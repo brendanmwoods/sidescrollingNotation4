@@ -20,6 +20,15 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mPK-ik-34W" userLabel="BlankStaff" customClass="BlankStaff" customModule="scrollingNotationv4" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="368"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yhs-66-ByA">
+                                        <rect key="frame" x="8" y="8" width="46" height="30"/>
+                                        <state key="normal" title="NEW"/>
+                                        <connections>
+                                            <action selector="newGameButtonPushed" destination="BYZ-38-t0r" eventType="touchUpInside" id="PJm-9y-hZg"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="368" id="iwd-S7-mmb"/>
@@ -157,7 +166,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="323" y="321"/>
+            <point key="canvasLocation" x="322" y="311"/>
         </scene>
     </scenes>
 </document>
