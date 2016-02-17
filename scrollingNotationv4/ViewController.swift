@@ -11,6 +11,14 @@ import UIKit
 class ViewController: UIViewController {
     
     @IBOutlet weak var blankStaff: UIView?
+    @IBOutlet weak var aButton:UIButton?
+    @IBOutlet weak var bButton:UIButton?
+    @IBOutlet weak var cButton:UIButton?
+    @IBOutlet weak var dButton:UIButton?
+    @IBOutlet weak var eButton:UIButton?
+    @IBOutlet weak var fButton:UIButton?
+    @IBOutlet weak var gButton:UIButton?
+    @IBOutlet weak var scoreLabel:UILabel?
     var ovalNoteImageView = UIImageView()
     
     
@@ -26,11 +34,16 @@ class ViewController: UIViewController {
     var startingScrollSpeed:NSTimeInterval = 0.02
     var currentNote: (noteName: String,octaveNumber: Int,
     absoluteNote: Int, isFlatOrSharp:Bool,diffFromTop:Int) = ("",0,0,false,0)
+    var currentScore = 0
+    var nextScoreIncrease = 0
+    let scoreIncreaseConstant = 100
+    var scoresNeedResetting = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         screenWidth = UIScreen.mainScreen().bounds.width
+        formatButtonShapes()
         
         noteLibrary.fillNoteLibrary()
         noteLibrary.filterNotesForDifficulty("easyTreble")
@@ -39,7 +52,7 @@ class ViewController: UIViewController {
         let image = UIImage(named: imageName)
         ovalNoteImageView = UIImageView(image: image!)
         
-        startGame()
+        gameLoop()
     }
     
     override func didReceiveMemoryWarning() {
@@ -47,7 +60,14 @@ class ViewController: UIViewController {
     }
     
     
-    func startGame() {
+    func gameLoop() {
+        if scoresNeedResetting
+        {
+            currentScore = 0
+            scoreLabel!.text = String(currentScore)
+            nextScoreIncrease = scoreIncreaseConstant
+            scoresNeedResetting = false
+        }
         
         currentNote = noteLibrary.returnRandomNote()
         createOvalNoteImage(currentNote)
@@ -55,13 +75,26 @@ class ViewController: UIViewController {
     }
     
     
+    func formatButtonShapes() {
+        let buttonRadius:CGFloat = 5
+        aButton?.layer.cornerRadius = buttonRadius
+        bButton?.layer.cornerRadius = buttonRadius
+        cButton?.layer.cornerRadius = buttonRadius
+        dButton?.layer.cornerRadius = buttonRadius
+        eButton?.layer.cornerRadius = buttonRadius
+        fButton?.layer.cornerRadius = buttonRadius
+        gButton?.layer.cornerRadius = buttonRadius
+    }
+    
     
     func createOvalNoteImage(note: (noteName: String,octaveNumber: Int,
         absoluteNote: Int, isFlatOrSharp:Bool,diffFromTop:Int)) {
             
-            ovalNoteImageView.frame = CGRectMake(screenWidth - ovalNoteWidth,
+            ovalNoteImageView.frame = CGRectMake(
+                screenWidth - ovalNoteWidth,
                 topLineY + CGFloat(currentNote.diffFromTop) * spaceBetweenNotes,
-                ovalNoteWidth, ovalNoteHeight)
+                ovalNoteWidth,
+                ovalNoteHeight)
             
             view.addSubview(ovalNoteImageView)
             
@@ -78,6 +111,7 @@ class ViewController: UIViewController {
         if ovalNoteImageView.frame.origin.x <= 0 {
             currentScrollSpeed = startingScrollSpeed
             gameOver = true
+            scoresNeedResetting = true
             timer.invalidate()
             gameOverAlert()
         } else {
@@ -99,7 +133,10 @@ class ViewController: UIViewController {
     func correctGuess() {
         timer.invalidate()
         currentScrollSpeed /= 1.25
-        startGame()
+        nextScoreIncrease += 100
+        currentScore += nextScoreIncrease
+        scoreLabel!.text = String(currentScore)
+        gameLoop()
         
     }
     
@@ -107,15 +144,16 @@ class ViewController: UIViewController {
         gameOver = true
         timer.invalidate()
         currentScrollSpeed = startingScrollSpeed
+        scoresNeedResetting = true
         gameOverAlert()
     }
     
     
     func gameOverAlert(){
-        let alert = UIAlertController(title: "Game Over", message: "You scored : ", preferredStyle: .Alert)
+        let alert = UIAlertController(title: "Game Over", message: "You scored : \(currentScore)", preferredStyle: .Alert)
         alert.addAction(UIAlertAction(title: "New Game", style: UIAlertActionStyle.Default, handler: {
             action in
-            self.startGame()
+            self.gameLoop()
         }))
         self.presentViewController(alert, animated: true, completion: nil)
     }
@@ -123,7 +161,7 @@ class ViewController: UIViewController {
     
     @IBAction func newGameButtonPushed() {
         timer.invalidate()
-        startGame()
+        gameLoop()
     }
 }
 

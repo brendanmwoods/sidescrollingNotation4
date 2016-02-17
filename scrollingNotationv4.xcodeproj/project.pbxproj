@@ -15,8 +15,8 @@
 		BC64B7D21C6C56F300DE7780 /* scrollingNotationv4Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC64B7D11C6C56F300DE7780 /* scrollingNotationv4Tests.swift */; };
 		BC64B7DD1C6C56F300DE7780 /* scrollingNotationv4UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC64B7DC1C6C56F300DE7780 /* scrollingNotationv4UITests.swift */; };
 		BC64B7EB1C6C57C900DE7780 /* BlankStaff.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC64B7EA1C6C57C900DE7780 /* BlankStaff.swift */; };
-		BC64B7ED1C6C5B8800DE7780 /* ovalNote.png in Resources */ = {isa = PBXBuildFile; fileRef = BC64B7EC1C6C5B8800DE7780 /* ovalNote.png */; };
 		BC64B7EF1C6C607500DE7780 /* NoteLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC64B7EE1C6C607500DE7780 /* NoteLibrary.swift */; };
+		BCE74CEF1C7506F600FB4EC4 /* ovalNote.png in Resources */ = {isa = PBXBuildFile; fileRef = BCE74CEE1C7506F600FB4EC4 /* ovalNote.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,8 +51,8 @@
 		BC64B7DC1C6C56F300DE7780 /* scrollingNotationv4UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = scrollingNotationv4UITests.swift; sourceTree = "<group>"; };
 		BC64B7DE1C6C56F300DE7780 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BC64B7EA1C6C57C900DE7780 /* BlankStaff.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlankStaff.swift; sourceTree = "<group>"; };
-		BC64B7EC1C6C5B8800DE7780 /* ovalNote.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ovalNote.png; sourceTree = "<group>"; };
 		BC64B7EE1C6C607500DE7780 /* NoteLibrary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteLibrary.swift; sourceTree = "<group>"; };
+		BCE74CEE1C7506F600FB4EC4 /* ovalNote.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ovalNote.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,7 +111,7 @@
 				BC64B7C31C6C56F200DE7780 /* Assets.xcassets */,
 				BC64B7C51C6C56F200DE7780 /* LaunchScreen.storyboard */,
 				BC64B7C81C6C56F200DE7780 /* Info.plist */,
-				BC64B7EC1C6C5B8800DE7780 /* ovalNote.png */,
+				BCE74CEE1C7506F600FB4EC4 /* ovalNote.png */,
 			);
 			path = scrollingNotationv4;
 			sourceTree = "<group>";
@@ -244,7 +244,7 @@
 				BC64B7C71C6C56F200DE7780 /* LaunchScreen.storyboard in Resources */,
 				BC64B7C41C6C56F200DE7780 /* Assets.xcassets in Resources */,
 				BC64B7C21C6C56F200DE7780 /* Main.storyboard in Resources */,
-				BC64B7ED1C6C5B8800DE7780 /* ovalNote.png in Resources */,
+				BCE74CEF1C7506F600FB4EC4 /* ovalNote.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -499,6 +499,7 @@
 				BC64B7E31C6C56F300DE7780 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BC64B7E41C6C56F300DE7780 /* Build configuration list for PBXNativeTarget "scrollingNotationv4Tests" */ = {
 			isa = XCConfigurationList;
@@ -507,6 +508,7 @@
 				BC64B7E61C6C56F300DE7780 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BC64B7E71C6C56F300DE7780 /* Build configuration list for PBXNativeTarget "scrollingNotationv4UITests" */ = {
 			isa = XCConfigurationList;
@@ -515,6 +517,7 @@
 				BC64B7E91C6C56F300DE7780 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
