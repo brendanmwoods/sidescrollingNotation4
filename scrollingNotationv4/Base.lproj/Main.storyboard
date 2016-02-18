@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1605" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1605" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="rAz-1u-ywJ">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -7,9 +7,305 @@
     </dependencies>
     <scenes>
         <!--View Controller-->
+        <scene sceneID="NtS-bn-I1z">
+            <objects>
+                <viewController id="rAz-1u-ywJ" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gij-m8-Aum"/>
+                        <viewControllerLayoutGuide type="bottom" id="uZH-qu-mtq"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="EPC-vU-BPr">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="98I-u6-nD5">
+                                <rect key="frame" x="233" y="246" width="134" height="107"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Up4-lV-nFh">
+                                        <rect key="frame" x="0.0" y="0.0" width="134" height="36"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" title="Learning Mode"/>
+                                        <connections>
+                                            <segue destination="jwG-yX-B3d" kind="show" id="2Ar-1D-l2I"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ufg-ac-baH">
+                                        <rect key="frame" x="0.0" y="71" width="134" height="36"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" title="Game Mode"/>
+                                        <connections>
+                                            <segue destination="ZX1-ud-3aB" kind="show" id="dMz-WU-T3z"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="98I-u6-nD5" firstAttribute="centerX" secondItem="EPC-vU-BPr" secondAttribute="centerX" id="7UE-Gh-hab"/>
+                            <constraint firstItem="98I-u6-nD5" firstAttribute="centerY" secondItem="EPC-vU-BPr" secondAttribute="centerY" constant="-0.5" id="8AX-4a-PuY"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="udM-dr-bDY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-116" y="675"/>
+        </scene>
+        <!--Learning Menu View Controller-->
+        <scene sceneID="c3P-Gq-X5h">
+            <objects>
+                <viewController id="jwG-yX-B3d" customClass="LearningMenuViewController" customModule="scrollingNotationv4" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="dJN-bu-s5O"/>
+                        <viewControllerLayoutGuide type="bottom" id="T8D-y0-lUU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="rga-JF-mva">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jvw-Dc-NDG">
+                                <rect key="frame" x="20" y="20" width="106" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="P31-0e-7me"/>
+                                    <constraint firstAttribute="width" constant="106" id="wTG-82-uVL"/>
+                                </constraints>
+                                <state key="normal" title="&lt;- MAIN MENU"/>
+                                <connections>
+                                    <segue destination="rAz-1u-ywJ" kind="show" id="3Km-Oj-8Q7"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Difficulty" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yIl-et-Q9o">
+                                <rect key="frame" x="230" y="100" width="141" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="7aq-Ti-WNW"/>
+                                    <constraint firstAttribute="width" constant="141" id="mEL-Mh-3PL"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="28" translatesAutoresizingMaskIntoConstraints="NO" id="8fi-cH-jHd">
+                                <rect key="frame" x="195" y="146" width="210" height="164"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1LA-iN-PIa">
+                                        <rect key="frame" x="0.0" y="0.0" width="210" height="36"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="200" id="2U4-YH-p0r"/>
+                                            <constraint firstAttribute="height" constant="36" id="9NZ-S9-a3t"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="210" id="Bcs-hR-As5"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" title="Easy - Treble Clef"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="2U4-YH-p0r"/>
+                                            </mask>
+                                        </variation>
+                                        <connections>
+                                            <segue destination="1kL-34-zOT" kind="show" identifier="easyTrebleSegue" id="FjW-Gn-dLX"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="seH-RO-d9T">
+                                        <rect key="frame" x="0.0" y="64" width="210" height="36"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="210" id="1Op-wj-E8A"/>
+                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="36" id="VSm-tX-Elv"/>
+                                            <constraint firstAttribute="width" constant="200" id="Xrl-6p-jgx"/>
+                                            <constraint firstAttribute="height" constant="36" id="Zg4-0e-tNG"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="36" id="oE0-Qp-00c"/>
+                                            <constraint firstAttribute="width" constant="187" id="vwX-xp-cag"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" title="Easy - Bass Clef"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="vwX-xp-cag"/>
+                                                <exclude reference="Xrl-6p-jgx"/>
+                                            </mask>
+                                        </variation>
+                                        <connections>
+                                            <segue destination="1kL-34-zOT" kind="show" identifier="easyBassSegue" id="nCS-e1-FV2"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kfo-pR-C4B">
+                                        <rect key="frame" x="0.0" y="128" width="210" height="36"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="36" id="g66-iQ-s4N"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="210" id="uqY-sv-xe0"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="36" id="wk9-0U-YRM"/>
+                                            <constraint firstAttribute="width" constant="200" id="yZa-ln-blM"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" title="Medium - Normal Clef "/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="yZa-ln-blM"/>
+                                            </mask>
+                                        </variation>
+                                        <connections>
+                                            <segue destination="1kL-34-zOT" kind="show" identifier="mediumSegue" id="TOg-Kn-4jB"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="164" id="D0A-YW-MC7"/>
+                                    <constraint firstAttribute="width" constant="187" id="bPK-0T-bKx"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="bPK-0T-bKx"/>
+                                    </mask>
+                                </variation>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="yIl-et-Q9o" firstAttribute="centerX" secondItem="rga-JF-mva" secondAttribute="centerX" id="3sH-8R-X6d"/>
+                            <constraint firstItem="8fi-cH-jHd" firstAttribute="centerX" secondItem="rga-JF-mva" secondAttribute="centerX" id="4Pe-C7-UxP"/>
+                            <constraint firstItem="yIl-et-Q9o" firstAttribute="top" secondItem="dJN-bu-s5O" secondAttribute="bottom" constant="80" id="PzG-Wi-xP4"/>
+                            <constraint firstItem="jvw-Dc-NDG" firstAttribute="leading" secondItem="rga-JF-mva" secondAttribute="leadingMargin" id="qf5-cE-NsS"/>
+                            <constraint firstItem="jvw-Dc-NDG" firstAttribute="top" secondItem="dJN-bu-s5O" secondAttribute="bottom" id="vjg-aX-B7S"/>
+                            <constraint firstItem="8fi-cH-jHd" firstAttribute="top" secondItem="yIl-et-Q9o" secondAttribute="bottom" constant="25" id="xOL-S5-rBZ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="easyBassButton" destination="seH-RO-d9T" id="kOm-oe-Ro5"/>
+                        <outlet property="easyTrebleButton" destination="1LA-iN-PIa" id="C0y-8W-27V"/>
+                        <outlet property="mediumButton" destination="Kfo-pR-C4B" id="Q5q-zv-4pp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TQl-o4-GAN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="595" y="259"/>
+        </scene>
+        <!--Game Menu View Controller-->
+        <scene sceneID="2Pr-e5-Iu5">
+            <objects>
+                <viewController id="ZX1-ud-3aB" customClass="GameMenuViewController" customModule="scrollingNotationv4" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="IEv-5c-rv1"/>
+                        <viewControllerLayoutGuide type="bottom" id="19q-Q7-kpY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="jp0-oC-9lf">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Difficulty" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Z8-lC-ta0">
+                                <rect key="frame" x="230" y="98" width="141" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="4hF-If-Apd"/>
+                                    <constraint firstAttribute="width" constant="141" id="jwl-5e-HFD"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="28" translatesAutoresizingMaskIntoConstraints="NO" id="vAR-LJ-Duu">
+                                <rect key="frame" x="195" y="144" width="210" height="164"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7hS-Vt-0eI">
+                                        <rect key="frame" x="0.0" y="0.0" width="210" height="36"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="210" id="5Xf-8U-wtX"/>
+                                            <constraint firstAttribute="height" constant="36" id="PiN-ow-KNV"/>
+                                            <constraint firstAttribute="width" constant="200" id="tzu-66-osC"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" title="Easy - Treble Clef"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="tzu-66-osC"/>
+                                            </mask>
+                                        </variation>
+                                        <connections>
+                                            <segue destination="BYZ-38-t0r" kind="show" identifier="easyTrebleSegue" id="IlK-ee-r50"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FFT-31-Y5g">
+                                        <rect key="frame" x="0.0" y="64" width="210" height="36"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="36" id="2tn-F0-QPi"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="36" id="85n-cT-FBO"/>
+                                            <constraint firstAttribute="width" constant="187" id="HOg-qb-PH4"/>
+                                            <constraint firstAttribute="width" constant="200" id="V6b-Kf-sYq"/>
+                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="36" id="gjv-da-B4W"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="210" id="x48-We-9u4"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" title="Easy - Bass Clef"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="HOg-qb-PH4"/>
+                                                <exclude reference="V6b-Kf-sYq"/>
+                                            </mask>
+                                        </variation>
+                                        <connections>
+                                            <segue destination="BYZ-38-t0r" kind="show" identifier="easyBassSegue" id="qX2-WN-kpe"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nBE-0m-22l">
+                                        <rect key="frame" x="0.0" y="128" width="210" height="36"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="200" id="CYv-IA-rQu"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="36" id="Qjn-1r-gJv"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="210" id="f47-Bf-Ddc"/>
+                                            <constraint firstAttribute="height" constant="36" id="iTt-gB-x0o"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" title="Medium - Normal Clef "/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="CYv-IA-rQu"/>
+                                            </mask>
+                                        </variation>
+                                        <connections>
+                                            <segue destination="BYZ-38-t0r" kind="show" identifier="mediumSegue" id="rOO-FZ-wti"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="164" id="RYV-Hs-KnX"/>
+                                    <constraint firstAttribute="width" constant="187" id="gX1-D2-IqD"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="gX1-D2-IqD"/>
+                                    </mask>
+                                </variation>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1R4-2e-jqn">
+                                <rect key="frame" x="20" y="20" width="106" height="30"/>
+                                <state key="normal" title="&lt;- MAIN MENU"/>
+                                <connections>
+                                    <segue destination="rAz-1u-ywJ" kind="show" id="wM7-ya-43D"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="1R4-2e-jqn" firstAttribute="leading" secondItem="jp0-oC-9lf" secondAttribute="leadingMargin" id="4FL-ix-gsX"/>
+                            <constraint firstItem="vAR-LJ-Duu" firstAttribute="centerX" secondItem="jp0-oC-9lf" secondAttribute="centerX" id="Dae-MV-K3p"/>
+                            <constraint firstItem="1R4-2e-jqn" firstAttribute="top" secondItem="IEv-5c-rv1" secondAttribute="bottom" id="jUc-wp-M9y"/>
+                            <constraint firstItem="0Z8-lC-ta0" firstAttribute="top" secondItem="IEv-5c-rv1" secondAttribute="bottom" constant="78" id="lPU-Pc-cKR"/>
+                            <constraint firstItem="0Z8-lC-ta0" firstAttribute="centerX" secondItem="jp0-oC-9lf" secondAttribute="centerX" id="m2a-oh-QmK"/>
+                            <constraint firstItem="vAR-LJ-Duu" firstAttribute="top" secondItem="0Z8-lC-ta0" secondAttribute="bottom" constant="25" id="s9u-qK-BVB"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="easyBassButton" destination="FFT-31-Y5g" id="bbj-rj-FEU"/>
+                        <outlet property="easyTrebleButton" destination="7hS-Vt-0eI" id="rkc-sK-vZ6"/>
+                        <outlet property="mediumButton" destination="nBE-0m-22l" id="9cw-IL-K2U"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ssM-2u-yfZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="596" y="923"/>
+        </scene>
+        <!--Game View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="scrollingNotationv4" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="GameViewController" customModule="scrollingNotationv4" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -21,13 +317,6 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mPK-ik-34W" userLabel="BlankStaff" customClass="BlankStaff" customModule="scrollingNotationv4" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="342"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yhs-66-ByA">
-                                        <rect key="frame" x="0.0" y="0.0" width="34" height="30"/>
-                                        <state key="normal" title="NEW"/>
-                                        <connections>
-                                            <action selector="newGameButtonPushed" destination="BYZ-38-t0r" eventType="touchUpInside" id="PJm-9y-hZg"/>
-                                        </connections>
-                                    </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G98-Nb-mE0">
                                         <rect key="frame" x="213" y="17" width="174" height="42"/>
                                         <constraints>
@@ -37,12 +326,26 @@
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yhs-66-ByA">
+                                        <rect key="frame" x="8" y="17" width="66" height="33"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="66" id="kVb-oH-9aa"/>
+                                            <constraint firstAttribute="height" constant="33" id="vsd-aA-NU0"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <state key="normal" title="&lt;- Menu"/>
+                                        <connections>
+                                            <segue destination="ZX1-ud-3aB" kind="show" id="f7B-BX-6d8"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="G98-Nb-mE0" firstAttribute="top" secondItem="mPK-ik-34W" secondAttribute="top" constant="17" id="BNg-je-GE2"/>
                                     <constraint firstItem="G98-Nb-mE0" firstAttribute="centerX" secondItem="mPK-ik-34W" secondAttribute="centerX" id="Bub-A4-rhM"/>
+                                    <constraint firstItem="Yhs-66-ByA" firstAttribute="top" secondItem="mPK-ik-34W" secondAttribute="top" constant="17" id="Wc3-Xp-LeV"/>
                                     <constraint firstAttribute="height" constant="342" id="iwd-S7-mmb"/>
+                                    <constraint firstItem="Yhs-66-ByA" firstAttribute="leading" secondItem="mPK-ik-34W" secondAttribute="leading" constant="8" id="oPb-43-off"/>
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="A2o-EU-Vll">
@@ -133,8 +436,8 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="A2o-EU-Vll" secondAttribute="bottom" constant="20" id="3Xd-sc-AJm"/>
                             <constraint firstItem="A2o-EU-Vll" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="HxC-dC-tJZ"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="A2o-EU-Vll" secondAttribute="bottom" constant="20" id="L80-Sh-cEq"/>
                             <constraint firstAttribute="trailingMargin" secondItem="mPK-ik-34W" secondAttribute="trailing" constant="-20" id="WeH-zh-FDM"/>
                             <constraint firstItem="A2o-EU-Vll" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="bnw-bx-Mdp"/>
                             <constraint firstItem="A2o-EU-Vll" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="10" id="eNY-ih-Ki6"/>
@@ -151,6 +454,7 @@
                             </mask>
                         </variation>
                     </view>
+                    <navigationItem key="navigationItem" id="dgE-FS-ftm"/>
                     <connections>
                         <outlet property="BlankStaff" destination="mPK-ik-34W" id="U73-8W-9IC"/>
                         <outlet property="aButton" destination="AzA-3G-aFF" id="U2h-lX-5Mv"/>
@@ -165,7 +469,183 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="322" y="311"/>
+            <point key="canvasLocation" x="1267" y="923"/>
+        </scene>
+        <!--Learning View Controller-->
+        <scene sceneID="KPe-yN-TUg">
+            <objects>
+                <viewController id="1kL-34-zOT" customClass="LearningViewController" customModule="scrollingNotationv4" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fUd-Mp-H3O"/>
+                        <viewControllerLayoutGuide type="bottom" id="Pa5-Aa-AGY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="s6J-K0-nnE">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X3R-Mr-HpQ" userLabel="BlankStaff" customClass="BlankStaff" customModule="scrollingNotationv4" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="342"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="od8-az-pCc">
+                                        <rect key="frame" x="213" y="17" width="174" height="42"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="174" id="qqU-7Q-Cvm"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="35"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZHH-X4-2lP">
+                                        <rect key="frame" x="8" y="17" width="66" height="33"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="33" id="XDa-Dc-hZj"/>
+                                            <constraint firstAttribute="width" constant="66" id="dB3-bH-u8y"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <state key="normal" title="&lt;- Menu"/>
+                                        <connections>
+                                            <segue destination="jwG-yX-B3d" kind="show" id="5rV-ja-cwG"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="od8-az-pCc" firstAttribute="top" secondItem="X3R-Mr-HpQ" secondAttribute="top" constant="17" id="DNf-ZC-aXm"/>
+                                    <constraint firstItem="ZHH-X4-2lP" firstAttribute="top" secondItem="X3R-Mr-HpQ" secondAttribute="top" constant="17" id="VcB-fD-xMe"/>
+                                    <constraint firstAttribute="height" constant="342" id="ZUH-xq-mbm"/>
+                                    <constraint firstItem="od8-az-pCc" firstAttribute="centerX" secondItem="X3R-Mr-HpQ" secondAttribute="centerX" id="pu0-NU-hwH"/>
+                                    <constraint firstItem="ZHH-X4-2lP" firstAttribute="leading" secondItem="X3R-Mr-HpQ" secondAttribute="leading" constant="8" id="vwr-47-rcF"/>
+                                </constraints>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="1Rm-0J-smk">
+                                <rect key="frame" x="10" y="500" width="580" height="80"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V85-Fj-Fow">
+                                        <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="22"/>
+                                        <state key="normal" title="A">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="noteButtonPushed:" destination="1kL-34-zOT" eventType="touchUpInside" id="sGB-l0-0AS"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Fi-av-X6d">
+                                        <rect key="frame" x="83" y="0.0" width="81" height="80"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="22"/>
+                                        <state key="normal" title="B">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="noteButtonPushed:" destination="1kL-34-zOT" eventType="touchUpInside" id="Jfy-jQ-jHc"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hGm-MP-z9l">
+                                        <rect key="frame" x="167" y="0.0" width="80" height="80"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="22"/>
+                                        <state key="normal" title="C">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="noteButtonPushed:" destination="1kL-34-zOT" eventType="touchUpInside" id="UMc-Kf-d0g"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xaK-QQ-PIp">
+                                        <rect key="frame" x="250" y="0.0" width="80" height="80"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="22"/>
+                                        <state key="normal" title="D">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="noteButtonPushed:" destination="1kL-34-zOT" eventType="touchUpInside" id="VYK-YD-2Hd"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vcx-5p-ffe">
+                                        <rect key="frame" x="333" y="0.0" width="80" height="80"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="22"/>
+                                        <state key="normal" title="E">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="noteButtonPushed:" destination="1kL-34-zOT" eventType="touchUpInside" id="SV5-tx-SLo"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qMr-o6-GUy">
+                                        <rect key="frame" x="416" y="0.0" width="81" height="80"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="22"/>
+                                        <state key="normal" title="F">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="noteButtonPushed:" destination="1kL-34-zOT" eventType="touchUpInside" id="tsO-Ai-Rvb"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EH2-L1-CJo">
+                                        <rect key="frame" x="500" y="0.0" width="80" height="80"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="22"/>
+                                        <state key="normal" title="G">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="noteButtonPushed:" destination="1kL-34-zOT" eventType="touchUpInside" id="Yqd-3Q-QTe"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="Kbz-7r-pmL"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="1Rm-0J-smk" firstAttribute="trailing" secondItem="s6J-K0-nnE" secondAttribute="trailingMargin" id="0sy-PO-dsL"/>
+                            <constraint firstItem="1Rm-0J-smk" firstAttribute="leading" secondItem="s6J-K0-nnE" secondAttribute="leading" constant="10" id="3GJ-r4-bxI"/>
+                            <constraint firstItem="Pa5-Aa-AGY" firstAttribute="top" secondItem="1Rm-0J-smk" secondAttribute="bottom" constant="20" id="5kx-mk-LQv"/>
+                            <constraint firstItem="1Rm-0J-smk" firstAttribute="centerX" secondItem="s6J-K0-nnE" secondAttribute="centerX" id="60l-iv-cJI"/>
+                            <constraint firstItem="X3R-Mr-HpQ" firstAttribute="top" secondItem="s6J-K0-nnE" secondAttribute="topMargin" id="Q8r-si-Zwa"/>
+                            <constraint firstItem="1Rm-0J-smk" firstAttribute="leading" secondItem="s6J-K0-nnE" secondAttribute="leadingMargin" id="WbR-SP-CH4"/>
+                            <constraint firstAttribute="trailing" secondItem="1Rm-0J-smk" secondAttribute="trailing" constant="10" id="blc-De-eAA"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="X3R-Mr-HpQ" secondAttribute="trailing" constant="-20" id="jQP-mE-Ygl"/>
+                            <constraint firstItem="X3R-Mr-HpQ" firstAttribute="leading" secondItem="s6J-K0-nnE" secondAttribute="leadingMargin" constant="-20" id="wrk-cO-JKJ"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="60l-iv-cJI"/>
+                                <exclude reference="0sy-PO-dsL"/>
+                                <exclude reference="WbR-SP-CH4"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" id="r4S-BJ-g2A"/>
+                    <connections>
+                        <outlet property="BlankStaff" destination="X3R-Mr-HpQ" id="1pG-1c-hal"/>
+                        <outlet property="aButton" destination="V85-Fj-Fow" id="6se-MI-4L2"/>
+                        <outlet property="bButton" destination="3Fi-av-X6d" id="6RF-Nd-JuE"/>
+                        <outlet property="cButton" destination="hGm-MP-z9l" id="8bN-yb-XPe"/>
+                        <outlet property="dButton" destination="xaK-QQ-PIp" id="B20-HP-j87"/>
+                        <outlet property="eButton" destination="vcx-5p-ffe" id="4co-7P-lly"/>
+                        <outlet property="fButton" destination="qMr-o6-GUy" id="DVY-BK-kkq"/>
+                        <outlet property="gButton" destination="EH2-L1-CJo" id="weV-u3-3DW"/>
+                        <outlet property="scoreLabel" destination="od8-az-pCc" id="cqN-PN-fJo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qSz-xf-Gjw" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1267" y="259"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="f7B-BX-6d8"/>
+        <segue reference="rOO-FZ-wti"/>
+        <segue reference="5rV-ja-cwG"/>
+        <segue reference="TOg-Kn-4jB"/>
+        <segue reference="3Km-Oj-8Q7"/>
+    </inferredMetricsTieBreakers>
 </document>

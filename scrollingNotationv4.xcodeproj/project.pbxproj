@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		BC64B7BD1C6C56F200DE7780 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC64B7BC1C6C56F200DE7780 /* AppDelegate.swift */; };
-		BC64B7BF1C6C56F200DE7780 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC64B7BE1C6C56F200DE7780 /* ViewController.swift */; };
+		BC64B7BF1C6C56F200DE7780 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC64B7BE1C6C56F200DE7780 /* GameViewController.swift */; };
 		BC64B7C21C6C56F200DE7780 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC64B7C01C6C56F200DE7780 /* Main.storyboard */; };
 		BC64B7C41C6C56F200DE7780 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC64B7C31C6C56F200DE7780 /* Assets.xcassets */; };
 		BC64B7C71C6C56F200DE7780 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC64B7C51C6C56F200DE7780 /* LaunchScreen.storyboard */; };
@@ -17,6 +17,9 @@
 		BC64B7EB1C6C57C900DE7780 /* BlankStaff.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC64B7EA1C6C57C900DE7780 /* BlankStaff.swift */; };
 		BC64B7EF1C6C607500DE7780 /* NoteLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC64B7EE1C6C607500DE7780 /* NoteLibrary.swift */; };
 		BCE74CEF1C7506F600FB4EC4 /* ovalNote.png in Resources */ = {isa = PBXBuildFile; fileRef = BCE74CEE1C7506F600FB4EC4 /* ovalNote.png */; };
+		BCE74CF11C75156100FB4EC4 /* GameMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE74CF01C75156100FB4EC4 /* GameMenuViewController.swift */; };
+		BCE74CF31C7562CD00FB4EC4 /* LearningMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE74CF21C7562CD00FB4EC4 /* LearningMenuViewController.swift */; };
+		BCE74CF51C75669200FB4EC4 /* LearningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE74CF41C75669200FB4EC4 /* LearningViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +42,7 @@
 /* Begin PBXFileReference section */
 		BC64B7B91C6C56F200DE7780 /* scrollingNotationv4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = scrollingNotationv4.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC64B7BC1C6C56F200DE7780 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BC64B7BE1C6C56F200DE7780 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BC64B7BE1C6C56F200DE7780 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		BC64B7C11C6C56F200DE7780 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BC64B7C31C6C56F200DE7780 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BC64B7C61C6C56F200DE7780 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -53,6 +56,9 @@
 		BC64B7EA1C6C57C900DE7780 /* BlankStaff.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlankStaff.swift; sourceTree = "<group>"; };
 		BC64B7EE1C6C607500DE7780 /* NoteLibrary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteLibrary.swift; sourceTree = "<group>"; };
 		BCE74CEE1C7506F600FB4EC4 /* ovalNote.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ovalNote.png; sourceTree = "<group>"; };
+		BCE74CF01C75156100FB4EC4 /* GameMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameMenuViewController.swift; sourceTree = "<group>"; };
+		BCE74CF21C7562CD00FB4EC4 /* LearningMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LearningMenuViewController.swift; sourceTree = "<group>"; };
+		BCE74CF41C75669200FB4EC4 /* LearningViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LearningViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,7 +110,6 @@
 			isa = PBXGroup;
 			children = (
 				BC64B7BC1C6C56F200DE7780 /* AppDelegate.swift */,
-				BC64B7BE1C6C56F200DE7780 /* ViewController.swift */,
 				BC64B7EA1C6C57C900DE7780 /* BlankStaff.swift */,
 				BC64B7EE1C6C607500DE7780 /* NoteLibrary.swift */,
 				BC64B7C01C6C56F200DE7780 /* Main.storyboard */,
@@ -112,6 +117,10 @@
 				BC64B7C51C6C56F200DE7780 /* LaunchScreen.storyboard */,
 				BC64B7C81C6C56F200DE7780 /* Info.plist */,
 				BCE74CEE1C7506F600FB4EC4 /* ovalNote.png */,
+				BCE74CF01C75156100FB4EC4 /* GameMenuViewController.swift */,
+				BC64B7BE1C6C56F200DE7780 /* GameViewController.swift */,
+				BCE74CF21C7562CD00FB4EC4 /* LearningMenuViewController.swift */,
+				BCE74CF41C75669200FB4EC4 /* LearningViewController.swift */,
 			);
 			path = scrollingNotationv4;
 			sourceTree = "<group>";
@@ -270,8 +279,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				BC64B7EB1C6C57C900DE7780 /* BlankStaff.swift in Sources */,
-				BC64B7BF1C6C56F200DE7780 /* ViewController.swift in Sources */,
+				BCE74CF11C75156100FB4EC4 /* GameMenuViewController.swift in Sources */,
+				BCE74CF51C75669200FB4EC4 /* LearningViewController.swift in Sources */,
+				BC64B7BF1C6C56F200DE7780 /* GameViewController.swift in Sources */,
 				BC64B7BD1C6C56F200DE7780 /* AppDelegate.swift in Sources */,
+				BCE74CF31C7562CD00FB4EC4 /* LearningMenuViewController.swift in Sources */,
 				BC64B7EF1C6C607500DE7780 /* NoteLibrary.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

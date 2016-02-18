@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class GameViewController: UIViewController {
     
     @IBOutlet weak var blankStaff: UIView?
     @IBOutlet weak var aButton:UIButton?
@@ -38,15 +38,16 @@ class ViewController: UIViewController {
     var nextScoreIncrease = 0
     let scoreIncreaseConstant = 100
     var scoresNeedResetting = false
+    var difficulty = ""
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         screenWidth = UIScreen.mainScreen().bounds.width
         formatButtonShapes()
         
         noteLibrary.fillNoteLibrary()
-        noteLibrary.filterNotesForDifficulty("easyTreble")
+        noteLibrary.filterNotesForDifficulty(difficulty)
         
         let imageName = "ovalNote.png"
         let image = UIImage(named: imageName)
@@ -120,16 +121,6 @@ class ViewController: UIViewController {
         }
     }
     
-    
-    
-    @IBAction func noteButtonPushed(sender:UIButton) {
-        if sender.titleLabel!.text!.lowercaseString == currentNote.noteName {
-            correctGuess()
-        }else {
-            incorrectGuess()
-        }
-    }
-    
     func correctGuess() {
         timer.invalidate()
         currentScrollSpeed /= 1.25
@@ -157,11 +148,14 @@ class ViewController: UIViewController {
         }))
         self.presentViewController(alert, animated: true, completion: nil)
     }
+
     
-    
-    @IBAction func newGameButtonPushed() {
-        timer.invalidate()
-        gameLoop()
+    @IBAction func noteButtonPushed(sender:UIButton) {
+        if sender.titleLabel!.text!.lowercaseString == currentNote.noteName {
+            correctGuess()
+        }else {
+            incorrectGuess()
+        }
     }
 }
 
