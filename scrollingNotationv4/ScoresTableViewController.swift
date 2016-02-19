@@ -37,13 +37,28 @@ class ScoresTableViewController: UITableViewController {
             print("Error occured while reading from the plist file")
         }
         
-        // TO DELETE AND OBJECT FROM LOCAL SCORES ARRAY
-        // scoresArray.removeObjectAtIndex(0)
-        // TO OVERWRITE EXISTING PLIST IN DOCS PATH
-        // scoresArray.writeToFile(plistPath, atomically: true)
         self.tableView.reloadData()
     }
     
+    func deleteAllScores() {
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        plistPath = appDelegate.plistPathInDocument
+        
+        // Extract the content of the file as NSData
+        let data:NSData =  NSFileManager.defaultManager().contentsAtPath(plistPath)!
+        do{
+            scoresArray = try NSPropertyListSerialization.propertyListWithData(data, options: NSPropertyListMutabilityOptions.MutableContainersAndLeaves, format: nil) as! NSMutableArray
+            
+            for var i = scoresArray.count - 1; i >= 0; i-- {
+                scoresArray.removeObjectAtIndex(i)
+                scoresArray.writeToFile(plistPath, atomically: true)
+            }
+            
+        }catch{
+            print("Error occured while reading from the plist file")
+        }
+
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

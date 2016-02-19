@@ -149,6 +149,12 @@ class GameViewController: UIViewController {
             action in
             self.gameLoop()
         }))
+        
+        alert.addAction(UIAlertAction(title: "Menu", style: UIAlertActionStyle.Default, handler: {
+            action in
+            self.performSegueWithIdentifier("gameViewToMenuSegue", sender: nil)
+        }))
+
         self.presentViewController(alert, animated: true, completion: nil)
     }
 
@@ -160,6 +166,7 @@ class GameViewController: UIViewController {
         
         do{
             let notesArray = try NSPropertyListSerialization.propertyListWithData(data, options: NSPropertyListMutabilityOptions.MutableContainersAndLeaves, format: nil) as! NSMutableArray
+
             notesArray.addObject(String(self.currentScore))
         
             notesArray.writeToFile(pathForThePlistFile, atomically: true)

@@ -33,7 +33,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 print("Error occurred while copying file to document \(error)")
             }
         }
-    
     }
     
     
