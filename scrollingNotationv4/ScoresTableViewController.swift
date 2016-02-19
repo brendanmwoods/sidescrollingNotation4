@@ -26,6 +26,7 @@ class ScoresTableViewController: UITableViewController {
 
     override func viewWillAppear(animated: Bool) {
         
+        //get path to plist of all scores
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         plistPath = appDelegate.plistPathInDocument
         
@@ -33,6 +34,7 @@ class ScoresTableViewController: UITableViewController {
         let data:NSData =  NSFileManager.defaultManager().contentsAtPath(plistPath)!
         do{
             scoresArray = try NSPropertyListSerialization.propertyListWithData(data, options: NSPropertyListMutabilityOptions.MutableContainersAndLeaves, format: nil) as! NSMutableArray
+            
         }catch{
             print("Error occured while reading from the plist file")
         }
@@ -40,6 +42,8 @@ class ScoresTableViewController: UITableViewController {
         self.tableView.reloadData()
     }
     
+    
+    // Delete all scores from plist records, permanently
     func deleteAllScores() {
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         plistPath = appDelegate.plistPathInDocument
@@ -73,10 +77,13 @@ class ScoresTableViewController: UITableViewController {
     }
 
 
+    // Reverse the order of all the scores in the plist array, and then display them
     override func tableView(tableView: UITableView,
         cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
+            var reversedScoresArray = scoresArray as! [String]
+            reversedScoresArray = reversedScoresArray.reverse()
             let cell:UITableViewCell! = tableView.dequeueReusableCellWithIdentifier("cellIdentifier")
-            cell.textLabel!.text = scoresArray.objectAtIndex(indexPath.row) as? String
+            cell.textLabel!.text = reversedScoresArray[indexPath.row]
             return cell
     }
     
