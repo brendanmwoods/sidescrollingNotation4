@@ -635,7 +635,7 @@
         <!--Navigation Controller-->
         <scene sceneID="7Z1-vv-nRK">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" id="9l3-rZ-ejb" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9l3-rZ-ejb" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="luC-CR-ltn">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>

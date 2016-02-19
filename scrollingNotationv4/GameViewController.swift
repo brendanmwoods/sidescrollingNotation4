@@ -150,9 +150,9 @@ class GameViewController: UIViewController {
             self.gameLoop()
         }))
         
-        alert.addAction(UIAlertAction(title: "Menu", style: UIAlertActionStyle.Default, handler: {
+        alert.addAction(UIAlertAction(title: "Main Menu", style: UIAlertActionStyle.Default, handler: {
             action in
-            self.performSegueWithIdentifier("gameViewToMenuSegue", sender: nil)
+            self.navigationController?.popToRootViewControllerAnimated(true)
         }))
 
         self.presentViewController(alert, animated: true, completion: nil)
