@@ -10,12 +10,41 @@ import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
+    
+    //this will be the path for our plist, and will be accessable from 
+    //everywhere in the app.
+    var plistPathInDocument:String = String()
+
+    func preparePlistForUse(){
+        // Get a path to the documents directory
+        let rootPath = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, .UserDomainMask, true)[0]
+        
+        // make a path to the docs folder for the scores.plist
+        // Check if a file already exists at that docs path
+        // if it doesnot, get a path to the main bundle version
+        plistPathInDocument = rootPath.stringByAppendingString("/allScores.plist")
+        if !NSFileManager.defaultManager().fileExistsAtPath(plistPathInDocument){
+            let plistPathInBundle = NSBundle.mainBundle().pathForResource("allScores", ofType: "plist") as String!
+            // if the docs path(file) doesn't exist, copy the item to documents path
+            // from the main bundle
+            do {
+                try NSFileManager.defaultManager().copyItemAtPath(plistPathInBundle, toPath: plistPathInDocument)
+            }catch{
+                print("Error occurred while copying file to document \(error)")
+            }
+        }
+    
+    }
+    
+    
+    
 
     var window: UIWindow?
-
+    
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        self.preparePlistForUse()
         return true
     }
 
@@ -35,6 +64,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidBecomeActive(application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+        self.preparePlistForUse()
     }
 
     func applicationWillTerminate(application: UIApplication) {

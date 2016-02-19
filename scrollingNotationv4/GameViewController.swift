@@ -21,6 +21,8 @@ class GameViewController: UIViewController {
     @IBOutlet weak var scoreLabel:UILabel?
     var ovalNoteImageView = UIImageView()
     
+    var scoresArray:NSMutableArray!
+    var plistPath:String!
     
     let topLineY:CGFloat = 100
     var screenWidth:CGFloat = 0
@@ -141,6 +143,7 @@ class GameViewController: UIViewController {
     
     
     func gameOverAlert(){
+        saveScoreToScoresPlist()
         let alert = UIAlertController(title: "Game Over", message: "You scored : \(currentScore)", preferredStyle: .Alert)
         alert.addAction(UIAlertAction(title: "New Game", style: UIAlertActionStyle.Default, handler: {
             action in
@@ -149,6 +152,22 @@ class GameViewController: UIViewController {
         self.presentViewController(alert, animated: true, completion: nil)
     }
 
+    func saveScoreToScoresPlist() {
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let pathForThePlistFile = appDelegate.plistPathInDocument
+        
+        let data:NSData =  NSFileManager.defaultManager().contentsAtPath(pathForThePlistFile)!
+        
+        do{
+            let notesArray = try NSPropertyListSerialization.propertyListWithData(data, options: NSPropertyListMutabilityOptions.MutableContainersAndLeaves, format: nil) as! NSMutableArray
+            notesArray.addObject(String(self.currentScore))
+        
+            notesArray.writeToFile(pathForThePlistFile, atomically: true)
+        }catch{
+            print("An error occurred while writing to plist")
+        }
+    }
+    
     
     @IBAction func noteButtonPushed(sender:UIButton) {
         if sender.titleLabel!.text!.lowercaseString == currentNote.noteName {
