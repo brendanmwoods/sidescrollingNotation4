@@ -9,7 +9,11 @@
 import UIKit
 
 class LearningViewController: UIViewController{
-    
+    // TO DO
+    //remove all non-necessary game mode features
+    //make not appear in horizontal center
+    //give hints when wrong
+    //note library returnRandomNote() shouldn't return same not twice in a row.
     @IBOutlet weak var blankStaff: UIView?
     @IBOutlet weak var aButton:UIButton?
     @IBOutlet weak var bButton:UIButton?
@@ -27,17 +31,11 @@ class LearningViewController: UIViewController{
     let ovalNoteWidth:CGFloat = 30
     let ovalNoteHeight:CGFloat = 20
     let spaceBetweenNotes:CGFloat = 10
-    var timer = NSTimer()
     var noteLibrary = NoteLibrary()
-    var gameOver = false
-    var currentScrollSpeed:NSTimeInterval = 0.02
-    var startingScrollSpeed:NSTimeInterval = 0.02
     var currentNote: (noteName: String,octaveNumber: Int,
     absoluteNote: Int, isFlatOrSharp:Bool,diffFromTop:Int) = ("",0,0,false,0)
-    var currentScore = 0
-    var nextScoreIncrease = 0
-    let scoreIncreaseConstant = 100
-    var scoresNeedResetting = false
+    var totalCorrect = 0
+    var totalIncorrect = 0
     var difficulty = ""
     
     
@@ -62,17 +60,8 @@ class LearningViewController: UIViewController{
     
     
     func gameLoop() {
-        if scoresNeedResetting
-        {
-            currentScore = 0
-            scoreLabel!.text = String(currentScore)
-            nextScoreIncrease = scoreIncreaseConstant
-            scoresNeedResetting = false
-        }
-        
         currentNote = noteLibrary.returnRandomNote()
         createOvalNoteImage(currentNote)
-        
     }
     
     
@@ -92,62 +81,38 @@ class LearningViewController: UIViewController{
         absoluteNote: Int, isFlatOrSharp:Bool,diffFromTop:Int)) {
             
             ovalNoteImageView.frame = CGRectMake(
-                screenWidth - ovalNoteWidth,
+                (screenWidth/2) - (ovalNoteWidth/2),
                 topLineY + CGFloat(currentNote.diffFromTop) * spaceBetweenNotes,
                 ovalNoteWidth,
                 ovalNoteHeight)
             
             view.addSubview(ovalNoteImageView)
-            
-            timer = NSTimer.scheduledTimerWithTimeInterval(currentScrollSpeed, target: self,
-                selector: Selector("moveOvalNoteLeft"), userInfo: nil, repeats: true)
-            
-    }
-    
-    
-    
-    //moves the note left. gets called repeatedly until timer is invalidated.
-    func moveOvalNoteLeft(){
-        
-        if ovalNoteImageView.frame.origin.x <= 0 {
-            currentScrollSpeed = startingScrollSpeed
-            gameOver = true
-            scoresNeedResetting = true
-            timer.invalidate()
-            gameOverAlert()
-        } else {
-            
-            self.ovalNoteImageView.center.x -= 1
-        }
     }
     
     func correctGuess() {
-        timer.invalidate()
-        currentScrollSpeed /= 1.25
-        nextScoreIncrease += 100
-        currentScore += nextScoreIncrease
-        scoreLabel!.text = String(currentScore)
+        totalCorrect++
+        updateResultsLabel()
         gameLoop()
-        
     }
     
     func incorrectGuess() {
-        gameOver = true
-        timer.invalidate()
-        currentScrollSpeed = startingScrollSpeed
-        scoresNeedResetting = true
-        gameOverAlert()
+        totalIncorrect++
+        updateResultsLabel()
+    }
+    
+    func updateResultsLabel() {
+        scoreLabel!.text = String("\(totalCorrect) / \(totalCorrect + totalIncorrect)")
     }
     
     
-    func gameOverAlert(){
-        let alert = UIAlertController(title: "Game Over", message: "You scored : \(currentScore)", preferredStyle: .Alert)
-        alert.addAction(UIAlertAction(title: "New Game", style: UIAlertActionStyle.Default, handler: {
-            action in
-            self.gameLoop()
-        }))
-        self.presentViewController(alert, animated: true, completion: nil)
-    }
+//    func gameOverAlert(){
+//        let alert = UIAlertController(title: "Game Over", message: "You scored : \(currentScore)", preferredStyle: .Alert)
+//        alert.addAction(UIAlertAction(title: "New Game", style: UIAlertActionStyle.Default, handler: {
+//            action in
+//            self.gameLoop()
+//        }))
+//        self.presentViewController(alert, animated: true, completion: nil)
+//    }
     
     
     @IBAction func noteButtonPushed(sender:UIButton) {

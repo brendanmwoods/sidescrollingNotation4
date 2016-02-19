@@ -471,6 +471,7 @@
 		BC64B7E81C6C56F300DE7780 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"CODE_SIGN_ENTITLEMENTS[sdk=*]" = "";
 				INFOPLIST_FILE = scrollingNotationv4UITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.brendanwoods.scrollingNotationv4UITests;

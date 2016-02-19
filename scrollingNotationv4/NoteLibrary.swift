@@ -23,6 +23,7 @@ class NoteLibrary:NSObject {
     var totalNotes = 88
     var allNotesArr = [(noteName: String,octaveNumber: Int,
         absoluteNote: Int, isFlatOrSharp:Bool, diffFromTop:Int)]()
+    var previousNoteAbsoluteNote = 0
     
     func fillNoteLibrary() {
         
@@ -76,6 +77,7 @@ class NoteLibrary:NSObject {
         
         
         //assign diffFromTop units for each non flat/sharp note
+        //used for plotting notes on the grand staff.
         var tempDiffFromTop = bottomNoteDiffFromTop
         
         for index in 0..<totalNotes{
@@ -147,14 +149,19 @@ class NoteLibrary:NSObject {
         }
     }
     
-    //return random note from allNotesArr
+    //return random note from allNotesArr. make sure it doesn't repeat 
     func returnRandomNote() -> ((noteName: String,octaveNumber: Int,
         absoluteNote: Int, isFlatOrSharp:Bool,diffFromTop:Int)) {
             
         let total = allNotesArr.count
-        let noteInt = Int(arc4random_uniform(UInt32(total)))
-        return allNotesArr[noteInt]
-            
+        var noteInt = Int(arc4random_uniform(UInt32(total)))
+        var newNote =  allNotesArr[noteInt]
+            while newNote.absoluteNote == previousNoteAbsoluteNote  {
+                noteInt = Int(arc4random_uniform(UInt32(total)))
+                newNote =  allNotesArr[noteInt]
+            }
+        previousNoteAbsoluteNote = newNote.absoluteNote
+        return newNote
     }
 }
 

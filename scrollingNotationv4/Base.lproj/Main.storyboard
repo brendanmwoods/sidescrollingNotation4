@@ -18,8 +18,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="98I-u6-nD5">
-                                <rect key="frame" x="233" y="246" width="134" height="107"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="63" translatesAutoresizingMaskIntoConstraints="NO" id="98I-u6-nD5">
+                                <rect key="frame" x="233" y="141" width="134" height="135"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Up4-lV-nFh">
                                         <rect key="frame" x="0.0" y="0.0" width="134" height="36"/>
@@ -30,7 +30,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ufg-ac-baH">
-                                        <rect key="frame" x="0.0" y="71" width="134" height="36"/>
+                                        <rect key="frame" x="0.0" y="99" width="134" height="36"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <state key="normal" title="Game Mode"/>
                                         <connections>
@@ -44,7 +44,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="98I-u6-nD5" firstAttribute="centerX" secondItem="EPC-vU-BPr" secondAttribute="centerX" id="7UE-Gh-hab"/>
-                            <constraint firstItem="98I-u6-nD5" firstAttribute="centerY" secondItem="EPC-vU-BPr" secondAttribute="centerY" constant="-0.5" id="8AX-4a-PuY"/>
+                            <constraint firstItem="98I-u6-nD5" firstAttribute="centerY" secondItem="EPC-vU-BPr" secondAttribute="centerY" constant="-91.5" id="8AX-4a-PuY"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -486,7 +486,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X3R-Mr-HpQ" userLabel="BlankStaff" customClass="BlankStaff" customModule="scrollingNotationv4" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="342"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="od8-az-pCc">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0/0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="od8-az-pCc">
                                         <rect key="frame" x="213" y="17" width="174" height="42"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="174" id="qqU-7Q-Cvm"/>
@@ -642,10 +642,10 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="f7B-BX-6d8"/>
-        <segue reference="rOO-FZ-wti"/>
-        <segue reference="5rV-ja-cwG"/>
-        <segue reference="TOg-Kn-4jB"/>
+        <segue reference="dMz-WU-T3z"/>
         <segue reference="3Km-Oj-8Q7"/>
+        <segue reference="2Ar-1D-l2I"/>
+        <segue reference="TOg-Kn-4jB"/>
+        <segue reference="rOO-FZ-wti"/>
     </inferredMetricsTieBreakers>
 </document>
