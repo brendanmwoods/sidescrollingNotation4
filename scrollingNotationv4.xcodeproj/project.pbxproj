@@ -17,13 +17,15 @@
 		BC64B7EB1C6C57C900DE7780 /* BlankStaff.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC64B7EA1C6C57C900DE7780 /* BlankStaff.swift */; };
 		BC64B7EF1C6C607500DE7780 /* NoteLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC64B7EE1C6C607500DE7780 /* NoteLibrary.swift */; };
 		BCC8F7731C77C58A00EAA645 /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC8F7721C77C58A00EAA645 /* MainMenuViewController.swift */; };
+		BCC8F7761C79060700EAA645 /* bass.png in Resources */ = {isa = PBXBuildFile; fileRef = BCC8F7741C79060700EAA645 /* bass.png */; };
+		BCC8F7771C79060700EAA645 /* treble.png in Resources */ = {isa = PBXBuildFile; fileRef = BCC8F7751C79060700EAA645 /* treble.png */; };
+		BCC8F7791C7BB7FC00EAA645 /* easyTrebleScores.plist in Resources */ = {isa = PBXBuildFile; fileRef = BCC8F7781C7BB7FC00EAA645 /* easyTrebleScores.plist */; };
 		BCE74CEF1C7506F600FB4EC4 /* ovalNote.png in Resources */ = {isa = PBXBuildFile; fileRef = BCE74CEE1C7506F600FB4EC4 /* ovalNote.png */; };
 		BCE74CF11C75156100FB4EC4 /* GameMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE74CF01C75156100FB4EC4 /* GameMenuViewController.swift */; };
 		BCE74CF31C7562CD00FB4EC4 /* LearningMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE74CF21C7562CD00FB4EC4 /* LearningMenuViewController.swift */; };
 		BCE74CF51C75669200FB4EC4 /* LearningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE74CF41C75669200FB4EC4 /* LearningViewController.swift */; };
 		BCE74D731C76F71300FB4EC4 /* ScoresTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE74D721C76F71300FB4EC4 /* ScoresTableViewController.swift */; };
 		BCE74D771C76FE2500FB4EC4 /* allScores.plist in Resources */ = {isa = PBXBuildFile; fileRef = BCE74D761C76FE2500FB4EC4 /* allScores.plist */; };
-		BCE74D791C77907100FB4EC4 /* allScoresAsNumbers.plist in Resources */ = {isa = PBXBuildFile; fileRef = BCE74D781C77907100FB4EC4 /* allScoresAsNumbers.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,13 +62,15 @@
 		BC64B7EA1C6C57C900DE7780 /* BlankStaff.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlankStaff.swift; sourceTree = "<group>"; };
 		BC64B7EE1C6C607500DE7780 /* NoteLibrary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteLibrary.swift; sourceTree = "<group>"; };
 		BCC8F7721C77C58A00EAA645 /* MainMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
+		BCC8F7741C79060700EAA645 /* bass.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bass.png; sourceTree = "<group>"; };
+		BCC8F7751C79060700EAA645 /* treble.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = treble.png; sourceTree = "<group>"; };
+		BCC8F7781C7BB7FC00EAA645 /* easyTrebleScores.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = easyTrebleScores.plist; sourceTree = "<group>"; };
 		BCE74CEE1C7506F600FB4EC4 /* ovalNote.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ovalNote.png; sourceTree = "<group>"; };
 		BCE74CF01C75156100FB4EC4 /* GameMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameMenuViewController.swift; sourceTree = "<group>"; };
 		BCE74CF21C7562CD00FB4EC4 /* LearningMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LearningMenuViewController.swift; sourceTree = "<group>"; };
 		BCE74CF41C75669200FB4EC4 /* LearningViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LearningViewController.swift; sourceTree = "<group>"; };
 		BCE74D721C76F71300FB4EC4 /* ScoresTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoresTableViewController.swift; sourceTree = "<group>"; };
 		BCE74D761C76FE2500FB4EC4 /* allScores.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = allScores.plist; sourceTree = "<group>"; };
-		BCE74D781C77907100FB4EC4 /* allScoresAsNumbers.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = allScoresAsNumbers.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +122,8 @@
 			isa = PBXGroup;
 			children = (
 				BCE74CEE1C7506F600FB4EC4 /* ovalNote.png */,
+				BCC8F7741C79060700EAA645 /* bass.png */,
+				BCC8F7751C79060700EAA645 /* treble.png */,
 				BC64B7BC1C6C56F200DE7780 /* AppDelegate.swift */,
 				BC64B7EA1C6C57C900DE7780 /* BlankStaff.swift */,
 				BC64B7EE1C6C607500DE7780 /* NoteLibrary.swift */,
@@ -130,9 +136,9 @@
 				BC64B7BE1C6C56F200DE7780 /* GameViewController.swift */,
 				BCE74CF21C7562CD00FB4EC4 /* LearningMenuViewController.swift */,
 				BCE74CF41C75669200FB4EC4 /* LearningViewController.swift */,
-				BCE74D781C77907100FB4EC4 /* allScoresAsNumbers.plist */,
 				BC64B7C81C6C56F200DE7780 /* Info.plist */,
 				BCE74D761C76FE2500FB4EC4 /* allScores.plist */,
+				BCC8F7781C7BB7FC00EAA645 /* easyTrebleScores.plist */,
 			);
 			path = scrollingNotationv4;
 			sourceTree = "<group>";
@@ -262,12 +268,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BCE74D791C77907100FB4EC4 /* allScoresAsNumbers.plist in Resources */,
 				BCE74D771C76FE2500FB4EC4 /* allScores.plist in Resources */,
 				BC64B7C71C6C56F200DE7780 /* LaunchScreen.storyboard in Resources */,
+				BCC8F7771C79060700EAA645 /* treble.png in Resources */,
 				BC64B7C41C6C56F200DE7780 /* Assets.xcassets in Resources */,
 				BC64B7C21C6C56F200DE7780 /* Main.storyboard in Resources */,
 				BCE74CEF1C7506F600FB4EC4 /* ovalNote.png in Resources */,
+				BCC8F7761C79060700EAA645 /* bass.png in Resources */,
+				BCC8F7791C7BB7FC00EAA645 /* easyTrebleScores.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

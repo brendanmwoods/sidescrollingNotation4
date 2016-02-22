@@ -16,7 +16,35 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Brendan Woods" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lNE-fT-AXe">
+                                <rect key="frame" x="239" y="520" width="122" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="KEU-LZ-J2f"/>
+                                    <constraint firstAttribute="width" constant="122" id="Ro9-LP-XX5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading Notebrain...." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PFs-jO-JJr">
+                                <rect key="frame" x="174" y="137" width="252" height="42"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="252" id="3PT-2f-FLj"/>
+                                    <constraint firstAttribute="height" constant="42" id="xNF-Ia-drQ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="lNE-fT-AXe" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="4I1-jb-Zlb"/>
+                            <constraint firstItem="PFs-jO-JJr" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Bpn-Zt-oQx"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="lNE-fT-AXe" secondAttribute="bottom" constant="59" id="LgY-Ic-D0C"/>
+                            <constraint firstItem="PFs-jO-JJr" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="117" id="ZmD-Y0-Tbi"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>

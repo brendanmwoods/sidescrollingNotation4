@@ -19,6 +19,7 @@ class GameViewController: UIViewController {
     @IBOutlet weak var fButton:UIButton?
     @IBOutlet weak var gButton:UIButton?
     @IBOutlet weak var scoreLabel:UILabel?
+    
     var ovalNoteImageView = UIImageView()
     
     var scoresArray:NSMutableArray!
@@ -68,7 +69,6 @@ class GameViewController: UIViewController {
         {
             currentScore = 0
             scoreLabel!.text = String(currentScore)
-            nextScoreIncrease = scoreIncreaseConstant
             scoresNeedResetting = false
         }
         
@@ -126,8 +126,7 @@ class GameViewController: UIViewController {
     func correctGuess() {
         timer.invalidate()
         currentScrollSpeed /= 1.25
-        nextScoreIncrease += 100
-        currentScore += nextScoreIncrease
+        currentScore++
         scoreLabel!.text = String(currentScore)
         gameLoop()
         

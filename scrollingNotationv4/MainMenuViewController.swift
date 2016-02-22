@@ -10,8 +10,16 @@ import UIKit
 
 class MainMenuViewController: UIViewController {
 
+    @IBOutlet weak var learningMode: UIButton!
+    @IBOutlet weak var gameMode: UIButton!
+    @IBOutlet weak var scores: UIButton!
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        formatButtons()
         
         // Make navigation bar transparent
         self.navigationController!.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
@@ -33,6 +41,16 @@ class MainMenuViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func formatButtons() {
+        learningMode.layer.borderColor = self.view.tintColor.CGColor
+        learningMode.layer.borderWidth = 1
+        learningMode.layer.cornerRadius = 10
+        
+        gameMode.layer.borderColor = self.view.tintColor.CGColor
+        gameMode.layer.borderWidth = 1
+        gameMode.layer.cornerRadius = 10
+
+    }
 
     /*
     // MARK: - Navigation

@@ -13,7 +13,7 @@ class GameMenuViewController: UIViewController {
     @IBOutlet weak var easyTrebleButton: UIButton!
     @IBOutlet weak var easyBassButton:   UIButton!
     @IBOutlet weak var mediumButton:     UIButton!
-    
+    @IBOutlet weak var scoresButton:     UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         formatButtons()
@@ -38,6 +38,10 @@ class GameMenuViewController: UIViewController {
         mediumButton.layer.borderColor = self.view.tintColor.CGColor
         mediumButton.layer.borderWidth = 1
         mediumButton.layer.cornerRadius = 10
+        
+        scoresButton.layer.borderColor = self.view.tintColor.CGColor
+        scoresButton.layer.borderWidth = 1
+        scoresButton.layer.cornerRadius = 10
     }
     
     override func  prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
