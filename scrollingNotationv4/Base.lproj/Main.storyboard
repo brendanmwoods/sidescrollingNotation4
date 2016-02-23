@@ -299,39 +299,90 @@
                                 </variation>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tkf-jL-82w">
-                                <rect key="frame" x="235" y="383" width="131" height="30"/>
+                                <rect key="frame" x="230" y="467" width="140" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="1sS-jQ-0A4"/>
+                                    <constraint firstAttribute="width" constant="140" id="Ifu-j0-cxP"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="84" id="WyC-lZ-m1o"/>
-                                    <constraint firstAttribute="width" constant="131" id="tsS-8a-bN5"/>
-                                    <constraint firstAttribute="height" constant="30" id="weK-sX-NX6"/>
+                                    <constraint firstAttribute="height" constant="30" id="X3G-v4-z4P"/>
                                 </constraints>
-                                <state key="normal" title="Easy Treble Scores"/>
+                                <state key="normal" title="Easy-Treble Stats"/>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="WyC-lZ-m1o"/>
                                     </mask>
                                 </variation>
                                 <connections>
-                                    <segue destination="bHG-gq-bW0" kind="show" id="eRL-zi-5ow"/>
+                                    <segue destination="bHG-gq-bW0" kind="show" identifier="easyTrebleScoresSegue" id="e9t-GQ-vKF"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KZH-j2-fLN">
+                                <rect key="frame" x="230" y="505" width="140" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="140" id="2G0-ms-wRS"/>
+                                    <constraint firstAttribute="height" constant="30" id="AkP-HL-v84"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="84" id="WSG-VQ-VkL"/>
+                                </constraints>
+                                <state key="normal" title="Easy-Bass Stats"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="WSG-VQ-VkL"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <segue destination="bHG-gq-bW0" kind="show" identifier="easyBassScoresSegue" id="5nA-dT-jsX"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1we-bT-S9Z">
+                                <rect key="frame" x="230" y="543" width="140" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="84" id="KIU-f2-2I8"/>
+                                    <constraint firstAttribute="height" constant="30" id="Y1J-w1-vhM"/>
+                                    <constraint firstAttribute="width" constant="140" id="dbc-VX-83j"/>
+                                </constraints>
+                                <state key="normal" title="Medium Stats"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="KIU-f2-2I8"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <segue destination="bHG-gq-bW0" kind="show" identifier="mediumScoresSegue" id="r0k-YJ-n82"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stats" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lsv-hm-HMa">
+                                <rect key="frame" x="209" y="438" width="183" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="YxO-q0-mJF"/>
+                                    <constraint firstAttribute="width" constant="183" id="oPE-Wq-iDW"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Tkf-jL-82w" firstAttribute="centerX" secondItem="jp0-oC-9lf" secondAttribute="centerX" id="19T-uk-CCV"/>
-                            <constraint firstItem="Tkf-jL-82w" firstAttribute="top" secondItem="vAR-LJ-Duu" secondAttribute="bottom" constant="31" id="Ba4-vc-sMM"/>
+                            <constraint firstItem="KZH-j2-fLN" firstAttribute="centerX" secondItem="jp0-oC-9lf" secondAttribute="centerX" id="252-Zb-Gep"/>
+                            <constraint firstItem="Lsv-hm-HMa" firstAttribute="centerX" secondItem="jp0-oC-9lf" secondAttribute="centerX" id="6i6-Mp-02F"/>
+                            <constraint firstItem="Tkf-jL-82w" firstAttribute="centerX" secondItem="jp0-oC-9lf" secondAttribute="centerX" id="DRb-l7-2Oh"/>
                             <constraint firstItem="vAR-LJ-Duu" firstAttribute="centerX" secondItem="jp0-oC-9lf" secondAttribute="centerX" id="Dae-MV-K3p"/>
+                            <constraint firstItem="19q-Q7-kpY" firstAttribute="top" secondItem="1we-bT-S9Z" secondAttribute="bottom" constant="27" id="SGh-bb-5A2"/>
+                            <constraint firstItem="Tkf-jL-82w" firstAttribute="top" secondItem="Lsv-hm-HMa" secondAttribute="bottom" constant="8" id="a7f-7D-CMV"/>
+                            <constraint firstItem="1we-bT-S9Z" firstAttribute="centerX" secondItem="jp0-oC-9lf" secondAttribute="centerX" id="axg-SW-ePm"/>
+                            <constraint firstItem="1we-bT-S9Z" firstAttribute="top" secondItem="KZH-j2-fLN" secondAttribute="bottom" constant="8" id="fK0-c1-pnj"/>
                             <constraint firstItem="0Z8-lC-ta0" firstAttribute="top" secondItem="IEv-5c-rv1" secondAttribute="bottom" constant="78" id="lPU-Pc-cKR"/>
                             <constraint firstItem="0Z8-lC-ta0" firstAttribute="centerX" secondItem="jp0-oC-9lf" secondAttribute="centerX" id="m2a-oh-QmK"/>
                             <constraint firstItem="vAR-LJ-Duu" firstAttribute="top" secondItem="0Z8-lC-ta0" secondAttribute="bottom" constant="25" id="s9u-qK-BVB"/>
+                            <constraint firstItem="KZH-j2-fLN" firstAttribute="top" secondItem="Tkf-jL-82w" secondAttribute="bottom" constant="8" id="tzF-1M-9Ih"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="easyBassButton" destination="FFT-31-Y5g" id="bbj-rj-FEU"/>
+                        <outlet property="easyBassScoresButton" destination="KZH-j2-fLN" id="2VL-W1-4Pw"/>
                         <outlet property="easyTrebleButton" destination="7hS-Vt-0eI" id="rkc-sK-vZ6"/>
+                        <outlet property="easyTrebleScoresButton" destination="Tkf-jL-82w" id="H1H-yM-2TW"/>
                         <outlet property="mediumButton" destination="nBE-0m-22l" id="9cw-IL-K2U"/>
-                        <outlet property="scoresButton" destination="Tkf-jL-82w" id="tEz-iM-lce"/>
+                        <outlet property="mediumScoresButton" destination="1we-bT-S9Z" id="3jB-ix-r4c"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ssM-2u-yfZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -672,6 +723,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="e9t-GQ-vKF"/>
         <segue reference="qX2-WN-kpe"/>
         <segue reference="TOg-Kn-4jB"/>
     </inferredMetricsTieBreakers>

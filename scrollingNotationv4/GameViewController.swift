@@ -125,7 +125,7 @@ class GameViewController: UIViewController {
     
     func correctGuess() {
         timer.invalidate()
-        currentScrollSpeed /= 1.25
+        currentScrollSpeed /= 1.2
         currentScore++
         scoreLabel!.text = String(currentScore)
         gameLoop()
@@ -157,9 +157,14 @@ class GameViewController: UIViewController {
         self.presentViewController(alert, animated: true, completion: nil)
     }
 
+    
+    
     func saveScoreToScoresPlist() {
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        let pathForThePlistFile = appDelegate.plistPathInDocument
+        
+        
+        if(difficulty == "easyTreble") {
+        let pathForThePlistFile = appDelegate.easyTreblePlistPathInDocument
         
         let data:NSData =  NSFileManager.defaultManager().contentsAtPath(pathForThePlistFile)!
         
@@ -171,7 +176,44 @@ class GameViewController: UIViewController {
             notesArray.writeToFile(pathForThePlistFile, atomically: true)
         }catch{
             print("An error occurred while writing to plist")
+            }
         }
+        
+        
+        if(difficulty == "easyBass") {
+            let pathForThePlistFile = appDelegate.easyBassPlistPathInDocument
+            
+            let data:NSData =  NSFileManager.defaultManager().contentsAtPath(pathForThePlistFile)!
+            
+            do{
+                let notesArray = try NSPropertyListSerialization.propertyListWithData(data, options: NSPropertyListMutabilityOptions.MutableContainersAndLeaves, format: nil) as! NSMutableArray
+                
+                notesArray.addObject(String(self.currentScore))
+                
+                notesArray.writeToFile(pathForThePlistFile, atomically: true)
+            }catch{
+                print("An error occurred while writing to plist")
+            }
+        }
+
+        
+        if(difficulty == "medium") {
+            let pathForThePlistFile = appDelegate.mediumPlistPathInDocument
+            
+            let data:NSData =  NSFileManager.defaultManager().contentsAtPath(pathForThePlistFile)!
+            
+            do{
+                
+                let notesArray = try NSPropertyListSerialization.propertyListWithData(data, options: NSPropertyListMutabilityOptions.MutableContainersAndLeaves, format: nil) as! NSMutableArray
+                
+                notesArray.addObject(String(self.currentScore))
+                
+                notesArray.writeToFile(pathForThePlistFile, atomically: true)
+            }catch{
+                print("An error occurred while writing to plist")
+            }
+        }
+
     }
     
     
