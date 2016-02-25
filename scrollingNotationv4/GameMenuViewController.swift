@@ -9,7 +9,7 @@
 import UIKit
 
 class GameMenuViewController: UIViewController {
-
+    
     @IBOutlet weak var easyTrebleButton:           UIButton!
     @IBOutlet weak var easyBassButton:             UIButton!
     @IBOutlet weak var mediumButton:               UIButton!
@@ -24,7 +24,7 @@ class GameMenuViewController: UIViewController {
         
         // Do any additional setup after loading the view.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -61,7 +61,6 @@ class GameMenuViewController: UIViewController {
             let destinationVC = segue.destinationViewController as! GameViewController
             destinationVC.difficulty = "easyTreble"
         }
-        
         if(segue.identifier == "easyBassSegue") {
             let destinationVC = segue.destinationViewController as! GameViewController
             destinationVC.difficulty = "easyBass"
@@ -78,10 +77,10 @@ class GameMenuViewController: UIViewController {
             let destinationVC = segue.destinationViewController as! ScoresTableViewController
             destinationVC.difficulty = "easyBass"
         }
-            if(segue.identifier == "mediumScoresSegue") {
-                let destinationVC = segue.destinationViewController as! ScoresTableViewController
-                destinationVC.difficulty = "medium"
+        if(segue.identifier == "mediumScoresSegue") {
+            let destinationVC = segue.destinationViewController as! ScoresTableViewController
+            destinationVC.difficulty = "medium"
         }
     }
-
+    
 }

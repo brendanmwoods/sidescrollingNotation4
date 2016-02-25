@@ -27,6 +27,8 @@ class GameViewController: UIViewController {
     
     let topLineY:CGFloat = 100
     var screenWidth:CGFloat = 0
+    var distanceToMoveNoteLeft:CGFloat = 0
+    let fractionOfTheScreenToMoveNote = 320
     let ovalNoteWidth:CGFloat = 30
     let ovalNoteHeight:CGFloat = 20
     let spaceBetweenNotes:CGFloat = 10
@@ -47,6 +49,7 @@ class GameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         screenWidth = UIScreen.mainScreen().bounds.width
+        distanceToMoveNoteLeft = screenWidth / CGFloat(fractionOfTheScreenToMoveNote)
         formatButtonShapes()
         
         noteLibrary.fillNoteLibrary()
@@ -118,8 +121,7 @@ class GameViewController: UIViewController {
             timer.invalidate()
             gameOverAlert()
         } else {
-            
-            self.ovalNoteImageView.center.x -= 1
+            self.ovalNoteImageView.center.x -= distanceToMoveNoteLeft
         }
     }
     
@@ -153,10 +155,10 @@ class GameViewController: UIViewController {
             action in
             self.navigationController?.popToRootViewControllerAnimated(true)
         }))
-
+        
         self.presentViewController(alert, animated: true, completion: nil)
     }
-
+    
     
     
     func saveScoreToScoresPlist() {
@@ -164,18 +166,18 @@ class GameViewController: UIViewController {
         
         
         if(difficulty == "easyTreble") {
-        let pathForThePlistFile = appDelegate.easyTreblePlistPathInDocument
-        
-        let data:NSData =  NSFileManager.defaultManager().contentsAtPath(pathForThePlistFile)!
-        
-        do{
-            let notesArray = try NSPropertyListSerialization.propertyListWithData(data, options: NSPropertyListMutabilityOptions.MutableContainersAndLeaves, format: nil) as! NSMutableArray
-
-            notesArray.addObject(String(self.currentScore))
-        
-            notesArray.writeToFile(pathForThePlistFile, atomically: true)
-        }catch{
-            print("An error occurred while writing to plist")
+            let pathForThePlistFile = appDelegate.easyTreblePlistPathInDocument
+            
+            let data:NSData =  NSFileManager.defaultManager().contentsAtPath(pathForThePlistFile)!
+            
+            do{
+                let notesArray = try NSPropertyListSerialization.propertyListWithData(data, options: NSPropertyListMutabilityOptions.MutableContainersAndLeaves, format: nil) as! NSMutableArray
+                
+                notesArray.addObject(String(self.currentScore))
+                
+                notesArray.writeToFile(pathForThePlistFile, atomically: true)
+            }catch{
+                print("An error occurred while writing to plist")
             }
         }
         
@@ -195,7 +197,7 @@ class GameViewController: UIViewController {
                 print("An error occurred while writing to plist")
             }
         }
-
+        
         
         if(difficulty == "medium") {
             let pathForThePlistFile = appDelegate.mediumPlistPathInDocument
@@ -213,7 +215,7 @@ class GameViewController: UIViewController {
                 print("An error occurred while writing to plist")
             }
         }
-
+        
     }
     
     
