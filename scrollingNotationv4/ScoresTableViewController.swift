@@ -54,11 +54,11 @@ class ScoresTableViewController: UITableViewController {
     func setTitle() {
         totalScores = scoresArray.count
         if difficulty == "easyTreble" {
-            self.title = "Easy-Treble Stats"
+            self.title = "Treble Clef Stats"
         }else if difficulty == "easyBass" {
-            self.title = "Easy-Bass Stats"
+            self.title = "Bass Clef Stats"
         }else if difficulty == "medium"{
-            self.title = "Medium Stats"
+            self.title = "Full Clef Stats"
         }
     }
     
@@ -189,8 +189,7 @@ class ScoresTableViewController: UITableViewController {
     // MARK: - Table view data source
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 4
+        return 5
     }
     
     
@@ -200,16 +199,19 @@ class ScoresTableViewController: UITableViewController {
             if indexPath.section == 0 {
                 let cell:UITableViewCell! = tableView.dequeueReusableCellWithIdentifier("cellIdentifier")
                 cell.textLabel!.text = "\(highScore)"
+                cell.textLabel?.textAlignment = .Center
                 cell.selectionStyle = UITableViewCellSelectionStyle.None
                 return cell
             }else if indexPath.section == 1 {
                 let cell:UITableViewCell! = tableView.dequeueReusableCellWithIdentifier("cellIdentifier")
                 cell.textLabel!.text = "\(averageScore)"
+                cell.textLabel?.textAlignment = .Center
                 cell.selectionStyle = UITableViewCellSelectionStyle.None
                 return cell
             }else if indexPath.section == 2 {
                 let cell:UITableViewCell! = tableView.dequeueReusableCellWithIdentifier("cellIdentifier")
                 cell.textLabel!.text = "\(scoresArray.count)"
+                cell.textLabel?.textAlignment = .Center
                 cell.selectionStyle = UITableViewCellSelectionStyle.None
                 return cell
             }else {
@@ -217,6 +219,7 @@ class ScoresTableViewController: UITableViewController {
                 reversedScoresArray = reversedScoresArray.reverse()
                 let cell:UITableViewCell! = tableView.dequeueReusableCellWithIdentifier("cellIdentifier")
                 cell.textLabel!.text = reversedScoresArray[indexPath.row]
+                cell.textLabel?.textAlignment = .Center
                 cell.selectionStyle = UITableViewCellSelectionStyle.None
                 return cell
             }
@@ -231,9 +234,20 @@ class ScoresTableViewController: UITableViewController {
                 return 1
             } else if section == 2 {
                 return 1
-            }else {
+            }else if section == 3 {
                 return scoresArray.count
+            }else {
+                return 0
             }
+    }
+    
+    override func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+    
+        for  var i = 0; i <= tableView.numberOfSections; i++ {
+        //tableView.headerViewForSection(i)?.contentView.backgroundColor = UIColor.blackColor()
+        //tableView.headerViewForSection(i)?.textLabel?.textColor = UIColor.whiteColor()
+        tableView.headerViewForSection(i)?.textLabel?.textAlignment = .Center
+        }
     }
     
     
@@ -244,10 +258,14 @@ class ScoresTableViewController: UITableViewController {
             return "Average Score"
         }else if section == 2 {
             return "Total Games Played"
-        }else {
+        }else if section == 3{
             return "Recent Scores"
+        }else {
+            return " "
         }
     }
+    
+    
     
     //    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     //        // #warning Incomplete implementation, return the number of rows

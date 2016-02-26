@@ -27,17 +27,17 @@ class LearningMenuViewController: UIViewController {
     }
     
     func formatButtons() {
-        easyTrebleButton.layer.borderColor = self.view.tintColor.CGColor
-        easyTrebleButton.layer.borderWidth = 1
-        easyTrebleButton.layer.cornerRadius = 10
+        easyTrebleButton.layer.borderColor = UIColor.blackColor().CGColor
+        easyTrebleButton.layer.borderWidth = 2
+        easyTrebleButton.layer.cornerRadius = 5
         
-        easyBassButton.layer.borderColor = self.view.tintColor.CGColor
-        easyBassButton.layer.borderWidth = 1
-        easyBassButton.layer.cornerRadius = 10
+        easyBassButton.layer.borderColor = UIColor.blackColor().CGColor
+        easyBassButton.layer.borderWidth = 2
+        easyBassButton.layer.cornerRadius = 5
         
-        mediumButton.layer.borderColor = self.view.tintColor.CGColor
-        mediumButton.layer.borderWidth = 1
-        mediumButton.layer.cornerRadius = 10
+        mediumButton.layer.borderColor = UIColor.blackColor().CGColor
+        mediumButton.layer.borderWidth = 2
+        mediumButton.layer.cornerRadius = 5
     }
     
     override func  prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

@@ -31,29 +31,29 @@ class GameMenuViewController: UIViewController {
     }
     
     func formatButtons() {
-        easyTrebleButton.layer.borderColor = self.view.tintColor.CGColor
+        easyTrebleButton.layer.borderColor = UIColor.blackColor().CGColor
         easyTrebleButton.layer.borderWidth = 1
-        easyTrebleButton.layer.cornerRadius = 10
+        easyTrebleButton.layer.cornerRadius = 5
         
-        easyBassButton.layer.borderColor = self.view.tintColor.CGColor
+        easyBassButton.layer.borderColor = UIColor.blackColor().CGColor
         easyBassButton.layer.borderWidth = 1
-        easyBassButton.layer.cornerRadius = 10
+        easyBassButton.layer.cornerRadius = 5
         
-        mediumButton.layer.borderColor = self.view.tintColor.CGColor
+        mediumButton.layer.borderColor = UIColor.blackColor().CGColor
         mediumButton.layer.borderWidth = 1
-        mediumButton.layer.cornerRadius = 10
+        mediumButton.layer.cornerRadius = 5
         
-        easyTrebleScoresButton.layer.borderColor = self.view.tintColor.CGColor
+        easyTrebleScoresButton.layer.borderColor = UIColor.blackColor().CGColor
         easyTrebleScoresButton.layer.borderWidth = 1
-        easyTrebleScoresButton.layer.cornerRadius = 10
+        easyTrebleScoresButton.layer.cornerRadius = 5
         
-        easyBassScoresButton.layer.borderColor = self.view.tintColor.CGColor
+        easyBassScoresButton.layer.borderColor = UIColor.blackColor().CGColor
         easyBassScoresButton.layer.borderWidth = 1
-        easyBassScoresButton.layer.cornerRadius = 10
+        easyBassScoresButton.layer.cornerRadius = 5
         
-        mediumScoresButton.layer.borderColor = self.view.tintColor.CGColor
+        mediumScoresButton.layer.borderColor = UIColor.blackColor().CGColor
         mediumScoresButton.layer.borderWidth = 1
-        mediumScoresButton.layer.cornerRadius = 10
+        mediumScoresButton.layer.cornerRadius = 5
     }
     
     override func  prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

@@ -25,6 +25,7 @@ class MainMenuViewController: UIViewController {
         self.navigationController!.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
         self.navigationController!.navigationBar.shadowImage = UIImage()
         self.navigationController!.navigationBar.translucent = true
+        self.navigationController!.navigationBar.backgroundColor = UIColor.clearColor()
         
         for parent in self.navigationController!.navigationBar.subviews {
             for childView in parent.subviews {
@@ -42,13 +43,14 @@ class MainMenuViewController: UIViewController {
     }
     
     func formatButtons() {
-        learningMode.layer.borderColor = self.view.tintColor.CGColor
-        learningMode.layer.borderWidth = 1
-        learningMode.layer.cornerRadius = 10
+        //learningMode.layer.borderColor = self.view.tintColor.CGColor
+        learningMode.layer.borderColor = UIColor.blackColor().CGColor
+        learningMode.layer.borderWidth = 2
+        learningMode.layer.cornerRadius = 5
         
-        gameMode.layer.borderColor = self.view.tintColor.CGColor
-        gameMode.layer.borderWidth = 1
-        gameMode.layer.cornerRadius = 10
+        gameMode.layer.borderColor = UIColor.blackColor().CGColor
+        gameMode.layer.borderWidth = 2
+        gameMode.layer.cornerRadius = 5
         
     }
     

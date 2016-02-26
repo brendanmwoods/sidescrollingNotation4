@@ -46,24 +46,37 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="63" translatesAutoresizingMaskIntoConstraints="NO" id="98I-u6-nD5">
-                                <rect key="frame" x="195" y="141" width="210" height="135"/>
+                            <imageView userInteractionEnabled="NO" alpha="0.29999999999999999" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="UOK-0v-WXx">
+                                <rect key="frame" x="40" y="20" width="520" height="560"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="45" translatesAutoresizingMaskIntoConstraints="NO" id="98I-u6-nD5">
+                                <rect key="frame" x="195" y="168" width="210" height="165"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Up4-lV-nFh">
-                                        <rect key="frame" x="0.0" y="0.0" width="210" height="36"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="210" height="60"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="N1T-KE-0c1"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <state key="normal" title="Learning Mode"/>
+                                        <state key="normal" title="Learning Mode">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
                                         <connections>
                                             <segue destination="jwG-yX-B3d" kind="show" id="2Ar-1D-l2I"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ufg-ac-baH">
-                                        <rect key="frame" x="0.0" y="99" width="210" height="36"/>
+                                        <rect key="frame" x="0.0" y="105" width="210" height="60"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="210" id="AXy-aF-mgm"/>
+                                            <constraint firstAttribute="height" constant="60" id="FSs-gB-ak5"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <state key="normal" title="Game Mode"/>
+                                        <state key="normal" title="Game Mode">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
                                         <connections>
                                             <segue destination="ZX1-ud-3aB" kind="show" id="dMz-WU-T3z"/>
                                         </connections>
@@ -75,7 +88,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="98I-u6-nD5" firstAttribute="centerX" secondItem="EPC-vU-BPr" secondAttribute="centerX" id="7UE-Gh-hab"/>
-                            <constraint firstItem="98I-u6-nD5" firstAttribute="centerY" secondItem="EPC-vU-BPr" secondAttribute="centerY" constant="-91.5" id="8AX-4a-PuY"/>
+                            <constraint firstItem="98I-u6-nD5" firstAttribute="centerY" secondItem="EPC-vU-BPr" secondAttribute="centerY" constant="-50" id="8AX-4a-PuY"/>
+                            <constraint firstItem="UOK-0v-WXx" firstAttribute="leading" secondItem="EPC-vU-BPr" secondAttribute="leadingMargin" constant="20" id="9Tp-uO-Ein"/>
+                            <constraint firstItem="UOK-0v-WXx" firstAttribute="top" secondItem="EPC-vU-BPr" secondAttribute="topMargin" constant="20" id="9s8-Fz-D5B"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="UOK-0v-WXx" secondAttribute="trailing" constant="20" id="FCJ-d9-49D"/>
+                            <constraint firstItem="uZH-qu-mtq" firstAttribute="top" secondItem="UOK-0v-WXx" secondAttribute="bottom" constant="20" id="hd6-M0-6Np"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="E1x-dC-6p9"/>
@@ -122,7 +139,9 @@
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="210" id="Bcs-hR-As5"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <state key="normal" title="Treble Clef"/>
+                                        <state key="normal" title="Treble Clef">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
                                         <variation key="default">
                                             <mask key="constraints">
                                                 <exclude reference="2U4-YH-p0r"/>
@@ -143,7 +162,9 @@
                                             <constraint firstAttribute="width" constant="187" id="vwX-xp-cag"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <state key="normal" title="Bass Clef"/>
+                                        <state key="normal" title="Bass Clef">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
                                         <variation key="default">
                                             <mask key="constraints">
                                                 <exclude reference="Xrl-6p-jgx"/>
@@ -163,7 +184,9 @@
                                             <constraint firstAttribute="width" constant="200" id="yZa-ln-blM"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <state key="normal" title="Full Clef "/>
+                                        <state key="normal" title="Full Clef ">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
                                         <variation key="default">
                                             <mask key="constraints">
                                                 <exclude reference="yZa-ln-blM"/>
@@ -184,12 +207,25 @@
                                     </mask>
                                 </variation>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Learning Mode" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G8m-K1-QVo">
+                                <rect key="frame" x="0.0" y="81" width="600" height="39"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="39" id="q3O-2e-xCL"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="yIl-et-Q9o" firstAttribute="centerX" secondItem="rga-JF-mva" secondAttribute="centerX" id="3sH-8R-X6d"/>
                             <constraint firstItem="8fi-cH-jHd" firstAttribute="centerX" secondItem="rga-JF-mva" secondAttribute="centerX" id="4Pe-C7-UxP"/>
+                            <constraint firstItem="G8m-K1-QVo" firstAttribute="leading" secondItem="rga-JF-mva" secondAttribute="leadingMargin" constant="-20" id="DXn-R2-Raq"/>
+                            <constraint firstItem="G8m-K1-QVo" firstAttribute="top" secondItem="dJN-bu-s5O" secondAttribute="bottom" constant="17" id="KAw-6T-RTp"/>
                             <constraint firstItem="yIl-et-Q9o" firstAttribute="top" secondItem="dJN-bu-s5O" secondAttribute="bottom" constant="80" id="PzG-Wi-xP4"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="G8m-K1-QVo" secondAttribute="trailing" constant="-20" id="bkv-SF-6Dd"/>
                             <constraint firstItem="8fi-cH-jHd" firstAttribute="top" secondItem="yIl-et-Q9o" secondAttribute="bottom" constant="25" id="xOL-S5-rBZ"/>
                         </constraints>
                     </view>
@@ -215,97 +251,125 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Difficulty" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Z8-lC-ta0">
-                                <rect key="frame" x="230" y="142" width="141" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Game" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Z8-lC-ta0">
+                                <rect key="frame" x="0.0" y="72" width="600" height="39"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="4hF-If-Apd"/>
-                                    <constraint firstAttribute="width" constant="141" id="jwl-5e-HFD"/>
+                                    <constraint firstAttribute="height" constant="39" id="cOP-YS-0wR"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="28" translatesAutoresizingMaskIntoConstraints="NO" id="vAR-LJ-Duu">
-                                <rect key="frame" x="195" y="188" width="210" height="164"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7hS-Vt-0eI">
-                                        <rect key="frame" x="0.0" y="0.0" width="210" height="36"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="210" id="5Xf-8U-wtX"/>
-                                            <constraint firstAttribute="height" constant="36" id="PiN-ow-KNV"/>
-                                            <constraint firstAttribute="width" constant="200" id="tzu-66-osC"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <state key="normal" title="Easy - Treble Clef"/>
-                                        <variation key="default">
-                                            <mask key="constraints">
-                                                <exclude reference="tzu-66-osC"/>
-                                            </mask>
-                                        </variation>
-                                        <connections>
-                                            <segue destination="BYZ-38-t0r" kind="show" identifier="easyTrebleSegue" id="IlK-ee-r50"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FFT-31-Y5g">
-                                        <rect key="frame" x="0.0" y="64" width="210" height="36"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="36" id="2tn-F0-QPi"/>
-                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="36" id="85n-cT-FBO"/>
-                                            <constraint firstAttribute="width" constant="187" id="HOg-qb-PH4"/>
-                                            <constraint firstAttribute="width" constant="200" id="V6b-Kf-sYq"/>
-                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="36" id="gjv-da-B4W"/>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="210" id="x48-We-9u4"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <state key="normal" title="Easy - Bass Clef"/>
-                                        <variation key="default">
-                                            <mask key="constraints">
-                                                <exclude reference="HOg-qb-PH4"/>
-                                                <exclude reference="V6b-Kf-sYq"/>
-                                            </mask>
-                                        </variation>
-                                        <connections>
-                                            <segue destination="BYZ-38-t0r" kind="show" identifier="easyBassSegue" id="qX2-WN-kpe"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nBE-0m-22l">
-                                        <rect key="frame" x="0.0" y="128" width="210" height="36"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="200" id="CYv-IA-rQu"/>
-                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="36" id="Qjn-1r-gJv"/>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="210" id="f47-Bf-Ddc"/>
-                                            <constraint firstAttribute="height" constant="36" id="iTt-gB-x0o"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <state key="normal" title="Medium - Normal Clef "/>
-                                        <variation key="default">
-                                            <mask key="constraints">
-                                                <exclude reference="CYv-IA-rQu"/>
-                                            </mask>
-                                        </variation>
-                                        <connections>
-                                            <segue destination="BYZ-38-t0r" kind="show" identifier="mediumSegue" id="rOO-FZ-wti"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stats" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lsv-hm-HMa">
+                                <rect key="frame" x="0.0" y="371" width="600" height="36"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="164" id="RYV-Hs-KnX"/>
-                                    <constraint firstAttribute="width" constant="187" id="gX1-D2-IqD"/>
+                                    <constraint firstAttribute="height" constant="36" id="bEK-fL-GFo"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FFT-31-Y5g">
+                                <rect key="frame" x="195" y="201" width="210" height="36"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="187" id="HOg-qb-PH4"/>
+                                    <constraint firstAttribute="width" constant="200" id="V6b-Kf-sYq"/>
+                                    <constraint firstAttribute="width" constant="210" id="Y6n-E6-FBu"/>
+                                    <constraint firstAttribute="height" constant="36" id="lYH-gq-drk"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Bass Clef">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="gX1-D2-IqD"/>
+                                        <exclude reference="HOg-qb-PH4"/>
+                                        <exclude reference="V6b-Kf-sYq"/>
                                     </mask>
                                 </variation>
-                            </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tkf-jL-82w">
-                                <rect key="frame" x="230" y="467" width="140" height="30"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="easyBassSegue" id="qX2-WN-kpe"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7hS-Vt-0eI">
+                                <rect key="frame" x="195" y="157" width="210" height="36"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="140" id="Ifu-j0-cxP"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="84" id="WyC-lZ-m1o"/>
-                                    <constraint firstAttribute="height" constant="30" id="X3G-v4-z4P"/>
+                                    <constraint firstAttribute="height" constant="36" id="ej6-5C-OIq"/>
+                                    <constraint firstAttribute="width" constant="210" id="qnU-Gm-sbB"/>
+                                    <constraint firstAttribute="width" constant="200" id="tzu-66-osC"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="210" id="u9c-cX-UBK"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="36" id="uxU-iO-PSZ"/>
                                 </constraints>
-                                <state key="normal" title="Easy-Treble Stats"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Treble Clef">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="tzu-66-osC"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="easyTrebleSegue" id="IlK-ee-r50"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Easy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ay1-xz-aDX">
+                                <rect key="frame" x="282" y="128" width="36" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="36" id="Ag5-p0-4Jq"/>
+                                    <constraint firstAttribute="height" constant="21" id="WwQ-ak-Yde"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Medium" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="etA-ZT-aBQ">
+                                <rect key="frame" x="269" y="245" width="62" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="AtD-OR-ixP"/>
+                                    <constraint firstAttribute="width" constant="62" id="TM3-ZG-Wde"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nBE-0m-22l">
+                                <rect key="frame" x="195" y="268" width="210" height="36"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="9wf-Wu-hzv"/>
+                                    <constraint firstAttribute="width" constant="200" id="CYv-IA-rQu"/>
+                                    <constraint firstAttribute="width" constant="210" id="EUN-dH-DOu"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Full Clef ">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="CYv-IA-rQu"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="mediumSegue" id="rOO-FZ-wti"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tkf-jL-82w">
+                                <rect key="frame" x="195" y="427" width="210" height="36"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="210" id="Ifu-j0-cxP"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="84" id="WyC-lZ-m1o"/>
+                                    <constraint firstAttribute="height" constant="36" id="X3G-v4-z4P"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Treble Clef Stats">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="WyC-lZ-m1o"/>
@@ -316,13 +380,17 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KZH-j2-fLN">
-                                <rect key="frame" x="230" y="505" width="140" height="30"/>
+                                <rect key="frame" x="195" y="476" width="210" height="36"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="140" id="2G0-ms-wRS"/>
-                                    <constraint firstAttribute="height" constant="30" id="AkP-HL-v84"/>
+                                    <constraint firstAttribute="width" constant="210" id="2G0-ms-wRS"/>
+                                    <constraint firstAttribute="height" constant="36" id="AkP-HL-v84"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="84" id="WSG-VQ-VkL"/>
                                 </constraints>
-                                <state key="normal" title="Easy-Bass Stats"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Bass Clef Stats">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="WSG-VQ-VkL"/>
@@ -333,13 +401,17 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1we-bT-S9Z">
-                                <rect key="frame" x="230" y="543" width="140" height="30"/>
+                                <rect key="frame" x="195" y="525" width="210" height="36"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="84" id="KIU-f2-2I8"/>
-                                    <constraint firstAttribute="height" constant="30" id="Y1J-w1-vhM"/>
-                                    <constraint firstAttribute="width" constant="140" id="dbc-VX-83j"/>
+                                    <constraint firstAttribute="height" constant="36" id="Y1J-w1-vhM"/>
+                                    <constraint firstAttribute="width" constant="210" id="dbc-VX-83j"/>
                                 </constraints>
-                                <state key="normal" title="Medium Stats"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Full Clef Stats">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="KIU-f2-2I8"/>
@@ -349,32 +421,49 @@
                                     <segue destination="bHG-gq-bW0" kind="show" identifier="mediumScoresSegue" id="r0k-YJ-n82"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stats" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lsv-hm-HMa">
-                                <rect key="frame" x="209" y="438" width="183" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="YxO-q0-mJF"/>
-                                    <constraint firstAttribute="width" constant="183" id="oPE-Wq-iDW"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="1we-bT-S9Z" firstAttribute="centerX" secondItem="jp0-oC-9lf" secondAttribute="centerX" id="1f3-k3-f4U"/>
                             <constraint firstItem="KZH-j2-fLN" firstAttribute="centerX" secondItem="jp0-oC-9lf" secondAttribute="centerX" id="252-Zb-Gep"/>
-                            <constraint firstItem="Lsv-hm-HMa" firstAttribute="centerX" secondItem="jp0-oC-9lf" secondAttribute="centerX" id="6i6-Mp-02F"/>
+                            <constraint firstItem="Ay1-xz-aDX" firstAttribute="top" secondItem="0Z8-lC-ta0" secondAttribute="bottom" constant="17" id="5q4-wh-hdV"/>
+                            <constraint firstItem="nBE-0m-22l" firstAttribute="centerX" secondItem="jp0-oC-9lf" secondAttribute="centerX" id="5xc-Vf-O3n"/>
+                            <constraint firstItem="0Z8-lC-ta0" firstAttribute="leading" secondItem="jp0-oC-9lf" secondAttribute="leadingMargin" constant="-20" id="7jU-T1-F5y"/>
+                            <constraint firstItem="Ay1-xz-aDX" firstAttribute="centerX" secondItem="jp0-oC-9lf" secondAttribute="centerX" id="BYE-1Z-fk0"/>
+                            <constraint firstItem="FFT-31-Y5g" firstAttribute="top" secondItem="7hS-Vt-0eI" secondAttribute="bottom" constant="8" id="Bfx-ma-Tky"/>
+                            <constraint firstItem="KZH-j2-fLN" firstAttribute="centerX" secondItem="jp0-oC-9lf" secondAttribute="centerX" id="BmB-yg-6jd"/>
                             <constraint firstItem="Tkf-jL-82w" firstAttribute="centerX" secondItem="jp0-oC-9lf" secondAttribute="centerX" id="DRb-l7-2Oh"/>
-                            <constraint firstItem="vAR-LJ-Duu" firstAttribute="centerX" secondItem="jp0-oC-9lf" secondAttribute="centerX" id="Dae-MV-K3p"/>
-                            <constraint firstItem="19q-Q7-kpY" firstAttribute="top" secondItem="1we-bT-S9Z" secondAttribute="bottom" constant="27" id="SGh-bb-5A2"/>
-                            <constraint firstItem="Tkf-jL-82w" firstAttribute="top" secondItem="Lsv-hm-HMa" secondAttribute="bottom" constant="8" id="a7f-7D-CMV"/>
+                            <constraint firstItem="7hS-Vt-0eI" firstAttribute="centerX" secondItem="jp0-oC-9lf" secondAttribute="centerX" id="Deh-bR-HA0"/>
+                            <constraint firstItem="Tkf-jL-82w" firstAttribute="top" secondItem="Lsv-hm-HMa" secondAttribute="bottom" constant="20" id="Ghy-hp-KWK"/>
+                            <constraint firstItem="nBE-0m-22l" firstAttribute="centerX" secondItem="jp0-oC-9lf" secondAttribute="centerX" id="JEb-qx-E1S"/>
+                            <constraint firstItem="19q-Q7-kpY" firstAttribute="top" secondItem="1we-bT-S9Z" secondAttribute="bottom" constant="39" id="SGh-bb-5A2"/>
+                            <constraint firstItem="Lsv-hm-HMa" firstAttribute="leading" secondItem="jp0-oC-9lf" secondAttribute="leadingMargin" constant="-20" id="Uel-pJ-zfl"/>
+                            <constraint firstItem="etA-ZT-aBQ" firstAttribute="centerX" secondItem="jp0-oC-9lf" secondAttribute="centerX" id="WDD-Gw-CQq"/>
+                            <constraint firstItem="7hS-Vt-0eI" firstAttribute="top" secondItem="Ay1-xz-aDX" secondAttribute="bottom" constant="8" id="Yqd-4f-NuS"/>
+                            <constraint firstItem="etA-ZT-aBQ" firstAttribute="centerX" secondItem="jp0-oC-9lf" secondAttribute="centerX" id="Z1F-qP-tJy"/>
+                            <constraint firstItem="Tkf-jL-82w" firstAttribute="centerX" secondItem="jp0-oC-9lf" secondAttribute="centerX" id="ZU1-AU-N7r"/>
+                            <constraint firstItem="FFT-31-Y5g" firstAttribute="centerX" secondItem="jp0-oC-9lf" secondAttribute="centerX" id="atA-Pl-ReJ"/>
                             <constraint firstItem="1we-bT-S9Z" firstAttribute="centerX" secondItem="jp0-oC-9lf" secondAttribute="centerX" id="axg-SW-ePm"/>
-                            <constraint firstItem="1we-bT-S9Z" firstAttribute="top" secondItem="KZH-j2-fLN" secondAttribute="bottom" constant="8" id="fK0-c1-pnj"/>
-                            <constraint firstItem="0Z8-lC-ta0" firstAttribute="top" secondItem="IEv-5c-rv1" secondAttribute="bottom" constant="78" id="lPU-Pc-cKR"/>
-                            <constraint firstItem="0Z8-lC-ta0" firstAttribute="centerX" secondItem="jp0-oC-9lf" secondAttribute="centerX" id="m2a-oh-QmK"/>
-                            <constraint firstItem="vAR-LJ-Duu" firstAttribute="top" secondItem="0Z8-lC-ta0" secondAttribute="bottom" constant="25" id="s9u-qK-BVB"/>
-                            <constraint firstItem="KZH-j2-fLN" firstAttribute="top" secondItem="Tkf-jL-82w" secondAttribute="bottom" constant="8" id="tzF-1M-9Ih"/>
+                            <constraint firstItem="Lsv-hm-HMa" firstAttribute="top" secondItem="nBE-0m-22l" secondAttribute="bottom" constant="67" id="bQ8-bc-0NQ"/>
+                            <constraint firstItem="Ay1-xz-aDX" firstAttribute="centerX" secondItem="jp0-oC-9lf" secondAttribute="centerX" id="cjm-7v-Wkd"/>
+                            <constraint firstItem="0Z8-lC-ta0" firstAttribute="top" secondItem="IEv-5c-rv1" secondAttribute="bottom" constant="8" id="czg-M9-7oj"/>
+                            <constraint firstItem="1we-bT-S9Z" firstAttribute="top" secondItem="KZH-j2-fLN" secondAttribute="bottom" constant="13" id="fK0-c1-pnj"/>
+                            <constraint firstItem="etA-ZT-aBQ" firstAttribute="top" secondItem="FFT-31-Y5g" secondAttribute="bottom" constant="8" id="fiv-ou-F9d"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Lsv-hm-HMa" secondAttribute="trailing" constant="-20" id="iD8-Q5-gHX"/>
+                            <constraint firstItem="7hS-Vt-0eI" firstAttribute="centerX" secondItem="jp0-oC-9lf" secondAttribute="centerX" id="jV1-HA-vq4"/>
+                            <constraint firstItem="nBE-0m-22l" firstAttribute="top" secondItem="etA-ZT-aBQ" secondAttribute="bottom" constant="2" id="nVy-0S-2ts"/>
+                            <constraint firstItem="FFT-31-Y5g" firstAttribute="top" secondItem="7hS-Vt-0eI" secondAttribute="bottom" constant="8" id="ptD-ah-YaC"/>
+                            <constraint firstItem="7hS-Vt-0eI" firstAttribute="top" secondItem="Ay1-xz-aDX" secondAttribute="bottom" constant="8" id="qby-Xj-Hgu"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="0Z8-lC-ta0" secondAttribute="trailing" constant="-20" id="qpK-8e-58Q"/>
+                            <constraint firstItem="KZH-j2-fLN" firstAttribute="top" secondItem="Tkf-jL-82w" secondAttribute="bottom" constant="13" id="tzF-1M-9Ih"/>
+                            <constraint firstItem="nBE-0m-22l" firstAttribute="top" secondItem="etA-ZT-aBQ" secondAttribute="bottom" constant="2" id="yeF-H9-ZjA"/>
+                            <constraint firstItem="FFT-31-Y5g" firstAttribute="centerX" secondItem="jp0-oC-9lf" secondAttribute="centerX" id="zPU-AP-mVj"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="bQ8-bc-0NQ"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="easyBassButton" destination="FFT-31-Y5g" id="bbj-rj-FEU"/>
@@ -493,14 +582,14 @@
                                     <constraint firstAttribute="height" constant="80" id="NHe-vE-OlC"/>
                                 </constraints>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G98-Nb-mE0">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G98-Nb-mE0">
                                 <rect key="frame" x="213" y="342" width="174" height="42"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="174" id="F6y-Vt-dBy"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="174" id="Na0-R5-zyY"/>
                                     <constraint firstAttribute="height" constant="42" id="r1w-uf-MH0"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="35"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="45"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -722,9 +811,12 @@
             <point key="canvasLocation" x="-116" y="675"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="logo.png" width="1000" height="1000"/>
+    </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="e9t-GQ-vKF"/>
-        <segue reference="qX2-WN-kpe"/>
+        <segue reference="rOO-FZ-wti"/>
+        <segue reference="r0k-YJ-n82"/>
         <segue reference="TOg-Kn-4jB"/>
     </inferredMetricsTieBreakers>
 </document>
