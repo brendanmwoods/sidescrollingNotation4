@@ -20,6 +20,7 @@ class GameMenuViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Game Mode"
         formatButtons()
         
         // Do any additional setup after loading the view.
@@ -32,27 +33,27 @@ class GameMenuViewController: UIViewController {
     
     func formatButtons() {
         easyTrebleButton.layer.borderColor = UIColor.blackColor().CGColor
-        easyTrebleButton.layer.borderWidth = 1
+        easyTrebleButton.layer.borderWidth = 2
         easyTrebleButton.layer.cornerRadius = 5
         
         easyBassButton.layer.borderColor = UIColor.blackColor().CGColor
-        easyBassButton.layer.borderWidth = 1
+        easyBassButton.layer.borderWidth = 2
         easyBassButton.layer.cornerRadius = 5
         
         mediumButton.layer.borderColor = UIColor.blackColor().CGColor
-        mediumButton.layer.borderWidth = 1
+        mediumButton.layer.borderWidth = 2
         mediumButton.layer.cornerRadius = 5
         
         easyTrebleScoresButton.layer.borderColor = UIColor.blackColor().CGColor
-        easyTrebleScoresButton.layer.borderWidth = 1
+        easyTrebleScoresButton.layer.borderWidth = 2
         easyTrebleScoresButton.layer.cornerRadius = 5
         
         easyBassScoresButton.layer.borderColor = UIColor.blackColor().CGColor
-        easyBassScoresButton.layer.borderWidth = 1
+        easyBassScoresButton.layer.borderWidth = 2
         easyBassScoresButton.layer.cornerRadius = 5
         
         mediumScoresButton.layer.borderColor = UIColor.blackColor().CGColor
-        mediumScoresButton.layer.borderWidth = 1
+        mediumScoresButton.layer.borderWidth = 2
         mediumScoresButton.layer.cornerRadius = 5
     }
     

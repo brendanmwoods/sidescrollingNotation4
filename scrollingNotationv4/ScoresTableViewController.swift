@@ -62,7 +62,7 @@ class ScoresTableViewController: UITableViewController {
         }
     }
     
-    func getScoresData  () {
+    func getScoresData() {
         if(difficulty == "easyTreble") {
             
             //get path to plist of all scores
@@ -193,6 +193,28 @@ class ScoresTableViewController: UITableViewController {
     }
     
     
+    override func tableView(tableView: UITableView,
+        numberOfRowsInSection section: Int) -> Int{
+            if section == 0 {
+                return 1
+            } else if section == 1 {
+                return 1
+            } else if section == 2 {
+                return 1
+            }else if section == 3 {
+                return 1
+            }else if section == 4{
+                if scoresArray.count < 5 {
+                    return scoresArray.count
+                } else {
+                    return 5
+                }
+            }else {
+                return 0
+            }
+    }
+    
+    
     // Generate the cell data for the sections
     override func tableView(tableView: UITableView,
         cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
@@ -214,7 +236,24 @@ class ScoresTableViewController: UITableViewController {
                 cell.textLabel?.textAlignment = .Center
                 cell.selectionStyle = UITableViewCellSelectionStyle.None
                 return cell
-            }else {
+            }else if indexPath.section == 3 {
+                
+                let cell:UITableViewCell! = tableView.dequeueReusableCellWithIdentifier("cellIdentifier")
+                cell.textLabel?.textAlignment = .Center
+                cell.selectionStyle = UITableViewCellSelectionStyle.None
+                cell.backgroundColor = UIColor.blackColor()
+                let button = UIButton()
+                button.frame = CGRectMake(0, 0, UIScreen.mainScreen().bounds.size.width, cell.frame.size.height)
+                button.backgroundColor = UIColor.blueColor()
+                button.setTitle("Press To Graph", forState: UIControlState.Normal)
+                button.titleLabel?.textAlignment = .Left
+                button.titleLabel!.font = UIFont.boldSystemFontOfSize(22)
+                button.layer.cornerRadius = 8
+                cell.addSubview(button)
+                
+                return cell
+                
+            } else {
                 var reversedScoresArray = scoresArray as NSArray as! [String]
                 reversedScoresArray = reversedScoresArray.reverse()
                 let cell:UITableViewCell! = tableView.dequeueReusableCellWithIdentifier("cellIdentifier")
@@ -226,34 +265,7 @@ class ScoresTableViewController: UITableViewController {
     }
     
     
-    override func tableView(tableView: UITableView,
-        numberOfRowsInSection section: Int) -> Int{
-            if section == 0 {
-                return 1
-            } else if section == 1 {
-                return 1
-            } else if section == 2 {
-                return 1
-            }else if section == 3 {
-                return scoresArray.count
-            }else {
-                return 0
-            }
-    }
     
-    override func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
-        
-        
-        //for  var i = 0; i <= tableView.numberOfSections; i++ {
-        
-        
-        //tableView.headerViewForSection(i)?.contentView.backgroundColor = UIColor.blackColor()
-        //tableView.headerViewForSection(i)?.textLabel?.textColor = UIColor.whiteColor()
-        //tableView.headerViewForSection(i)?.textLabel?.textAlignment = .Center
-        
-        //return header
-        // }
-    }
     
     override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let title: UILabel = UILabel()
@@ -270,6 +282,8 @@ class ScoresTableViewController: UITableViewController {
         }else if section == 2 {
             title.text = "Total Games Played"
         }else if section == 3{
+            title.text = "Graph Scores"
+        }else if section == 4{
             title.text = "Recent Scores"
         }
         return title

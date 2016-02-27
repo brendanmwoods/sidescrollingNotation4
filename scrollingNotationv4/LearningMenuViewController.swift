@@ -16,6 +16,7 @@ class LearningMenuViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Learning Mode"
         formatButtons()
         
         // Do any additional setup after loading the view.
