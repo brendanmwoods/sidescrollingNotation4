@@ -21,6 +21,8 @@ class GameMenuViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Game Mode"
+        let backItem = UIBarButtonItem(title: "Menu", style: UIBarButtonItemStyle.Plain, target: nil, action: nil)
+        navigationItem.backBarButtonItem = backItem
         formatButtons()
         
         // Do any additional setup after loading the view.

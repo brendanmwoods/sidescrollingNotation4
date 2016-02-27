@@ -22,13 +22,13 @@
 		BCC8F7791C7BB7FC00EAA645 /* easyTrebleScores.plist in Resources */ = {isa = PBXBuildFile; fileRef = BCC8F7781C7BB7FC00EAA645 /* easyTrebleScores.plist */; };
 		BCC8F77B1C7BCCFA00EAA645 /* easyBassScores.plist in Resources */ = {isa = PBXBuildFile; fileRef = BCC8F77A1C7BCCFA00EAA645 /* easyBassScores.plist */; };
 		BCC8F77F1C7BE16A00EAA645 /* mediumScores.plist in Resources */ = {isa = PBXBuildFile; fileRef = BCC8F77E1C7BE16A00EAA645 /* mediumScores.plist */; };
-		BCE171071C7F9C570000D868 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = BCE171061C7F9C570000D868 /* logo.png */; };
 		BCE74CEF1C7506F600FB4EC4 /* ovalNote.png in Resources */ = {isa = PBXBuildFile; fileRef = BCE74CEE1C7506F600FB4EC4 /* ovalNote.png */; };
 		BCE74CF11C75156100FB4EC4 /* GameMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE74CF01C75156100FB4EC4 /* GameMenuViewController.swift */; };
 		BCE74CF31C7562CD00FB4EC4 /* LearningMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE74CF21C7562CD00FB4EC4 /* LearningMenuViewController.swift */; };
 		BCE74CF51C75669200FB4EC4 /* LearningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE74CF41C75669200FB4EC4 /* LearningViewController.swift */; };
 		BCE74D731C76F71300FB4EC4 /* ScoresTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE74D721C76F71300FB4EC4 /* ScoresTableViewController.swift */; };
 		BCE74D771C76FE2500FB4EC4 /* allScores.plist in Resources */ = {isa = PBXBuildFile; fileRef = BCE74D761C76FE2500FB4EC4 /* allScores.plist */; };
+		BCEAB11A1C8150FF00929924 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = BCEAB1191C8150FF00929924 /* logo.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,13 +70,13 @@
 		BCC8F7781C7BB7FC00EAA645 /* easyTrebleScores.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = easyTrebleScores.plist; sourceTree = "<group>"; };
 		BCC8F77A1C7BCCFA00EAA645 /* easyBassScores.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = easyBassScores.plist; sourceTree = "<group>"; };
 		BCC8F77E1C7BE16A00EAA645 /* mediumScores.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = mediumScores.plist; sourceTree = "<group>"; };
-		BCE171061C7F9C570000D868 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo.png; path = ../../../../../../Volumes/disk/Programming/IOS/Notation/logo/logo.png; sourceTree = "<group>"; };
 		BCE74CEE1C7506F600FB4EC4 /* ovalNote.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ovalNote.png; sourceTree = "<group>"; };
 		BCE74CF01C75156100FB4EC4 /* GameMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameMenuViewController.swift; sourceTree = "<group>"; };
 		BCE74CF21C7562CD00FB4EC4 /* LearningMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LearningMenuViewController.swift; sourceTree = "<group>"; };
 		BCE74CF41C75669200FB4EC4 /* LearningViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LearningViewController.swift; sourceTree = "<group>"; };
 		BCE74D721C76F71300FB4EC4 /* ScoresTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoresTableViewController.swift; sourceTree = "<group>"; };
 		BCE74D761C76FE2500FB4EC4 /* allScores.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = allScores.plist; sourceTree = "<group>"; };
+		BCEAB1191C8150FF00929924 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,8 +172,8 @@
 			children = (
 				BCE74CEE1C7506F600FB4EC4 /* ovalNote.png */,
 				BCC8F7741C79060700EAA645 /* bass.png */,
+				BCEAB1191C8150FF00929924 /* logo.png */,
 				BCC8F7751C79060700EAA645 /* treble.png */,
-				BCE171061C7F9C570000D868 /* logo.png */,
 			);
 			name = images;
 			sourceTree = "<group>";
@@ -287,7 +287,7 @@
 			files = (
 				BCE74D771C76FE2500FB4EC4 /* allScores.plist in Resources */,
 				BC64B7C71C6C56F200DE7780 /* LaunchScreen.storyboard in Resources */,
-				BCE171071C7F9C570000D868 /* logo.png in Resources */,
+				BCEAB11A1C8150FF00929924 /* logo.png in Resources */,
 				BCC8F7771C79060700EAA645 /* treble.png in Resources */,
 				BC64B7C41C6C56F200DE7780 /* Assets.xcassets in Resources */,
 				BCC8F77B1C7BCCFA00EAA645 /* easyBassScores.plist in Resources */,

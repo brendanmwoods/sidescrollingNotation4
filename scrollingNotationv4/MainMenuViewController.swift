@@ -21,6 +21,8 @@ class MainMenuViewController: UIViewController {
         super.viewDidLoad()
         formatButtons()
         
+
+        
         // Make navigation bar transparent
         self.navigationController!.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
         self.navigationController!.navigationBar.shadowImage = UIImage()

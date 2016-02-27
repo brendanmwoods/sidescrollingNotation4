@@ -17,6 +17,8 @@ class LearningMenuViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Learning Mode"
+        let backItem = UIBarButtonItem(title: "Menu", style: UIBarButtonItemStyle.Plain, target: nil, action: nil)
+        navigationItem.backBarButtonItem = backItem
         formatButtons()
         
         // Do any additional setup after loading the view.
