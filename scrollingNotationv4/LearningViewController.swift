@@ -9,11 +9,7 @@
 import UIKit
 
 class LearningViewController: UIViewController{
-    // TO DO
-    //remove all non-necessary game mode features
-    //make not appear in horizontal center
-    //give hints when wrong
-    //note library returnRandomNote() shouldn't return same not twice in a row.
+
     @IBOutlet weak var blankStaff: UIView?
     @IBOutlet weak var aButton:UIButton?
     @IBOutlet weak var bButton:UIButton?
@@ -40,6 +36,7 @@ class LearningViewController: UIViewController{
     
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         screenWidth = UIScreen.mainScreen().bounds.width
         formatButtonShapes()
@@ -105,21 +102,23 @@ class LearningViewController: UIViewController{
     }
     
     
-//    func gameOverAlert(){
-//        let alert = UIAlertController(title: "Game Over", message: "You scored : \(currentScore)", preferredStyle: .Alert)
-//        alert.addAction(UIAlertAction(title: "New Game", style: UIAlertActionStyle.Default, handler: {
-//            action in
-//            self.gameLoop()
-//        }))
-//        self.presentViewController(alert, animated: true, completion: nil)
-//    }
-    
-    
     @IBAction func noteButtonPushed(sender:UIButton) {
+        
         if sender.titleLabel!.text!.lowercaseString == currentNote.noteName {
+            // animate a color change of the key pushed
+            sender.backgroundColor = UIColor.greenColor()
+            UIView.animateWithDuration(1.0, animations: {
+                sender.backgroundColor = UIColor.whiteColor()
+            })
             correctGuess()
         }else {
+            // animate a color change of the key pushed
+            sender.backgroundColor = UIColor.redColor()
+            UIView.animateWithDuration(1.0, animations: {
+                sender.backgroundColor = UIColor.whiteColor()
+            })
             incorrectGuess()
         }
+
     }
 }

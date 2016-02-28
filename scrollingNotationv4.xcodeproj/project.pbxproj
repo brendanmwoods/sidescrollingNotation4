@@ -16,6 +16,8 @@
 		BC64B7DD1C6C56F300DE7780 /* scrollingNotationv4UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC64B7DC1C6C56F300DE7780 /* scrollingNotationv4UITests.swift */; };
 		BC64B7EB1C6C57C900DE7780 /* BlankStaff.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC64B7EA1C6C57C900DE7780 /* BlankStaff.swift */; };
 		BC64B7EF1C6C607500DE7780 /* NoteLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC64B7EE1C6C607500DE7780 /* NoteLibrary.swift */; };
+		BCA05A8A1C83A1F00018A72F /* LineChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA05A891C83A1F00018A72F /* LineChart.swift */; };
+		BCA05A8C1C83A2180018A72F /* GraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA05A8B1C83A2180018A72F /* GraphViewController.swift */; };
 		BCC8F7731C77C58A00EAA645 /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC8F7721C77C58A00EAA645 /* MainMenuViewController.swift */; };
 		BCC8F7761C79060700EAA645 /* bass.png in Resources */ = {isa = PBXBuildFile; fileRef = BCC8F7741C79060700EAA645 /* bass.png */; };
 		BCC8F7771C79060700EAA645 /* treble.png in Resources */ = {isa = PBXBuildFile; fileRef = BCC8F7751C79060700EAA645 /* treble.png */; };
@@ -64,6 +66,8 @@
 		BC64B7DE1C6C56F300DE7780 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BC64B7EA1C6C57C900DE7780 /* BlankStaff.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlankStaff.swift; sourceTree = "<group>"; };
 		BC64B7EE1C6C607500DE7780 /* NoteLibrary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteLibrary.swift; sourceTree = "<group>"; };
+		BCA05A891C83A1F00018A72F /* LineChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LineChart.swift; path = "../../../../Downloads/swift-linechart-master/linechart/LineChart.swift"; sourceTree = "<group>"; };
+		BCA05A8B1C83A2180018A72F /* GraphViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GraphViewController.swift; path = "../../../../Downloads/swift-linechart-master/linechart/GraphViewController.swift"; sourceTree = "<group>"; };
 		BCC8F7721C77C58A00EAA645 /* MainMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
 		BCC8F7741C79060700EAA645 /* bass.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bass.png; sourceTree = "<group>"; };
 		BCC8F7751C79060700EAA645 /* treble.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = treble.png; sourceTree = "<group>"; };
@@ -145,6 +149,8 @@
 				BCC8F7781C7BB7FC00EAA645 /* easyTrebleScores.plist */,
 				BCC8F77A1C7BCCFA00EAA645 /* easyBassScores.plist */,
 				BCC8F77E1C7BE16A00EAA645 /* mediumScores.plist */,
+				BCA05A8B1C83A2180018A72F /* GraphViewController.swift */,
+				BCA05A891C83A1F00018A72F /* LineChart.swift */,
 			);
 			path = scrollingNotationv4;
 			sourceTree = "<group>";
@@ -321,9 +327,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				BCC8F7731C77C58A00EAA645 /* MainMenuViewController.swift in Sources */,
+				BCA05A8C1C83A2180018A72F /* GraphViewController.swift in Sources */,
 				BCE74D731C76F71300FB4EC4 /* ScoresTableViewController.swift in Sources */,
 				BC64B7EB1C6C57C900DE7780 /* BlankStaff.swift in Sources */,
 				BCE74CF11C75156100FB4EC4 /* GameMenuViewController.swift in Sources */,
+				BCA05A8A1C83A1F00018A72F /* LineChart.swift in Sources */,
 				BCE74CF51C75669200FB4EC4 /* LearningViewController.swift in Sources */,
 				BC64B7BF1C6C56F200DE7780 /* GameViewController.swift in Sources */,
 				BC64B7BD1C6C56F200DE7780 /* AppDelegate.swift in Sources */,

@@ -15,13 +15,11 @@ class MainMenuViewController: UIViewController {
     @IBOutlet weak var scores: UIButton!
     
     
-    
-    
+
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         formatButtons()
-        
-
         
         // Make navigation bar transparent
         self.navigationController!.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
@@ -36,16 +34,14 @@ class MainMenuViewController: UIViewController {
                 }
             }
         }
-        // Do any additional setup after loading the view.
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
+    
     func formatButtons() {
-        //learningMode.layer.borderColor = self.view.tintColor.CGColor
         learningMode.layer.borderColor = UIColor.blackColor().CGColor
         learningMode.layer.borderWidth = 2
         learningMode.layer.cornerRadius = 5
@@ -55,15 +51,4 @@ class MainMenuViewController: UIViewController {
         gameMode.layer.cornerRadius = 5
         
     }
-    
-    /*
-    // MARK: - Navigation
-    
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    // Get the new view controller using segue.destinationViewController.
-    // Pass the selected object to the new view controller.
-    }
-    */
-    
 }

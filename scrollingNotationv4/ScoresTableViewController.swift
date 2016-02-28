@@ -16,6 +16,7 @@ class ScoresTableViewController: UITableViewController {
     var highScore = 99
     var totalScores = 0
     var averageScore:Double = 0
+    let graphButton = UIButton()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,13 +29,11 @@ class ScoresTableViewController: UITableViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
-        
         getScoresData()
         setTitle()
         calculateHighScore()
         calculateAverageScore()
         self.tableView.reloadData()
-        
     }
     
     func calculateAverageScore() {
@@ -61,6 +60,7 @@ class ScoresTableViewController: UITableViewController {
             self.title = "Full Clef Stats"
         }
     }
+    
     
     func getScoresData() {
         if(difficulty == "easyTreble") {
@@ -180,13 +180,10 @@ class ScoresTableViewController: UITableViewController {
     }
     
     
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
-    // MARK: - Table view data source
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 5
@@ -219,41 +216,47 @@ class ScoresTableViewController: UITableViewController {
     override func tableView(tableView: UITableView,
         cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
             if indexPath.section == 0 {
+                //the high score cell
                 let cell:UITableViewCell! = tableView.dequeueReusableCellWithIdentifier("cellIdentifier")
                 cell.textLabel!.text = "\(highScore)"
                 cell.textLabel?.textAlignment = .Center
                 cell.selectionStyle = UITableViewCellSelectionStyle.None
                 return cell
             }else if indexPath.section == 1 {
+                //the average score cell
                 let cell:UITableViewCell! = tableView.dequeueReusableCellWithIdentifier("cellIdentifier")
                 cell.textLabel!.text = "\(averageScore)"
                 cell.textLabel?.textAlignment = .Center
                 cell.selectionStyle = UITableViewCellSelectionStyle.None
                 return cell
             }else if indexPath.section == 2 {
+                //the number of games played cell
                 let cell:UITableViewCell! = tableView.dequeueReusableCellWithIdentifier("cellIdentifier")
                 cell.textLabel!.text = "\(scoresArray.count)"
                 cell.textLabel?.textAlignment = .Center
                 cell.selectionStyle = UITableViewCellSelectionStyle.None
                 return cell
             }else if indexPath.section == 3 {
-                
+                // the cell for the graph button
                 let cell:UITableViewCell! = tableView.dequeueReusableCellWithIdentifier("cellIdentifier")
                 cell.textLabel?.textAlignment = .Center
                 cell.selectionStyle = UITableViewCellSelectionStyle.None
                 cell.backgroundColor = UIColor.blackColor()
-                let button = UIButton()
-                button.frame = CGRectMake(0, 0, UIScreen.mainScreen().bounds.size.width, cell.frame.size.height)
-                button.backgroundColor = UIColor.blueColor()
-                button.setTitle("Press To Graph", forState: UIControlState.Normal)
-                button.titleLabel?.textAlignment = .Left
-                button.titleLabel!.font = UIFont.boldSystemFontOfSize(22)
-                button.layer.cornerRadius = 8
-                cell.addSubview(button)
                 
+                graphButton.frame = CGRectMake(0, 0, UIScreen.mainScreen().bounds.size.width, cell.frame.size.height)
+                graphButton.backgroundColor = UIColor(red: 225/255, green: 247/255, blue: 253/255, alpha: 1.0)
+                graphButton.setTitle("Press To Graph", forState: UIControlState.Normal)
+                graphButton.titleLabel?.textAlignment = .Left
+                graphButton.setTitleColor(UIColor.blackColor(), forState: .Normal)
+                graphButton.titleLabel!.font = UIFont.boldSystemFontOfSize(22)
+                
+                graphButton.layer.cornerRadius = 8
+                graphButton.tag = 1
+                graphButton.addTarget(self, action: "graphButtonPressed", forControlEvents: .TouchUpInside)
+                cell.addSubview(graphButton)
                 return cell
-                
-            } else {
+            }else {
+                //the recent scores cells
                 var reversedScoresArray = scoresArray as NSArray as! [String]
                 reversedScoresArray = reversedScoresArray.reverse()
                 let cell:UITableViewCell! = tableView.dequeueReusableCellWithIdentifier("cellIdentifier")
@@ -264,13 +267,16 @@ class ScoresTableViewController: UITableViewController {
             }
     }
     
-    
-    
+    func graphButtonPressed() {
+        print("pressed")
+        let vc = storyboard?.instantiateViewControllerWithIdentifier("graphViewID") as! GraphViewController
+        vc.testString = "non default"
+        self.showViewController(vc, sender: vc)
+    }
     
     override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let title: UILabel = UILabel()
         
-        title.text = "test label"
         title.textColor = UIColor.whiteColor()
         title.backgroundColor = UIColor.blackColor()
         title.textAlignment = .Center

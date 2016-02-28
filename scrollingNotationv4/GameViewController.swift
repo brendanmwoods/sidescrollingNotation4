@@ -220,11 +220,24 @@ class GameViewController: UIViewController {
     
     
     @IBAction func noteButtonPushed(sender:UIButton) {
+        
         if sender.titleLabel!.text!.lowercaseString == currentNote.noteName {
+            // animate a color change of the key pushed
+            sender.backgroundColor = UIColor.greenColor()
+            UIView.animateWithDuration(1.0, animations: {
+                sender.backgroundColor = UIColor.whiteColor()
+            })
             correctGuess()
         }else {
             incorrectGuess()
+            // animate a color change of the key pushed
+            sender.backgroundColor = UIColor.redColor()
+            UIView.animateWithDuration(1.0, animations: {
+                sender.backgroundColor = UIColor.whiteColor()
+            })
         }
     }
+    
 }
+
 
