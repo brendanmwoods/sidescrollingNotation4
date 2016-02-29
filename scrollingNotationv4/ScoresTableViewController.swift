@@ -29,6 +29,9 @@ class ScoresTableViewController: UITableViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
+        let backItem = UIBarButtonItem(title: "Stats", style: UIBarButtonItemStyle.Plain, target: nil, action: nil)
+        navigationItem.backBarButtonItem = backItem
+        
         getScoresData()
         setTitle()
         calculateHighScore()
@@ -268,10 +271,11 @@ class ScoresTableViewController: UITableViewController {
     }
     
     func graphButtonPressed() {
-        print("pressed")
         let vc = storyboard?.instantiateViewControllerWithIdentifier("graphViewID") as! GraphViewController
-        vc.testString = "non default"
+        vc.scoresArray = scoresArray as NSArray as! [String]
+        vc.difficulty = difficulty
         self.showViewController(vc, sender: vc)
+        
     }
     
     override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
