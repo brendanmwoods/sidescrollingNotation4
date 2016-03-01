@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import AVFoundation
 
-class GameViewController: UIViewController {
+class GameViewController: UIViewController , AVAudioPlayerDelegate{
     
     @IBOutlet weak var blankStaff: UIView?
     @IBOutlet weak var aButton:UIButton?
@@ -44,7 +45,7 @@ class GameViewController: UIViewController {
     let scoreIncreaseConstant = 100
     var scoresNeedResetting = false
     var difficulty = ""
-    
+    var notePlayer: AVAudioPlayer! = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -104,6 +105,14 @@ class GameViewController: UIViewController {
             
             view.addSubview(ovalNoteImageView)
             
+            let path = NSBundle.mainBundle().pathForResource("\(note.absoluteNote)", ofType: "mp3")
+            let fileUrl = NSURL(fileURLWithPath: (path)!)
+            
+            notePlayer = try? AVAudioPlayer(contentsOfURL: fileUrl)
+            
+            notePlayer.prepareToPlay()
+            notePlayer.delegate = self
+            notePlayer.play()
             timer = NSTimer.scheduledTimerWithTimeInterval(currentScrollSpeed, target: self,
                 selector: Selector("moveOvalNoteLeft"), userInfo: nil, repeats: true)
             
@@ -126,6 +135,7 @@ class GameViewController: UIViewController {
     }
     
     func correctGuess() {
+        //playCorrectSound()
         timer.invalidate()
         currentScrollSpeed /= 1.2
         currentScore++
@@ -145,7 +155,7 @@ class GameViewController: UIViewController {
     
     func gameOverAlert(){
         saveScoreToScoresPlist()
-        let alert = UIAlertController(title: "Game Over", message: "You scored : \(currentScore)", preferredStyle: .Alert)
+        let alert = UIAlertController(title: "Game Over", message: "The note was :  \(currentNote.noteName.uppercaseString) \n You scored : \(currentScore)", preferredStyle: .Alert)
         alert.addAction(UIAlertAction(title: "New Game", style: UIAlertActionStyle.Default, handler: {
             action in
             self.gameLoop()
@@ -224,7 +234,7 @@ class GameViewController: UIViewController {
         if sender.titleLabel!.text!.lowercaseString == currentNote.noteName {
             // animate a color change of the key pushed
             sender.backgroundColor = UIColor.greenColor()
-            UIView.animateWithDuration(1.0, animations: {
+            UIView.animateWithDuration(0.3, animations: {
                 sender.backgroundColor = UIColor.whiteColor()
             })
             correctGuess()
@@ -232,7 +242,7 @@ class GameViewController: UIViewController {
             incorrectGuess()
             // animate a color change of the key pushed
             sender.backgroundColor = UIColor.redColor()
-            UIView.animateWithDuration(1.0, animations: {
+            UIView.animateWithDuration(0.3, animations: {
                 sender.backgroundColor = UIColor.whiteColor()
             })
         }

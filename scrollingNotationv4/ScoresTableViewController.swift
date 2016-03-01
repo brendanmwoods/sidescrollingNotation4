@@ -274,6 +274,7 @@ class ScoresTableViewController: UITableViewController {
         let vc = storyboard?.instantiateViewControllerWithIdentifier("graphViewID") as! GraphViewController
         vc.scoresArray = scoresArray as NSArray as! [String]
         vc.difficulty = difficulty
+        vc.highScore = highScore
         self.showViewController(vc, sender: vc)
         
     }

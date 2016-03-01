@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import AVFoundation
 
-class LearningViewController: UIViewController{
+class LearningViewController: UIViewController, AVAudioPlayerDelegate   {
 
     @IBOutlet weak var blankStaff: UIView?
     @IBOutlet weak var aButton:UIButton?
@@ -33,13 +34,14 @@ class LearningViewController: UIViewController{
     var totalCorrect = 0
     var totalIncorrect = 0
     var difficulty = ""
-    
+    var notePlayer : AVAudioPlayer! = nil
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
         screenWidth = UIScreen.mainScreen().bounds.width
         formatButtonShapes()
+
         
         noteLibrary.fillNoteLibrary()
         noteLibrary.filterNotesForDifficulty(difficulty)
@@ -83,6 +85,15 @@ class LearningViewController: UIViewController{
                 ovalNoteWidth,
                 ovalNoteHeight)
             
+            let path = NSBundle.mainBundle().pathForResource("\(note.absoluteNote)", ofType: "mp3")
+            let fileUrl = NSURL(fileURLWithPath: (path)!)
+            
+            notePlayer = try? AVAudioPlayer(contentsOfURL: fileUrl)
+            
+            notePlayer.prepareToPlay()
+            notePlayer.delegate = self
+            notePlayer.play()
+            
             view.addSubview(ovalNoteImageView)
     }
     
@@ -101,20 +112,21 @@ class LearningViewController: UIViewController{
         scoreLabel!.text = String("\(totalCorrect) / \(totalCorrect + totalIncorrect)")
     }
     
+
     
     @IBAction func noteButtonPushed(sender:UIButton) {
         
         if sender.titleLabel!.text!.lowercaseString == currentNote.noteName {
             // animate a color change of the key pushed
             sender.backgroundColor = UIColor.greenColor()
-            UIView.animateWithDuration(1.0, animations: {
+            UIView.animateWithDuration(0.3, animations: {
                 sender.backgroundColor = UIColor.whiteColor()
             })
             correctGuess()
         }else {
             // animate a color change of the key pushed
             sender.backgroundColor = UIColor.redColor()
-            UIView.animateWithDuration(1.0, animations: {
+            UIView.animateWithDuration(0.3, animations: {
                 sender.backgroundColor = UIColor.whiteColor()
             })
             incorrectGuess()
