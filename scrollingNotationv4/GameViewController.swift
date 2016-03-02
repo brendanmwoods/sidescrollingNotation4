@@ -20,6 +20,7 @@ class GameViewController: UIViewController , AVAudioPlayerDelegate{
     @IBOutlet weak var fButton:UIButton?
     @IBOutlet weak var gButton:UIButton?
     @IBOutlet weak var scoreLabel:UILabel?
+    @IBOutlet weak var highScoreLabel:UILabel?
     
     var ovalNoteImageView = UIImageView()
     
@@ -46,6 +47,7 @@ class GameViewController: UIViewController , AVAudioPlayerDelegate{
     var scoresNeedResetting = false
     var difficulty = ""
     var notePlayer: AVAudioPlayer! = nil
+    var highScore = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,6 +71,9 @@ class GameViewController: UIViewController , AVAudioPlayerDelegate{
     
     
     func gameLoop() {
+        getHighScore()
+        setHighScore()
+        
         if scoresNeedResetting
         {
             currentScore = 0
@@ -81,6 +86,9 @@ class GameViewController: UIViewController , AVAudioPlayerDelegate{
         
     }
     
+    func setHighScore() {
+        highScoreLabel!.text = "High Score: \(highScore)"
+    }
     
     func formatButtonShapes() {
         let buttonRadius:CGFloat = 5
@@ -155,7 +163,12 @@ class GameViewController: UIViewController , AVAudioPlayerDelegate{
     
     func gameOverAlert(){
         saveScoreToScoresPlist()
-        let alert = UIAlertController(title: "Game Over", message: "The note was :  \(currentNote.noteName.uppercaseString) \n You scored : \(currentScore)", preferredStyle: .Alert)
+        var alert = UIAlertController()
+        if currentScore > highScore {
+            alert = UIAlertController(title: "Game Over", message: "NEW HIGH SCORE! \n The note was :  \(currentNote.noteName.uppercaseString) \n You scored : \(currentScore)", preferredStyle: .Alert)
+        }else {
+            alert = UIAlertController(title: "Game Over", message: "The note was :  \(currentNote.noteName.uppercaseString) \n You scored : \(currentScore)", preferredStyle: .Alert)
+        }
         alert.addAction(UIAlertAction(title: "New Game", style: UIAlertActionStyle.Default, handler: {
             action in
             self.gameLoop()
@@ -225,7 +238,6 @@ class GameViewController: UIViewController , AVAudioPlayerDelegate{
                 print("An error occurred while writing to plist")
             }
         }
-        
     }
     
     
@@ -248,6 +260,64 @@ class GameViewController: UIViewController , AVAudioPlayerDelegate{
         }
     }
     
+    
+    func getHighScore() {
+        if(difficulty == "easyTreble") {
+            
+            //get path to plist of all scores
+            let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+            plistPath = appDelegate.easyTreblePlistPathInDocument
+            
+            // Extract the content of the file as NSData
+            let data:NSData =  NSFileManager.defaultManager().contentsAtPath(plistPath)!
+            do{
+                scoresArray = try NSPropertyListSerialization.propertyListWithData(data, options: NSPropertyListMutabilityOptions.MutableContainersAndLeaves, format: nil) as! NSMutableArray
+                
+            }catch{
+                print("Error occured while reading from the plist file")
+            }
+            
+        } else if(difficulty == "easyBass") {
+            
+            //get path to plist of all scores
+            let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+            plistPath = appDelegate.easyBassPlistPathInDocument
+            
+            // Extract the content of the file as NSData
+            let data:NSData =  NSFileManager.defaultManager().contentsAtPath(plistPath)!
+            do{
+                scoresArray = try NSPropertyListSerialization.propertyListWithData(data, options: NSPropertyListMutabilityOptions.MutableContainersAndLeaves, format: nil) as! NSMutableArray
+                
+            }catch{
+                print("Error occured while reading from the plist file")
+            }
+        }
+            
+            
+        else if(difficulty == "medium") {
+            
+            //get path to plist of all scores
+            let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+            plistPath = appDelegate.mediumPlistPathInDocument
+            
+            // Extract the content of the file as NSData
+            let data:NSData =  NSFileManager.defaultManager().contentsAtPath(plistPath)!
+            do{
+                scoresArray = try NSPropertyListSerialization.propertyListWithData(data, options: NSPropertyListMutabilityOptions.MutableContainersAndLeaves, format: nil) as! NSMutableArray
+                
+            }catch{
+                print("Error occured while reading from the plist file")
+            }
+            
+        }
+        
+        highScore = 0
+        for score in scoresArray as NSArray as! [String] {
+            if Int(score) > Int(highScore) {
+                highScore = Int(score)!
+            }
+        }
+    }
 }
 
 

@@ -14,7 +14,6 @@ class MainMenuViewController: UIViewController {
     @IBOutlet weak var gameMode: UIButton!
     @IBOutlet weak var scores: UIButton!
     
-    
 
     override func viewDidLoad() {
         

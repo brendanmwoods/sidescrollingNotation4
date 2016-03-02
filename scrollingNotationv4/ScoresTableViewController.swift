@@ -248,11 +248,11 @@ class ScoresTableViewController: UITableViewController {
                 
                 graphButton.frame = CGRectMake(0, 0, UIScreen.mainScreen().bounds.size.width, cell.frame.size.height)
                 graphButton.backgroundColor = UIColor(red: 225/255, green: 247/255, blue: 253/255, alpha: 1.0)
+                
                 graphButton.setTitle("Press To Graph", forState: UIControlState.Normal)
                 graphButton.titleLabel?.textAlignment = .Left
                 graphButton.setTitleColor(UIColor.blackColor(), forState: .Normal)
-                graphButton.titleLabel!.font = UIFont.boldSystemFontOfSize(22)
-                
+                graphButton.titleLabel?.font = UIFont (name: "HelveticaNeue", size: 22)
                 graphButton.layer.cornerRadius = 8
                 graphButton.tag = 1
                 graphButton.addTarget(self, action: "graphButtonPressed", forControlEvents: .TouchUpInside)
@@ -281,10 +281,11 @@ class ScoresTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let title: UILabel = UILabel()
-        
+        title.font = UIFont (name: "HelveticaNeue-Light ", size: 22)
         title.textColor = UIColor.whiteColor()
         title.backgroundColor = UIColor.blackColor()
         title.textAlignment = .Center
+        
         
         if section == 0 {
             title.text = "High Score"
