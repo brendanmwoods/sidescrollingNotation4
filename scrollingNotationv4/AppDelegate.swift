@@ -11,6 +11,9 @@ import UIKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
+    //the app option for sound
+    var isSound = true
+    
     //this will be the path for our plist, and will be accessable from 
     //everywhere in the app.
     var easyTreblePlistPathInDocument:String = String()

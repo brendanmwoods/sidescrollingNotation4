@@ -11,10 +11,12 @@ import UIKit
 class OptionsViewController: UIViewController {
     
     var isSound = true
-
+    var appDelegate = AppDelegate()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        
         // Do any additional setup after loading the view.
     }
 
@@ -25,11 +27,11 @@ class OptionsViewController: UIViewController {
     
     @IBAction func soundSwitched(sender:UISwitch) {
         if sender.on {
-            isSound = true
+            appDelegate.isSound = true
         } else {
-            isSound = false
+            appDelegate.isSound = false
         }
-        print(isSound)
+        print(appDelegate.isSound)
     }
     /*
     // MARK: - Navigation
