@@ -17,7 +17,7 @@ class OptionsViewController: UIViewController {
         super.viewDidLoad()
         appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         
-        // Do any additional setup after loading the view.
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -33,6 +33,8 @@ class OptionsViewController: UIViewController {
         }
         print(appDelegate.isSound)
     }
+    
+    
     /*
     // MARK: - Navigation
 
