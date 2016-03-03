@@ -48,9 +48,16 @@ class GameViewController: UIViewController , AVAudioPlayerDelegate{
     var difficulty = ""
     var notePlayer: AVAudioPlayer! = nil
     var highScore = 0
+    var appDelegate = AppDelegate()
+    
+    
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        
         screenWidth = UIScreen.mainScreen().bounds.width
         distanceToMoveNoteLeft = screenWidth / CGFloat(fractionOfTheScreenToMoveNote)
         formatButtonShapes()
@@ -113,14 +120,16 @@ class GameViewController: UIViewController , AVAudioPlayerDelegate{
             
             view.addSubview(ovalNoteImageView)
             
+            //ff the sound option is true, play note sound.
+            if appDelegate.isSound {
             let path = NSBundle.mainBundle().pathForResource("\(note.absoluteNote)", ofType: "mp3")
             let fileUrl = NSURL(fileURLWithPath: (path)!)
-            
             notePlayer = try? AVAudioPlayer(contentsOfURL: fileUrl)
-            
             notePlayer.prepareToPlay()
             notePlayer.delegate = self
             notePlayer.play()
+            }
+            
             timer = NSTimer.scheduledTimerWithTimeInterval(currentScrollSpeed, target: self,
                 selector: Selector("moveOvalNoteLeft"), userInfo: nil, repeats: true)
             
@@ -143,7 +152,6 @@ class GameViewController: UIViewController , AVAudioPlayerDelegate{
     }
     
     func correctGuess() {
-        //playCorrectSound()
         timer.invalidate()
         currentScrollSpeed /= 1.2
         currentScore++
@@ -185,7 +193,7 @@ class GameViewController: UIViewController , AVAudioPlayerDelegate{
     
     
     func saveScoreToScoresPlist() {
-        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        
         
         
         if(difficulty == "easyTreble") {

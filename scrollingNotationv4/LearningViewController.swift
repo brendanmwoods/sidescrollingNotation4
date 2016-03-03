@@ -10,7 +10,7 @@ import UIKit
 import AVFoundation
 
 class LearningViewController: UIViewController, AVAudioPlayerDelegate   {
-
+    
     @IBOutlet weak var blankStaff: UIView?
     @IBOutlet weak var aButton:UIButton?
     @IBOutlet weak var bButton:UIButton?
@@ -20,8 +20,8 @@ class LearningViewController: UIViewController, AVAudioPlayerDelegate   {
     @IBOutlet weak var fButton:UIButton?
     @IBOutlet weak var gButton:UIButton?
     @IBOutlet weak var scoreLabel:UILabel?
-    var ovalNoteImageView = UIImageView()
     
+    var ovalNoteImageView = UIImageView()
     
     let topLineY:CGFloat = 100
     var screenWidth:CGFloat = 0
@@ -35,13 +35,15 @@ class LearningViewController: UIViewController, AVAudioPlayerDelegate   {
     var totalIncorrect = 0
     var difficulty = ""
     var notePlayer : AVAudioPlayer! = nil
+    var appDelegate = AppDelegate()
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         screenWidth = UIScreen.mainScreen().bounds.width
         formatButtonShapes()
-
+        
         
         noteLibrary.fillNoteLibrary()
         noteLibrary.filterNotesForDifficulty(difficulty)
@@ -85,14 +87,16 @@ class LearningViewController: UIViewController, AVAudioPlayerDelegate   {
                 ovalNoteWidth,
                 ovalNoteHeight)
             
-            let path = NSBundle.mainBundle().pathForResource("\(note.absoluteNote)", ofType: "mp3")
-            let fileUrl = NSURL(fileURLWithPath: (path)!)
             
-            notePlayer = try? AVAudioPlayer(contentsOfURL: fileUrl)
-            
-            notePlayer.prepareToPlay()
-            notePlayer.delegate = self
-            notePlayer.play()
+            //if the sound option is true, play the note sound.
+            if appDelegate.isSound {
+                let path = NSBundle.mainBundle().pathForResource("\(note.absoluteNote)", ofType: "mp3")
+                let fileUrl = NSURL(fileURLWithPath: (path)!)
+                notePlayer = try? AVAudioPlayer(contentsOfURL: fileUrl)
+                notePlayer.prepareToPlay()
+                notePlayer.delegate = self
+                notePlayer.play()
+            }
             
             view.addSubview(ovalNoteImageView)
     }
@@ -112,7 +116,7 @@ class LearningViewController: UIViewController, AVAudioPlayerDelegate   {
         scoreLabel!.text = String("\(totalCorrect) / \(totalCorrect + totalIncorrect)")
     }
     
-
+    
     
     @IBAction func noteButtonPushed(sender:UIButton) {
         
@@ -131,6 +135,6 @@ class LearningViewController: UIViewController, AVAudioPlayerDelegate   {
             })
             incorrectGuess()
         }
-
+        
     }
 }

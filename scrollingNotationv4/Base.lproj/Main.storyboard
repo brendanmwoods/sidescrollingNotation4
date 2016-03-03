@@ -193,6 +193,9 @@
                             <constraint firstItem="JOY-Gs-eFz" firstAttribute="centerY" secondItem="QkT-6U-N3J" secondAttribute="centerY" id="YqK-bx-xfO"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="soundSwitch" destination="tmz-gr-TXX" id="jQf-ME-yNd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bkr-2V-cTd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

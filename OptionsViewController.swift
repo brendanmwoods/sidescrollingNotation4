@@ -10,13 +10,16 @@ import UIKit
 
 class OptionsViewController: UIViewController {
     
+    @IBOutlet weak var soundSwitch: UISwitch!
+    
     var isSound = true
     var appDelegate = AppDelegate()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        
+        soundSwitch.on = appDelegate.isSound
         
     }
 
@@ -31,7 +34,6 @@ class OptionsViewController: UIViewController {
         } else {
             appDelegate.isSound = false
         }
-        print(appDelegate.isSound)
     }
     
     
