@@ -27,6 +27,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         preparePlistsForUse()
         setUUID()
+        setUsername()
+        print(username)
         return true
     }
     
@@ -50,12 +52,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     //if a username has been set to userdefaults before, assign to delegate variable
     func setUsername() {
         let userDefaults = NSUserDefaults.standardUserDefaults()
-        if(userDefaults.objectForKey("UniqueUsername") != nil) {
-            username = String(userDefaults.objectForKey("UniqueUsername"))
+        if(userDefaults.objectForKey("Username") != nil) {
+            username = String(userDefaults.objectForKey("Username")!)
         }
 
     }
     
+    func clearLocalUsername() {
+        let userDefaults = NSUserDefaults.standardUserDefaults()
+        userDefaults.removeObjectForKey("Username")
+    }
     
     func preparePlistsForUse(){
         // Get a path to the documents directory

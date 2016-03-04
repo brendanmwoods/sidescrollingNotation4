@@ -1,0 +1,6 @@
+framework module Pods_scrollingNotationv4 {
+  umbrella header "Pods-scrollingNotationv4-umbrella.h"
+
+  export *
+  module * { export * }
+}

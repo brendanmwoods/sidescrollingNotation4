@@ -247,7 +247,7 @@ class ScoresTableViewController: UITableViewController {
                 cell.backgroundColor = UIColor.blackColor()
                 
                 graphButton.frame = CGRectMake(0, 0, UIScreen.mainScreen().bounds.size.width, cell.frame.size.height)
-                graphButton.backgroundColor = UIColor(red: 225/255, green: 247/255, blue: 253/255, alpha: 1.0)
+                graphButton.backgroundColor = UIColor(red: 146/255, green: 247/255, blue: 253/255, alpha: 1.0)
                 
                 graphButton.setTitle("Press To Graph", forState: UIControlState.Normal)
                 graphButton.titleLabel?.textAlignment = .Left

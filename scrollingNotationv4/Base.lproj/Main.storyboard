@@ -73,7 +73,7 @@
                                 <subviews>
                                     <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Up4-lV-nFh">
                                         <rect key="frame" x="0.0" y="0.0" width="210" height="60"/>
-                                        <color key="backgroundColor" red="0.88235294119999996" green="0.96862745100000003" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.57398774559999999" green="0.96677217790000003" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="N1T-KE-0c1"/>
                                         </constraints>
@@ -87,7 +87,7 @@
                                     </button>
                                     <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ufg-ac-baH">
                                         <rect key="frame" x="0.0" y="105" width="210" height="60"/>
-                                        <color key="backgroundColor" red="0.88235294119999996" green="0.96862745100000003" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.57398774559999999" green="0.96677217790000003" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="210" id="AXy-aF-mgm"/>
                                             <constraint firstAttribute="height" constant="60" id="FSs-gB-ak5"/>
@@ -102,7 +102,7 @@
                                     </button>
                                     <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pbn-qw-KS1">
                                         <rect key="frame" x="0.0" y="210" width="210" height="60"/>
-                                        <color key="backgroundColor" red="0.88235294119999996" green="0.96862745100000003" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.57398774559999999" green="0.96677217790000003" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="210" id="hgc-Iu-vqf"/>
                                             <constraint firstAttribute="height" constant="60" id="qGS-1L-N39"/>
@@ -243,29 +243,29 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="8fi-cH-jHd">
                                 <rect key="frame" x="30" y="145" width="540" height="220"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1LA-iN-PIa">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kfo-pR-C4B">
                                         <rect key="frame" x="0.0" y="0.0" width="540" height="70"/>
-                                        <color key="backgroundColor" red="0.88235294119999996" green="0.96862745100000003" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.57398774559999999" green="0.96677217790000003" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="200" id="2U4-YH-p0r"/>
-                                            <constraint firstAttribute="height" constant="70" id="8hd-Lb-Dx1"/>
+                                            <constraint firstAttribute="height" constant="70" id="dlZ-QA-hMv"/>
+                                            <constraint firstAttribute="width" constant="200" id="yZa-ln-blM"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
-                                        <state key="normal" title="Treble Clef">
+                                        <state key="normal" title="Full Clef ">
                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <variation key="default">
                                             <mask key="constraints">
-                                                <exclude reference="2U4-YH-p0r"/>
+                                                <exclude reference="yZa-ln-blM"/>
                                             </mask>
                                         </variation>
                                         <connections>
-                                            <segue destination="1kL-34-zOT" kind="show" identifier="easyTrebleSegue" id="FjW-Gn-dLX"/>
+                                            <segue destination="1kL-34-zOT" kind="show" identifier="mediumSegue" id="TOg-Kn-4jB"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="seH-RO-d9T">
                                         <rect key="frame" x="0.0" y="75" width="540" height="70"/>
-                                        <color key="backgroundColor" red="0.88235294119999996" green="0.96862745100000003" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.57398774559999999" green="0.96677217790000003" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="70" id="Mp7-9x-Zbc"/>
                                             <constraint firstAttribute="width" constant="200" id="Xrl-6p-jgx"/>
@@ -287,24 +287,24 @@
                                             <segue destination="1kL-34-zOT" kind="show" identifier="easyBassSegue" id="nCS-e1-FV2"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kfo-pR-C4B">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1LA-iN-PIa">
                                         <rect key="frame" x="0.0" y="150" width="540" height="70"/>
-                                        <color key="backgroundColor" red="0.88235294119999996" green="0.96862745100000003" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.57398774559999999" green="0.96677217790000003" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="70" id="dlZ-QA-hMv"/>
-                                            <constraint firstAttribute="width" constant="200" id="yZa-ln-blM"/>
+                                            <constraint firstAttribute="width" constant="200" id="2U4-YH-p0r"/>
+                                            <constraint firstAttribute="height" constant="70" id="8hd-Lb-Dx1"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
-                                        <state key="normal" title="Full Clef ">
+                                        <state key="normal" title="Treble Clef">
                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <variation key="default">
                                             <mask key="constraints">
-                                                <exclude reference="yZa-ln-blM"/>
+                                                <exclude reference="2U4-YH-p0r"/>
                                             </mask>
                                         </variation>
                                         <connections>
-                                            <segue destination="1kL-34-zOT" kind="show" identifier="mediumSegue" id="TOg-Kn-4jB"/>
+                                            <segue destination="1kL-34-zOT" kind="show" identifier="easyTrebleSegue" id="FjW-Gn-dLX"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -325,7 +325,7 @@
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SnO-0p-3Fd">
                                 <rect key="frame" x="30" y="408" width="540" height="70"/>
-                                <color key="backgroundColor" red="0.88235294119999996" green="0.96862745100000003" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.57398774559999999" green="0.96677217790000003" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="2eR-tE-w1b"/>
                                     <constraint firstAttribute="width" constant="200" id="Jcx-GX-XJp"/>
@@ -410,7 +410,7 @@
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nBE-0m-22l">
                                         <rect key="frame" x="10" y="30" width="580" height="70"/>
-                                        <color key="backgroundColor" red="0.88235294119999996" green="0.96862745100000003" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.57398774560005139" green="0.96677217785529468" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="70" id="80a-fr-9DM"/>
                                             <constraint firstAttribute="width" constant="200" id="CYv-IA-rQu"/>
@@ -445,7 +445,7 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1we-bT-S9Z">
                                                 <rect key="frame" x="0.0" y="0.0" width="580" height="70"/>
-                                                <color key="backgroundColor" red="0.88235294119999996" green="0.96862745100000003" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="backgroundColor" red="0.57398774559999999" green="0.96677217790000003" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="70" id="4tN-Fc-GEb"/>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="84" id="KIU-f2-2I8"/>
