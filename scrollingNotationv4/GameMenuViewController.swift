@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class GameMenuViewController: UIViewController {
     
     @IBOutlet weak var easyTrebleButton:           UIButton!
@@ -16,7 +17,8 @@ class GameMenuViewController: UIViewController {
     @IBOutlet weak var easyTrebleScoresButton:     UIButton!
     @IBOutlet weak var easyBassScoresButton:       UIButton!
     @IBOutlet weak var mediumScoresButton:         UIButton!
-    
+    var appDelegate = AppDelegate()
+    //var ref = Firebase(url:"https://glowing-torch-8861.firebaseio.com")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,31 +30,57 @@ class GameMenuViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    override func viewDidAppear(animated: Bool) {
+        appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        checkForUsername()
+    }
+    
+    func checkForUsername() {
+        //if a username hasn't been set, then ask for one
+        if appDelegate.username == "" {
+            
+            //create alert
+            let alert = UIAlertController(title: "Set Username", message: "Please set a unique Username. This can only be set once, and cannot be edited", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addTextFieldWithConfigurationHandler({ (textField) -> Void in
+                textField.text = ""
+            })
+            //submit the username attempt
+            alert.addAction(UIAlertAction(title: "Submit", style: .Default, handler: { (action) -> Void in
+                let textField = alert.textFields![0].text!
+                print("Text field:\(textField)")
+                
+                
+            }))
+            
+            self.presentViewController(alert, animated: true, completion: nil)
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
     func formatButtons() {
-        easyTrebleButton.layer.borderColor = UIColor.blackColor().CGColor
-        easyTrebleButton.layer.borderWidth = 2
-        easyTrebleButton.layer.cornerRadius = 5
+//        easyTrebleButton.layer.borderColor = UIColor.blackColor().CGColor
+//        easyTrebleButton.layer.borderWidth = 2
+//        easyTrebleButton.layer.cornerRadius = 5
         
-        easyBassButton.layer.borderColor = UIColor.blackColor().CGColor
-        easyBassButton.layer.borderWidth = 2
-        easyBassButton.layer.cornerRadius = 5
+//        easyBassButton.layer.borderColor = UIColor.blackColor().CGColor
+//        easyBassButton.layer.borderWidth = 2
+//        easyBassButton.layer.cornerRadius = 5
         
         mediumButton.layer.borderColor = UIColor.blackColor().CGColor
         mediumButton.layer.borderWidth = 2
         mediumButton.layer.cornerRadius = 5
         
-        easyTrebleScoresButton.layer.borderColor = UIColor.blackColor().CGColor
-        easyTrebleScoresButton.layer.borderWidth = 2
-        easyTrebleScoresButton.layer.cornerRadius = 5
-        
-        easyBassScoresButton.layer.borderColor = UIColor.blackColor().CGColor
-        easyBassScoresButton.layer.borderWidth = 2
-        easyBassScoresButton.layer.cornerRadius = 5
+//        easyTrebleScoresButton.layer.borderColor = UIColor.blackColor().CGColor
+//        easyTrebleScoresButton.layer.borderWidth = 2
+//        easyTrebleScoresButton.layer.cornerRadius = 5
+//        
+//        easyBassScoresButton.layer.borderColor = UIColor.blackColor().CGColor
+//        easyBassScoresButton.layer.borderWidth = 2
+//        easyBassScoresButton.layer.cornerRadius = 5
         
         mediumScoresButton.layer.borderColor = UIColor.blackColor().CGColor
         mediumScoresButton.layer.borderWidth = 2

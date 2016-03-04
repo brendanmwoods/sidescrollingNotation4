@@ -281,11 +281,10 @@ class ScoresTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let title: UILabel = UILabel()
-        title.font = UIFont (name: "HelveticaNeue-Light ", size: 22)
+        title.font = UIFont(name: "HelveticaNeue-Thin", size: 20)!
         title.textColor = UIColor.whiteColor()
         title.backgroundColor = UIColor.blackColor()
         title.textAlignment = .Center
-        
         
         if section == 0 {
             title.text = "High Score"

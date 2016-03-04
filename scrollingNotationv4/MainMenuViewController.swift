@@ -12,7 +12,7 @@ class MainMenuViewController: UIViewController {
     
     @IBOutlet weak var learningMode: UIButton!
     @IBOutlet weak var gameMode: UIButton!
-    @IBOutlet weak var scores: UIButton!
+    @IBOutlet weak var options: UIButton!
     
 
     override func viewDidLoad() {
@@ -48,6 +48,10 @@ class MainMenuViewController: UIViewController {
         gameMode.layer.borderColor = UIColor.blackColor().CGColor
         gameMode.layer.borderWidth = 2
         gameMode.layer.cornerRadius = 5
+        
+        options.layer.borderColor = UIColor.blackColor().CGColor
+        options.layer.borderWidth = 2
+        options.layer.cornerRadius = 5
         
     }
 }

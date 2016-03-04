@@ -19,6 +19,42 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var easyTreblePlistPathInDocument:String = String()
     var easyBassPlistPathInDocument:String = String()
     var mediumPlistPathInDocument:String = String()
+    var UUID = String()
+    var window: UIWindow?
+    var username = String()
+    
+    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        // Override point for customization after application launch.
+        preparePlistsForUse()
+        setUUID()
+        return true
+    }
+    
+    func setUUID() {
+        
+        //if uuid has been set, assign to delegate. otherwise create one
+        let userDefaults = NSUserDefaults.standardUserDefaults()
+        
+        if userDefaults.objectForKey("ApplicationUniqueIdentifier") == nil {
+            let tempUUID = NSUUID().UUIDString
+            UUID = tempUUID
+            userDefaults.setObject(tempUUID, forKey: "ApplicationUniqueIdentifier")
+            userDefaults.synchronize()
+        } else {
+            UUID = String(userDefaults.objectForKey("ApplicationUniqueIdentifier")!)
+        }
+        
+        print(UUID)
+    }
+    
+    //if a username has been set to userdefaults before, assign to delegate variable
+    func setUsername() {
+        let userDefaults = NSUserDefaults.standardUserDefaults()
+        if(userDefaults.objectForKey("UniqueUsername") != nil) {
+            username = String(userDefaults.objectForKey("UniqueUsername"))
+        }
+
+    }
     
     
     func preparePlistsForUse(){
@@ -29,7 +65,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Check if a file already exists at that docs path
         // if it doesnot, get a path to the main bundle version
         easyTreblePlistPathInDocument = rootPath.stringByAppendingString("/easyTrebleScores.plist")
-                
+        
         if !NSFileManager.defaultManager().fileExistsAtPath(easyTreblePlistPathInDocument){
             let plistPathInBundle = NSBundle.mainBundle().pathForResource("easyTrebleScores", ofType: "plist") as String!
             // if the docs path(file) doesn't exist, copy the item to documents path
@@ -53,7 +89,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 print("Error occurred while copying file to document \(error)")
             }
         }
-
+        
         mediumPlistPathInDocument = rootPath.stringByAppendingString("/mediumScores.plist")
         
         if !NSFileManager.defaultManager().fileExistsAtPath(mediumPlistPathInDocument){
@@ -69,18 +105,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
     }
     
-    
-    
-
-    var window: UIWindow?
-    
-
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
-        self.preparePlistsForUse()
-        return true
-    }
-
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.

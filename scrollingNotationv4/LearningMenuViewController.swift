@@ -13,6 +13,8 @@ class LearningMenuViewController: UIViewController {
     @IBOutlet weak var easyTrebleButton: UIButton!
     @IBOutlet weak var easyBassButton:   UIButton!
     @IBOutlet weak var mediumButton:     UIButton!
+    @IBOutlet weak var noteChartButton:  UIButton!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,6 +43,11 @@ class LearningMenuViewController: UIViewController {
         mediumButton.layer.borderColor = UIColor.blackColor().CGColor
         mediumButton.layer.borderWidth = 2
         mediumButton.layer.cornerRadius = 5
+        
+        noteChartButton.layer.borderColor = UIColor.blackColor().CGColor
+        noteChartButton.layer.borderWidth = 2
+        noteChartButton.layer.cornerRadius = 5
+
     }
     
     override func  prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
