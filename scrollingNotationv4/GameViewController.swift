@@ -8,6 +8,7 @@
 
 import UIKit
 import AVFoundation
+import Firebase
 
 class GameViewController: UIViewController , AVAudioPlayerDelegate{
     
@@ -56,8 +57,8 @@ class GameViewController: UIViewController , AVAudioPlayerDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         
+        appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         screenWidth = UIScreen.mainScreen().bounds.width
         distanceToMoveNoteLeft = screenWidth / CGFloat(fractionOfTheScreenToMoveNote)
         formatButtonShapes()
@@ -76,6 +77,45 @@ class GameViewController: UIViewController , AVAudioPlayerDelegate{
         super.didReceiveMemoryWarning()
     }
     
+    
+    func postPreDbScores() {
+        let highScoresRef = Firebase(url: "https://glowing-torch-8861.firebaseio.com/High%20Scores")
+        
+        //get path to plist of all scores
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        plistPath = appDelegate.mediumPlistPathInDocument
+        
+        // Extract the content of the file as NSData
+        let data:NSData =  NSFileManager.defaultManager().contentsAtPath(plistPath)!
+        do{
+            scoresArray = try NSPropertyListSerialization.propertyListWithData(data, options: NSPropertyListMutabilityOptions.MutableContainersAndLeaves, format: nil) as! NSMutableArray
+            
+        }catch{
+            print("Error occured while reading from the plist file")
+        }
+        
+        for score in scoresArray as NSArray as! [String] {
+            let theScore = score
+            let score1 = ["Score" : theScore, "Name" : appDelegate.username, "UUID" : appDelegate.UUID, "Date": NSDate().timeIntervalSince1970]
+            
+            highScoresRef.childByAutoId().setValue(score1, andPriority: 0 - Int(theScore)!)
+        }
+        print("posted all scores")
+    }
+    
+    func postScoreToFirebase() {
+        let highScoresRef = Firebase(url: "https://glowing-torch-8861.firebaseio.com/High%20Scores")
+        
+        //get path to plist of all scores
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        
+            let theScore = currentScore
+            let score1 = ["Score" : theScore, "Name" : appDelegate.username, "UUID" : appDelegate.UUID, "Date": NSDate().timeIntervalSince1970]
+            
+            highScoresRef.childByAutoId().setValue(score1, andPriority: 0 - Int(theScore))
+        
+        print("posted  single score")
+    }
     
     func gameLoop() {
         getHighScore()
@@ -122,12 +162,12 @@ class GameViewController: UIViewController , AVAudioPlayerDelegate{
             
             //ff the sound option is true, play note sound.
             if appDelegate.isSound {
-            let path = NSBundle.mainBundle().pathForResource("\(note.absoluteNote)", ofType: "mp3")
-            let fileUrl = NSURL(fileURLWithPath: (path)!)
-            notePlayer = try? AVAudioPlayer(contentsOfURL: fileUrl)
-            notePlayer.prepareToPlay()
-            notePlayer.delegate = self
-            notePlayer.play()
+                let path = NSBundle.mainBundle().pathForResource("\(note.absoluteNote)", ofType: "mp3")
+                let fileUrl = NSURL(fileURLWithPath: (path)!)
+                notePlayer = try? AVAudioPlayer(contentsOfURL: fileUrl)
+                notePlayer.prepareToPlay()
+                notePlayer.delegate = self
+                notePlayer.play()
             }
             
             timer = NSTimer.scheduledTimerWithTimeInterval(currentScrollSpeed, target: self,
@@ -171,6 +211,7 @@ class GameViewController: UIViewController , AVAudioPlayerDelegate{
     
     func gameOverAlert(){
         saveScoreToScoresPlist()
+        postScoreToFirebase()
         var alert = UIAlertController()
         if currentScore > highScore {
             alert = UIAlertController(title: "Game Over", message: "NEW HIGH SCORE! \n The note was :  \(currentNote.noteName.uppercaseString) \n You scored : \(currentScore)", preferredStyle: .Alert)
@@ -193,9 +234,6 @@ class GameViewController: UIViewController , AVAudioPlayerDelegate{
     
     
     func saveScoreToScoresPlist() {
-        
-        
-        
         if(difficulty == "easyTreble") {
             let pathForThePlistFile = appDelegate.easyTreblePlistPathInDocument
             
@@ -211,7 +249,6 @@ class GameViewController: UIViewController , AVAudioPlayerDelegate{
                 print("An error occurred while writing to plist")
             }
         }
-        
         
         if(difficulty == "easyBass") {
             let pathForThePlistFile = appDelegate.easyBassPlistPathInDocument
