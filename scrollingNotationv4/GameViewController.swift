@@ -57,12 +57,10 @@ class GameViewController: UIViewController , AVAudioPlayerDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         screenWidth = UIScreen.mainScreen().bounds.width
         distanceToMoveNoteLeft = screenWidth / CGFloat(fractionOfTheScreenToMoveNote)
         formatButtonShapes()
-        
         noteLibrary.fillNoteLibrary()
         noteLibrary.filterNotesForDifficulty(difficulty)
         
@@ -95,10 +93,10 @@ class GameViewController: UIViewController , AVAudioPlayerDelegate{
         }
         
         for score in scoresArray as NSArray as! [String] {
-            let theScore = score
+            let theScore:Int = Int(score)!
             let score1 = ["Score" : theScore, "Name" : appDelegate.username, "UUID" : appDelegate.UUID, "Date": NSDate().timeIntervalSince1970]
             
-            highScoresRef.childByAutoId().setValue(score1, andPriority: 0 - Int(theScore)!)
+            highScoresRef.childByAutoId().setValue(score1, andPriority: 0 - Int(theScore))
         }
         print("posted all scores")
     }
@@ -172,7 +170,6 @@ class GameViewController: UIViewController , AVAudioPlayerDelegate{
             
             timer = NSTimer.scheduledTimerWithTimeInterval(currentScrollSpeed, target: self,
                 selector: Selector("moveOvalNoteLeft"), userInfo: nil, repeats: true)
-            
     }
     
     

@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '2A3B82BD28535665091CDBEE'
+               BlueprintIdentifier = 'CC546A6464368C6F5C4B6E39'
                BlueprintName = 'Pods-scrollingNotationv4'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'Pods_scrollingNotationv4.framework'>

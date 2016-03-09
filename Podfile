@@ -5,6 +5,7 @@ use_frameworks!
 
 target 'scrollingNotationv4' do
     pod 'Firebase', '>= 2.5.0'
+    pod 'SwiftyJSON', :git => 'https://github.com/SwiftyJSON/SwiftyJSON.git'
 end
 
 target 'scrollingNotationv4Tests' do

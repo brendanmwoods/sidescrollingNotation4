@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import SwiftyJSON
 
 class GameMenuViewController: UIViewController {
     
@@ -17,29 +18,37 @@ class GameMenuViewController: UIViewController {
     @IBOutlet weak var easyTrebleScoresButton:     UIButton!
     @IBOutlet weak var easyBassScoresButton:       UIButton!
     @IBOutlet weak var mediumScoresButton:         UIButton!
+    @IBOutlet weak var fullLeaderboardButton:      UIButton!
+    @IBOutlet weak var leaderboardScore1:          UILabel!
+    @IBOutlet weak var leaderboardScore2:          UILabel!
+    @IBOutlet weak var leaderboardScore3:          UILabel!
+    @IBOutlet weak var leaderboardScore4:          UILabel!
+    @IBOutlet weak var leaderboardScore5:          UILabel!
+    
     var appDelegate = AppDelegate()
     var ref = Firebase(url:"https://glowing-torch-8861.firebaseio.com")
+    var leaderboardItems = [LeaderboardItem]()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //retrieveLeaderBoardData()
         self.title = "Game Mode"
         let backItem = UIBarButtonItem(title: "Menu", style: UIBarButtonItemStyle.Plain, target: nil, action: nil)
         navigationItem.backBarButtonItem = backItem
         formatButtons()
-        
-        // Do any additional setup after loading the view.
+        makeLeaderboard()
     }
     
     override func viewDidAppear(animated: Bool) {
         appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         checkForUsername()
-        print("delegate username is \(appDelegate.username)")
     }
     
     func checkForUsername() {
         //if a username hasn't been set, then ask for one
         if appDelegate.username == "" {
-            
             
             //create alert
             let alert = UIAlertController(title: "Set Username", message: "Please set a unique Username. This can only be set once, and cannot be edited", preferredStyle: UIAlertControllerStyle.Alert)
@@ -84,7 +93,6 @@ class GameMenuViewController: UIViewController {
         //loop through this until a valid name is entered
         print(appDelegate.username)
         if appDelegate.username == "" {
-            print("got here")
             //create alert
             let alert = UIAlertController(title: "Set Username", message: "Username is already taken. Please try again", preferredStyle: UIAlertControllerStyle.Alert)
             alert.addTextFieldWithConfigurationHandler({ (textField) -> Void in
@@ -122,7 +130,6 @@ class GameMenuViewController: UIViewController {
             }))
             self.presentViewController(alert, animated: true, completion: nil)
         }
-        
     }
     
     
@@ -155,6 +162,10 @@ class GameMenuViewController: UIViewController {
         mediumScoresButton.layer.borderColor = UIColor.blackColor().CGColor
         mediumScoresButton.layer.borderWidth = 2
         mediumScoresButton.layer.cornerRadius = 5
+        
+        fullLeaderboardButton.layer.borderColor = UIColor.blackColor().CGColor
+        fullLeaderboardButton.layer.borderWidth = 2
+        fullLeaderboardButton.layer.cornerRadius = 5
     }
     
     override func  prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -184,4 +195,44 @@ class GameMenuViewController: UIViewController {
         }
     }
     
+    func populateLeaderBoard() {
+        
+        if leaderboardItems.count > 4 {
+        leaderboardScore1.text = "\(leaderboardItems[0].score) \(leaderboardItems[0].name!)"
+        leaderboardScore2.text = "\(leaderboardItems[1].score) \(leaderboardItems[1].name!)"
+        leaderboardScore3.text = "\(leaderboardItems[2].score) \(leaderboardItems[2].name)"
+        leaderboardScore4.text = "\(leaderboardItems[3].score) \(leaderboardItems[3].name)"
+        leaderboardScore5.text = "\(leaderboardItems[4].score) \(leaderboardItems[4].name)"
+        } else {
+            leaderboardScore1.text = "More scores needed"
+            leaderboardScore2.text = "More scores needed"
+            leaderboardScore3.text = "More scores needed"
+            leaderboardScore4.text = "More scores needed"
+            leaderboardScore5.text = "More scores needed"
+            
+        }
+    }
+    
+    @IBAction func addNamesToLeaderboard(sender:UIButton) {
+        populateLeaderBoard()
+    }
+    
+    func makeLeaderboard() {
+        let scoresRef = Firebase(url: "https://glowing-torch-8861.firebaseio.com/High%20Scores")
+        
+        scoresRef.observeSingleEventOfType(.Value, withBlock: { snapshot in
+            var newItems = [LeaderboardItem]()
+            var childrenCount = 0
+            
+            for item in snapshot.children {
+                if childrenCount < 5 {
+                let leaderboardItem = LeaderboardItem(snapshot: item as! FDataSnapshot)
+                newItems.append(leaderboardItem)
+                childrenCount++
+                }
+            }
+            self.leaderboardItems = newItems
+            self.populateLeaderBoard()
+        })
+    }
 }
