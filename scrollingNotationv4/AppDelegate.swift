@@ -32,7 +32,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func setUUID() {
-        
         //if uuid has been set, assign to delegate. otherwise create one
         let userDefaults = NSUserDefaults.standardUserDefaults()
         

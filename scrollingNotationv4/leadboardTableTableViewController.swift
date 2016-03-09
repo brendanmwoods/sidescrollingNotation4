@@ -16,6 +16,9 @@ class leadboardTableTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController!.navigationBar.translucent = false
+        self.navigationController!.navigationBar.backgroundColor = UIColor.whiteColor()
+        self.title = "Leaderboard"
         makeLeaderboard()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -69,7 +72,8 @@ class leadboardTableTableViewController: UITableViewController {
         
         if indexPath.row < leaderboardItems.count {
             cell.textLabel?.textAlignment = .Center
-            cell.textLabel!.text = ("\(indexPath.row + 1). \(leaderboardItems[indexPath.row].name)      Score: \(leaderboardItems[indexPath.row].score)")
+            cell.textLabel!.text = ("\(indexPath.row + 1). \(leaderboardItems[indexPath.row].name)")
+            cell.detailTextLabel!.text = "      Score: \(leaderboardItems[indexPath.row].score)"
             cell.selectionStyle = UITableViewCellSelectionStyle.None
         }
         return cell
