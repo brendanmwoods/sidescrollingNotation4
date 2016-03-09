@@ -261,12 +261,13 @@ class ScoresTableViewController: UITableViewController {
     }
     
     func graphButtonPressed() {
+        if(scoresArray.count > 1) {
         let vc = storyboard?.instantiateViewControllerWithIdentifier("graphViewID") as! GraphViewController
         vc.scoresArray = scoresArray as NSArray as! [String]
         vc.difficulty = difficulty
         vc.highScore = highScore
         self.showViewController(vc, sender: vc)
-        
+        } 
     }
     
     override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {

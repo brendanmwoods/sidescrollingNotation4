@@ -69,14 +69,12 @@ class GameMenuViewController: UIViewController {
                     namesRef.observeSingleEventOfType(.Value, withBlock: {
                         snap in
                         if snap.value is NSNull {
-                            print("username does not yet exists")
                             let userNameAndUUID = ["Username" : textField, "UUID" : self.appDelegate.UUID]
                             namesRef.setValue(userNameAndUUID)
                             self.appDelegate.username = textField
                             let userDefaults = NSUserDefaults.standardUserDefaults()
                             userDefaults.setObject(textField, forKey: "Username")
                         }else {
-                            print("username is already taken")
                             self.usernameTakenRetry()
                         }
                     })
@@ -94,7 +92,7 @@ class GameMenuViewController: UIViewController {
         print(appDelegate.username)
         if appDelegate.username == "" {
             //create alert
-            let alert = UIAlertController(title: "Set Username", message: "Username is already taken. Please try again", preferredStyle: UIAlertControllerStyle.Alert)
+            let alert = UIAlertController(title: "Set Username", message: "Username is already taken, or is invalid. Please try again", preferredStyle: UIAlertControllerStyle.Alert)
             alert.addTextFieldWithConfigurationHandler({ (textField) -> Void in
                 textField.text = ""
             })
@@ -112,15 +110,12 @@ class GameMenuViewController: UIViewController {
                     namesRef.observeSingleEventOfType(.Value, withBlock: {
                         snap in
                         if snap.value is NSNull {
-                            print("username does not yet exists")
                             let userNameAndUUID = ["Username" : textField, "UUID" : self.appDelegate.UUID]
                             namesRef.setValue(userNameAndUUID)
-                            print("username entered")
                             self.appDelegate.username = textField
                             let userDefaults = NSUserDefaults.standardUserDefaults()
                             userDefaults.setObject(textField, forKey: "Username")
                         }else {
-                            print("username is already taken")
                             self.usernameTakenRetry()
                         }
                     })

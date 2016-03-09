@@ -11,7 +11,8 @@ import UIKit
 class OptionsViewController: UIViewController {
     
     @IBOutlet weak var soundSwitch: UISwitch!
-    
+    @IBOutlet weak var usernameLabel: UILabel!
+
     var isSound = true
     var appDelegate = AppDelegate()
     
@@ -20,12 +21,20 @@ class OptionsViewController: UIViewController {
         super.viewDidLoad()
         appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         soundSwitch.on = appDelegate.isSound
-        
+        setUsernameLabel()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func setUsernameLabel(){
+        if appDelegate.username.isEmpty {
+            usernameLabel.text = "Username not yet set."
+        } else {
+            usernameLabel.text = "\(appDelegate.username)"
+        }
     }
     
     @IBAction func soundSwitched(sender:UISwitch) {
