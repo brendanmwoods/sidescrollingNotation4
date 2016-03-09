@@ -35,6 +35,10 @@ class MainMenuViewController: UIViewController {
         }
     }
     
+    override func viewDidAppear(animated: Bool) {
+        self.navigationController!.navigationBar.translucent = true
+        self.navigationController!.navigationBar.backgroundColor = UIColor.clearColor()
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }

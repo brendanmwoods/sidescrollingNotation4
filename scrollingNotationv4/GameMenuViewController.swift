@@ -51,7 +51,7 @@ class GameMenuViewController: UIViewController {
         if appDelegate.username == "" {
             
             //create alert
-            let alert = UIAlertController(title: "Set Username", message: "Please set a unique Username. This can only be set once, and cannot be edited", preferredStyle: UIAlertControllerStyle.Alert)
+            let alert = UIAlertController(title: "Set Username", message: "Please set a unique Username. This can only be set once, and cannot be edited. Must be 3 - 12 characters.", preferredStyle: UIAlertControllerStyle.Alert)
             alert.addTextFieldWithConfigurationHandler({ (textField) -> Void in
                 textField.text = ""
             })
@@ -63,7 +63,7 @@ class GameMenuViewController: UIViewController {
                 let namesRef = self.ref.childByAppendingPath("/usernames/\(textField)")
                 
                 //check if the string is not blank characters
-                if textField.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet()) != "" {
+                if textField.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet()) != "" && textField.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet()).characters.count > 2 {
                     
                     //check if the username exists
                     namesRef.observeSingleEventOfType(.Value, withBlock: {
@@ -198,11 +198,11 @@ class GameMenuViewController: UIViewController {
     func populateLeaderBoard() {
         
         if leaderboardItems.count > 4 {
-        leaderboardScore1.text = "\(leaderboardItems[0].score) \(leaderboardItems[0].name!)"
-        leaderboardScore2.text = "\(leaderboardItems[1].score) \(leaderboardItems[1].name!)"
-        leaderboardScore3.text = "\(leaderboardItems[2].score) \(leaderboardItems[2].name)"
-        leaderboardScore4.text = "\(leaderboardItems[3].score) \(leaderboardItems[3].name)"
-        leaderboardScore5.text = "\(leaderboardItems[4].score) \(leaderboardItems[4].name)"
+        leaderboardScore1.text = "1.  \(leaderboardItems[0].score) - \(leaderboardItems[0].name!)"
+        leaderboardScore2.text = "2.  \(leaderboardItems[1].score) - \(leaderboardItems[1].name!)"
+        leaderboardScore3.text = "3.  \(leaderboardItems[2].score) - \(leaderboardItems[2].name)"
+        leaderboardScore4.text = "4.  \(leaderboardItems[3].score) - \(leaderboardItems[3].name)"
+        leaderboardScore5.text = "5.  \(leaderboardItems[4].score) - \(leaderboardItems[4].name)"
         } else {
             leaderboardScore1.text = "More scores needed"
             leaderboardScore2.text = "More scores needed"

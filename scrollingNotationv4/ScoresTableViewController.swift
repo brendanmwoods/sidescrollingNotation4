@@ -31,7 +31,7 @@ class ScoresTableViewController: UITableViewController {
     override func viewWillAppear(animated: Bool) {
         let backItem = UIBarButtonItem(title: "Stats", style: UIBarButtonItemStyle.Plain, target: nil, action: nil)
         navigationItem.backBarButtonItem = backItem
-        
+        self.tableView.separatorStyle = .None
         getScoresData()
         setTitle()
         calculateHighScore()
@@ -189,7 +189,7 @@ class ScoresTableViewController: UITableViewController {
     
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 5
+        return 4
     }
     
     
@@ -203,13 +203,7 @@ class ScoresTableViewController: UITableViewController {
                 return 1
             }else if section == 3 {
                 return 1
-            }else if section == 4{
-                if scoresArray.count < 5 {
-                    return scoresArray.count
-                } else {
-                    return 5
-                }
-            }else {
+            } else {
                 return 0
             }
     }
@@ -244,7 +238,7 @@ class ScoresTableViewController: UITableViewController {
                 let cell:UITableViewCell! = tableView.dequeueReusableCellWithIdentifier("cellIdentifier")
                 cell.textLabel?.textAlignment = .Center
                 cell.selectionStyle = UITableViewCellSelectionStyle.None
-                cell.backgroundColor = UIColor.blackColor()
+                cell.backgroundColor = UIColor.clearColor()
                 
                 graphButton.frame = CGRectMake(0, 0, UIScreen.mainScreen().bounds.size.width, cell.frame.size.height)
                 graphButton.backgroundColor = UIColor(red: 146/255, green: 247/255, blue: 253/255, alpha: 1.0)
@@ -254,18 +248,14 @@ class ScoresTableViewController: UITableViewController {
                 graphButton.setTitleColor(UIColor.blackColor(), forState: .Normal)
                 graphButton.titleLabel?.font = UIFont (name: "HelveticaNeue", size: 22)
                 graphButton.layer.cornerRadius = 8
+                graphButton.layer.borderColor = UIColor.blackColor().CGColor
+                graphButton.layer.borderWidth = 2
                 graphButton.tag = 1
                 graphButton.addTarget(self, action: "graphButtonPressed", forControlEvents: .TouchUpInside)
                 cell.addSubview(graphButton)
                 return cell
             }else {
-                //the recent scores cells
-                var reversedScoresArray = scoresArray as NSArray as! [String]
-                reversedScoresArray = reversedScoresArray.reverse()
                 let cell:UITableViewCell! = tableView.dequeueReusableCellWithIdentifier("cellIdentifier")
-                cell.textLabel!.text = reversedScoresArray[indexPath.row]
-                cell.textLabel?.textAlignment = .Center
-                cell.selectionStyle = UITableViewCellSelectionStyle.None
                 return cell
             }
     }
@@ -294,8 +284,6 @@ class ScoresTableViewController: UITableViewController {
             title.text = "Total Games Played"
         }else if section == 3{
             title.text = "Graph Scores"
-        }else if section == 4{
-            title.text = "Recent Scores"
         }
         return title
     }
