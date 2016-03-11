@@ -50,17 +50,17 @@ class MainMenuViewController: UIViewController {
     
     
     func formatButtons() {
-        learningMode.layer.borderColor = UIColor.blackColor().CGColor
-        learningMode.layer.borderWidth = 2
-        learningMode.layer.cornerRadius = 5
+//        learningMode.layer.borderColor = UIColor.blackColor().CGColor
+//        learningMode.layer.borderWidth = 2
+//        learningMode.layer.cornerRadius = 5
         
-        gameMode.layer.borderColor = UIColor.blackColor().CGColor
-        gameMode.layer.borderWidth = 2
-        gameMode.layer.cornerRadius = 5
+//        gameMode.layer.borderColor = UIColor.blackColor().CGColor
+//        gameMode.layer.borderWidth = 2
+//        gameMode.layer.cornerRadius = 2
         
-        options.layer.borderColor = UIColor.blackColor().CGColor
-        options.layer.borderWidth = 2
-        options.layer.cornerRadius = 5
+//        options.layer.borderColor = UIColor.blackColor().CGColor
+//        options.layer.borderWidth = 2
+//        options.layer.cornerRadius = 5
         
     }
     

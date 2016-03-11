@@ -65,38 +65,42 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo-1500-darkgreen1.png" translatesAutoresizingMaskIntoConstraints="NO" id="UOK-0v-WXx">
-                                <rect key="frame" x="20" y="0.0" width="560" height="600"/>
+                            <imageView userInteractionEnabled="NO" alpha="0.074999999999999997" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo-1500-darkgreen1.png" translatesAutoresizingMaskIntoConstraints="NO" id="UOK-0v-WXx">
+                                <rect key="frame" x="150" y="151" width="300" height="300"/>
                                 <color key="backgroundColor" red="0.1137254902" green="0.2156862745" blue="0.34901960780000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="fau-l8-RJQ"/>
+                                    <constraint firstAttribute="height" constant="300" id="jb6-hA-wqQ"/>
+                                </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="45" translatesAutoresizingMaskIntoConstraints="NO" id="98I-u6-nD5">
-                                <rect key="frame" x="195" y="218" width="210" height="165"/>
+                                <rect key="frame" x="200" y="228" width="200" height="145"/>
                                 <subviews>
                                     <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Up4-lV-nFh">
-                                        <rect key="frame" x="0.0" y="0.0" width="210" height="60"/>
-                                        <color key="backgroundColor" red="0.57398774559999999" green="0.96677217790000003" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="200" height="50"/>
+                                        <color key="backgroundColor" red="0.0" green="0.54117647059999996" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="60" id="8Br-7R-m4l"/>
-                                            <constraint firstAttribute="width" constant="210" id="KKf-ed-TDg"/>
+                                            <constraint firstAttribute="height" constant="50" id="8Br-7R-m4l"/>
+                                            <constraint firstAttribute="width" constant="200" id="KKf-ed-TDg"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="40"/>
                                         <state key="normal" title="Learn">
-                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
                                             <segue destination="jwG-yX-B3d" kind="show" id="2Ar-1D-l2I"/>
                                         </connections>
                                     </button>
                                     <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ufg-ac-baH">
-                                        <rect key="frame" x="0.0" y="105" width="210" height="60"/>
-                                        <color key="backgroundColor" red="0.57398774559999999" green="0.96677217790000003" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <rect key="frame" x="0.0" y="95" width="200" height="50"/>
+                                        <color key="backgroundColor" red="0.0" green="0.54117647059999996" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="60" id="QPL-qH-gIk"/>
-                                            <constraint firstAttribute="width" constant="210" id="UFm-hF-eAb"/>
+                                            <constraint firstAttribute="height" constant="50" id="QPL-qH-gIk"/>
+                                            <constraint firstAttribute="width" constant="200" id="UFm-hF-eAb"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="40"/>
                                         <state key="normal" title="Game">
-                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
                                             <action selector="gameButtonPushed:" destination="rAz-1u-ywJ" eventType="touchUpInside" id="Ceg-BL-f7A"/>
@@ -107,33 +111,45 @@
                             </stackView>
                             <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pbn-qw-KS1">
                                 <rect key="frame" x="220" y="530" width="160" height="50"/>
-                                <color key="backgroundColor" red="0.57398774559999999" green="0.96677217790000003" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.0" green="0.54117647059999996" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="6V9-8m-OG9"/>
                                     <constraint firstAttribute="width" constant="160" id="dFy-Xo-kOd"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="26"/>
                                 <state key="normal" title="Options">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <segue destination="hwx-1s-bus" kind="show" id="OsI-m5-fms"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NoteBrainer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NhF-lX-nfz">
+                                <rect key="frame" x="196" y="72" width="209" height="51"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="43"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.1137254902" green="0.2156862745" blue="0.34901960780000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="UOK-0v-WXx" firstAttribute="leading" secondItem="EPC-vU-BPr" secondAttribute="leadingMargin" id="9Tp-uO-Ein"/>
-                            <constraint firstItem="UOK-0v-WXx" firstAttribute="top" secondItem="EPC-vU-BPr" secondAttribute="topMargin" id="9s8-Fz-D5B"/>
+                            <constraint firstItem="NhF-lX-nfz" firstAttribute="top" secondItem="gij-m8-Aum" secondAttribute="bottom" constant="8" id="0XG-x6-zxS"/>
+                            <constraint firstItem="UOK-0v-WXx" firstAttribute="centerY" secondItem="EPC-vU-BPr" secondAttribute="centerY" constant="1" id="BuJ-Fm-0Pm"/>
                             <constraint firstItem="98I-u6-nD5" firstAttribute="centerY" secondItem="EPC-vU-BPr" secondAttribute="centerY" id="CtE-2Q-ddQ"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="UOK-0v-WXx" secondAttribute="trailing" id="FCJ-d9-49D"/>
-                            <constraint firstItem="uZH-qu-mtq" firstAttribute="top" secondItem="UOK-0v-WXx" secondAttribute="bottom" id="hd6-M0-6Np"/>
+                            <constraint firstItem="UOK-0v-WXx" firstAttribute="centerX" secondItem="EPC-vU-BPr" secondAttribute="centerX" id="TGh-nH-arU"/>
+                            <constraint firstItem="NhF-lX-nfz" firstAttribute="centerX" secondItem="EPC-vU-BPr" secondAttribute="centerX" id="aTT-Ls-lEU"/>
                             <constraint firstItem="98I-u6-nD5" firstAttribute="centerX" secondItem="EPC-vU-BPr" secondAttribute="centerX" id="kVu-ts-Tku"/>
+                            <constraint firstItem="UOK-0v-WXx" firstAttribute="centerY" secondItem="EPC-vU-BPr" secondAttribute="centerY" constant="-11.5" id="nR6-us-24I"/>
                             <constraint firstItem="pbn-qw-KS1" firstAttribute="centerX" secondItem="EPC-vU-BPr" secondAttribute="centerX" id="pNe-t3-4XH"/>
                             <constraint firstItem="uZH-qu-mtq" firstAttribute="top" secondItem="pbn-qw-KS1" secondAttribute="bottom" constant="20" id="y91-Zm-k7W"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="nR6-us-24I"/>
+                            </mask>
+                        </variation>
                     </view>
-                    <navigationItem key="navigationItem" id="E1x-dC-6p9"/>
+                    <navigationItem key="navigationItem" id="Rc6-iD-rzN"/>
                     <connections>
                         <outlet property="gameMode" destination="ufg-ac-baH" id="zgP-6Q-cl8"/>
                         <outlet property="learningMode" destination="Up4-lV-nFh" id="No3-pJ-viP"/>
