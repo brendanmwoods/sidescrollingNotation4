@@ -30,10 +30,18 @@ class OptionsViewController: UIViewController {
     }
     
     func setUsernameLabel(){
-        if appDelegate.username.isEmpty {
-            usernameLabel.text = "Username not yet set."
-        } else {
-            usernameLabel.text = "\(appDelegate.username)"
+//        if appDelegate.username.isEmpty {
+//            usernameLabel.text = "Username not yet set."
+//        } else {
+//            usernameLabel.text = "\(appDelegate.username)"
+//        }
+        
+        let defaults = NSUserDefaults()
+        
+        if defaults.valueForKey("FirebaseUsername") == nil {
+            usernameLabel.text = "Not logged in"
+        }else {
+            usernameLabel.text = defaults.valueForKey("FirebaseUsername") as? String
         }
     }
     
@@ -45,6 +53,12 @@ class OptionsViewController: UIViewController {
         }
     }
     
+    @IBAction func logoutOfFirebase() {
+        let defaults = NSUserDefaults()
+        defaults.setValue(nil, forKey: "FirebaseUID")
+        defaults.setValue(nil, forKey: "FirebaseUsername")
+        setUsernameLabel()
+    }
     
     /*
     // MARK: - Navigation

@@ -19,6 +19,9 @@
 		BC64B7DD1C6C56F300DE7780 /* scrollingNotationv4UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC64B7DC1C6C56F300DE7780 /* scrollingNotationv4UITests.swift */; };
 		BC64B7EB1C6C57C900DE7780 /* BlankStaff.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC64B7EA1C6C57C900DE7780 /* BlankStaff.swift */; };
 		BC64B7EF1C6C607500DE7780 /* NoteLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC64B7EE1C6C607500DE7780 /* NoteLibrary.swift */; };
+		BC69BAE81C90F00900347E55 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC69BAE71C90F00900347E55 /* CreateAccountViewController.swift */; };
+		BC69BAEA1C90F67C00347E55 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC69BAE91C90F67C00347E55 /* SignInViewController.swift */; };
+		BC7495C61C924B3D0003D439 /* logo-1500-darkgreen1.png in Resources */ = {isa = PBXBuildFile; fileRef = BC7495C51C924B3D0003D439 /* logo-1500-darkgreen1.png */; };
 		BCA05A8A1C83A1F00018A72F /* LineChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA05A891C83A1F00018A72F /* LineChart.swift */; };
 		BCA05A8C1C83A2180018A72F /* GraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA05A8B1C83A2180018A72F /* GraphViewController.swift */; };
 		BCC046A21C85611C00438E71 /* Bubble.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BCC046A11C85611C00438E71 /* Bubble.mp3 */; };
@@ -98,6 +101,9 @@
 		BC64B7DE1C6C56F300DE7780 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BC64B7EA1C6C57C900DE7780 /* BlankStaff.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlankStaff.swift; sourceTree = "<group>"; };
 		BC64B7EE1C6C607500DE7780 /* NoteLibrary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteLibrary.swift; sourceTree = "<group>"; };
+		BC69BAE71C90F00900347E55 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
+		BC69BAE91C90F67C00347E55 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		BC7495C51C924B3D0003D439 /* logo-1500-darkgreen1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo-1500-darkgreen1.png"; sourceTree = "<group>"; };
 		BCA05A891C83A1F00018A72F /* LineChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LineChart.swift; path = "../../../../Downloads/swift-linechart-master/linechart/LineChart.swift"; sourceTree = "<group>"; };
 		BCA05A8B1C83A2180018A72F /* GraphViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GraphViewController.swift; path = "../../../../Downloads/swift-linechart-master/linechart/GraphViewController.swift"; sourceTree = "<group>"; };
 		BCC046A11C85611C00438E71 /* Bubble.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Bubble.mp3; sourceTree = "<group>"; };
@@ -216,6 +222,8 @@
 				BCDB07581C84F0BE0087DE7F /* sounds */,
 				BCE171051C7F9BFA0000D868 /* images */,
 				BC64B7BC1C6C56F200DE7780 /* AppDelegate.swift */,
+				BC69BAE91C90F67C00347E55 /* SignInViewController.swift */,
+				BC69BAE71C90F00900347E55 /* CreateAccountViewController.swift */,
 				BCD883631C8E9BFD000DD793 /* LeaderboardItem.swift */,
 				BC64B7EA1C6C57C900DE7780 /* BlankStaff.swift */,
 				BC64B7EE1C6C607500DE7780 /* NoteLibrary.swift */,
@@ -293,6 +301,7 @@
 			children = (
 				BCE74CEE1C7506F600FB4EC4 /* ovalNote.png */,
 				BCC8F7741C79060700EAA645 /* bass.png */,
+				BC7495C51C924B3D0003D439 /* logo-1500-darkgreen1.png */,
 				BCEAB1191C8150FF00929924 /* logo.png */,
 				BCC8F7751C79060700EAA645 /* treble.png */,
 			);
@@ -431,6 +440,7 @@
 				BCC046C81C85794500438E71 /* 44.mp3 in Resources */,
 				BCC046E21C857D0D00438E71 /* 35.mp3 in Resources */,
 				BCC046C71C85794500438E71 /* 42.mp3 in Resources */,
+				BC7495C61C924B3D0003D439 /* logo-1500-darkgreen1.png in Resources */,
 				BCC046E41C857D0D00438E71 /* 39.mp3 in Resources */,
 				BCC046CC1C85794500438E71 /* 51.mp3 in Resources */,
 				BCC8F7761C79060700EAA645 /* bass.png in Resources */,
@@ -514,6 +524,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC69BAE81C90F00900347E55 /* CreateAccountViewController.swift in Sources */,
 				BCD883641C8E9BFD000DD793 /* LeaderboardItem.swift in Sources */,
 				BCC8F7731C77C58A00EAA645 /* MainMenuViewController.swift in Sources */,
 				BCA05A8C1C83A2180018A72F /* GraphViewController.swift in Sources */,
@@ -525,6 +536,7 @@
 				BCE74CF51C75669200FB4EC4 /* LearningViewController.swift in Sources */,
 				BC64B7BF1C6C56F200DE7780 /* GameViewController.swift in Sources */,
 				BC64B7BD1C6C56F200DE7780 /* AppDelegate.swift in Sources */,
+				BC69BAEA1C90F67C00347E55 /* SignInViewController.swift in Sources */,
 				BC20A3F61C86CFAA00F72BFA /* OptionsViewController.swift in Sources */,
 				BCE74CF31C7562CD00FB4EC4 /* LearningMenuViewController.swift in Sources */,
 				BC64B7EF1C6C607500DE7780 /* NoteLibrary.swift in Sources */,

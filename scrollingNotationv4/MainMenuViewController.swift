@@ -13,12 +13,17 @@ class MainMenuViewController: UIViewController {
     @IBOutlet weak var learningMode: UIButton!
     @IBOutlet weak var gameMode: UIButton!
     @IBOutlet weak var options: UIButton!
+    var didJustLoginInPreviousScreen = false
     
-
     override func viewDidLoad() {
         
         super.viewDidLoad()
         formatButtons()
+        
+        if didJustLoginInPreviousScreen == true {
+            self.navigationController?.popToRootViewControllerAnimated(true)
+            self.didJustLoginInPreviousScreen = false
+        }
         
         // Make navigation bar transparent
         self.navigationController!.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
@@ -57,5 +62,19 @@ class MainMenuViewController: UIViewController {
         options.layer.borderWidth = 2
         options.layer.cornerRadius = 5
         
+    }
+    
+    @IBAction func gameButtonPushed(sender:UIButton) {
+        let defaults = NSUserDefaults()
+        if defaults.valueForKey("FirebaseUID") == nil{
+            //not logged in, go to login
+            print("not yet logged in")
+            let vc = storyboard?.instantiateViewControllerWithIdentifier("createAccountScene") as! CreateAccountViewController
+            self.showViewController(vc, sender: vc)
+        } else {
+            //logged in already. carry on to game.
+            let vc = storyboard?.instantiateViewControllerWithIdentifier("gameMenuScene") as! GameMenuViewController
+            self.showViewController(vc, sender: vc)
+        }
     }
 }
