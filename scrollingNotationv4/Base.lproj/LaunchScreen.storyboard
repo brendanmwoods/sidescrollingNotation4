@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -19,7 +18,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" alpha="0.14999999999999999" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo-1500-darkgreen1.png" translatesAutoresizingMaskIntoConstraints="NO" id="rze-er-dOx">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <rect key="frame" x="150" y="150" width="300" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="G3c-36-Tt2"/>
+                                    <constraint firstAttribute="height" constant="300" id="gQ1-bs-TqF"/>
+                                </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NoteBrainer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SPa-IJ-VLa">
                                 <rect key="frame" x="200" y="275" width="200" height="50"/>
@@ -30,12 +33,10 @@
                         </subviews>
                         <color key="backgroundColor" red="0.11372549019607843" green="0.21568627450980393" blue="0.34901960784313724" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="rze-er-dOx" secondAttribute="trailing" constant="-20" id="3fx-wa-jnn"/>
-                            <constraint firstItem="rze-er-dOx" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="topMargin" id="LDy-97-94Q"/>
+                            <constraint firstItem="rze-er-dOx" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="E3M-LL-Te3"/>
+                            <constraint firstItem="rze-er-dOx" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="HTy-ka-M1p"/>
                             <constraint firstItem="SPa-IJ-VLa" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="Lj8-Sw-HDk"/>
                             <constraint firstItem="SPa-IJ-VLa" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Xeu-q3-eue"/>
-                            <constraint firstItem="rze-er-dOx" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="-20" id="Yki-ag-vnC"/>
-                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="rze-er-dOx" secondAttribute="bottom" id="hhb-tg-eLi"/>
                         </constraints>
                     </view>
                 </viewController>

@@ -33,8 +33,10 @@ class GameMenuViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+
+        
         //retrieveLeaderBoardData()
-        self.title = "Game Mode"
+        //self.title = "Game Mode"
         let backItem = UIBarButtonItem(title: "Menu", style: UIBarButtonItemStyle.Plain, target: nil, action: nil)
         navigationItem.backBarButtonItem = backItem
         formatButtons()
@@ -44,6 +46,8 @@ class GameMenuViewController: UIViewController {
     override func viewDidAppear(animated: Bool) {
         appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         checkForUsername()
+        self.navigationController!.navigationBar.translucent = true
+        self.navigationController!.navigationBar.backgroundColor = UIColor.clearColor()
     }
     
     func checkForUsername() {
@@ -142,9 +146,9 @@ class GameMenuViewController: UIViewController {
         //        easyBassButton.layer.borderWidth = 2
         //        easyBassButton.layer.cornerRadius = 5
         
-        mediumButton.layer.borderColor = UIColor.blackColor().CGColor
-        mediumButton.layer.borderWidth = 2
-        mediumButton.layer.cornerRadius = 5
+        //        mediumButton.layer.borderColor = UIColor.blackColor().CGColor
+        //        mediumButton.layer.borderWidth = 2
+        //        mediumButton.layer.cornerRadius = 5
         
         //        easyTrebleScoresButton.layer.borderColor = UIColor.blackColor().CGColor
         //        easyTrebleScoresButton.layer.borderWidth = 2
@@ -154,13 +158,13 @@ class GameMenuViewController: UIViewController {
         //        easyBassScoresButton.layer.borderWidth = 2
         //        easyBassScoresButton.layer.cornerRadius = 5
         
-        mediumScoresButton.layer.borderColor = UIColor.blackColor().CGColor
-        mediumScoresButton.layer.borderWidth = 2
-        mediumScoresButton.layer.cornerRadius = 5
-        
-        fullLeaderboardButton.layer.borderColor = UIColor.blackColor().CGColor
-        fullLeaderboardButton.layer.borderWidth = 2
-        fullLeaderboardButton.layer.cornerRadius = 5
+        //        mediumScoresButton.layer.borderColor = UIColor.blackColor().CGColor
+        //        mediumScoresButton.layer.borderWidth = 2
+        //        mediumScoresButton.layer.cornerRadius = 5
+        //
+        //        fullLeaderboardButton.layer.borderColor = UIColor.blackColor().CGColor
+        //        fullLeaderboardButton.layer.borderWidth = 2
+        //        fullLeaderboardButton.layer.cornerRadius = 5
     }
     
     override func  prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
