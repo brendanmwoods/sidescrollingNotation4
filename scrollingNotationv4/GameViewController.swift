@@ -102,13 +102,14 @@ class GameViewController: UIViewController , AVAudioPlayerDelegate{
     }
     
     func postScoreToFirebase() {
+        let defaults = NSUserDefaults()
         let highScoresRef = Firebase(url: "https://glowing-torch-8861.firebaseio.com/High%20Scores")
-        
+
+        let uid = defaults.valueForKey("FirebaseUID")
         //get path to plist of all scores
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        
             let theScore = currentScore
-            let score1 = ["Score" : theScore, "Name" : appDelegate.username, "UUID" : appDelegate.UUID, "Date": NSDate().timeIntervalSince1970]
+            let score1 = ["Score" : theScore, "Name" : defaults.valueForKey("FirebaseUsername")!, "UUID" : appDelegate.UUID, "Date": NSDate().timeIntervalSince1970, "UID": uid!]
             
             highScoresRef.childByAutoId().setValue(score1, andPriority: 0 - Int(theScore))
         

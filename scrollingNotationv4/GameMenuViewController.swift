@@ -33,10 +33,6 @@ class GameMenuViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-
-        
-        //retrieveLeaderBoardData()
-        //self.title = "Game Mode"
         let backItem = UIBarButtonItem(title: "Menu", style: UIBarButtonItemStyle.Plain, target: nil, action: nil)
         navigationItem.backBarButtonItem = backItem
         formatButtons()
@@ -45,92 +41,94 @@ class GameMenuViewController: UIViewController {
     
     override func viewDidAppear(animated: Bool) {
         appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        checkForUsername()
+        
         self.navigationController!.navigationBar.translucent = true
         self.navigationController!.navigationBar.backgroundColor = UIColor.clearColor()
     }
+//    
+//    func checkForUsername() {
+//        //if a username hasn't been set, then ask for one
+//        if appDelegate.username == "" {
+//            
+//            //create alert
+//            let alert = UIAlertController(title: "Set Username", message: "Please set a unique Username. This can only be set once, and cannot be edited. Must be 3 - 12 characters.", preferredStyle: UIAlertControllerStyle.Alert)
+//            alert.addTextFieldWithConfigurationHandler({ (textField) -> Void in
+//                textField.text = ""
+//            })
+//            //submit the username attempt
+//            alert.addAction(UIAlertAction(title: "Submit", style: .Default, handler: { (action) ->
+//                Void in
+//                //create a refence to the url of the submitted username
+//                let textField = alert.textFields![0].text!
+//                let namesRef = self.ref.childByAppendingPath("/usernames/\(textField)")
+//                
+//                //check if the string is not blank characters
+//                if textField.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet()) != "" && textField.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet()).characters.count > 2 {
+//                    
+//                    //check if the username exists
+//                    namesRef.observeSingleEventOfType(.Value, withBlock: {
+//                        snap in
+//                        if snap.value is NSNull {
+//                            let userNameAndUUID = ["Username" : textField, "UUID" : self.appDelegate.UUID]
+//                            namesRef.setValue(userNameAndUUID)
+//                            self.appDelegate.username = textField
+//                            let userDefaults = NSUserDefaults.standardUserDefaults()
+//                            userDefaults.setObject(textField, forKey: "Username")
+//                        }else {
+//                            self.usernameTakenRetry()
+//                        }
+//                    })
+//                }else {
+//                    self.usernameTakenRetry()
+//                }
+//            }))
+//            self.presentViewController(alert, animated: true, completion: nil)
+//        }
+//    }
+//   
     
-    func checkForUsername() {
-        //if a username hasn't been set, then ask for one
-        if appDelegate.username == "" {
-            
-            //create alert
-            let alert = UIAlertController(title: "Set Username", message: "Please set a unique Username. This can only be set once, and cannot be edited. Must be 3 - 12 characters.", preferredStyle: UIAlertControllerStyle.Alert)
-            alert.addTextFieldWithConfigurationHandler({ (textField) -> Void in
-                textField.text = ""
-            })
-            //submit the username attempt
-            alert.addAction(UIAlertAction(title: "Submit", style: .Default, handler: { (action) ->
-                Void in
-                //create a refence to the url of the submitted username
-                let textField = alert.textFields![0].text!
-                let namesRef = self.ref.childByAppendingPath("/usernames/\(textField)")
-                
-                //check if the string is not blank characters
-                if textField.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet()) != "" && textField.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet()).characters.count > 2 {
-                    
-                    //check if the username exists
-                    namesRef.observeSingleEventOfType(.Value, withBlock: {
-                        snap in
-                        if snap.value is NSNull {
-                            let userNameAndUUID = ["Username" : textField, "UUID" : self.appDelegate.UUID]
-                            namesRef.setValue(userNameAndUUID)
-                            self.appDelegate.username = textField
-                            let userDefaults = NSUserDefaults.standardUserDefaults()
-                            userDefaults.setObject(textField, forKey: "Username")
-                        }else {
-                            self.usernameTakenRetry()
-                        }
-                    })
-                }else {
-                    self.usernameTakenRetry()
-                }
-            }))
-            self.presentViewController(alert, animated: true, completion: nil)
-        }
-    }
-    
-    func usernameTakenRetry(){
-        
-        //loop through this until a valid name is entered
-        print(appDelegate.username)
-        if appDelegate.username == "" {
-            //create alert
-            let alert = UIAlertController(title: "Set Username", message: "Username is already taken, or is invalid. Please try again", preferredStyle: UIAlertControllerStyle.Alert)
-            alert.addTextFieldWithConfigurationHandler({ (textField) -> Void in
-                textField.text = ""
-            })
-            //submit the username attempt
-            alert.addAction(UIAlertAction(title: "Submit", style: .Default, handler: { (action) ->
-                Void in
-                //create a refence to the url of the submitted username
-                let textField = alert.textFields![0].text!
-                let namesRef = self.ref.childByAppendingPath("/usernames/\(textField)")
-                
-                //check if the name is a non blank string
-                if textField.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet()) != "" {
-                    
-                    //check if the username exists
-                    namesRef.observeSingleEventOfType(.Value, withBlock: {
-                        snap in
-                        if snap.value is NSNull {
-                            let userNameAndUUID = ["Username" : textField, "UUID" : self.appDelegate.UUID]
-                            namesRef.setValue(userNameAndUUID)
-                            self.appDelegate.username = textField
-                            let userDefaults = NSUserDefaults.standardUserDefaults()
-                            userDefaults.setObject(textField, forKey: "Username")
-                        }else {
-                            self.usernameTakenRetry()
-                        }
-                    })
-                }else {
-                    self.usernameTakenRetry()
-                }
-            }))
-            self.presentViewController(alert, animated: true, completion: nil)
-        }
-    }
-    
+//    
+//    func usernameTakenRetry(){
+//        
+//        //loop through this until a valid name is entered
+//        print(appDelegate.username)
+//        if appDelegate.username == "" {
+//            //create alert
+//            let alert = UIAlertController(title: "Set Username", message: "Username is already taken, or is invalid. Please try again", preferredStyle: UIAlertControllerStyle.Alert)
+//            alert.addTextFieldWithConfigurationHandler({ (textField) -> Void in
+//                textField.text = ""
+//            })
+//            //submit the username attempt
+//            alert.addAction(UIAlertAction(title: "Submit", style: .Default, handler: { (action) ->
+//                Void in
+//                //create a refence to the url of the submitted username
+//                let textField = alert.textFields![0].text!
+//                let namesRef = self.ref.childByAppendingPath("/usernames/\(textField)")
+//                
+//                //check if the name is a non blank string
+//                if textField.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet()) != "" {
+//                    
+//                    //check if the username exists
+//                    namesRef.observeSingleEventOfType(.Value, withBlock: {
+//                        snap in
+//                        if snap.value is NSNull {
+//                            let userNameAndUUID = ["Username" : textField, "UUID" : self.appDelegate.UUID]
+//                            namesRef.setValue(userNameAndUUID)
+//                            self.appDelegate.username = textField
+//                            let userDefaults = NSUserDefaults.standardUserDefaults()
+//                            userDefaults.setObject(textField, forKey: "Username")
+//                        }else {
+//                            self.usernameTakenRetry()
+//                        }
+//                    })
+//                }else {
+//                    self.usernameTakenRetry()
+//                }
+//            }))
+//            self.presentViewController(alert, animated: true, completion: nil)
+//        }
+//    }
+//    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

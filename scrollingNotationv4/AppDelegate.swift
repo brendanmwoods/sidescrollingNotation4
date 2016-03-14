@@ -20,6 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var easyBassPlistPathInDocument:String = String()
     var mediumPlistPathInDocument:String = String()
     var UUID = String()
+    var UID = String()
     var window: UIWindow?
     var username = String()
     
