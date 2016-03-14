@@ -48,7 +48,7 @@ class GameViewController: UIViewController , AVAudioPlayerDelegate{
     var scoresNeedResetting = false
     var difficulty = ""
     var notePlayer: AVAudioPlayer! = nil
-    var highScore = 0
+    // var highScore = 0
     var appDelegate = AppDelegate()
     
     
@@ -104,20 +104,17 @@ class GameViewController: UIViewController , AVAudioPlayerDelegate{
     func postScoreToFirebase() {
         let defaults = NSUserDefaults()
         let highScoresRef = Firebase(url: "https://glowing-torch-8861.firebaseio.com/High%20Scores")
-
+        
         let uid = defaults.valueForKey("FirebaseUID")
         //get path to plist of all scores
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-            let theScore = currentScore
-            let score1 = ["Score" : theScore, "Name" : defaults.valueForKey("FirebaseUsername")!, "UUID" : appDelegate.UUID, "Date": NSDate().timeIntervalSince1970, "UID": uid!]
-            
-            highScoresRef.childByAutoId().setValue(score1, andPriority: 0 - Int(theScore))
+        let theScore = currentScore
+        let score1 = ["Score" : theScore, "Name" : defaults.valueForKey("FirebaseUsername")!, "UUID" : appDelegate.UUID, "Date": NSDate().timeIntervalSince1970, "UID": uid!]
         
-        print("posted  single score")
+        highScoresRef.childByAutoId().setValue(score1, andPriority: 0 - Int(theScore))
     }
     
     func gameLoop() {
-        getHighScore()
         setHighScore()
         
         if scoresNeedResetting
@@ -133,7 +130,8 @@ class GameViewController: UIViewController , AVAudioPlayerDelegate{
     }
     
     func setHighScore() {
-        highScoreLabel!.text = "High Score: \(highScore)"
+        appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        highScoreLabel!.text = "High Score: \(appDelegate.highScore)"
     }
     
     func formatButtonShapes() {
@@ -208,11 +206,14 @@ class GameViewController: UIViewController , AVAudioPlayerDelegate{
     
     
     func gameOverAlert(){
+        appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        
         saveScoreToScoresPlist()
         postScoreToFirebase()
         var alert = UIAlertController()
-        if currentScore > highScore {
+        if currentScore > appDelegate.highScore {
             alert = UIAlertController(title: "Game Over", message: "NEW HIGH SCORE! \n The note was :  \(currentNote.noteName.uppercaseString) \n You scored : \(currentScore)", preferredStyle: .Alert)
+            appDelegate.highScore = currentScore
         }else {
             alert = UIAlertController(title: "Game Over", message: "The note was :  \(currentNote.noteName.uppercaseString) \n You scored : \(currentScore)", preferredStyle: .Alert)
         }
@@ -304,63 +305,6 @@ class GameViewController: UIViewController , AVAudioPlayerDelegate{
     }
     
     
-    func getHighScore() {
-        if(difficulty == "easyTreble") {
-            
-            //get path to plist of all scores
-            let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-            plistPath = appDelegate.easyTreblePlistPathInDocument
-            
-            // Extract the content of the file as NSData
-            let data:NSData =  NSFileManager.defaultManager().contentsAtPath(plistPath)!
-            do{
-                scoresArray = try NSPropertyListSerialization.propertyListWithData(data, options: NSPropertyListMutabilityOptions.MutableContainersAndLeaves, format: nil) as! NSMutableArray
-                
-            }catch{
-                print("Error occured while reading from the plist file")
-            }
-            
-        } else if(difficulty == "easyBass") {
-            
-            //get path to plist of all scores
-            let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-            plistPath = appDelegate.easyBassPlistPathInDocument
-            
-            // Extract the content of the file as NSData
-            let data:NSData =  NSFileManager.defaultManager().contentsAtPath(plistPath)!
-            do{
-                scoresArray = try NSPropertyListSerialization.propertyListWithData(data, options: NSPropertyListMutabilityOptions.MutableContainersAndLeaves, format: nil) as! NSMutableArray
-                
-            }catch{
-                print("Error occured while reading from the plist file")
-            }
-        }
-            
-            
-        else if(difficulty == "medium") {
-            
-            //get path to plist of all scores
-            let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-            plistPath = appDelegate.mediumPlistPathInDocument
-            
-            // Extract the content of the file as NSData
-            let data:NSData =  NSFileManager.defaultManager().contentsAtPath(plistPath)!
-            do{
-                scoresArray = try NSPropertyListSerialization.propertyListWithData(data, options: NSPropertyListMutabilityOptions.MutableContainersAndLeaves, format: nil) as! NSMutableArray
-                
-            }catch{
-                print("Error occured while reading from the plist file")
-            }
-            
-        }
-        
-        highScore = 0
-        for score in scoresArray as NSArray as! [String] {
-            if Int(score) > Int(highScore) {
-                highScore = Int(score)!
-            }
-        }
-    }
 }
 
 

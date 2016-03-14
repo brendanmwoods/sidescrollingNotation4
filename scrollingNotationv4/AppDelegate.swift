@@ -6,7 +6,10 @@
 //  Copyright © 2016 brendan woods. All rights reserved.
 //
 
+
 import UIKit
+import Firebase
+//import SwiftyJSON
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -23,13 +26,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var UID = String()
     var window: UIWindow?
     var username = String()
+    var allPlayerScores = [Int]()
+    var highScore = 0
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         preparePlistsForUse()
         setUUID()
         setUsername()
+        getPlayerScores()
         return true
+    }
+    
+    func getPlayerScores() {
+        let defaults = NSUserDefaults()
+        if defaults.valueForKey("FirebaseUID") != nil {
+            let scoresRef = Firebase(url: "https://glowing-torch-8861.firebaseio.com/High%20Scores")
+            scoresRef.queryOrderedByChild("UID").queryEqualToValue(defaults.valueForKey("FirebaseUID")).observeEventType(.ChildAdded, withBlock: {
+                snapshot in
+                let score:Int = snapshot.value["Score"] as! Int
+                self.allPlayerScores.append(score)
+                if score > self.highScore {
+                    self.highScore = score
+                }
+            })
+        }
     }
     
     func setUUID() {

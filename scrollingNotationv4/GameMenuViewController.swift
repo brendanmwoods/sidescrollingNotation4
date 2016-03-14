@@ -37,6 +37,8 @@ class GameMenuViewController: UIViewController {
         navigationItem.backBarButtonItem = backItem
         formatButtons()
         makeLeaderboard()
+        appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        print(appDelegate.highScore)
     }
     
     override func viewDidAppear(animated: Bool) {
