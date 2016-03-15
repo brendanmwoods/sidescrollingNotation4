@@ -31,7 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
-        preparePlistsForUse()
+        //preparePlistsForUse()
         setUUID()
         setUsername()
         getPlayerScores()
@@ -80,52 +80,52 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         userDefaults.removeObjectForKey("Username")
     }
     
-    func preparePlistsForUse(){
-        // Get a path to the documents directory
-        let rootPath = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, .UserDomainMask, true)[0]
-        
-        // make a path to the docs folder for the scores.plist
-        // Check if a file already exists at that docs path
-        // if it doesnot, get a path to the main bundle version
-        easyTreblePlistPathInDocument = rootPath.stringByAppendingString("/easyTrebleScores.plist")
-        
-        if !NSFileManager.defaultManager().fileExistsAtPath(easyTreblePlistPathInDocument){
-            let plistPathInBundle = NSBundle.mainBundle().pathForResource("easyTrebleScores", ofType: "plist") as String!
-            // if the docs path(file) doesn't exist, copy the item to documents path
-            // from the main bundle
-            do {
-                try NSFileManager.defaultManager().copyItemAtPath(plistPathInBundle, toPath: easyTreblePlistPathInDocument)
-            }catch{
-                print("Error occurred while copying file to document \(error)")
-            }
-        }
-        
-        easyBassPlistPathInDocument = rootPath.stringByAppendingString("/easyBassScores.plist")
-        
-        if !NSFileManager.defaultManager().fileExistsAtPath(easyBassPlistPathInDocument){
-            let plistPathInBundle = NSBundle.mainBundle().pathForResource("easyBassScores", ofType: "plist") as String!
-            // if the docs path(file) doesn't exist, copy the item to documents path
-            // from the main bundle
-            do {
-                try NSFileManager.defaultManager().copyItemAtPath(plistPathInBundle, toPath: easyBassPlistPathInDocument)
-            }catch{
-                print("Error occurred while copying file to document \(error)")
-            }
-        }
-        
-        mediumPlistPathInDocument = rootPath.stringByAppendingString("/mediumScores.plist")
-        
-        if !NSFileManager.defaultManager().fileExistsAtPath(mediumPlistPathInDocument){
-            let plistPathInBundle = NSBundle.mainBundle().pathForResource("mediumScores", ofType: "plist") as String!
-            // if the docs path(file) doesn't exist, copy the item to documents path
-            // from the main bundle
-            do {
-                try NSFileManager.defaultManager().copyItemAtPath(plistPathInBundle, toPath: mediumPlistPathInDocument)
-            }catch{
-                print("Error occurred while copying file to document \(error)")
-            }
-        }
-    }
+//    func preparePlistsForUse(){
+//        // Get a path to the documents directory
+//        let rootPath = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, .UserDomainMask, true)[0]
+//        
+//        // make a path to the docs folder for the scores.plist
+//        // Check if a file already exists at that docs path
+//        // if it doesnot, get a path to the main bundle version
+//        easyTreblePlistPathInDocument = rootPath.stringByAppendingString("/easyTrebleScores.plist")
+//        
+//        if !NSFileManager.defaultManager().fileExistsAtPath(easyTreblePlistPathInDocument){
+//            let plistPathInBundle = NSBundle.mainBundle().pathForResource("easyTrebleScores", ofType: "plist") as String!
+//            // if the docs path(file) doesn't exist, copy the item to documents path
+//            // from the main bundle
+//            do {
+//                try NSFileManager.defaultManager().copyItemAtPath(plistPathInBundle, toPath: easyTreblePlistPathInDocument)
+//            }catch{
+//                print("Error occurred while copying file to document \(error)")
+//            }
+//        }
+//        
+//        easyBassPlistPathInDocument = rootPath.stringByAppendingString("/easyBassScores.plist")
+//        
+//        if !NSFileManager.defaultManager().fileExistsAtPath(easyBassPlistPathInDocument){
+//            let plistPathInBundle = NSBundle.mainBundle().pathForResource("easyBassScores", ofType: "plist") as String!
+//            // if the docs path(file) doesn't exist, copy the item to documents path
+//            // from the main bundle
+//            do {
+//                try NSFileManager.defaultManager().copyItemAtPath(plistPathInBundle, toPath: easyBassPlistPathInDocument)
+//            }catch{
+//                print("Error occurred while copying file to document \(error)")
+//            }
+//        }
+//        
+//        mediumPlistPathInDocument = rootPath.stringByAppendingString("/mediumScores.plist")
+//        
+//        if !NSFileManager.defaultManager().fileExistsAtPath(mediumPlistPathInDocument){
+//            let plistPathInBundle = NSBundle.mainBundle().pathForResource("mediumScores", ofType: "plist") as String!
+//            // if the docs path(file) doesn't exist, copy the item to documents path
+//            // from the main bundle
+//            do {
+//                try NSFileManager.defaultManager().copyItemAtPath(plistPathInBundle, toPath: mediumPlistPathInDocument)
+//            }catch{
+//                print("Error occurred while copying file to document \(error)")
+//            }
+//        }
+//    }
     
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -143,7 +143,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func applicationDidBecomeActive(application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-        self.preparePlistsForUse()
+        //self.preparePlistsForUse()
     }
     
     func applicationWillTerminate(application: UIApplication) {

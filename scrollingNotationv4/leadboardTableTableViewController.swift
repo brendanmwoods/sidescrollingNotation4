@@ -41,6 +41,10 @@ class leadboardTableTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
+        
+        if leaderboardSize > leaderboardItems.count {
+            return leaderboardItems.count
+        }
         return leaderboardSize
     }
     

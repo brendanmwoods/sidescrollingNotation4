@@ -72,6 +72,7 @@ class CreateAccountViewController: UIViewController {
                             let vc = self.storyboard?.instantiateViewControllerWithIdentifier("signInScene") as! SignInViewController
                             vc.optionalPrefilledEmail = self.emailTextField.text!
                             vc.optionalPrefilledPassword = self.passwordTextField.text!
+                            vc.optionalprefilledAccountStatus = "Success. Now Login"
                             self.showViewController(vc, sender: vc)
                         }
                     })

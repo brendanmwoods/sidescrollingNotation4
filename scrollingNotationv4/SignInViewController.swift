@@ -16,9 +16,11 @@ class SignInViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var signInButton: UIButton!
     @IBOutlet weak var accountStatusLabel: UILabel!
+    @IBOutlet weak var errorLabel:UILabel!
     
     var optionalPrefilledEmail: String = ""
     var optionalPrefilledPassword: String = ""
+    var optionalprefilledAccountStatus: String = ""
     var ref = Firebase(url:"https://glowing-torch-8861.firebaseio.com/")
     
     override func viewDidLoad() {
@@ -30,7 +32,10 @@ class SignInViewController: UIViewController {
         view.addGestureRecognizer(tap)
         emailTextField.text = optionalPrefilledEmail
         passwordTextField.text = optionalPrefilledPassword
-        
+        if optionalprefilledAccountStatus != "" {
+            accountStatusLabel.hidden = false
+            accountStatusLabel.text = optionalprefilledAccountStatus
+        }
     }
     
     //Calls this function when the tap is recognized.
@@ -49,8 +54,8 @@ class SignInViewController: UIViewController {
 
         ref.authUser(emailTextField.text, password: passwordTextField.text, withCompletionBlock: {error, authData in
             if error != nil {
-                self.accountStatusLabel.hidden = false
-                self.accountStatusLabel.text = error.description
+                self.errorLabel.hidden = false
+                self.errorLabel.text = "Error signing in. Please confirm valid details. Error code:\(error.code)"
                 
             }else {
                 let uid = authData.uid

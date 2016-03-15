@@ -208,7 +208,6 @@ class GameViewController: UIViewController , AVAudioPlayerDelegate{
     func gameOverAlert(){
         appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         
-        saveScoreToScoresPlist()
         postScoreToFirebase()
         var alert = UIAlertController()
         if currentScore > appDelegate.highScore {
@@ -231,58 +230,58 @@ class GameViewController: UIViewController , AVAudioPlayerDelegate{
     }
     
     
-    
-    func saveScoreToScoresPlist() {
-        if(difficulty == "easyTreble") {
-            let pathForThePlistFile = appDelegate.easyTreblePlistPathInDocument
-            
-            let data:NSData =  NSFileManager.defaultManager().contentsAtPath(pathForThePlistFile)!
-            
-            do{
-                let notesArray = try NSPropertyListSerialization.propertyListWithData(data, options: NSPropertyListMutabilityOptions.MutableContainersAndLeaves, format: nil) as! NSMutableArray
-                
-                notesArray.addObject(String(self.currentScore))
-                
-                notesArray.writeToFile(pathForThePlistFile, atomically: true)
-            }catch{
-                print("An error occurred while writing to plist")
-            }
-        }
-        
-        if(difficulty == "easyBass") {
-            let pathForThePlistFile = appDelegate.easyBassPlistPathInDocument
-            
-            let data:NSData =  NSFileManager.defaultManager().contentsAtPath(pathForThePlistFile)!
-            
-            do{
-                let notesArray = try NSPropertyListSerialization.propertyListWithData(data, options: NSPropertyListMutabilityOptions.MutableContainersAndLeaves, format: nil) as! NSMutableArray
-                
-                notesArray.addObject(String(self.currentScore))
-                
-                notesArray.writeToFile(pathForThePlistFile, atomically: true)
-            }catch{
-                print("An error occurred while writing to plist")
-            }
-        }
-        
-        
-        if(difficulty == "medium") {
-            let pathForThePlistFile = appDelegate.mediumPlistPathInDocument
-            
-            let data:NSData =  NSFileManager.defaultManager().contentsAtPath(pathForThePlistFile)!
-            
-            do{
-                
-                let notesArray = try NSPropertyListSerialization.propertyListWithData(data, options: NSPropertyListMutabilityOptions.MutableContainersAndLeaves, format: nil) as! NSMutableArray
-                
-                notesArray.addObject(String(self.currentScore))
-                
-                notesArray.writeToFile(pathForThePlistFile, atomically: true)
-            }catch{
-                print("An error occurred while writing to plist")
-            }
-        }
-    }
+//    
+//    func saveScoreToScoresPlist() {
+//        if(difficulty == "easyTreble") {
+//            let pathForThePlistFile = appDelegate.easyTreblePlistPathInDocument
+//            
+//            let data:NSData =  NSFileManager.defaultManager().contentsAtPath(pathForThePlistFile)!
+//            
+//            do{
+//                let notesArray = try NSPropertyListSerialization.propertyListWithData(data, options: NSPropertyListMutabilityOptions.MutableContainersAndLeaves, format: nil) as! NSMutableArray
+//                
+//                notesArray.addObject(String(self.currentScore))
+//                
+//                notesArray.writeToFile(pathForThePlistFile, atomically: true)
+//            }catch{
+//                print("An error occurred while writing to plist")
+//            }
+//        }
+//        
+//        if(difficulty == "easyBass") {
+//            let pathForThePlistFile = appDelegate.easyBassPlistPathInDocument
+//            
+//            let data:NSData =  NSFileManager.defaultManager().contentsAtPath(pathForThePlistFile)!
+//            
+//            do{
+//                let notesArray = try NSPropertyListSerialization.propertyListWithData(data, options: NSPropertyListMutabilityOptions.MutableContainersAndLeaves, format: nil) as! NSMutableArray
+//                
+//                notesArray.addObject(String(self.currentScore))
+//                
+//                notesArray.writeToFile(pathForThePlistFile, atomically: true)
+//            }catch{
+//                print("An error occurred while writing to plist")
+//            }
+//        }
+//        
+//        
+//        if(difficulty == "medium") {
+//            let pathForThePlistFile = appDelegate.mediumPlistPathInDocument
+//            
+//            let data:NSData =  NSFileManager.defaultManager().contentsAtPath(pathForThePlistFile)!
+//            
+//            do{
+//                
+//                let notesArray = try NSPropertyListSerialization.propertyListWithData(data, options: NSPropertyListMutabilityOptions.MutableContainersAndLeaves, format: nil) as! NSMutableArray
+//                
+//                notesArray.addObject(String(self.currentScore))
+//                
+//                notesArray.writeToFile(pathForThePlistFile, atomically: true)
+//            }catch{
+//                print("An error occurred while writing to plist")
+//            }
+//        }
+//    }
     
     
     @IBAction func noteButtonPushed(sender:UIButton) {
@@ -303,7 +302,6 @@ class GameViewController: UIViewController , AVAudioPlayerDelegate{
             })
         }
     }
-    
     
 }
 

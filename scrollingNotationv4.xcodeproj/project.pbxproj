@@ -18,6 +18,7 @@
 		BC64B7DD1C6C56F300DE7780 /* scrollingNotationv4UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC64B7DC1C6C56F300DE7780 /* scrollingNotationv4UITests.swift */; };
 		BC64B7EB1C6C57C900DE7780 /* BlankStaff.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC64B7EA1C6C57C900DE7780 /* BlankStaff.swift */; };
 		BC64B7EF1C6C607500DE7780 /* NoteLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC64B7EE1C6C607500DE7780 /* NoteLibrary.swift */; };
+		BC64D3C01C9773210001F676 /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC64D3BF1C9773210001F676 /* StatsViewController.swift */; };
 		BC69BAE81C90F00900347E55 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC69BAE71C90F00900347E55 /* CreateAccountViewController.swift */; };
 		BC69BAEA1C90F67C00347E55 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC69BAE91C90F67C00347E55 /* SignInViewController.swift */; };
 		BC7495C61C924B3D0003D439 /* logo-1500-darkgreen1.png in Resources */ = {isa = PBXBuildFile; fileRef = BC7495C51C924B3D0003D439 /* logo-1500-darkgreen1.png */; };
@@ -100,6 +101,7 @@
 		BC64B7DE1C6C56F300DE7780 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BC64B7EA1C6C57C900DE7780 /* BlankStaff.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlankStaff.swift; sourceTree = "<group>"; };
 		BC64B7EE1C6C607500DE7780 /* NoteLibrary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteLibrary.swift; sourceTree = "<group>"; };
+		BC64D3BF1C9773210001F676 /* StatsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatsViewController.swift; sourceTree = "<group>"; };
 		BC69BAE71C90F00900347E55 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		BC69BAE91C90F67C00347E55 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		BC7495C51C924B3D0003D439 /* logo-1500-darkgreen1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo-1500-darkgreen1.png"; sourceTree = "<group>"; };
@@ -234,6 +236,7 @@
 				BC64B7C51C6C56F200DE7780 /* LaunchScreen.storyboard */,
 				BCC8F7721C77C58A00EAA645 /* MainMenuViewController.swift */,
 				BCE74D721C76F71300FB4EC4 /* ScoresTableViewController.swift */,
+				BC64D3BF1C9773210001F676 /* StatsViewController.swift */,
 				BCE74CF01C75156100FB4EC4 /* GameMenuViewController.swift */,
 				BC64B7BE1C6C56F200DE7780 /* GameViewController.swift */,
 				BCE74CF21C7562CD00FB4EC4 /* LearningMenuViewController.swift */,
@@ -535,6 +538,7 @@
 				BCE74CF11C75156100FB4EC4 /* GameMenuViewController.swift in Sources */,
 				BCE74CF51C75669200FB4EC4 /* LearningViewController.swift in Sources */,
 				BC64B7BF1C6C56F200DE7780 /* GameViewController.swift in Sources */,
+				BC64D3C01C9773210001F676 /* StatsViewController.swift in Sources */,
 				BC64B7BD1C6C56F200DE7780 /* AppDelegate.swift in Sources */,
 				BC69BAEA1C90F67C00347E55 /* SignInViewController.swift in Sources */,
 				BC7E7AD61C96297700042F7F /* GraphViewController.swift in Sources */,
