@@ -60,7 +60,6 @@
 		BCE74CF11C75156100FB4EC4 /* GameMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE74CF01C75156100FB4EC4 /* GameMenuViewController.swift */; };
 		BCE74CF31C7562CD00FB4EC4 /* LearningMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE74CF21C7562CD00FB4EC4 /* LearningMenuViewController.swift */; };
 		BCE74CF51C75669200FB4EC4 /* LearningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE74CF41C75669200FB4EC4 /* LearningViewController.swift */; };
-		BCE74D731C76F71300FB4EC4 /* ScoresTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE74D721C76F71300FB4EC4 /* ScoresTableViewController.swift */; };
 		BCE74D771C76FE2500FB4EC4 /* allScores.plist in Resources */ = {isa = PBXBuildFile; fileRef = BCE74D761C76FE2500FB4EC4 /* allScores.plist */; };
 		BCEAB11A1C8150FF00929924 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = BCEAB1191C8150FF00929924 /* logo.png */; };
 /* End PBXBuildFile section */
@@ -143,7 +142,6 @@
 		BCE74CF01C75156100FB4EC4 /* GameMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameMenuViewController.swift; sourceTree = "<group>"; };
 		BCE74CF21C7562CD00FB4EC4 /* LearningMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LearningMenuViewController.swift; sourceTree = "<group>"; };
 		BCE74CF41C75669200FB4EC4 /* LearningViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LearningViewController.swift; sourceTree = "<group>"; };
-		BCE74D721C76F71300FB4EC4 /* ScoresTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoresTableViewController.swift; sourceTree = "<group>"; };
 		BCE74D761C76FE2500FB4EC4 /* allScores.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = allScores.plist; sourceTree = "<group>"; };
 		BCEAB1191C8150FF00929924 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		FF6CD2A6DD5CF5657E3991B3 /* Pods-scrollingNotationv4.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-scrollingNotationv4.release.xcconfig"; path = "Pods/Target Support Files/Pods-scrollingNotationv4/Pods-scrollingNotationv4.release.xcconfig"; sourceTree = "<group>"; };
@@ -235,7 +233,6 @@
 				BC64B7C31C6C56F200DE7780 /* Assets.xcassets */,
 				BC64B7C51C6C56F200DE7780 /* LaunchScreen.storyboard */,
 				BCC8F7721C77C58A00EAA645 /* MainMenuViewController.swift */,
-				BCE74D721C76F71300FB4EC4 /* ScoresTableViewController.swift */,
 				BC64D3BF1C9773210001F676 /* StatsViewController.swift */,
 				BCE74CF01C75156100FB4EC4 /* GameMenuViewController.swift */,
 				BC64B7BE1C6C56F200DE7780 /* GameViewController.swift */,
@@ -532,7 +529,6 @@
 				BC7E7AD41C96291B00042F7F /* LineChart.swift in Sources */,
 				BC0928671C8F85F80096140F /* leadboardTableTableViewController.swift in Sources */,
 				BC7E7AD11C9628EF00042F7F /* LeaderboardItem.swift in Sources */,
-				BCE74D731C76F71300FB4EC4 /* ScoresTableViewController.swift in Sources */,
 				BC7E7AD21C9628EF00042F7F /* OptionsViewController.swift in Sources */,
 				BC64B7EB1C6C57C900DE7780 /* BlankStaff.swift in Sources */,
 				BCE74CF11C75156100FB4EC4 /* GameMenuViewController.swift in Sources */,

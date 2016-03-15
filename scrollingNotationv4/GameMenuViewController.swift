@@ -12,11 +12,8 @@ import SwiftyJSON
 
 class GameMenuViewController: UIViewController {
     
-    @IBOutlet weak var easyTrebleButton:           UIButton!
-    @IBOutlet weak var easyBassButton:             UIButton!
+
     @IBOutlet weak var mediumButton:               UIButton!
-    @IBOutlet weak var easyTrebleScoresButton:     UIButton!
-    @IBOutlet weak var easyBassScoresButton:       UIButton!
     @IBOutlet weak var mediumScoresButton:         UIButton!
     @IBOutlet weak var fullLeaderboardButton:      UIButton!
     @IBOutlet weak var leaderboardScore1:          UILabel!
@@ -168,30 +165,11 @@ class GameMenuViewController: UIViewController {
     }
     
     override func  prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-//        if (segue.identifier == "easyTrebleSegue") {
-//            let destinationVC = segue.destinationViewController as! GameViewController
-//            destinationVC.difficulty = "easyTreble"
-//        }
-//        if(segue.identifier == "easyBassSegue") {
-//            let destinationVC = segue.destinationViewController as! GameViewController
-//            destinationVC.difficulty = "easyBass"
-//        }
+
         if (segue.identifier == "mediumSegue") {
             let destinationVC = segue.destinationViewController as! GameViewController
             destinationVC.difficulty = "medium"
           }
-//        if(segue.identifier == "easyTrebleScoresSegue") {
-//            let destinationVC = segue.destinationViewController as! ScoresTableViewController
-//            destinationVC.difficulty = "easyTreble"
-//        }
-//        if(segue.identifier == "easyBassScoresSegue") {
-//            let destinationVC = segue.destinationViewController as! ScoresTableViewController
-//            destinationVC.difficulty = "easyBass"
-//        }
-        if(segue.identifier == "mediumScoresSegue") {
-            let destinationVC = segue.destinationViewController as! ScoresTableViewController
-            destinationVC.difficulty = "medium"
-        }
     }
     
     func populateLeaderBoard() {

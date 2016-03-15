@@ -68,7 +68,19 @@ class SignInViewController: UIViewController {
                     .observeEventType(.ChildAdded, withBlock: { snapshot in
                         defaults.setValue(snapshot.key!, forKey: "FirebaseUsername")
                     })
-               
+                
+                let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+                
+                let scoresRef = Firebase(url: "https://glowing-torch-8861.firebaseio.com/High%20Scores")
+                scoresRef.queryOrderedByChild("UID").queryEqualToValue(defaults.valueForKey("FirebaseUID")).observeEventType(.ChildAdded, withBlock: {
+                    snapshot in
+                    let score:Int = snapshot.value["Score"] as! Int
+                    appDelegate.allPlayerScores.append(score)
+                    if score > appDelegate.highScore {
+                        appDelegate.highScore = score
+                    }
+                })
+                
                 let vc = self.storyboard?.instantiateViewControllerWithIdentifier("mainMenuScene") as! MainMenuViewController
                 vc.didJustLoginInPreviousScreen = true
                 self.showViewController(vc, sender: vc)

@@ -18,6 +18,14 @@ class StatsViewController: UIViewController {
         super.viewDidLoad()
         highScoreLabel.text = "\(appDelegate.highScore)"
         gamesPlayedLabel.text = "\(appDelegate.allPlayerScores.count)"
+        
+        var scoreTotal = 0
+        for score in appDelegate.allPlayerScores {
+            scoreTotal += score
+        }
+        let averageScore = Double(scoreTotal) / Double(appDelegate.allPlayerScores.count)
+        let roundedAverageScore = Double(round(100*averageScore)/100)
+        averageScoreLabel.text = String(roundedAverageScore)
     }
 
     override func didReceiveMemoryWarning() {
