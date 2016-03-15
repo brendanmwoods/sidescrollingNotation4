@@ -38,7 +38,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="lYN-wC-SHI">
-                                <rect key="frame" x="20" y="105" width="560" height="218"/>
+                                <rect key="frame" x="20" y="65" width="560" height="218"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="PqP-1R-kbQ">
                                         <rect key="frame" x="218" y="0.0" width="125" height="62"/>
@@ -94,7 +94,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hdA-1q-1yD">
-                                <rect key="frame" x="195" y="352" width="210" height="70"/>
+                                <rect key="frame" x="195" y="312" width="210" height="70"/>
                                 <color key="backgroundColor" red="0.0" green="0.54117647059999996" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="210" id="6jM-bV-qHk"/>
@@ -111,7 +111,7 @@
                         </subviews>
                         <color key="backgroundColor" red="0.11351610099999999" green="0.21346665400000001" blue="0.34619633840000003" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="lYN-wC-SHI" firstAttribute="top" secondItem="WtH-Le-3Pc" secondAttribute="bottom" constant="85" id="96C-Gr-DwY"/>
+                            <constraint firstItem="lYN-wC-SHI" firstAttribute="top" secondItem="WtH-Le-3Pc" secondAttribute="bottom" constant="45" id="96C-Gr-DwY"/>
                             <constraint firstItem="hdA-1q-1yD" firstAttribute="top" secondItem="lYN-wC-SHI" secondAttribute="bottom" constant="29" id="Vzu-uU-a9L"/>
                             <constraint firstItem="lYN-wC-SHI" firstAttribute="leading" secondItem="gHl-0b-4cw" secondAttribute="leadingMargin" id="cy3-J1-0zm"/>
                             <constraint firstAttribute="trailingMargin" secondItem="lYN-wC-SHI" secondAttribute="trailing" id="q2o-3H-4qH"/>

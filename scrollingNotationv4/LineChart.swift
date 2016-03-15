@@ -80,7 +80,7 @@ public class LineChart: UIView {
     }
     
     public struct Dots {
-        public var visible: Bool = true
+        public var visible: Bool = false
         public var color: UIColor = UIColor.whiteColor()
         public var innerRadius: CGFloat = 8
         public var outerRadius: CGFloat = 12
