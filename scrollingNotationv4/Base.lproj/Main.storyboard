@@ -1110,6 +1110,7 @@
                         <outlet property="BlankStaff" destination="mPK-ik-34W" id="U73-8W-9IC"/>
                         <outlet property="aButton" destination="AzA-3G-aFF" id="U2h-lX-5Mv"/>
                         <outlet property="bButton" destination="d21-cM-XQY" id="B4f-iz-zdp"/>
+                        <outlet property="blankStaff" destination="mPK-ik-34W" id="Uyd-1H-1Q8"/>
                         <outlet property="cButton" destination="Ucj-J1-gfX" id="Ln7-0L-Oat"/>
                         <outlet property="dButton" destination="als-Tl-LLd" id="4l8-Qp-d2k"/>
                         <outlet property="eButton" destination="7l5-Zu-rRi" id="1pC-Ag-TNN"/>

@@ -12,6 +12,7 @@ import Firebase
 
 class GameViewController: UIViewController , AVAudioPlayerDelegate{
     
+    @IBOutlet weak var blankStaff:BlankStaff!
     @IBOutlet weak var aButton:UIButton?
     @IBOutlet weak var bButton:UIButton?
     @IBOutlet weak var cButton:UIButton?
@@ -25,7 +26,6 @@ class GameViewController: UIViewController , AVAudioPlayerDelegate{
     var ovalNoteImageView = UIImageView()
     
     var scoresArray:NSMutableArray!
-    var plistPath:String!
     
     let topLineY:CGFloat = 100
     var screenWidth:CGFloat = 0
@@ -74,37 +74,12 @@ class GameViewController: UIViewController , AVAudioPlayerDelegate{
     }
     
     
-    func postPreDbScores() {
-        let highScoresRef = Firebase(url: "https://glowing-torch-8861.firebaseio.com/High%20Scores")
-        
-        //get path to plist of all scores
-        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        plistPath = appDelegate.mediumPlistPathInDocument
-        
-        // Extract the content of the file as NSData
-        let data:NSData =  NSFileManager.defaultManager().contentsAtPath(plistPath)!
-        do{
-            scoresArray = try NSPropertyListSerialization.propertyListWithData(data, options: NSPropertyListMutabilityOptions.MutableContainersAndLeaves, format: nil) as! NSMutableArray
-            
-        }catch{
-            print("Error occured while reading from the plist file")
-        }
-        
-        for score in scoresArray as NSArray as! [String] {
-            let theScore:Int = Int(score)!
-            let score1 = ["Score" : theScore, "Name" : appDelegate.username, "UUID" : appDelegate.UUID, "Date": NSDate().timeIntervalSince1970]
-            
-            highScoresRef.childByAutoId().setValue(score1, andPriority: 0 - Int(theScore))
-        }
-        print("posted all scores")
-    }
     
     func postScoreToFirebase() {
         let defaults = NSUserDefaults()
         let highScoresRef = Firebase(url: "https://glowing-torch-8861.firebaseio.com/High%20Scores")
         
         let uid = defaults.valueForKey("FirebaseUID")
-        //get path to plist of all scores
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         let theScore = currentScore
         let score1 = ["Score" : theScore, "Name" : defaults.valueForKey("FirebaseUsername")!, "UUID" : appDelegate.UUID, "Date": NSDate().timeIntervalSince1970, "UID": uid!]

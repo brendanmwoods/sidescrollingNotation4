@@ -17,11 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     //the app option for sound
     var isSound = true
     
-    //this will be the path for our plist, and will be accessable from
-    //everywhere in the app.
-    var easyTreblePlistPathInDocument:String = String()
-    var easyBassPlistPathInDocument:String = String()
-    var mediumPlistPathInDocument:String = String()
+
     var UUID = String()
     var UID = String()
     var window: UIWindow?
@@ -31,7 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
-        //preparePlistsForUse()
+
         setUUID()
         setUsername()
         getPlayerScores()
@@ -96,7 +92,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func applicationDidBecomeActive(application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-        //self.preparePlistsForUse()
+        
     }
     
     func applicationWillTerminate(application: UIApplication) {
