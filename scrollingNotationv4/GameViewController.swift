@@ -12,7 +12,6 @@ import Firebase
 
 class GameViewController: UIViewController , AVAudioPlayerDelegate{
     
-    @IBOutlet weak var blankStaff: UIView?
     @IBOutlet weak var aButton:UIButton?
     @IBOutlet weak var bButton:UIButton?
     @IBOutlet weak var cButton:UIButton?
@@ -48,7 +47,6 @@ class GameViewController: UIViewController , AVAudioPlayerDelegate{
     var scoresNeedResetting = false
     var difficulty = ""
     var notePlayer: AVAudioPlayer! = nil
-    // var highScore = 0
     var appDelegate = AppDelegate()
     
     
@@ -172,10 +170,7 @@ class GameViewController: UIViewController , AVAudioPlayerDelegate{
     }
     
     
-    
-    //moves the note left. gets called repeatedly until timer is invalidated.
     func moveOvalNoteLeft(){
-        
         if ovalNoteImageView.frame.origin.x <= 0 {
             currentScrollSpeed = startingScrollSpeed
             gameOver = true
@@ -228,60 +223,6 @@ class GameViewController: UIViewController , AVAudioPlayerDelegate{
         
         self.presentViewController(alert, animated: true, completion: nil)
     }
-    
-    
-//    
-//    func saveScoreToScoresPlist() {
-//        if(difficulty == "easyTreble") {
-//            let pathForThePlistFile = appDelegate.easyTreblePlistPathInDocument
-//            
-//            let data:NSData =  NSFileManager.defaultManager().contentsAtPath(pathForThePlistFile)!
-//            
-//            do{
-//                let notesArray = try NSPropertyListSerialization.propertyListWithData(data, options: NSPropertyListMutabilityOptions.MutableContainersAndLeaves, format: nil) as! NSMutableArray
-//                
-//                notesArray.addObject(String(self.currentScore))
-//                
-//                notesArray.writeToFile(pathForThePlistFile, atomically: true)
-//            }catch{
-//                print("An error occurred while writing to plist")
-//            }
-//        }
-//        
-//        if(difficulty == "easyBass") {
-//            let pathForThePlistFile = appDelegate.easyBassPlistPathInDocument
-//            
-//            let data:NSData =  NSFileManager.defaultManager().contentsAtPath(pathForThePlistFile)!
-//            
-//            do{
-//                let notesArray = try NSPropertyListSerialization.propertyListWithData(data, options: NSPropertyListMutabilityOptions.MutableContainersAndLeaves, format: nil) as! NSMutableArray
-//                
-//                notesArray.addObject(String(self.currentScore))
-//                
-//                notesArray.writeToFile(pathForThePlistFile, atomically: true)
-//            }catch{
-//                print("An error occurred while writing to plist")
-//            }
-//        }
-//        
-//        
-//        if(difficulty == "medium") {
-//            let pathForThePlistFile = appDelegate.mediumPlistPathInDocument
-//            
-//            let data:NSData =  NSFileManager.defaultManager().contentsAtPath(pathForThePlistFile)!
-//            
-//            do{
-//                
-//                let notesArray = try NSPropertyListSerialization.propertyListWithData(data, options: NSPropertyListMutabilityOptions.MutableContainersAndLeaves, format: nil) as! NSMutableArray
-//                
-//                notesArray.addObject(String(self.currentScore))
-//                
-//                notesArray.writeToFile(pathForThePlistFile, atomically: true)
-//            }catch{
-//                print("An error occurred while writing to plist")
-//            }
-//        }
-//    }
     
     
     @IBAction func noteButtonPushed(sender:UIButton) {

@@ -51,16 +51,12 @@
 		BCC8F7731C77C58A00EAA645 /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC8F7721C77C58A00EAA645 /* MainMenuViewController.swift */; };
 		BCC8F7761C79060700EAA645 /* bass.png in Resources */ = {isa = PBXBuildFile; fileRef = BCC8F7741C79060700EAA645 /* bass.png */; };
 		BCC8F7771C79060700EAA645 /* treble.png in Resources */ = {isa = PBXBuildFile; fileRef = BCC8F7751C79060700EAA645 /* treble.png */; };
-		BCC8F7791C7BB7FC00EAA645 /* easyTrebleScores.plist in Resources */ = {isa = PBXBuildFile; fileRef = BCC8F7781C7BB7FC00EAA645 /* easyTrebleScores.plist */; };
-		BCC8F77B1C7BCCFA00EAA645 /* easyBassScores.plist in Resources */ = {isa = PBXBuildFile; fileRef = BCC8F77A1C7BCCFA00EAA645 /* easyBassScores.plist */; };
-		BCC8F77F1C7BE16A00EAA645 /* mediumScores.plist in Resources */ = {isa = PBXBuildFile; fileRef = BCC8F77E1C7BE16A00EAA645 /* mediumScores.plist */; };
 		BCD883261C8E4B8F000DD793 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCD883251C8E4B8F000DD793 /* SwiftyJSON.framework */; };
 		BCDB075C1C84F1E00087DE7F /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCDB075B1C84F1E00087DE7F /* AVFoundation.framework */; };
 		BCE74CEF1C7506F600FB4EC4 /* ovalNote.png in Resources */ = {isa = PBXBuildFile; fileRef = BCE74CEE1C7506F600FB4EC4 /* ovalNote.png */; };
 		BCE74CF11C75156100FB4EC4 /* GameMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE74CF01C75156100FB4EC4 /* GameMenuViewController.swift */; };
 		BCE74CF31C7562CD00FB4EC4 /* LearningMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE74CF21C7562CD00FB4EC4 /* LearningMenuViewController.swift */; };
 		BCE74CF51C75669200FB4EC4 /* LearningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE74CF41C75669200FB4EC4 /* LearningViewController.swift */; };
-		BCE74D771C76FE2500FB4EC4 /* allScores.plist in Resources */ = {isa = PBXBuildFile; fileRef = BCE74D761C76FE2500FB4EC4 /* allScores.plist */; };
 		BCEAB11A1C8150FF00929924 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = BCEAB1191C8150FF00929924 /* logo.png */; };
 /* End PBXBuildFile section */
 
@@ -133,16 +129,12 @@
 		BCC8F7721C77C58A00EAA645 /* MainMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
 		BCC8F7741C79060700EAA645 /* bass.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bass.png; sourceTree = "<group>"; };
 		BCC8F7751C79060700EAA645 /* treble.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = treble.png; sourceTree = "<group>"; };
-		BCC8F7781C7BB7FC00EAA645 /* easyTrebleScores.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = easyTrebleScores.plist; sourceTree = "<group>"; };
-		BCC8F77A1C7BCCFA00EAA645 /* easyBassScores.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = easyBassScores.plist; sourceTree = "<group>"; };
-		BCC8F77E1C7BE16A00EAA645 /* mediumScores.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = mediumScores.plist; sourceTree = "<group>"; };
 		BCD883251C8E4B8F000DD793 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "Pods/../build/Debug-iphoneos/SwiftyJSON.framework"; sourceTree = "<group>"; };
 		BCDB075B1C84F1E00087DE7F /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		BCE74CEE1C7506F600FB4EC4 /* ovalNote.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ovalNote.png; sourceTree = "<group>"; };
 		BCE74CF01C75156100FB4EC4 /* GameMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameMenuViewController.swift; sourceTree = "<group>"; };
 		BCE74CF21C7562CD00FB4EC4 /* LearningMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LearningMenuViewController.swift; sourceTree = "<group>"; };
 		BCE74CF41C75669200FB4EC4 /* LearningViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LearningViewController.swift; sourceTree = "<group>"; };
-		BCE74D761C76FE2500FB4EC4 /* allScores.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = allScores.plist; sourceTree = "<group>"; };
 		BCEAB1191C8150FF00929924 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		FF6CD2A6DD5CF5657E3991B3 /* Pods-scrollingNotationv4.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-scrollingNotationv4.release.xcconfig"; path = "Pods/Target Support Files/Pods-scrollingNotationv4/Pods-scrollingNotationv4.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -239,10 +231,6 @@
 				BCE74CF21C7562CD00FB4EC4 /* LearningMenuViewController.swift */,
 				BCE74CF41C75669200FB4EC4 /* LearningViewController.swift */,
 				BC64B7C81C6C56F200DE7780 /* Info.plist */,
-				BCE74D761C76FE2500FB4EC4 /* allScores.plist */,
-				BCC8F7781C7BB7FC00EAA645 /* easyTrebleScores.plist */,
-				BCC8F77A1C7BCCFA00EAA645 /* easyBassScores.plist */,
-				BCC8F77E1C7BE16A00EAA645 /* mediumScores.plist */,
 				BC7E7AD51C96297700042F7F /* GraphViewController.swift */,
 				BC7E7AD31C96291B00042F7F /* LineChart.swift */,
 			);
@@ -420,7 +408,6 @@
 			files = (
 				BCC046C61C85794500438E71 /* 40.mp3 in Resources */,
 				BCC046DE1C857D0D00438E71 /* 28.mp3 in Resources */,
-				BCE74D771C76FE2500FB4EC4 /* allScores.plist in Resources */,
 				BCC046DF1C857D0D00438E71 /* 30.mp3 in Resources */,
 				BCC046CA1C85794500438E71 /* 47.mp3 in Resources */,
 				BC64B7C71C6C56F200DE7780 /* LaunchScreen.storyboard in Resources */,
@@ -433,7 +420,6 @@
 				BCC046A21C85611C00438E71 /* Bubble.mp3 in Resources */,
 				BCC046DB1C857D0D00438E71 /* 23.mp3 in Resources */,
 				BCC046E31C857D0D00438E71 /* 37.mp3 in Resources */,
-				BCC8F77B1C7BCCFA00EAA645 /* easyBassScores.plist in Resources */,
 				BC64B7C21C6C56F200DE7780 /* Main.storyboard in Resources */,
 				BCC046DD1C857D0D00438E71 /* 27.mp3 in Resources */,
 				BCE74CEF1C7506F600FB4EC4 /* ovalNote.png in Resources */,
@@ -448,9 +434,7 @@
 				BCC046E01C857D0D00438E71 /* 32.mp3 in Resources */,
 				BCC046C91C85794500438E71 /* 45.mp3 in Resources */,
 				BCC046CE1C85794500438E71 /* 54.mp3 in Resources */,
-				BCC8F77F1C7BE16A00EAA645 /* mediumScores.plist in Resources */,
 				BCC046D01C85794500438E71 /* 57.mp3 in Resources */,
-				BCC8F7791C7BB7FC00EAA645 /* easyTrebleScores.plist in Resources */,
 				BCC046CB1C85794500438E71 /* 49.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
