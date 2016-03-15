@@ -67,8 +67,6 @@ class MainMenuViewController: UIViewController {
     @IBAction func gameButtonPushed(sender:UIButton) {
         let defaults = NSUserDefaults()
         if defaults.valueForKey("FirebaseUID") == nil{
-            //not logged in, go to login
-            print("not yet logged in")
             let vc = storyboard?.instantiateViewControllerWithIdentifier("createAccountScene") as! CreateAccountViewController
             self.showViewController(vc, sender: vc)
         } else {
