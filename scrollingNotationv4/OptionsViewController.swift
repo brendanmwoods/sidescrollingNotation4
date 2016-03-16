@@ -12,16 +12,18 @@ class OptionsViewController: UIViewController {
     
     @IBOutlet weak var soundSwitch: UISwitch!
     @IBOutlet weak var usernameLabel: UILabel!
-
+    @IBOutlet weak var logoutButton:UIButton!
+    
     var isSound = true
     var appDelegate = AppDelegate()
-    
+    var loggedIn = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         soundSwitch.on = appDelegate.isSound
         setUsernameLabel()
+        setLogoutButton()
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,19 +31,24 @@ class OptionsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func setLogoutButton() {
+        if loggedIn == true {
+            logoutButton.setTitle("Logout", forState: .Normal)
+        } else if loggedIn == false {
+            logoutButton.setTitle("Login", forState: .Normal)
+        }
+    }
+    
     func setUsernameLabel(){
-//        if appDelegate.username.isEmpty {
-//            usernameLabel.text = "Username not yet set."
-//        } else {
-//            usernameLabel.text = "\(appDelegate.username)"
-//        }
         
         let defaults = NSUserDefaults()
         
         if defaults.valueForKey("FirebaseUsername") == nil {
             usernameLabel.text = "Not logged in"
+            loggedIn = false
         }else {
             usernameLabel.text = defaults.valueForKey("FirebaseUsername") as? String
+            loggedIn = true
         }
     }
     
@@ -54,10 +61,19 @@ class OptionsViewController: UIViewController {
     }
     
     @IBAction func logoutOfFirebase() {
+        if loggedIn == true {
         let defaults = NSUserDefaults()
         defaults.setValue(nil, forKey: "FirebaseUID")
         defaults.setValue(nil, forKey: "FirebaseUsername")
+        appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        appDelegate.allPlayerScores = [Int]()
         setUsernameLabel()
+        logoutButton.setTitle("Login", forState: .Normal)
+        loggedIn = false
+        } else {
+            let vc = self.storyboard?.instantiateViewControllerWithIdentifier("signInScene") as! SignInViewController
+            self.showViewController(vc, sender: vc)
+        }
     }
     
     /*
