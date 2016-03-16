@@ -98,22 +98,3 @@ class GameMenuViewController: UIViewController {
     }
 }
 
-//
-// xyz:
-//  :player1
-//      :wins 
-//          :1
-//      :isturn
-//          :true
-//      :scoreToBeat
-//          :7
-//  :player2
-//      :wins 
-//          :2
-//      :isturn
-//          :false
-//      :scoreToBeat
-//          :nil
-// yyy:
-//  :player1
-//  :player3

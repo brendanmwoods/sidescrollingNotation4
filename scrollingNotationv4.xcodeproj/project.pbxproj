@@ -83,7 +83,7 @@
 		83BFEF0AB207ED3D6629C939 /* Pods-scrollingNotationv4.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-scrollingNotationv4.debug.xcconfig"; path = "Pods/Target Support Files/Pods-scrollingNotationv4/Pods-scrollingNotationv4.debug.xcconfig"; sourceTree = "<group>"; };
 		B763151F543B160F3F04BE93 /* Pods_scrollingNotationv4.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_scrollingNotationv4.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC0928661C8F85F80096140F /* leadboardTableTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = leadboardTableTableViewController.swift; sourceTree = "<group>"; };
-		BC64B7B91C6C56F200DE7780 /* scrollingNotationv4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = scrollingNotationv4.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC64B7B91C6C56F200DE7780 /* NoteBrainer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NoteBrainer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC64B7BC1C6C56F200DE7780 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BC64B7BE1C6C56F200DE7780 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		BC64B7C11C6C56F200DE7780 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -205,7 +205,7 @@
 		BC64B7BA1C6C56F200DE7780 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				BC64B7B91C6C56F200DE7780 /* scrollingNotationv4.app */,
+				BC64B7B91C6C56F200DE7780 /* NoteBrainer.app */,
 				BC64B7CD1C6C56F300DE7780 /* scrollingNotationv4Tests.xctest */,
 				BC64B7D81C6C56F300DE7780 /* scrollingNotationv4UITests.xctest */,
 			);
@@ -322,7 +322,7 @@
 			);
 			name = scrollingNotationv4;
 			productName = scrollingNotationv4;
-			productReference = BC64B7B91C6C56F200DE7780 /* scrollingNotationv4.app */;
+			productReference = BC64B7B91C6C56F200DE7780 /* NoteBrainer.app */;
 			productType = "com.apple.product-type.application";
 		};
 		BC64B7CC1C6C56F300DE7780 /* scrollingNotationv4Tests */ = {
@@ -681,7 +681,7 @@
 				INFOPLIST_FILE = scrollingNotationv4/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.brendanwoods.scrollingNotationv4;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = NoteBrainer;
 			};
 			name = Debug;
 		};
@@ -697,7 +697,7 @@
 				INFOPLIST_FILE = scrollingNotationv4/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.brendanwoods.scrollingNotationv4;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = NoteBrainer;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 			};
 			name = Release;
