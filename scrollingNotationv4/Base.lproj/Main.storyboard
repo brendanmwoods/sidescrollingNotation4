@@ -152,10 +152,10 @@
                                 <exclude reference="fZI-3C-ZQN"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="6J0-0r-xTN"/>
-                                <exclude reference="cTJ-f9-Xyw"/>
                                 <exclude reference="qML-c2-hcA"/>
                                 <exclude reference="x4t-vt-Doi"/>
+                                <exclude reference="6J0-0r-xTN"/>
+                                <exclude reference="cTJ-f9-Xyw"/>
                                 <exclude reference="3Qt-eG-f2d"/>
                                 <exclude reference="v1u-Q4-hkd"/>
                             </mask>
@@ -165,11 +165,11 @@
                                 <include reference="fZI-3C-ZQN"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="qML-c2-hcA"/>
+                                <include reference="x4t-vt-Doi"/>
                                 <include reference="6J0-0r-xTN"/>
                                 <exclude reference="96C-Gr-DwY"/>
                                 <exclude reference="cTJ-f9-Xyw"/>
-                                <include reference="qML-c2-hcA"/>
-                                <include reference="x4t-vt-Doi"/>
                                 <include reference="3Qt-eG-f2d"/>
                                 <exclude reference="Vzu-uU-a9L"/>
                                 <exclude reference="rYU-Ie-gmP"/>
@@ -233,7 +233,7 @@
                                             <constraint firstAttribute="width" constant="210" id="UFm-hF-eAb"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="40"/>
-                                        <state key="normal" title="Play">
+                                        <state key="normal" title="Game">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
@@ -336,9 +336,6 @@
                                         <state key="normal" title="Login">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
-                                        <variation key="heightClass=regular" misplaced="YES">
-                                            <rect key="frame" x="228" y="95" width="105" height="45"/>
-                                        </variation>
                                         <connections>
                                             <action selector="signInPushed:" destination="8bo-82-9Rd" eventType="touchUpInside" id="UNo-TU-hpZ"/>
                                             <action selector="signInPushed:" destination="0tR-tQ-gQI" eventType="touchUpInside" id="flt-ks-Jgs"/>
@@ -349,9 +346,6 @@
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
-                                        <variation key="heightClass=regular" misplaced="YES">
-                                            <rect key="frame" x="266" y="142" width="29" height="0.0"/>
-                                        </variation>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Need to create an account? Click below." textAlignment="center" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n6K-Wp-cFn">
                                         <rect key="frame" x="144" y="144" width="272" height="18"/>
@@ -370,9 +364,6 @@
                                         <state key="normal" title="Create Account">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
-                                        <variation key="heightClass=regular" misplaced="YES">
-                                            <rect key="frame" x="228" y="165" width="105" height="45"/>
-                                        </variation>
                                         <connections>
                                             <action selector="createAccountPushed:" destination="8bo-82-9Rd" eventType="touchUpInside" id="Ryf-4o-LWL"/>
                                             <segue destination="8bo-82-9Rd" kind="show" id="uG7-pb-PVI"/>
@@ -383,9 +374,6 @@
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
-                                        <variation key="heightClass=regular" misplaced="YES">
-                                            <rect key="frame" x="262" y="210" width="37" height="0.0"/>
-                                        </variation>
                                     </label>
                                 </subviews>
                                 <constraints>
@@ -435,9 +423,6 @@
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="22"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
-                                        <variation key="heightClass=regular" misplaced="YES">
-                                            <rect key="frame" x="209" y="0.0" width="143" height="26"/>
-                                        </variation>
                                     </label>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yhf-g6-Rk2">
                                         <rect key="frame" x="0.0" y="29" width="560" height="30"/>
@@ -464,9 +449,6 @@
                                         <state key="normal" title="Create Account">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
-                                        <variation key="heightClass=regular" misplaced="YES">
-                                            <rect key="frame" x="228" y="128" width="105" height="45"/>
-                                        </variation>
                                         <connections>
                                             <action selector="createAccountPushed:" destination="8bo-82-9Rd" eventType="touchUpInside" id="vKt-qa-BXU"/>
                                         </connections>
@@ -476,18 +458,12 @@
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
-                                        <variation key="heightClass=regular" misplaced="YES">
-                                            <rect key="frame" x="266" y="175" width="29" height="0.0"/>
-                                        </variation>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Already have an account? Click below." textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="29r-fG-KRt">
                                         <rect key="frame" x="151" y="177" width="259" height="18"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
-                                        <variation key="heightClass=regular" misplaced="YES">
-                                            <rect key="frame" x="151" y="177" width="259" height="18"/>
-                                        </variation>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Tt-Lf-UdA">
                                         <rect key="frame" x="228" y="198" width="105" height="45"/>
@@ -500,9 +476,6 @@
                                         <state key="normal" title="Login">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
-                                        <variation key="heightClass=regular" misplaced="YES">
-                                            <rect key="frame" x="228" y="198" width="105" height="45"/>
-                                        </variation>
                                         <connections>
                                             <segue destination="0tR-tQ-gQI" kind="show" id="JSl-5L-8SL"/>
                                         </connections>
@@ -516,9 +489,6 @@
                                     <constraint firstItem="yZo-iM-CPa" firstAttribute="leading" secondItem="qvx-Vh-mIT" secondAttribute="leading" id="t0t-EM-miX"/>
                                     <constraint firstItem="yhf-g6-Rk2" firstAttribute="leading" secondItem="qvx-Vh-mIT" secondAttribute="leading" id="y8r-tS-0Dq"/>
                                 </constraints>
-                                <variation key="heightClass=regular" misplaced="YES">
-                                    <rect key="frame" x="20" y="20" width="560" height="243"/>
-                                </variation>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Itg-E0-P3x">
                                 <rect key="frame" x="239" y="276" width="123" height="30"/>
@@ -1098,7 +1068,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="Rgv-wv-ePs">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mPK-ik-34W" userLabel="BlankStaff" customClass="BlankStaff" customModule="NoteBrainer" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" horizontalHuggingPriority="248" verticalHuggingPriority="248" translatesAutoresizingMaskIntoConstraints="NO" id="mPK-ik-34W" userLabel="BlankStaff" customClass="BlankStaff" customModule="NoteBrainer" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="342"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pW3-M4-fBK">
@@ -1117,28 +1087,22 @@
                                             <constraint firstItem="pW3-M4-fBK" firstAttribute="top" secondItem="mPK-ik-34W" secondAttribute="top" id="h4r-Jt-k9P"/>
                                         </constraints>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G98-Nb-mE0">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="751" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G98-Nb-mE0">
                                         <rect key="frame" x="0.0" y="342" width="600" height="54"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="45"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
-                                        <variation key="heightClass=regular" ambiguous="YES" misplaced="YES">
-                                            <rect key="frame" x="0.0" y="342" width="600" height="251"/>
-                                        </variation>
-                                        <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
-                                            <rect key="frame" x="0.0" y="342" width="800" height="189"/>
+                                        <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                            <rect key="frame" x="0.0" y="342" width="800" height="190"/>
                                         </variation>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="High Score: 00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OgI-dt-9YL">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="High Score: 00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OgI-dt-9YL">
                                         <rect key="frame" x="485" y="396" width="115" height="19"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
-                                        <variation key="heightClass=regular" ambiguous="YES" misplaced="YES">
-                                            <rect key="frame" x="485" y="593" width="115" height="21"/>
-                                        </variation>
-                                        <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
-                                            <rect key="frame" x="685" y="531" width="115" height="21"/>
+                                        <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                            <rect key="frame" x="685" y="532" width="115" height="21"/>
                                         </variation>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="A2o-EU-Vll">
@@ -1155,7 +1119,7 @@
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
-                                                    <rect key="frame" x="0.0" y="0.0" width="113" height="248"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="113" height="247"/>
                                                 </variation>
                                                 <connections>
                                                     <action selector="noteButtonPushed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="24r-6J-BqZ"/>
@@ -1168,11 +1132,8 @@
                                                 <state key="normal" title="B">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
-                                                <variation key="heightClass=regular" misplaced="YES">
-                                                    <rect key="frame" x="86" y="0.0" width="84" height="186"/>
-                                                </variation>
                                                 <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
-                                                    <rect key="frame" x="115" y="0.0" width="112" height="248"/>
+                                                    <rect key="frame" x="115" y="0.0" width="112" height="247"/>
                                                 </variation>
                                                 <connections>
                                                     <action selector="noteButtonPushed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="y0U-qx-1oe"/>
@@ -1185,11 +1146,8 @@
                                                 <state key="normal" title="C">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
-                                                <variation key="heightClass=regular" misplaced="YES">
-                                                    <rect key="frame" x="172" y="0.0" width="84" height="186"/>
-                                                </variation>
                                                 <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
-                                                    <rect key="frame" x="229" y="0.0" width="113" height="248"/>
+                                                    <rect key="frame" x="229" y="0.0" width="113" height="247"/>
                                                 </variation>
                                                 <connections>
                                                     <action selector="noteButtonPushed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tIr-bk-UaE"/>
@@ -1203,7 +1161,7 @@
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
-                                                    <rect key="frame" x="344" y="0.0" width="112" height="248"/>
+                                                    <rect key="frame" x="344" y="0.0" width="112" height="247"/>
                                                 </variation>
                                                 <connections>
                                                     <action selector="noteButtonPushed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3ac-qQ-sdR"/>
@@ -1217,7 +1175,7 @@
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
-                                                    <rect key="frame" x="458" y="0.0" width="113" height="248"/>
+                                                    <rect key="frame" x="458" y="0.0" width="113" height="247"/>
                                                 </variation>
                                                 <connections>
                                                     <action selector="noteButtonPushed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RQ4-qG-Vq4"/>
@@ -1230,11 +1188,8 @@
                                                 <state key="normal" title="F">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
-                                                <variation key="heightClass=regular" misplaced="YES">
-                                                    <rect key="frame" x="430" y="0.0" width="84" height="186"/>
-                                                </variation>
                                                 <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
-                                                    <rect key="frame" x="573" y="0.0" width="112" height="248"/>
+                                                    <rect key="frame" x="573" y="0.0" width="112" height="247"/>
                                                 </variation>
                                                 <connections>
                                                     <action selector="noteButtonPushed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Lcv-Fz-jSu"/>
@@ -1247,11 +1202,8 @@
                                                 <state key="normal" title="G">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
-                                                <variation key="heightClass=regular" misplaced="YES">
-                                                    <rect key="frame" x="516" y="0.0" width="84" height="186"/>
-                                                </variation>
                                                 <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
-                                                    <rect key="frame" x="687" y="0.0" width="113" height="248"/>
+                                                    <rect key="frame" x="687" y="0.0" width="113" height="247"/>
                                                 </variation>
                                                 <connections>
                                                     <action selector="noteButtonPushed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aJj-lY-6xU"/>
@@ -1259,7 +1211,7 @@
                                             </button>
                                         </subviews>
                                         <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
-                                            <rect key="frame" x="0.0" y="552" width="800" height="248"/>
+                                            <rect key="frame" x="0.0" y="553" width="800" height="247"/>
                                         </variation>
                                     </stackView>
                                 </subviews>
@@ -1348,141 +1300,271 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AhY-w5-zJh">
-                                <rect key="frame" x="0.0" y="420" width="600" height="180"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="1Rm-0J-smk">
-                                <rect key="frame" x="2" y="425" width="596" height="170"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="kck-Ed-YFq">
+                                <rect key="frame" x="-20" y="209" width="174" height="423"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V85-Fj-Fow">
-                                        <rect key="frame" x="0.0" y="0.0" width="83" height="170"/>
+                                    <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="X3R-Mr-HpQ" userLabel="BlankStaff" customClass="BlankStaff" customModule="NoteBrainer" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="174" height="342"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fwc-na-WXL">
+                                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                                <color key="backgroundColor" red="0.11351610099999999" green="0.21346665400000001" blue="0.34619633840000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="71q-ac-lSd"/>
+                                                    <constraint firstAttribute="height" constant="60" id="gwm-ej-BTa"/>
+                                                </constraints>
+                                                <variation key="default">
+                                                    <mask key="constraints">
+                                                        <exclude reference="71q-ac-lSd"/>
+                                                        <exclude reference="gwm-ej-BTa"/>
+                                                    </mask>
+                                                </variation>
+                                                <variation key="heightClass=regular">
+                                                    <mask key="constraints">
+                                                        <exclude reference="71q-ac-lSd"/>
+                                                        <include reference="gwm-ej-BTa"/>
+                                                    </mask>
+                                                </variation>
+                                            </view>
+                                        </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="120" id="OJj-0s-D9c"/>
-                                            <constraint firstAttribute="width" secondItem="V85-Fj-Fow" secondAttribute="height" multiplier="83:120" id="dgJ-uG-3CK"/>
+                                            <constraint firstItem="fwc-na-WXL" firstAttribute="top" secondItem="X3R-Mr-HpQ" secondAttribute="top" constant="-22" id="21n-rx-HKh">
+                                                <variation key="heightClass=regular" constant="0.0"/>
+                                            </constraint>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="342" id="BWn-Nb-JzA"/>
+                                            <constraint firstItem="fwc-na-WXL" firstAttribute="leading" secondItem="X3R-Mr-HpQ" secondAttribute="leading" id="PKU-Kg-I7D"/>
+                                            <constraint firstAttribute="height" constant="342" id="ZUH-xq-mbm"/>
+                                            <constraint firstAttribute="height" constant="342" id="ddW-F0-0LM"/>
+                                            <constraint firstAttribute="trailing" secondItem="fwc-na-WXL" secondAttribute="trailing" id="vpU-YK-NtF"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="22"/>
-                                        <state key="normal" title="A">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
                                         <variation key="default">
+                                            <mask key="subviews">
+                                                <exclude reference="fwc-na-WXL"/>
+                                            </mask>
                                             <mask key="constraints">
-                                                <exclude reference="OJj-0s-D9c"/>
-                                                <exclude reference="dgJ-uG-3CK"/>
+                                                <exclude reference="BWn-Nb-JzA"/>
+                                                <exclude reference="ddW-F0-0LM"/>
+                                                <exclude reference="21n-rx-HKh"/>
+                                                <exclude reference="PKU-Kg-I7D"/>
+                                                <exclude reference="vpU-YK-NtF"/>
                                             </mask>
                                         </variation>
-                                        <connections>
-                                            <action selector="noteButtonPushed:" destination="1kL-34-zOT" eventType="touchUpInside" id="sGB-l0-0AS"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Fi-av-X6d">
-                                        <rect key="frame" x="85" y="0.0" width="84" height="170"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="22"/>
-                                        <state key="normal" title="B">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="noteButtonPushed:" destination="1kL-34-zOT" eventType="touchUpInside" id="Jfy-jQ-jHc"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hGm-MP-z9l">
-                                        <rect key="frame" x="171" y="0.0" width="83" height="170"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="22"/>
-                                        <state key="normal" title="C">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="noteButtonPushed:" destination="1kL-34-zOT" eventType="touchUpInside" id="UMc-Kf-d0g"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xaK-QQ-PIp">
-                                        <rect key="frame" x="256" y="0.0" width="84" height="170"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="22"/>
-                                        <state key="normal" title="D">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="noteButtonPushed:" destination="1kL-34-zOT" eventType="touchUpInside" id="VYK-YD-2Hd"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vcx-5p-ffe">
-                                        <rect key="frame" x="342" y="0.0" width="83" height="170"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="22"/>
-                                        <state key="normal" title="E">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="noteButtonPushed:" destination="1kL-34-zOT" eventType="touchUpInside" id="SV5-tx-SLo"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qMr-o6-GUy">
-                                        <rect key="frame" x="427" y="0.0" width="84" height="170"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="22"/>
-                                        <state key="normal" title="F">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="noteButtonPushed:" destination="1kL-34-zOT" eventType="touchUpInside" id="tsO-Ai-Rvb"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EH2-L1-CJo">
-                                        <rect key="frame" x="513" y="0.0" width="83" height="170"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="22"/>
-                                        <state key="normal" title="G">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="noteButtonPushed:" destination="1kL-34-zOT" eventType="touchUpInside" id="Yqd-3Q-QTe"/>
-                                        </connections>
-                                    </button>
+                                        <variation key="heightClass=regular">
+                                            <mask key="subviews">
+                                                <include reference="fwc-na-WXL"/>
+                                            </mask>
+                                            <mask key="constraints">
+                                                <exclude reference="BWn-Nb-JzA"/>
+                                                <exclude reference="ZUH-xq-mbm"/>
+                                                <include reference="ddW-F0-0LM"/>
+                                                <include reference="21n-rx-HKh"/>
+                                                <include reference="PKU-Kg-I7D"/>
+                                                <include reference="vpU-YK-NtF"/>
+                                            </mask>
+                                        </variation>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="0/0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="od8-az-pCc">
+                                        <rect key="frame" x="0.0" y="342" width="174" height="42"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="174" id="lTV-F6-4H9"/>
+                                            <constraint firstAttribute="width" constant="174" id="qqU-7Q-Cvm"/>
+                                            <constraint firstAttribute="height" constant="42" id="xg7-SM-Mn9"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="45"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="heightClass=regular">
+                                            <mask key="constraints">
+                                                <exclude reference="lTV-F6-4H9"/>
+                                                <exclude reference="qqU-7Q-Cvm"/>
+                                                <exclude reference="xg7-SM-Mn9"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                            <rect key="frame" x="367" y="342" width="66" height="212"/>
+                                        </variation>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" distribution="fillEqually" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="2gh-Y3-L2B">
+                                        <rect key="frame" x="0.0" y="384" width="174" height="39"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V85-Fj-Fow">
+                                                <rect key="frame" x="0.0" y="0.0" width="22" height="39"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="183" id="JvT-Sz-eu9"/>
+                                                    <constraint firstAttribute="height" constant="120" id="OJj-0s-D9c"/>
+                                                    <constraint firstAttribute="width" secondItem="V85-Fj-Fow" secondAttribute="height" multiplier="83:183" id="S6d-gn-V49"/>
+                                                    <constraint firstAttribute="width" secondItem="V85-Fj-Fow" secondAttribute="height" multiplier="83:120" id="dgJ-uG-3CK"/>
+                                                    <constraint firstAttribute="width" secondItem="V85-Fj-Fow" secondAttribute="height" multiplier="83:340" id="igg-QI-yAw"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="22"/>
+                                                <state key="normal" title="A">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <variation key="default">
+                                                    <mask key="constraints">
+                                                        <exclude reference="JvT-Sz-eu9"/>
+                                                        <exclude reference="OJj-0s-D9c"/>
+                                                        <exclude reference="S6d-gn-V49"/>
+                                                        <exclude reference="dgJ-uG-3CK"/>
+                                                        <exclude reference="igg-QI-yAw"/>
+                                                    </mask>
+                                                </variation>
+                                                <variation key="heightClass=regular">
+                                                    <mask key="constraints">
+                                                        <exclude reference="JvT-Sz-eu9"/>
+                                                        <include reference="S6d-gn-V49"/>
+                                                        <exclude reference="igg-QI-yAw"/>
+                                                    </mask>
+                                                </variation>
+                                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                                    <rect key="frame" x="0.0" y="0.0" width="112" height="246"/>
+                                                </variation>
+                                                <connections>
+                                                    <action selector="noteButtonPushed:" destination="1kL-34-zOT" eventType="touchUpInside" id="sGB-l0-0AS"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Fi-av-X6d">
+                                                <rect key="frame" x="25" y="0.0" width="23" height="39"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="22"/>
+                                                <state key="normal" title="B">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                                    <rect key="frame" x="115" y="0.0" width="111" height="246"/>
+                                                </variation>
+                                                <connections>
+                                                    <action selector="noteButtonPushed:" destination="1kL-34-zOT" eventType="touchUpInside" id="Jfy-jQ-jHc"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hGm-MP-z9l">
+                                                <rect key="frame" x="51" y="0.0" width="22" height="39"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="22"/>
+                                                <state key="normal" title="C">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                                    <rect key="frame" x="229" y="0.0" width="112" height="246"/>
+                                                </variation>
+                                                <connections>
+                                                    <action selector="noteButtonPushed:" destination="1kL-34-zOT" eventType="touchUpInside" id="UMc-Kf-d0g"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xaK-QQ-PIp">
+                                                <rect key="frame" x="76" y="0.0" width="22" height="39"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="22"/>
+                                                <state key="normal" title="D">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                                    <rect key="frame" x="344" y="0.0" width="112" height="246"/>
+                                                </variation>
+                                                <connections>
+                                                    <action selector="noteButtonPushed:" destination="1kL-34-zOT" eventType="touchUpInside" id="VYK-YD-2Hd"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vcx-5p-ffe">
+                                                <rect key="frame" x="101" y="0.0" width="22" height="39"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="22"/>
+                                                <state key="normal" title="E">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                                    <rect key="frame" x="459" y="0.0" width="112" height="246"/>
+                                                </variation>
+                                                <connections>
+                                                    <action selector="noteButtonPushed:" destination="1kL-34-zOT" eventType="touchUpInside" id="SV5-tx-SLo"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qMr-o6-GUy">
+                                                <rect key="frame" x="126" y="0.0" width="23" height="39"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="22"/>
+                                                <state key="normal" title="F">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                                    <rect key="frame" x="574" y="0.0" width="111" height="246"/>
+                                                </variation>
+                                                <connections>
+                                                    <action selector="noteButtonPushed:" destination="1kL-34-zOT" eventType="touchUpInside" id="tsO-Ai-Rvb"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EH2-L1-CJo">
+                                                <rect key="frame" x="152" y="0.0" width="22" height="39"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="22"/>
+                                                <state key="normal" title="G">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                                    <rect key="frame" x="688" y="0.0" width="112" height="246"/>
+                                                </variation>
+                                                <connections>
+                                                    <action selector="noteButtonPushed:" destination="1kL-34-zOT" eventType="touchUpInside" id="Yqd-3Q-QTe"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                            <rect key="frame" x="0.0" y="554" width="800" height="246"/>
+                                        </variation>
+                                    </stackView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="1Rm-0J-smk" secondAttribute="height" multiplier="42:12" id="n1z-zR-kTA"/>
+                                    <constraint firstItem="X3R-Mr-HpQ" firstAttribute="top" secondItem="kck-Ed-YFq" secondAttribute="top" id="OCN-7T-7Uf"/>
+                                    <constraint firstItem="X3R-Mr-HpQ" firstAttribute="leading" secondItem="kck-Ed-YFq" secondAttribute="leading" id="woA-ZJ-COD"/>
+                                    <constraint firstAttribute="trailing" secondItem="X3R-Mr-HpQ" secondAttribute="trailing" id="zBu-Wf-Xvc"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="OCN-7T-7Uf"/>
+                                        <exclude reference="woA-ZJ-COD"/>
+                                        <exclude reference="zBu-Wf-Xvc"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular" alignment="center" axis="vertical">
+                                    <mask key="constraints">
+                                        <include reference="OCN-7T-7Uf"/>
+                                        <include reference="woA-ZJ-COD"/>
+                                        <include reference="zBu-Wf-Xvc"/>
+                                    </mask>
+                                </variation>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0/0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="od8-az-pCc">
-                                <rect key="frame" x="213" y="350" width="174" height="42"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="174" id="lTV-F6-4H9"/>
-                                    <constraint firstAttribute="width" constant="174" id="qqU-7Q-Cvm"/>
-                                    <constraint firstAttribute="height" constant="42" id="xg7-SM-Mn9"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="35"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X3R-Mr-HpQ" userLabel="BlankStaff" customClass="BlankStaff" customModule="NoteBrainer" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="342"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="342" id="ZUH-xq-mbm"/>
-                                </constraints>
-                            </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.11351610099999999" green="0.21346665400000001" blue="0.34619633840000003" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="1Rm-0J-smk" firstAttribute="leading" secondItem="s6J-K0-nnE" secondAttribute="leading" constant="2" id="3GJ-r4-bxI"/>
-                            <constraint firstItem="Pa5-Aa-AGY" firstAttribute="top" secondItem="1Rm-0J-smk" secondAttribute="bottom" constant="5" id="5kx-mk-LQv"/>
-                            <constraint firstItem="Pa5-Aa-AGY" firstAttribute="top" secondItem="AhY-w5-zJh" secondAttribute="bottom" id="L8P-Ry-0Eb"/>
-                            <constraint firstItem="X3R-Mr-HpQ" firstAttribute="top" secondItem="s6J-K0-nnE" secondAttribute="topMargin" id="Q8r-si-Zwa"/>
-                            <constraint firstItem="AhY-w5-zJh" firstAttribute="leading" secondItem="s6J-K0-nnE" secondAttribute="leadingMargin" constant="-20" id="S2V-qU-39U"/>
-                            <constraint firstAttribute="trailing" secondItem="1Rm-0J-smk" secondAttribute="trailing" constant="2" id="blc-De-eAA"/>
-                            <constraint firstItem="AhY-w5-zJh" firstAttribute="top" secondItem="1Rm-0J-smk" secondAttribute="top" constant="-5" id="dtk-X8-U9x"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="X3R-Mr-HpQ" secondAttribute="trailing" constant="-20" id="jQP-mE-Ygl"/>
-                            <constraint firstItem="od8-az-pCc" firstAttribute="centerX" secondItem="s6J-K0-nnE" secondAttribute="centerX" id="lZP-I7-eEq"/>
-                            <constraint firstItem="od8-az-pCc" firstAttribute="top" secondItem="X3R-Mr-HpQ" secondAttribute="bottom" constant="8" id="r1H-28-Sfb"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="AhY-w5-zJh" secondAttribute="trailing" constant="-20" id="sMT-gP-jYZ"/>
-                            <constraint firstItem="X3R-Mr-HpQ" firstAttribute="leading" secondItem="s6J-K0-nnE" secondAttribute="leadingMargin" constant="-20" id="wrk-cO-JKJ"/>
+                            <constraint firstItem="kck-Ed-YFq" firstAttribute="top" secondItem="s6J-K0-nnE" secondAttribute="top" id="NvF-Ba-KX7"/>
+                            <constraint firstItem="Pa5-Aa-AGY" firstAttribute="top" secondItem="kck-Ed-YFq" secondAttribute="bottom" id="S2O-p2-X3c"/>
+                            <constraint firstItem="kck-Ed-YFq" firstAttribute="leading" secondItem="s6J-K0-nnE" secondAttribute="leading" id="aGg-he-5W3"/>
+                            <constraint firstItem="kck-Ed-YFq" firstAttribute="top" secondItem="fUd-Mp-H3O" secondAttribute="bottom" id="bY9-9r-ajg"/>
+                            <constraint firstAttribute="trailing" secondItem="kck-Ed-YFq" secondAttribute="trailing" id="sRe-d4-I7N"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="NvF-Ba-KX7"/>
+                                <exclude reference="aGg-he-5W3"/>
+                                <exclude reference="bY9-9r-ajg"/>
+                                <exclude reference="sRe-d4-I7N"/>
+                                <exclude reference="S2O-p2-X3c"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular">
+                            <mask key="constraints">
+                                <include reference="NvF-Ba-KX7"/>
+                                <include reference="aGg-he-5W3"/>
+                                <exclude reference="bY9-9r-ajg"/>
+                                <include reference="sRe-d4-I7N"/>
+                                <include reference="S2O-p2-X3c"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="r4S-BJ-g2A"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="BlankStaff" destination="X3R-Mr-HpQ" id="1pG-1c-hal"/>
                         <outlet property="aButton" destination="V85-Fj-Fow" id="6se-MI-4L2"/>
@@ -1497,7 +1579,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qSz-xf-Gjw" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2079" y="259"/>
+            <point key="canvasLocation" x="2079" y="258.75"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="7Z1-vv-nRK">
