@@ -13,12 +13,12 @@ class MainMenuViewController: UIViewController {
     @IBOutlet weak var learningMode: UIButton!
     @IBOutlet weak var gameMode: UIButton!
     @IBOutlet weak var options: UIButton!
+    
     var didJustLoginInPreviousScreen = false
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        formatButtons()
         
         if didJustLoginInPreviousScreen == true {
             self.navigationController?.popToRootViewControllerAnimated(true)
@@ -48,29 +48,12 @@ class MainMenuViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
-    
-    func formatButtons() {
-//        learningMode.layer.borderColor = UIColor.blackColor().CGColor
-//        learningMode.layer.borderWidth = 2
-//        learningMode.layer.cornerRadius = 5
-        
-//        gameMode.layer.borderColor = UIColor.blackColor().CGColor
-//        gameMode.layer.borderWidth = 2
-//        gameMode.layer.cornerRadius = 2
-        
-//        options.layer.borderColor = UIColor.blackColor().CGColor
-//        options.layer.borderWidth = 2
-//        options.layer.cornerRadius = 5
-        
-    }
-    
     @IBAction func gameButtonPushed(sender:UIButton) {
         let defaults = NSUserDefaults()
         if defaults.valueForKey("FirebaseUID") == nil{
             let vc = storyboard?.instantiateViewControllerWithIdentifier("createAccountScene") as! CreateAccountViewController
             self.showViewController(vc, sender: vc)
         } else {
-            //logged in already. carry on to game.
             let vc = storyboard?.instantiateViewControllerWithIdentifier("gameMenuScene") as! GameMenuViewController
             self.showViewController(vc, sender: vc)
         }

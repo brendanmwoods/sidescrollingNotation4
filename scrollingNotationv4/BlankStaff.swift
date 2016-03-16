@@ -14,7 +14,6 @@ class BlankStaff: UIView {
     var staffLineEndX: CGFloat = 0.0 // detetermined and assigned at runtime
     let topLineY: CGFloat = 100.0
     
-    
     var trebleSymbol = UIImageView()
     var trebleSymbolAspectRatio:CGFloat = 0.35
     var bassSymbol = UIImageView()
@@ -23,10 +22,7 @@ class BlankStaff: UIView {
     
     override func drawRect(rect: CGRect) {
         
-        
-        
         //Draw the grand staff lines in the background
-        
         
         //get width of frame set set global variable
         staffLineEndX = self.frame.size.width
@@ -72,7 +68,7 @@ class BlankStaff: UIView {
         trebleSymbol.frame = CGRectMake(2, topLineY - spaceBetweenStaffLines, spaceBetweenStaffLines * 7 * trebleSymbolAspectRatio, spaceBetweenStaffLines * 6.5)
         trebleSymbol.alpha = 0.75
         addSubview(trebleSymbol)
-
+        
         
         let bassSymbol = UIImageView(image: UIImage(named: "bass"))
         
@@ -80,7 +76,5 @@ class BlankStaff: UIView {
         bassSymbol.alpha = 0.75
         addSubview(bassSymbol)
         
-           }
-    
-    
+    }
 }

@@ -50,9 +50,6 @@ class GameViewController: UIViewController , AVAudioPlayerDelegate{
     var appDelegate = AppDelegate()
     
     
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
@@ -72,8 +69,6 @@ class GameViewController: UIViewController , AVAudioPlayerDelegate{
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    
-    
     
     func postScoreToFirebase() {
         let defaults = NSUserDefaults()

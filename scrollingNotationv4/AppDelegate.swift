@@ -14,10 +14,7 @@ import Firebase
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
-    //the app option for sound
     var isSound = true
-    
-
     var UUID = String()
     var UID = String()
     var window: UIWindow?
@@ -26,8 +23,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var highScore = 0
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
-
         setUUID()
         setUsername()
         getPlayerScores()

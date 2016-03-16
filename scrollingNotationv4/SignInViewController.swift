@@ -26,19 +26,18 @@ class SignInViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.
-        //Looks for single or multiple taps.
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
         view.addGestureRecognizer(tap)
         emailTextField.text = optionalPrefilledEmail
         passwordTextField.text = optionalPrefilledPassword
+        
         if optionalprefilledAccountStatus != "" {
             accountStatusLabel.hidden = false
             accountStatusLabel.text = optionalprefilledAccountStatus
         }
     }
     
-    //Calls this function when the tap is recognized.
+
     func dismissKeyboard() {
         //Causes the view (or one of its embedded text fields) to resign the first responder status.
         view.endEditing(true)
@@ -51,7 +50,7 @@ class SignInViewController: UIViewController {
     
     
     @IBAction func signInPushed(sender: UIButton) {
-
+        
         ref.authUser(emailTextField.text, password: passwordTextField.text, withCompletionBlock: {error, authData in
             if error != nil {
                 self.errorLabel.hidden = false
@@ -87,5 +86,4 @@ class SignInViewController: UIViewController {
             }
         })
     }
-    
 }

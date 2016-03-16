@@ -43,8 +43,6 @@ class LearningViewController: UIViewController, AVAudioPlayerDelegate   {
         appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         screenWidth = UIScreen.mainScreen().bounds.width
         formatButtonShapes()
-        
-        
         noteLibrary.fillNoteLibrary()
         noteLibrary.filterNotesForDifficulty(difficulty)
         
@@ -65,7 +63,6 @@ class LearningViewController: UIViewController, AVAudioPlayerDelegate   {
         createOvalNoteImage(currentNote)
     }
     
-    
     func formatButtonShapes() {
         let buttonRadius:CGFloat = 5
         aButton?.layer.cornerRadius = buttonRadius
@@ -76,7 +73,6 @@ class LearningViewController: UIViewController, AVAudioPlayerDelegate   {
         fButton?.layer.cornerRadius = buttonRadius
         gButton?.layer.cornerRadius = buttonRadius
     }
-    
     
     func createOvalNoteImage(note: (noteName: String,octaveNumber: Int,
         absoluteNote: Int, isFlatOrSharp:Bool,diffFromTop:Int)) {
@@ -115,8 +111,6 @@ class LearningViewController: UIViewController, AVAudioPlayerDelegate   {
     func updateResultsLabel() {
         scoreLabel!.text = String("\(totalCorrect) / \(totalCorrect + totalIncorrect)")
     }
-    
-    
     
     @IBAction func noteButtonPushed(sender:UIButton) {
         
