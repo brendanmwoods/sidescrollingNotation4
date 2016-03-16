@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "BC64B7B81C6C56F200DE7780"
-               BuildableName = "scrollingNotationv4.app"
+               BuildableName = "NoteBrainer.app"
                BlueprintName = "scrollingNotationv4"
                ReferencedContainer = "container:scrollingNotationv4.xcodeproj">
             </BuildableReference>
@@ -53,7 +53,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "BC64B7B81C6C56F200DE7780"
-            BuildableName = "scrollingNotationv4.app"
+            BuildableName = "NoteBrainer.app"
             BlueprintName = "scrollingNotationv4"
             ReferencedContainer = "container:scrollingNotationv4.xcodeproj">
          </BuildableReference>
@@ -76,7 +76,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "BC64B7B81C6C56F200DE7780"
-            BuildableName = "scrollingNotationv4.app"
+            BuildableName = "NoteBrainer.app"
             BlueprintName = "scrollingNotationv4"
             ReferencedContainer = "container:scrollingNotationv4.xcodeproj">
          </BuildableReference>
@@ -95,7 +95,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "BC64B7B81C6C56F200DE7780"
-            BuildableName = "scrollingNotationv4.app"
+            BuildableName = "NoteBrainer.app"
             BlueprintName = "scrollingNotationv4"
             ReferencedContainer = "container:scrollingNotationv4.xcodeproj">
          </BuildableReference>
