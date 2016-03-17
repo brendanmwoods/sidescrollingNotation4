@@ -680,7 +680,7 @@
 				);
 				INFOPLIST_FILE = scrollingNotationv4/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.brendanwoods.scrollingNotationv4;
+				PRODUCT_BUNDLE_IDENTIFIER = com.brendanwoods.noteBrainer;
 				PRODUCT_NAME = NoteBrainer;
 			};
 			name = Debug;
@@ -696,7 +696,7 @@
 				);
 				INFOPLIST_FILE = scrollingNotationv4/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.brendanwoods.scrollingNotationv4;
+				PRODUCT_BUNDLE_IDENTIFIER = com.brendanwoods.noteBrainer;
 				PRODUCT_NAME = NoteBrainer;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 			};

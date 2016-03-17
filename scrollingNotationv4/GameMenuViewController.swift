@@ -33,6 +33,10 @@ class GameMenuViewController: UIViewController {
         let backItem = UIBarButtonItem(title: "Menu", style: UIBarButtonItemStyle.Plain, target: nil, action: nil)
         navigationItem.backBarButtonItem = backItem
         makeLeaderboard()
+        
+        
+        //THIS FOLLOWING FUNCTION IS NEW, DESIGNED TO REDUCE BANDWIDTH.
+        makeSmallLeaderboard()
         appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     }
     
@@ -94,6 +98,23 @@ class GameMenuViewController: UIViewController {
             }
             self.leaderboardItems = newItems
             self.populateLeaderBoard()
+        })
+        
+    }
+    
+    
+    
+    
+    func makeSmallLeaderboard() {
+        let scoresRef = Firebase(url: "https://glowing-torch-8861.firebaseio.com/High%20Scores")
+        
+        scoresRef.queryLimitedToFirst(3).observeSingleEventOfType(.Value, withBlock: { snapshot in
+            
+
+            print(snapshot)
+            for score in snapshot.children {
+                print(score.value!!["Score"])
+            }
         })
     }
 }
