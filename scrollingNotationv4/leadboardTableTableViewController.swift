@@ -40,7 +40,7 @@ class leadboardTableTableViewController: UITableViewController {
     func makeLeaderboard() {
         let scoresRef = Firebase(url: "https://glowing-torch-8861.firebaseio.com/High%20Scores")
         
-        scoresRef.observeSingleEventOfType(.Value, withBlock: { snapshot in
+        scoresRef.queryLimitedToFirst(100).observeSingleEventOfType(.Value, withBlock: { snapshot in
             var newItems = [LeaderboardItem]()
             var childrenCount = 0
             

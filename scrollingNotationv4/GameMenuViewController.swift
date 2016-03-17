@@ -26,23 +26,18 @@ class GameMenuViewController: UIViewController {
     var ref = Firebase(url:"https://glowing-torch-8861.firebaseio.com")
     var leaderboardItems = [LeaderboardItem]()
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let backItem = UIBarButtonItem(title: "Menu", style: UIBarButtonItemStyle.Plain, target: nil, action: nil)
         navigationItem.backBarButtonItem = backItem
-        makeLeaderboard()
         
-        
-        //THIS FOLLOWING FUNCTION IS NEW, DESIGNED TO REDUCE BANDWIDTH.
-        makeSmallLeaderboard()
         appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     }
     
     override func viewDidAppear(animated: Bool) {
         appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        
+        makeLeaderboard()
         self.navigationController!.navigationBar.translucent = true
         self.navigationController!.navigationBar.backgroundColor = UIColor.clearColor()
     }
@@ -85,7 +80,7 @@ class GameMenuViewController: UIViewController {
     func makeLeaderboard() {
         let scoresRef = Firebase(url: "https://glowing-torch-8861.firebaseio.com/High%20Scores")
         
-        scoresRef.observeSingleEventOfType(.Value, withBlock: { snapshot in
+        scoresRef.queryLimitedToFirst(5).observeSingleEventOfType(.Value, withBlock: { snapshot in
             var newItems = [LeaderboardItem]()
             var childrenCount = 0
             
@@ -100,22 +95,6 @@ class GameMenuViewController: UIViewController {
             self.populateLeaderBoard()
         })
         
-    }
-    
-    
-    
-    
-    func makeSmallLeaderboard() {
-        let scoresRef = Firebase(url: "https://glowing-torch-8861.firebaseio.com/High%20Scores")
-        
-        scoresRef.queryLimitedToFirst(3).observeSingleEventOfType(.Value, withBlock: { snapshot in
-            
-
-            print(snapshot)
-            for score in snapshot.children {
-                print(score.value!!["Score"])
-            }
-        })
     }
 }
 

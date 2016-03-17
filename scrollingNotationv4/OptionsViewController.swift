@@ -70,6 +70,8 @@ class OptionsViewController: UIViewController {
         setUsernameLabel()
         logoutButton.setTitle("Login", forState: .Normal)
         loggedIn = false
+        appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        appDelegate.highScore = 0
         } else {
             let vc = self.storyboard?.instantiateViewControllerWithIdentifier("signInScene") as! SignInViewController
             self.showViewController(vc, sender: vc)

@@ -9,7 +9,7 @@
 import UIKit
 
 class StatsViewController: UIViewController {
-   
+    
     @IBOutlet weak var  highScoreLabel:UILabel!
     @IBOutlet weak var  averageScoreLabel:UILabel!
     @IBOutlet weak var  gamesPlayedLabel:UILabel!
@@ -21,18 +21,28 @@ class StatsViewController: UIViewController {
         highScoreLabel.text = "\(appDelegate.highScore)"
         gamesPlayedLabel.text = "\(appDelegate.allPlayerScores.count)"
         
-        var scoreTotal = 0
-        for score in appDelegate.allPlayerScores {
-            scoreTotal += score
+        if appDelegate.allPlayerScores.count > 0 {
+            var scoreTotal = 0
+            for score in appDelegate.allPlayerScores {
+                scoreTotal += score
+            }
+            let averageScore = Double(scoreTotal) / Double(appDelegate.allPlayerScores.count)
+            let roundedAverageScore = Double(round(100*averageScore)/100)
+            averageScoreLabel.text = String(roundedAverageScore)
+        } else {
+            averageScoreLabel.text = "0"
         }
-        let averageScore = Double(scoreTotal) / Double(appDelegate.allPlayerScores.count)
-        let roundedAverageScore = Double(round(100*averageScore)/100)
-        averageScoreLabel.text = String(roundedAverageScore)
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
+    @IBAction func graphButtonPressed(sender:UIButton) {
+        if appDelegate.allPlayerScores.count > 1 {
+            let vc = self.storyboard?.instantiateViewControllerWithIdentifier("graphViewID") as! GraphViewController
+            self.showViewController(vc, sender: vc)
+        }
+    }
 }
