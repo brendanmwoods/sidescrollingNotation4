@@ -789,7 +789,7 @@
                                     <constraint firstAttribute="width" constant="300" id="w1i-oA-3tc"/>
                                 </constraints>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleAspectFit" verticalHuggingPriority="260" misplaced="YES" axis="vertical" distribution="fillProportionally" alignment="center" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="SLT-vg-N2s">
+                            <stackView opaque="NO" contentMode="scaleAspectFit" verticalHuggingPriority="260" axis="vertical" distribution="fillProportionally" alignment="center" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="SLT-vg-N2s">
                                 <rect key="frame" x="20" y="98" width="560" height="385"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="LbA-NJ-Cln">
@@ -853,10 +853,10 @@
                                             </button>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="6WN-9S-tVK">
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="6WN-9S-tVK">
                                         <rect key="frame" x="190" y="184" width="180" height="201"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="center" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="1oJ-fG-mW0">
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="1oJ-fG-mW0">
                                                 <rect key="frame" x="0.0" y="0.0" width="180" height="201"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YHj-9G-HkF">
@@ -874,10 +874,10 @@
                                                             <segue destination="PiT-ZN-ucP" kind="show" id="bur-gc-iP9"/>
                                                         </connections>
                                                     </button>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="UgN-wD-230">
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="UgN-wD-230">
                                                         <rect key="frame" x="80" y="92" width="21" height="109"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="1 -" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k0u-9z-PDy">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 -" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k0u-9z-PDy">
                                                                 <rect key="frame" x="0.0" y="0.0" width="21" height="22"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="22" id="zNo-nF-W2f"/>
@@ -886,7 +886,7 @@
                                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="2 -" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wbc-Qg-Wh9">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2 -" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wbc-Qg-Wh9">
                                                                 <rect key="frame" x="0.0" y="22" width="21" height="22"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="22" id="yHj-cG-F5U"/>
@@ -895,7 +895,7 @@
                                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="3 -" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mWr-Va-jsV">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3 -" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mWr-Va-jsV">
                                                                 <rect key="frame" x="0.0" y="44" width="21" height="22"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="22" id="D2Q-Z0-F2K"/>
@@ -904,7 +904,7 @@
                                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="4 -" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ldc-n0-P6p">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4 -" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ldc-n0-P6p">
                                                                 <rect key="frame" x="0.0" y="66" width="21" height="22"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="22" id="D35-j9-Gm2"/>
@@ -913,7 +913,7 @@
                                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="5 -" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gLb-Cx-daK">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5 -" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gLb-Cx-daK">
                                                                 <rect key="frame" x="0.0" y="88" width="21" height="21"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="21" id="rAP-Bd-Eb5"/>
@@ -1086,7 +1086,7 @@
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
-                                            <rect key="frame" x="0.0" y="342" width="800" height="191"/>
+                                            <rect key="frame" x="0.0" y="342" width="800" height="189"/>
                                         </variation>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="High Score: 00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OgI-dt-9YL">
@@ -1095,7 +1095,7 @@
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
-                                            <rect key="frame" x="685" y="533" width="115" height="21"/>
+                                            <rect key="frame" x="685" y="531" width="115" height="21"/>
                                         </variation>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="A2o-EU-Vll">
@@ -1112,7 +1112,7 @@
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
-                                                    <rect key="frame" x="0.0" y="0.0" width="113" height="246"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="113" height="248"/>
                                                 </variation>
                                                 <connections>
                                                     <action selector="noteButtonPushed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="24r-6J-BqZ"/>
@@ -1126,7 +1126,7 @@
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
-                                                    <rect key="frame" x="115" y="0.0" width="112" height="246"/>
+                                                    <rect key="frame" x="115" y="0.0" width="112" height="248"/>
                                                 </variation>
                                                 <connections>
                                                     <action selector="noteButtonPushed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="y0U-qx-1oe"/>
@@ -1140,7 +1140,7 @@
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
-                                                    <rect key="frame" x="229" y="0.0" width="113" height="246"/>
+                                                    <rect key="frame" x="229" y="0.0" width="113" height="248"/>
                                                 </variation>
                                                 <connections>
                                                     <action selector="noteButtonPushed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tIr-bk-UaE"/>
@@ -1154,7 +1154,7 @@
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
-                                                    <rect key="frame" x="344" y="0.0" width="112" height="246"/>
+                                                    <rect key="frame" x="344" y="0.0" width="112" height="248"/>
                                                 </variation>
                                                 <connections>
                                                     <action selector="noteButtonPushed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3ac-qQ-sdR"/>
@@ -1168,7 +1168,7 @@
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
-                                                    <rect key="frame" x="458" y="0.0" width="113" height="246"/>
+                                                    <rect key="frame" x="458" y="0.0" width="113" height="248"/>
                                                 </variation>
                                                 <connections>
                                                     <action selector="noteButtonPushed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RQ4-qG-Vq4"/>
@@ -1182,7 +1182,7 @@
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
-                                                    <rect key="frame" x="573" y="0.0" width="112" height="246"/>
+                                                    <rect key="frame" x="573" y="0.0" width="112" height="248"/>
                                                 </variation>
                                                 <connections>
                                                     <action selector="noteButtonPushed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Lcv-Fz-jSu"/>
@@ -1196,7 +1196,7 @@
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
-                                                    <rect key="frame" x="687" y="0.0" width="113" height="246"/>
+                                                    <rect key="frame" x="687" y="0.0" width="113" height="248"/>
                                                 </variation>
                                                 <connections>
                                                     <action selector="noteButtonPushed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aJj-lY-6xU"/>
@@ -1372,7 +1372,7 @@
                                             </mask>
                                         </variation>
                                         <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
-                                            <rect key="frame" x="367" y="342" width="66" height="213"/>
+                                            <rect key="frame" x="367" y="342" width="66" height="212"/>
                                         </variation>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillEqually" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="2gh-Y3-L2B">
@@ -1409,7 +1409,7 @@
                                                     </mask>
                                                 </variation>
                                                 <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
-                                                    <rect key="frame" x="0.0" y="0.0" width="112" height="245"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="112" height="246"/>
                                                 </variation>
                                                 <connections>
                                                     <action selector="noteButtonPushed:" destination="1kL-34-zOT" eventType="touchUpInside" id="sGB-l0-0AS"/>
@@ -1423,7 +1423,7 @@
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
-                                                    <rect key="frame" x="115" y="0.0" width="111" height="245"/>
+                                                    <rect key="frame" x="115" y="0.0" width="111" height="246"/>
                                                 </variation>
                                                 <connections>
                                                     <action selector="noteButtonPushed:" destination="1kL-34-zOT" eventType="touchUpInside" id="Jfy-jQ-jHc"/>
@@ -1437,7 +1437,7 @@
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
-                                                    <rect key="frame" x="229" y="0.0" width="112" height="245"/>
+                                                    <rect key="frame" x="229" y="0.0" width="112" height="246"/>
                                                 </variation>
                                                 <connections>
                                                     <action selector="noteButtonPushed:" destination="1kL-34-zOT" eventType="touchUpInside" id="UMc-Kf-d0g"/>
@@ -1451,7 +1451,7 @@
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
-                                                    <rect key="frame" x="344" y="0.0" width="112" height="245"/>
+                                                    <rect key="frame" x="344" y="0.0" width="112" height="246"/>
                                                 </variation>
                                                 <connections>
                                                     <action selector="noteButtonPushed:" destination="1kL-34-zOT" eventType="touchUpInside" id="VYK-YD-2Hd"/>
@@ -1465,7 +1465,7 @@
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
-                                                    <rect key="frame" x="459" y="0.0" width="112" height="245"/>
+                                                    <rect key="frame" x="459" y="0.0" width="112" height="246"/>
                                                 </variation>
                                                 <connections>
                                                     <action selector="noteButtonPushed:" destination="1kL-34-zOT" eventType="touchUpInside" id="SV5-tx-SLo"/>
@@ -1479,7 +1479,7 @@
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
-                                                    <rect key="frame" x="574" y="0.0" width="111" height="245"/>
+                                                    <rect key="frame" x="574" y="0.0" width="111" height="246"/>
                                                 </variation>
                                                 <connections>
                                                     <action selector="noteButtonPushed:" destination="1kL-34-zOT" eventType="touchUpInside" id="tsO-Ai-Rvb"/>
@@ -1498,7 +1498,7 @@
                                             </button>
                                         </subviews>
                                         <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
-                                            <rect key="frame" x="0.0" y="555" width="800" height="245"/>
+                                            <rect key="frame" x="0.0" y="554" width="800" height="246"/>
                                         </variation>
                                     </stackView>
                                 </subviews>
