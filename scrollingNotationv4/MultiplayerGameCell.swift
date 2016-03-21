@@ -9,7 +9,9 @@
 import UIKit
 
 class MultiplayerGameCell: UITableViewCell {
-
+    @IBOutlet weak var opponentLabel:UILabel!
+    @IBOutlet weak var playButton:UIButton!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
