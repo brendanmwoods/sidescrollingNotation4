@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -789,8 +790,8 @@
                                     <constraint firstAttribute="width" constant="300" id="w1i-oA-3tc"/>
                                 </constraints>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleAspectFit" verticalHuggingPriority="260" axis="vertical" distribution="fillProportionally" alignment="center" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="SLT-vg-N2s">
-                                <rect key="frame" x="20" y="98" width="560" height="385"/>
+                            <stackView opaque="NO" contentMode="scaleAspectFit" verticalHuggingPriority="260" misplaced="YES" axis="vertical" distribution="fillProportionally" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="SLT-vg-N2s">
+                                <rect key="frame" x="20" y="98" width="560" height="431"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="LbA-NJ-Cln">
                                         <rect key="frame" x="175" y="0.0" width="210" height="70"/>
@@ -825,15 +826,46 @@
                                             </stackView>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="dvO-a4-KhR">
-                                        <rect key="frame" x="190" y="92" width="180" height="70"/>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JeC-kJ-0OS">
+                                        <rect key="frame" x="175" y="90" width="210" height="70"/>
+                                        <color key="backgroundColor" red="0.0" green="0.54117647059999996" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="70" id="7rN-xG-jSq"/>
+                                            <constraint firstAttribute="height" constant="70" id="OiW-xK-obf"/>
+                                            <constraint firstAttribute="width" constant="210" id="WsX-yi-nGE"/>
+                                            <constraint firstAttribute="width" constant="210" id="bSC-qb-7oG"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="30"/>
+                                        <state key="normal" title="Multiplayer">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="7rN-xG-jSq"/>
+                                                <exclude reference="WsX-yi-nGE"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=regular">
+                                            <mask key="constraints">
+                                                <include reference="7rN-xG-jSq"/>
+                                                <include reference="WsX-yi-nGE"/>
+                                            </mask>
+                                        </variation>
+                                        <connections>
+                                            <segue destination="cfh-9c-eSt" kind="show" id="2ph-aN-JKU"/>
+                                        </connections>
+                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="dvO-a4-KhR">
+                                        <rect key="frame" x="190" y="180" width="180" height="50"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1we-bT-S9Z">
-                                                <rect key="frame" x="0.0" y="0.0" width="180" height="70"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="180" height="50"/>
                                                 <color key="backgroundColor" red="0.0" green="0.54117647059999996" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="84" id="KIU-f2-2I8"/>
-                                                    <constraint firstAttribute="height" constant="70" id="aj5-yo-Q9X"/>
+                                                    <constraint firstAttribute="height" constant="50" id="aj5-yo-Q9X">
+                                                        <variation key="heightClass=regular-widthClass=regular" constant="50"/>
+                                                    </constraint>
                                                     <constraint firstAttribute="width" constant="180" id="gS0-YI-YmB"/>
                                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="70" id="tpa-4C-KUc"/>
                                                 </constraints>
@@ -853,17 +885,19 @@
                                             </button>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="6WN-9S-tVK">
-                                        <rect key="frame" x="190" y="184" width="180" height="201"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="6WN-9S-tVK">
+                                        <rect key="frame" x="190" y="250" width="180" height="181"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="1oJ-fG-mW0">
-                                                <rect key="frame" x="0.0" y="0.0" width="180" height="201"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="180" height="181"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YHj-9G-HkF">
-                                                        <rect key="frame" x="0.0" y="0.0" width="180" height="70"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="180" height="50"/>
                                                         <color key="backgroundColor" red="0.0" green="0.54117647059999996" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="70" id="uGh-NB-UJ6"/>
+                                                            <constraint firstAttribute="height" constant="50" id="uGh-NB-UJ6">
+                                                                <variation key="heightClass=regular-widthClass=regular" constant="50"/>
+                                                            </constraint>
                                                             <constraint firstAttribute="width" constant="180" id="yZa-1n-2T9"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="30"/>
@@ -875,7 +909,7 @@
                                                         </connections>
                                                     </button>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="UgN-wD-230">
-                                                        <rect key="frame" x="80" y="92" width="21" height="109"/>
+                                                        <rect key="frame" x="80" y="72" width="21" height="109"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 -" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k0u-9z-PDy">
                                                                 <rect key="frame" x="0.0" y="0.0" width="21" height="22"/>
@@ -930,9 +964,6 @@
                                     </stackView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.11351610099999999" green="0.21346665400000001" blue="0.34619633840000003" alpha="1" colorSpace="calibratedRGB"/>
-                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
-                                    <rect key="frame" x="20" y="198" width="760" height="385"/>
-                                </variation>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nWm-rf-ONd">
                                 <rect key="frame" x="245" y="28" width="110" height="51"/>
@@ -946,6 +977,9 @@
                             <constraint firstItem="19q-Q7-kpY" firstAttribute="top" secondItem="SLT-vg-N2s" secondAttribute="bottom" constant="10" id="1bk-6l-VmY"/>
                             <constraint firstAttribute="trailingMargin" secondItem="SLT-vg-N2s" secondAttribute="trailing" id="2u9-pY-kGr"/>
                             <constraint firstItem="SLT-vg-N2s" firstAttribute="centerY" secondItem="jp0-oC-9lf" secondAttribute="centerY" id="4rP-Nd-ngJ"/>
+                            <constraint firstItem="19q-Q7-kpY" firstAttribute="top" relation="greaterThanOrEqual" secondItem="SLT-vg-N2s" secondAttribute="bottom" constant="181" id="4vT-xq-Mg0">
+                                <variation key="heightClass=regular-widthClass=regular" constant="10"/>
+                            </constraint>
                             <constraint firstItem="19q-Q7-kpY" firstAttribute="top" secondItem="SLT-vg-N2s" secondAttribute="bottom" constant="104" id="6Xs-zm-WrQ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="SLT-vg-N2s" secondAttribute="trailing" id="Ayx-l5-Zyf"/>
                             <constraint firstItem="S5V-Ct-Hin" firstAttribute="centerX" secondItem="jp0-oC-9lf" secondAttribute="centerX" id="DWZ-uS-JJQ"/>
@@ -960,6 +994,7 @@
                             <constraint firstItem="SLT-vg-N2s" firstAttribute="leading" secondItem="jp0-oC-9lf" secondAttribute="leadingMargin" id="p64-2F-7LB"/>
                             <constraint firstItem="S5V-Ct-Hin" firstAttribute="centerY" secondItem="jp0-oC-9lf" secondAttribute="centerY" id="vAf-Qs-WsG"/>
                             <constraint firstItem="SLT-vg-N2s" firstAttribute="centerY" secondItem="jp0-oC-9lf" secondAttribute="centerY" id="voL-HP-HQL"/>
+                            <constraint firstItem="19q-Q7-kpY" firstAttribute="top" relation="greaterThanOrEqual" secondItem="SLT-vg-N2s" secondAttribute="bottom" constant="10" id="wpb-uy-Iai"/>
                             <constraint firstItem="SLT-vg-N2s" firstAttribute="centerY" secondItem="jp0-oC-9lf" secondAttribute="centerY" id="yEH-UB-BMZ"/>
                             <constraint firstItem="SLT-vg-N2s" firstAttribute="centerX" secondItem="jp0-oC-9lf" secondAttribute="centerX" id="zKm-6p-IMQ"/>
                         </constraints>
@@ -974,6 +1009,7 @@
                                 <exclude reference="yEH-UB-BMZ"/>
                                 <exclude reference="zKm-6p-IMQ"/>
                                 <exclude reference="1bk-6l-VmY"/>
+                                <exclude reference="4vT-xq-Mg0"/>
                                 <exclude reference="6Xs-zm-WrQ"/>
                                 <exclude reference="m3U-ly-vhB"/>
                                 <exclude reference="oNT-gK-vNV"/>
@@ -984,6 +1020,7 @@
                                 <exclude reference="ebd-7a-SRy"/>
                                 <include reference="yEH-UB-BMZ"/>
                                 <exclude reference="zKm-6p-IMQ"/>
+                                <include reference="4vT-xq-Mg0"/>
                             </mask>
                         </variation>
                     </view>
@@ -1046,6 +1083,120 @@
             </objects>
             <point key="canvasLocation" x="1411" y="1676"/>
         </scene>
+        <!--Multiplayer Menu View Controller-->
+        <scene sceneID="2le-8V-F9r">
+            <objects>
+                <viewController id="cfh-9c-eSt" customClass="MultiplayerMenuViewController" customModule="NoteBrainer" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Aa7-A2-41r"/>
+                        <viewControllerLayoutGuide type="bottom" id="0tK-2Y-BFK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Bdf-sj-oNh">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RMd-21-JxS">
+                                <rect key="frame" x="0.0" y="202" width="600" height="398"/>
+                                <color key="backgroundColor" red="0.11351610099999999" green="0.21346665400000001" blue="0.34619633840000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <segue destination="waf-uz-Km4" kind="embed" id="B1W-jq-axV"/>
+                                </connections>
+                            </containerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Games" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nYJ-LC-YFb">
+                                <rect key="frame" x="223" y="150" width="154" height="36"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="30"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="highlightedColor" red="0.0" green="0.54117647059999996" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </label>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bvU-b0-c9w">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="109" width="800" height="691"/>
+                                </variation>
+                            </containerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fga-hI-MLq">
+                                <rect key="frame" x="195" y="71" width="210" height="50"/>
+                                <color key="backgroundColor" red="0.0" green="0.54117647059999996" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="210" id="10C-hn-IW1"/>
+                                    <constraint firstAttribute="height" constant="50" id="DMx-wi-vLG"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="15"/>
+                                <state key="normal" title="Start New Game">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="newGameButtonPushed:" destination="cfh-9c-eSt" eventType="touchUpInside" id="VM0-Dw-BMA"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.11351610099999999" green="0.21346665400000001" blue="0.34619633840000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="nYJ-LC-YFb" firstAttribute="top" secondItem="Fga-hI-MLq" secondAttribute="bottom" constant="29" id="739-0f-x3A"/>
+                            <constraint firstItem="0tK-2Y-BFK" firstAttribute="top" secondItem="RMd-21-JxS" secondAttribute="bottom" id="BMD-cb-7GS"/>
+                            <constraint firstItem="nYJ-LC-YFb" firstAttribute="centerX" secondItem="Bdf-sj-oNh" secondAttribute="centerX" id="PDw-8x-V1x"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="RMd-21-JxS" secondAttribute="trailing" constant="-20" id="aTn-xa-9OL"/>
+                            <constraint firstItem="RMd-21-JxS" firstAttribute="top" secondItem="nYJ-LC-YFb" secondAttribute="bottom" constant="16" id="dx5-Mf-QO7"/>
+                            <constraint firstItem="RMd-21-JxS" firstAttribute="leading" secondItem="Bdf-sj-oNh" secondAttribute="leadingMargin" constant="-20" id="epo-ie-GRa"/>
+                            <constraint firstItem="Fga-hI-MLq" firstAttribute="centerX" secondItem="Bdf-sj-oNh" secondAttribute="centerX" id="n8f-XR-DRY"/>
+                            <constraint firstItem="Fga-hI-MLq" firstAttribute="top" secondItem="Aa7-A2-41r" secondAttribute="bottom" constant="51" id="yhi-e9-dXF"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="bvU-b0-c9w"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=regular">
+                            <mask key="subviews">
+                                <include reference="bvU-b0-c9w"/>
+                            </mask>
+                        </variation>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xrC-Hj-vpc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2081" y="1671"/>
+        </scene>
+        <!--Multiplayer Games Table View Controller-->
+        <scene sceneID="QJ9-7s-PEZ">
+            <objects>
+                <tableViewController id="waf-uz-Km4" customClass="MultiplayerGamesTableViewController" customModule="NoteBrainer" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Fnd-co-RYS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="398"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.11351610099999999" green="0.21346665400000001" blue="0.34619633840000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="separatorColor" red="0.11351610099999999" green="0.21346665400000001" blue="0.34619633840000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="sectionIndexBackgroundColor" red="0.11351610099999999" green="0.21346665400000001" blue="0.34619633840000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="reuseIdentifier" id="WFQ-KB-fNO" customClass="MultiplayerGameCell" customModule="NoteBrainer" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WFQ-KB-fNO" id="pbK-LW-a1J">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Game" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JMA-1D-aR0">
+                                            <rect key="frame" x="27" y="11" width="46" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" red="0.11351610099999999" green="0.21346665400000001" blue="0.34619633840000003" alpha="1" colorSpace="calibratedRGB"/>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.11351610099999999" green="0.21346665400000001" blue="0.34619633840000003" alpha="1" colorSpace="calibratedRGB"/>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="waf-uz-Km4" id="KYr-ko-vAM"/>
+                            <outlet property="delegate" destination="waf-uz-Km4" id="fJf-fK-ywa"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bE5-S9-glO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2767" y="1656"/>
+        </scene>
         <!--Game View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -1086,7 +1237,7 @@
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
-                                            <rect key="frame" x="0.0" y="342" width="800" height="189"/>
+                                            <rect key="frame" x="0.0" y="342" width="800" height="190"/>
                                         </variation>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="High Score: 00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OgI-dt-9YL">
@@ -1095,7 +1246,7 @@
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
-                                            <rect key="frame" x="685" y="531" width="115" height="21"/>
+                                            <rect key="frame" x="685" y="532" width="115" height="21"/>
                                         </variation>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="A2o-EU-Vll">
@@ -1112,7 +1263,7 @@
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
-                                                    <rect key="frame" x="0.0" y="0.0" width="113" height="248"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="113" height="247"/>
                                                 </variation>
                                                 <connections>
                                                     <action selector="noteButtonPushed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="24r-6J-BqZ"/>
@@ -1126,7 +1277,7 @@
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
-                                                    <rect key="frame" x="115" y="0.0" width="112" height="248"/>
+                                                    <rect key="frame" x="115" y="0.0" width="112" height="247"/>
                                                 </variation>
                                                 <connections>
                                                     <action selector="noteButtonPushed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="y0U-qx-1oe"/>
@@ -1140,7 +1291,7 @@
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
-                                                    <rect key="frame" x="229" y="0.0" width="113" height="248"/>
+                                                    <rect key="frame" x="229" y="0.0" width="113" height="247"/>
                                                 </variation>
                                                 <connections>
                                                     <action selector="noteButtonPushed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tIr-bk-UaE"/>
@@ -1154,7 +1305,7 @@
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
-                                                    <rect key="frame" x="344" y="0.0" width="112" height="248"/>
+                                                    <rect key="frame" x="344" y="0.0" width="112" height="247"/>
                                                 </variation>
                                                 <connections>
                                                     <action selector="noteButtonPushed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3ac-qQ-sdR"/>
@@ -1168,7 +1319,7 @@
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
-                                                    <rect key="frame" x="458" y="0.0" width="113" height="248"/>
+                                                    <rect key="frame" x="458" y="0.0" width="113" height="247"/>
                                                 </variation>
                                                 <connections>
                                                     <action selector="noteButtonPushed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RQ4-qG-Vq4"/>
@@ -1182,7 +1333,7 @@
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
-                                                    <rect key="frame" x="573" y="0.0" width="112" height="248"/>
+                                                    <rect key="frame" x="573" y="0.0" width="112" height="247"/>
                                                 </variation>
                                                 <connections>
                                                     <action selector="noteButtonPushed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Lcv-Fz-jSu"/>
@@ -1196,13 +1347,16 @@
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
-                                                    <rect key="frame" x="687" y="0.0" width="113" height="248"/>
+                                                    <rect key="frame" x="687" y="0.0" width="113" height="247"/>
                                                 </variation>
                                                 <connections>
                                                     <action selector="noteButtonPushed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aJj-lY-6xU"/>
                                                 </connections>
                                             </button>
                                         </subviews>
+                                        <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                            <rect key="frame" x="0.0" y="553" width="800" height="247"/>
+                                        </variation>
                                     </stackView>
                                 </subviews>
                                 <constraints>
@@ -1372,7 +1526,7 @@
                                             </mask>
                                         </variation>
                                         <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
-                                            <rect key="frame" x="367" y="342" width="66" height="212"/>
+                                            <rect key="frame" x="367" y="342" width="66" height="213"/>
                                         </variation>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillEqually" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="2gh-Y3-L2B">
@@ -1409,7 +1563,7 @@
                                                     </mask>
                                                 </variation>
                                                 <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
-                                                    <rect key="frame" x="0.0" y="0.0" width="112" height="246"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="112" height="245"/>
                                                 </variation>
                                                 <connections>
                                                     <action selector="noteButtonPushed:" destination="1kL-34-zOT" eventType="touchUpInside" id="sGB-l0-0AS"/>
@@ -1423,7 +1577,7 @@
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
-                                                    <rect key="frame" x="115" y="0.0" width="111" height="246"/>
+                                                    <rect key="frame" x="115" y="0.0" width="111" height="245"/>
                                                 </variation>
                                                 <connections>
                                                     <action selector="noteButtonPushed:" destination="1kL-34-zOT" eventType="touchUpInside" id="Jfy-jQ-jHc"/>
@@ -1437,7 +1591,7 @@
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
-                                                    <rect key="frame" x="229" y="0.0" width="112" height="246"/>
+                                                    <rect key="frame" x="229" y="0.0" width="112" height="245"/>
                                                 </variation>
                                                 <connections>
                                                     <action selector="noteButtonPushed:" destination="1kL-34-zOT" eventType="touchUpInside" id="UMc-Kf-d0g"/>
@@ -1451,7 +1605,7 @@
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
-                                                    <rect key="frame" x="344" y="0.0" width="112" height="246"/>
+                                                    <rect key="frame" x="344" y="0.0" width="112" height="245"/>
                                                 </variation>
                                                 <connections>
                                                     <action selector="noteButtonPushed:" destination="1kL-34-zOT" eventType="touchUpInside" id="VYK-YD-2Hd"/>
@@ -1465,7 +1619,7 @@
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
-                                                    <rect key="frame" x="459" y="0.0" width="112" height="246"/>
+                                                    <rect key="frame" x="459" y="0.0" width="112" height="245"/>
                                                 </variation>
                                                 <connections>
                                                     <action selector="noteButtonPushed:" destination="1kL-34-zOT" eventType="touchUpInside" id="SV5-tx-SLo"/>
@@ -1479,7 +1633,7 @@
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
-                                                    <rect key="frame" x="574" y="0.0" width="111" height="246"/>
+                                                    <rect key="frame" x="574" y="0.0" width="111" height="245"/>
                                                 </variation>
                                                 <connections>
                                                     <action selector="noteButtonPushed:" destination="1kL-34-zOT" eventType="touchUpInside" id="tsO-Ai-Rvb"/>
@@ -1492,13 +1646,16 @@
                                                 <state key="normal" title="G">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                                    <rect key="frame" x="688" y="0.0" width="112" height="245"/>
+                                                </variation>
                                                 <connections>
                                                     <action selector="noteButtonPushed:" destination="1kL-34-zOT" eventType="touchUpInside" id="Yqd-3Q-QTe"/>
                                                 </connections>
                                             </button>
                                         </subviews>
                                         <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
-                                            <rect key="frame" x="0.0" y="554" width="800" height="246"/>
+                                            <rect key="frame" x="0.0" y="555" width="800" height="245"/>
                                         </variation>
                                     </stackView>
                                 </subviews>

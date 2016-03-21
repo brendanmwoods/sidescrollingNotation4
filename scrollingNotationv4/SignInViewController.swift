@@ -22,9 +22,11 @@ class SignInViewController: UIViewController {
     var optionalPrefilledPassword: String = ""
     var optionalprefilledAccountStatus: String = ""
     var ref = Firebase(url:"https://glowing-torch-8861.firebaseio.com/")
+    var delegate = AppDelegate()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        delegate = UIApplication.sharedApplication().delegate as! AppDelegate
         
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
         view.addGestureRecognizer(tap)
@@ -66,6 +68,7 @@ class SignInViewController: UIViewController {
                 nameRef.queryOrderedByChild("UID").queryEqualToValue(uid)
                     .observeEventType(.ChildAdded, withBlock: { snapshot in
                         defaults.setValue(snapshot.key!, forKey: "FirebaseUsername")
+                        self.delegate.setUsername()
                     })
                 
                 let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate

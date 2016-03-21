@@ -61,8 +61,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     //if a username has been set to userdefaults before, assign to delegate variable
     func setUsername() {
         let userDefaults = NSUserDefaults.standardUserDefaults()
-        if (userDefaults.objectForKey("Username") != nil) {
-            username = String(userDefaults.objectForKey("Username")!)
+        if (userDefaults.objectForKey("FirebaseUsername") != nil) {
+            username = String(userDefaults.objectForKey("FirebaseUsername")!)
         }
     }
     

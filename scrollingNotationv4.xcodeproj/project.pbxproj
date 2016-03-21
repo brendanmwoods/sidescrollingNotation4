@@ -26,6 +26,9 @@
 		BC7E7AD21C9628EF00042F7F /* OptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7E7AD01C9628EF00042F7F /* OptionsViewController.swift */; };
 		BC7E7AD41C96291B00042F7F /* LineChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7E7AD31C96291B00042F7F /* LineChart.swift */; };
 		BC7E7AD61C96297700042F7F /* GraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7E7AD51C96297700042F7F /* GraphViewController.swift */; };
+		BC8A43EE1C9F6CCC006F8A9D /* MultiplayerMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8A43ED1C9F6CCC006F8A9D /* MultiplayerMenuViewController.swift */; };
+		BC8A43F01C9F90B5006F8A9D /* MultiplayerGamesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8A43EF1C9F90B5006F8A9D /* MultiplayerGamesTableViewController.swift */; };
+		BC8A43F21C9F90E6006F8A9D /* MultiplayerGameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8A43F11C9F90E6006F8A9D /* MultiplayerGameCell.swift */; };
 		BCB038831C988BAB002A35D0 /* noteChart.png in Resources */ = {isa = PBXBuildFile; fileRef = BCB038821C988BAB002A35D0 /* noteChart.png */; };
 		BCB038851C98944F002A35D0 /* noteChartAltColors.png in Resources */ = {isa = PBXBuildFile; fileRef = BCB038841C98944F002A35D0 /* noteChartAltColors.png */; };
 		BCC046A21C85611C00438E71 /* Bubble.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BCC046A11C85611C00438E71 /* Bubble.mp3 */; };
@@ -106,6 +109,9 @@
 		BC7E7AD01C9628EF00042F7F /* OptionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsViewController.swift; sourceTree = "<group>"; };
 		BC7E7AD31C96291B00042F7F /* LineChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineChart.swift; sourceTree = "<group>"; };
 		BC7E7AD51C96297700042F7F /* GraphViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GraphViewController.swift; path = "../../../../Downloads/swift-linechart-master/linechart/GraphViewController.swift"; sourceTree = "<group>"; };
+		BC8A43ED1C9F6CCC006F8A9D /* MultiplayerMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultiplayerMenuViewController.swift; sourceTree = "<group>"; };
+		BC8A43EF1C9F90B5006F8A9D /* MultiplayerGamesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultiplayerGamesTableViewController.swift; sourceTree = "<group>"; };
+		BC8A43F11C9F90E6006F8A9D /* MultiplayerGameCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultiplayerGameCell.swift; sourceTree = "<group>"; };
 		BCB038821C988BAB002A35D0 /* noteChart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = noteChart.png; sourceTree = "<group>"; };
 		BCB038841C98944F002A35D0 /* noteChartAltColors.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = noteChartAltColors.png; sourceTree = "<group>"; };
 		BCC046A11C85611C00438E71 /* Bubble.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Bubble.mp3; sourceTree = "<group>"; };
@@ -237,6 +243,9 @@
 				BC64B7C81C6C56F200DE7780 /* Info.plist */,
 				BC7E7AD51C96297700042F7F /* GraphViewController.swift */,
 				BC7E7AD31C96291B00042F7F /* LineChart.swift */,
+				BC8A43ED1C9F6CCC006F8A9D /* MultiplayerMenuViewController.swift */,
+				BC8A43EF1C9F90B5006F8A9D /* MultiplayerGamesTableViewController.swift */,
+				BC8A43F11C9F90E6006F8A9D /* MultiplayerGameCell.swift */,
 			);
 			path = scrollingNotationv4;
 			sourceTree = "<group>";
@@ -516,9 +525,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC8A43F21C9F90E6006F8A9D /* MultiplayerGameCell.swift in Sources */,
 				BC69BAE81C90F00900347E55 /* CreateAccountViewController.swift in Sources */,
 				BCC8F7731C77C58A00EAA645 /* MainMenuViewController.swift in Sources */,
+				BC8A43EE1C9F6CCC006F8A9D /* MultiplayerMenuViewController.swift in Sources */,
 				BC7E7AD41C96291B00042F7F /* LineChart.swift in Sources */,
+				BC8A43F01C9F90B5006F8A9D /* MultiplayerGamesTableViewController.swift in Sources */,
 				BC0928671C8F85F80096140F /* leadboardTableTableViewController.swift in Sources */,
 				BC7E7AD11C9628EF00042F7F /* LeaderboardItem.swift in Sources */,
 				BC7E7AD21C9628EF00042F7F /* OptionsViewController.swift in Sources */,
