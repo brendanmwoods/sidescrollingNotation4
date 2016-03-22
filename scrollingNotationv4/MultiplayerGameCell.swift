@@ -11,6 +11,9 @@ import UIKit
 class MultiplayerGameCell: UITableViewCell {
     @IBOutlet weak var opponentLabel:UILabel!
     @IBOutlet weak var playButton:UIButton!
+    @IBOutlet weak var scoreLabel:UILabel!
+    
+    var gameData = MultiplayerGamesTableViewController.gameData()
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -22,5 +25,7 @@ class MultiplayerGameCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    
 
 }

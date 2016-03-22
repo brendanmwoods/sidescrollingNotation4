@@ -48,7 +48,8 @@ class GameViewController: UIViewController , AVAudioPlayerDelegate{
     var difficulty = ""
     var notePlayer: AVAudioPlayer! = nil
     var appDelegate = AppDelegate()
-    
+    var multiplayerData = MultiplayerGamesTableViewController.gameData()
+    var isMultiplayer = false
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -1155,7 +1155,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xrC-Hj-vpc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2081" y="1671"/>
+            <point key="canvasLocation" x="2085" y="1629"/>
         </scene>
         <!--Multiplayer Games Table View Controller-->
         <scene sceneID="QJ9-7s-PEZ">
@@ -1192,17 +1192,26 @@
                                                 <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             </state>
                                         </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 - 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="no6-aV-frm">
+                                            <rect key="frame" x="445" y="11" width="38" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <color key="backgroundColor" red="0.11351610099999999" green="0.21346665400000001" blue="0.34619633840000003" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="trailingMargin" secondItem="Zx4-OR-s23" secondAttribute="trailing" constant="11" id="GK4-EQ-CtE"/>
                                         <constraint firstItem="Zx4-OR-s23" firstAttribute="centerY" secondItem="pbK-LW-a1J" secondAttribute="centerY" id="Gf9-PA-pRy"/>
+                                        <constraint firstItem="Zx4-OR-s23" firstAttribute="leading" secondItem="no6-aV-frm" secondAttribute="trailing" constant="8" id="LUr-o8-l79"/>
+                                        <constraint firstItem="no6-aV-frm" firstAttribute="centerY" secondItem="pbK-LW-a1J" secondAttribute="centerY" id="cUe-eq-Uzi"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="0.11351610099999999" green="0.21346665400000001" blue="0.34619633840000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <outlet property="opponentLabel" destination="JMA-1D-aR0" id="tTX-tU-g3m"/>
                                     <outlet property="playButton" destination="Zx4-OR-s23" id="Qyz-69-iES"/>
+                                    <outlet property="scoreLabel" destination="no6-aV-frm" id="e7e-v7-INh"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -1214,12 +1223,12 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bE5-S9-glO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2695" y="1598"/>
+            <point key="canvasLocation" x="2749" y="1629"/>
         </scene>
         <!--Game View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="GameViewController" customModule="NoteBrainer" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="gameViewControllerScene" id="BYZ-38-t0r" customClass="GameViewController" customModule="NoteBrainer" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>

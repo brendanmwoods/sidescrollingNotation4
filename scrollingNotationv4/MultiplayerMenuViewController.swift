@@ -65,7 +65,7 @@ class MultiplayerMenuViewController: UIViewController {
 
         let gameId = ref.childByAppendingPath("Games/").childByAutoId()
         gameId.setValue(["Player1" : "\(self.delegate.username)",
-            "Player2" : "\(opponent)", "scoreToBeat": 0])
+            "Player2" : "\(opponent)", "scoreToBeat": 0, "isNewGame" : true])
         gameId.childByAppendingPath("waitingOnPlayer").setValue([self.delegate.username : "true"])
         gameId.childByAppendingPath("wins").setValue([self.delegate.username : 0, opponent: 0])
         let gameIdString = String(gameId.key)
