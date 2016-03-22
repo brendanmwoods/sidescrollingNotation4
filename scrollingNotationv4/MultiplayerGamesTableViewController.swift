@@ -100,24 +100,25 @@ class MultiplayerGamesTableViewController: UITableViewController {
         cell.scoreLabel.text = "\(allGames[indexPath.row].heroWins) - \(allGames[indexPath.row].opponentWins)"
         if allGames[indexPath.row].waitingOnPlayer == delegate.username {
             cell.playButton.hidden = false
+            cell.waitingLabel.hidden = true
+        }
+        else {
+            cell.playButton.hidden = true
+            cell.waitingLabel.hidden = false
         }
         cell.gameData = allGames[indexPath.row]
         cell.selectionStyle = UITableViewCellSelectionStyle.None
-        print(cell.gameData)
         cell.playButton.tag = indexPath.row
-        print("cell.tag = \(cell.tag)")
         cell.playButton.addTarget(self, action: "multiplayerGameSegue:", forControlEvents: .TouchUpInside)
         
         return cell
     }
 
     func multiplayerGameSegue(sender:UIButton!) {
-        print("sender tag = \(sender.tag)")
         let vc = self.storyboard?.instantiateViewControllerWithIdentifier("gameViewControllerScene") as! GameViewController
         vc.isMultiplayer = true
         vc.multiplayerData = allGames[sender.tag]
         vc.difficulty = "medium"
-        print("sending this data \(allGames[sender.tag])")
         self.showViewController(vc, sender: vc)
 
     }

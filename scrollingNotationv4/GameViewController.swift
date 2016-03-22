@@ -22,6 +22,7 @@ class GameViewController: UIViewController , AVAudioPlayerDelegate{
     @IBOutlet weak var gButton:UIButton?
     @IBOutlet weak var scoreLabel:UILabel?
     @IBOutlet weak var highScoreLabel:UILabel?
+    @IBOutlet weak var scoreToBeatLabel:UILabel!
     
     var ovalNoteImageView = UIImageView()
     
@@ -63,7 +64,13 @@ class GameViewController: UIViewController , AVAudioPlayerDelegate{
         let imageName = "ovalNote.png"
         let image = UIImage(named: imageName)
         ovalNoteImageView = UIImageView(image: image!)
-        
+        if isMultiplayer && multiplayerData.isNewGame != true {
+            scoreToBeatLabel?.hidden = false
+            scoreToBeatLabel.text = "Score To Beat: \(multiplayerData.scoreToBeat)"
+        }
+        else {
+            scoreToBeatLabel.hidden = true
+        }
         gameLoop()
     }
     
@@ -211,7 +218,7 @@ class GameViewController: UIViewController , AVAudioPlayerDelegate{
                 multiplayerData.heroWins++
                 gameRef.childByAppendingPath("/wins/").updateChildValues([multiplayerData.hero : multiplayerData.heroWins])
             }
-            else {
+            else if currentScore < multiplayerData.scoreToBeat{
                 //update opponent wins
                 multiplayerData.opponentWins++
                 gameRef.childByAppendingPath("/wins/").updateChildValues([multiplayerData.opponent : multiplayerData.opponentWins])

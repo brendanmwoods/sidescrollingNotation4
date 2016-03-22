@@ -12,6 +12,7 @@ class MultiplayerGameCell: UITableViewCell {
     @IBOutlet weak var opponentLabel:UILabel!
     @IBOutlet weak var playButton:UIButton!
     @IBOutlet weak var scoreLabel:UILabel!
+    @IBOutlet weak var waitingLabel:UIButton!
     
     var gameData = MultiplayerGamesTableViewController.gameData()
     
