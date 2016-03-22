@@ -1134,7 +1134,10 @@
                         <constraints>
                             <constraint firstItem="nYJ-LC-YFb" firstAttribute="top" secondItem="Fga-hI-MLq" secondAttribute="bottom" constant="29" id="739-0f-x3A"/>
                             <constraint firstItem="0tK-2Y-BFK" firstAttribute="top" secondItem="RMd-21-JxS" secondAttribute="bottom" id="BMD-cb-7GS"/>
+                            <constraint firstItem="RMd-21-JxS" firstAttribute="top" secondItem="nYJ-LC-YFb" secondAttribute="bottom" constant="16" id="MLi-co-gph"/>
                             <constraint firstItem="nYJ-LC-YFb" firstAttribute="centerX" secondItem="Bdf-sj-oNh" secondAttribute="centerX" id="PDw-8x-V1x"/>
+                            <constraint firstItem="RMd-21-JxS" firstAttribute="top" secondItem="Aa7-A2-41r" secondAttribute="bottom" constant="182" id="TtN-Cp-l5q"/>
+                            <constraint firstItem="RMd-21-JxS" firstAttribute="top" secondItem="Aa7-A2-41r" secondAttribute="bottom" constant="182" id="U8Y-aN-wqp"/>
                             <constraint firstAttribute="trailingMargin" secondItem="RMd-21-JxS" secondAttribute="trailing" constant="-20" id="aTn-xa-9OL"/>
                             <constraint firstItem="RMd-21-JxS" firstAttribute="top" secondItem="nYJ-LC-YFb" secondAttribute="bottom" constant="16" id="dx5-Mf-QO7"/>
                             <constraint firstItem="RMd-21-JxS" firstAttribute="leading" secondItem="Bdf-sj-oNh" secondAttribute="leadingMargin" constant="-20" id="epo-ie-GRa"/>
@@ -1144,6 +1147,11 @@
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="bvU-b0-c9w"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="TtN-Cp-l5q"/>
+                                <exclude reference="U8Y-aN-wqp"/>
+                                <exclude reference="dx5-Mf-QO7"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=regular">
@@ -1160,7 +1168,7 @@
         <!--Multiplayer Games Table View Controller-->
         <scene sceneID="QJ9-7s-PEZ">
             <objects>
-                <tableViewController id="waf-uz-Km4" customClass="MultiplayerGamesTableViewController" customModule="NoteBrainer" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController automaticallyAdjustsScrollViewInsets="NO" id="waf-uz-Km4" customClass="MultiplayerGamesTableViewController" customModule="NoteBrainer" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Fnd-co-RYS">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="398"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

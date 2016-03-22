@@ -46,6 +46,7 @@ class MultiplayerGamesTableViewController: UITableViewController {
                     opponentName = snapshot.value["Player1"] as! String
                 }
                 let scoreToBeat = snapshot.value["scoreToBeat"] as! Int
+                let isNewGame = snapshot.value["isNewGame"] as! Bool
                 var waitingOnPlayer = String()
                 gamesDataRef.childByAppendingPath("waitingOnPlayer").observeSingleEventOfType(.ChildAdded, withBlock: {
                     snapshot in
@@ -56,9 +57,8 @@ class MultiplayerGamesTableViewController: UITableViewController {
                     print(snapshot)
                     let heroWins = snapshot.value["\(self.delegate.username)"] as! Int
                     let opponentWins = snapshot.value["\(opponentName)"] as! Int
-                    let tempGame = gameData(hero:self.delegate.username , opponent: opponentName, heroWins: heroWins, opponentWins: opponentWins, waitingOnPlayer: waitingOnPlayer, scoreToBeat: scoreToBeat, isNewGame: true, gameID: gameID )
+                    let tempGame = gameData(hero:self.delegate.username , opponent: opponentName, heroWins: heroWins, opponentWins: opponentWins, waitingOnPlayer: waitingOnPlayer, scoreToBeat: scoreToBeat, isNewGame: isNewGame, gameID: gameID )
                     self.allGames.append(tempGame)
-                    print(self.allGames.count)
                     self.tableView.reloadData()
                 })
             })
@@ -96,7 +96,7 @@ class MultiplayerGamesTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as! MultiplayerGameCell
-        cell.opponentLabel.text = "(allGames[indexPath.row].opponent)"
+        cell.opponentLabel.text = "\(allGames[indexPath.row].opponent)"
         cell.scoreLabel.text = "\(allGames[indexPath.row].heroWins) - \(allGames[indexPath.row].opponentWins)"
         if allGames[indexPath.row].waitingOnPlayer == delegate.username {
             cell.playButton.hidden = false
@@ -104,13 +104,15 @@ class MultiplayerGamesTableViewController: UITableViewController {
         cell.gameData = allGames[indexPath.row]
         cell.selectionStyle = UITableViewCellSelectionStyle.None
         print(cell.gameData)
+        cell.playButton.tag = indexPath.row
+        print("cell.tag = \(cell.tag)")
         cell.playButton.addTarget(self, action: "multiplayerGameSegue:", forControlEvents: .TouchUpInside)
-        cell.tag = indexPath.row
+        
         return cell
     }
 
     func multiplayerGameSegue(sender:UIButton!) {
-        
+        print("sender tag = \(sender.tag)")
         let vc = self.storyboard?.instantiateViewControllerWithIdentifier("gameViewControllerScene") as! GameViewController
         vc.isMultiplayer = true
         vc.multiplayerData = allGames[sender.tag]

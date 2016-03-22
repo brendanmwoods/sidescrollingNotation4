@@ -173,28 +173,136 @@ class GameViewController: UIViewController , AVAudioPlayerDelegate{
     
     func gameOverAlert(){
         appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        
         postScoreToFirebase()
-        var alert = UIAlertController()
-        if currentScore > appDelegate.highScore {
-            alert = UIAlertController(title: "Game Over", message: "NEW HIGH SCORE! \n The note was :  \(currentNote.noteName.uppercaseString) \n You scored : \(currentScore)", preferredStyle: .Alert)
-            appDelegate.highScore = currentScore
-        }else {
-            alert = UIAlertController(title: "Game Over", message: "The note was :  \(currentNote.noteName.uppercaseString) \n You scored : \(currentScore)", preferredStyle: .Alert)
+        
+        if isMultiplayer == false {
+            var alert = UIAlertController()
+            if currentScore > appDelegate.highScore {
+                alert = UIAlertController(title: "Game Over", message: "NEW HIGH SCORE! \n The note was :  \(currentNote.noteName.uppercaseString) \n You scored : \(currentScore)", preferredStyle: .Alert)
+                appDelegate.highScore = currentScore
+            }
+            else {
+                alert = UIAlertController(title: "Game Over", message: "The note was :  \(currentNote.noteName.uppercaseString) \n You scored : \(currentScore)", preferredStyle: .Alert)
+            }
+            alert.addAction(UIAlertAction(title: "New Game", style: UIAlertActionStyle.Default, handler: {
+                action in
+                self.gameLoop()
+            }))
+            
+            alert.addAction(UIAlertAction(title: "Main Menu", style: UIAlertActionStyle.Default, handler: {
+                action in
+                self.navigationController?.popToRootViewControllerAnimated(true)
+            }))
+            
+            self.presentViewController(alert, animated: true, completion: nil)
         }
-        alert.addAction(UIAlertAction(title: "New Game", style: UIAlertActionStyle.Default, handler: {
-            action in
-            self.gameLoop()
-        }))
-        
-        alert.addAction(UIAlertAction(title: "Main Menu", style: UIAlertActionStyle.Default, handler: {
-            action in
-            self.navigationController?.popToRootViewControllerAnimated(true)
-        }))
-        
-        self.presentViewController(alert, animated: true, completion: nil)
+        else {
+            multiplayerGameOver()
+        }
     }
     
+    func multiplayerGameOver() {
+        let gameRef = Firebase(url: "https://glowing-torch-8861.firebaseio.com/Games/\(multiplayerData.gameID)")
+        
+        if multiplayerData.isNewGame == false{
+            //check if player beat opponent
+            if currentScore > multiplayerData.scoreToBeat {
+                //update player wins
+                multiplayerData.heroWins++
+                gameRef.childByAppendingPath("/wins/").updateChildValues([multiplayerData.hero : multiplayerData.heroWins])
+            }
+            else {
+                //update opponent wins
+                multiplayerData.opponentWins++
+                gameRef.childByAppendingPath("/wins/").updateChildValues([multiplayerData.opponent : multiplayerData.opponentWins])
+            }
+            
+            //display alerts
+            var alert = UIAlertController()
+            
+            //if high score
+            if currentScore > appDelegate.highScore {
+                //if high score and win
+                if currentScore > multiplayerData.scoreToBeat{
+                    alert = UIAlertController(title: "Game Over", message: "NEW HIGH SCORE! \n YOU WIN! \n The note was :  \(currentNote.noteName.uppercaseString) \n You scored : \(currentScore)", preferredStyle: .Alert)
+                    appDelegate.highScore = currentScore
+                }
+                //if high score and loss
+                if currentScore < multiplayerData.scoreToBeat{
+                    alert = UIAlertController(title: "Game Over", message: "NEW HIGH SCORE! \n You Lost \n The note was :  \(currentNote.noteName.uppercaseString) \n You scored : \(currentScore)", preferredStyle: .Alert)
+                    appDelegate.highScore = currentScore
+                }
+                if currentScore == multiplayerData.scoreToBeat{
+                    alert = UIAlertController(title: "Game Over", message: "NEW HIGH SCORE! \n YOU TIED! \n The note was :  \(currentNote.noteName.uppercaseString) \n You scored : \(currentScore)", preferredStyle: .Alert)
+                    appDelegate.highScore = currentScore
+                }
+            }
+                //if win
+            else if currentScore > multiplayerData.scoreToBeat {
+                alert = UIAlertController(title: "Game Over", message: "YOU WIN! \n The note was :  \(currentNote.noteName.uppercaseString) \n You scored : \(currentScore)", preferredStyle: .Alert)
+            }
+                //if loss
+            else if currentScore < multiplayerData.scoreToBeat {
+                alert = UIAlertController(title: "Game Over", message: "You Lost \n The note was :  \(currentNote.noteName.uppercaseString) \n You scored : \(currentScore)", preferredStyle: .Alert)
+            }
+                
+                //if tie
+            else if currentScore == multiplayerData.scoreToBeat {
+                alert = UIAlertController(title: "Game Over", message: "YOU TIED! \n The note was :  \(currentNote.noteName.uppercaseString) \n You scored : \(currentScore)", preferredStyle: .Alert)
+            }
+            
+            
+            alert.addAction(UIAlertAction(title: "Start New Game", style: UIAlertActionStyle.Default, handler: {
+                action in
+                self.gameLoop()
+            }))
+            
+            //update score to beat to 0
+            multiplayerData.scoreToBeat = 0
+            gameRef.updateChildValues(["scoreToBeat": 0])
+            
+            //change the waitingOnPlayer
+            multiplayerData.waitingOnPlayer = multiplayerData.opponent
+            gameRef.childByAppendingPath("/waitingOnPlayer").setValue([multiplayerData.opponent : true])
+            
+            //change isNewGame to true
+            multiplayerData.isNewGame = true
+            gameRef.updateChildValues(["isNewGame" : false])
+            
+            self.presentViewController(alert, animated: true, completion: nil)
+            
+        }
+            
+        //if it is the first score of the round
+        else if multiplayerData.isNewGame == true {
+            //post the score to beat to firebase
+            gameRef.updateChildValues(["scoreToBeat" : currentScore])
+            //change the waiting on player
+            gameRef.childByAppendingPath("/waitingOnPlayer").setValue([multiplayerData.opponent : true])
+            //change the isnewgame
+            gameRef.updateChildValues(["isNewGame" : false])
+            
+            //display alerts
+            var alert = UIAlertController()
+            
+            //if high score
+            if currentScore > appDelegate.highScore {
+                alert = UIAlertController(title: "Game Over", message: "NEW HIGH SCORE! \n The note was :  \(currentNote.noteName.uppercaseString) \n You scored : \(currentScore) \n \(multiplayerData.opponent)'s turn", preferredStyle: .Alert)
+                appDelegate.highScore = currentScore
+            }
+                //else display posted score
+            else {
+                alert = UIAlertController(title: "Game Over", message: "The note was :  \(currentNote.noteName.uppercaseString) \n You scored : \(currentScore) \n \(multiplayerData.opponent)'s turn", preferredStyle: .Alert)
+            }
+            alert.addAction(UIAlertAction(title: "Main Menu", style: UIAlertActionStyle.Default, handler: {
+                action in
+                self.navigationController?.popToRootViewControllerAnimated(true)
+            }))
+            
+            self.presentViewController(alert, animated: true, completion: nil)
+        }
+        
+    }
     
     @IBAction func noteButtonPushed(sender:UIButton) {
         
