@@ -13,6 +13,7 @@ class MultiplayerGameCell: UITableViewCell {
     @IBOutlet weak var playButton:UIButton!
     @IBOutlet weak var scoreLabel:UILabel!
     @IBOutlet weak var waitingLabel:UIButton!
+    @IBOutlet weak var deleteGameButton:UIButton!
     
     var gameData = MultiplayerGamesTableViewController.gameData()
     
@@ -26,7 +27,6 @@ class MultiplayerGameCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
     
 
 }

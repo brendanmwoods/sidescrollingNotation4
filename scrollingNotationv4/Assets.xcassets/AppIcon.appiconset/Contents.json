@@ -27,13 +27,13 @@
     {
       "size" : "60x60",
       "idiom" : "iphone",
-      "filename" : "logo-120.png",
+      "filename" : "logo-gui-120.png",
       "scale" : "2x"
     },
     {
       "size" : "60x60",
       "idiom" : "iphone",
-      "filename" : "logo-180.png",
+      "filename" : "logo-gui-180.png",
       "scale" : "3x"
     },
     {

@@ -110,10 +110,26 @@ class MultiplayerGamesTableViewController: UITableViewController {
         cell.selectionStyle = UITableViewCellSelectionStyle.None
         cell.playButton.tag = indexPath.row
         cell.playButton.addTarget(self, action: "multiplayerGameSegue:", forControlEvents: .TouchUpInside)
-        
+        cell.deleteGameButton.tag = indexPath.row
+        cell.deleteGameButton.addTarget(self, action: "deleteGamePushed:", forControlEvents: .TouchUpInside)
         return cell
     }
 
+    func deleteGamePushed(sender:UIButton!) {
+        print("pushed by \(sender.tag)")
+        let alert = UIAlertController(title: "Delete Game", message: "Are you sure you want to delete the game, forever?", preferredStyle: .Alert)
+        alert.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "Delete", style: .Default, handler: {
+            handler in
+            self.ref.childByAppendingPath("Games/\(self.allGames[sender.tag].gameID)").removeValue()
+            self.ref.childByAppendingPath("Usernames/\(self.allGames[sender.tag].hero)/games/\(self.allGames[sender.tag].gameID)").removeValue()
+            self.ref.childByAppendingPath("Usernames/\(self.allGames[sender.tag].opponent)/games/\(self.allGames[sender.tag].gameID)").removeValue()
+            self.allGames.removeAtIndex(sender.tag)
+            self.tableView.reloadData()
+        }))
+        
+        self.presentViewController(alert, animated: true, completion: nil)
+    }
     func multiplayerGameSegue(sender:UIButton!) {
         let vc = self.storyboard?.instantiateViewControllerWithIdentifier("gameViewControllerScene") as! GameViewController
         vc.isMultiplayer = true
@@ -122,6 +138,16 @@ class MultiplayerGamesTableViewController: UITableViewController {
         self.showViewController(vc, sender: vc)
 
     }
+    
+//    func gameRemovedListener(){
+//        ref.childByAppendingPath("Usernames/\(delegate.username)/games").observeEventType(.ChildRemoved, withBlock: {
+//            snapshot in
+//            print("reloading data")
+//            self.tableView.reloadData()
+//            
+//        })
+//    }
+    
 }
 
 
