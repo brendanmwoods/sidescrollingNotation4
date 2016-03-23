@@ -20,6 +20,7 @@ class LearningViewController: UIViewController, AVAudioPlayerDelegate   {
     @IBOutlet weak var fButton:UIButton?
     @IBOutlet weak var gButton:UIButton?
     @IBOutlet weak var scoreLabel:UILabel?
+    @IBOutlet weak var noteLabel:UILabel!
     
     var ovalNoteImageView = UIImageView()
     
@@ -59,6 +60,7 @@ class LearningViewController: UIViewController, AVAudioPlayerDelegate   {
     
     
     func gameLoop() {
+        noteLabel.hidden = true
         currentNote = noteLibrary.returnRandomNote()
         createOvalNoteImage(currentNote)
     }
@@ -130,5 +132,10 @@ class LearningViewController: UIViewController, AVAudioPlayerDelegate   {
             incorrectGuess()
         }
         
+    }
+    
+    @IBAction func showNotePushed(sender:UIButton) {
+        noteLabel.text = "\(currentNote.noteName.uppercaseString)"
+        noteLabel.hidden = false
     }
 }

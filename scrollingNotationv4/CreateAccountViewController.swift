@@ -42,8 +42,11 @@ class CreateAccountViewController: UIViewController {
     
     @IBAction func createAccountPushed(sender: UIButton) {
         let usernamesRef = Firebase(url: "https://glowing-torch-8861.firebaseio.com/Usernames")
-        
-        if self.usernameTextField.text == "" || self.emailTextField.text == "" || self.passwordTextField.text == "" {
+        if self.usernameTextField.text?.characters.count < 3 || self.usernameTextField.text?.characters.count > 12 {
+            accountStatusLabel.text = "Username must be 3-12 characters in length"
+            accountStatusLabel.hidden = false
+        }
+        else if self.usernameTextField.text == "" || self.emailTextField.text == "" || self.passwordTextField.text == "" {
             accountStatusLabel.text = "All fields must be filled"
             accountStatusLabel.hidden = false
         } else {
