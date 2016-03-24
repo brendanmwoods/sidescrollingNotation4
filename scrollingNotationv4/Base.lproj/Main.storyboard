@@ -200,13 +200,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" alpha="0.10000000000000001" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo-1500-white.png" translatesAutoresizingMaskIntoConstraints="NO" id="6HN-Mf-DFo">
-                                <rect key="frame" x="100" y="173" width="400" height="400"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="400" id="tQ9-A4-dLh"/>
-                                    <constraint firstAttribute="height" constant="400" id="tUq-4W-Wac"/>
-                                </constraints>
-                            </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="45" translatesAutoresizingMaskIntoConstraints="NO" id="98I-u6-nD5">
                                 <rect key="frame" x="195" y="208" width="210" height="185"/>
                                 <subviews>
@@ -269,19 +262,11 @@
                         <constraints>
                             <constraint firstItem="NhF-lX-nfz" firstAttribute="top" secondItem="gij-m8-Aum" secondAttribute="bottom" constant="8" id="0XG-x6-zxS"/>
                             <constraint firstItem="98I-u6-nD5" firstAttribute="centerY" secondItem="EPC-vU-BPr" secondAttribute="centerY" id="CtE-2Q-ddQ"/>
-                            <constraint firstItem="6HN-Mf-DFo" firstAttribute="centerX" secondItem="EPC-vU-BPr" secondAttribute="centerX" id="KmB-BW-V09"/>
-                            <constraint firstItem="uZH-qu-mtq" firstAttribute="top" secondItem="6HN-Mf-DFo" secondAttribute="bottom" constant="27" id="TB1-PF-nBN"/>
-                            <constraint firstItem="6HN-Mf-DFo" firstAttribute="centerY" secondItem="EPC-vU-BPr" secondAttribute="centerY" id="VKm-To-sSt"/>
                             <constraint firstItem="NhF-lX-nfz" firstAttribute="centerX" secondItem="EPC-vU-BPr" secondAttribute="centerX" id="aTT-Ls-lEU"/>
                             <constraint firstItem="98I-u6-nD5" firstAttribute="centerX" secondItem="EPC-vU-BPr" secondAttribute="centerX" id="kVu-ts-Tku"/>
                             <constraint firstItem="pbn-qw-KS1" firstAttribute="centerX" secondItem="EPC-vU-BPr" secondAttribute="centerX" id="pNe-t3-4XH"/>
                             <constraint firstItem="uZH-qu-mtq" firstAttribute="top" secondItem="pbn-qw-KS1" secondAttribute="bottom" constant="64" id="y91-Zm-k7W"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="VKm-To-sSt"/>
-                            </mask>
-                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="Rc6-iD-rzN"/>
                     <connections>
@@ -674,25 +659,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" alpha="0.10000000000000001" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="logo-1500-white.png" translatesAutoresizingMaskIntoConstraints="NO" id="pBe-3H-gOY">
-                                <rect key="frame" x="101" y="173" width="400" height="400"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="400" id="0KC-in-kFB"/>
-                                    <constraint firstAttribute="width" secondItem="pBe-3H-gOY" secondAttribute="height" multiplier="1:1" id="BA3-Zb-isC"/>
-                                    <constraint firstAttribute="height" constant="300" id="JoZ-xU-ZlP"/>
-                                    <constraint firstAttribute="height" constant="400" id="L3x-CQ-EcU"/>
-                                    <constraint firstAttribute="width" secondItem="pBe-3H-gOY" secondAttribute="height" multiplier="1:1" id="jTY-Xx-4Jv"/>
-                                    <constraint firstAttribute="width" constant="300" id="rVc-6i-Lzi"/>
-                                </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="BA3-Zb-isC"/>
-                                        <exclude reference="JoZ-xU-ZlP"/>
-                                        <exclude reference="jTY-Xx-4Jv"/>
-                                        <exclude reference="rVc-6i-Lzi"/>
-                                    </mask>
-                                </variation>
-                            </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="45" translatesAutoresizingMaskIntoConstraints="NO" id="q8R-4x-9rM">
                                 <rect key="frame" x="195" y="208" width="210" height="185"/>
                                 <subviews>
@@ -765,25 +731,11 @@
                         </subviews>
                         <color key="backgroundColor" red="0.066666666666666666" green="0.21568627450980393" blue="0.43137254901960786" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="pBe-3H-gOY" firstAttribute="top" secondItem="rpy-nu-gK0" secondAttribute="bottom" constant="27" id="5W3-JA-5il"/>
                             <constraint firstItem="rpy-nu-gK0" firstAttribute="top" secondItem="dJN-bu-s5O" secondAttribute="bottom" constant="8" id="ALB-ah-4XI"/>
                             <constraint firstItem="q8R-4x-9rM" firstAttribute="centerY" secondItem="rga-JF-mva" secondAttribute="centerY" id="JbU-Sw-WQ8"/>
-                            <constraint firstItem="T8D-y0-lUU" firstAttribute="top" secondItem="pBe-3H-gOY" secondAttribute="bottom" constant="27" id="NaG-eE-6A6"/>
-                            <constraint firstItem="pBe-3H-gOY" firstAttribute="centerY" secondItem="rga-JF-mva" secondAttribute="centerY" id="SCM-Nb-Ct8"/>
-                            <constraint firstItem="pBe-3H-gOY" firstAttribute="top" secondItem="rpy-nu-gK0" secondAttribute="bottom" constant="70" id="Sou-ga-gVO"/>
-                            <constraint firstItem="pBe-3H-gOY" firstAttribute="centerX" secondItem="rga-JF-mva" secondAttribute="centerX" id="X8s-V0-1CD"/>
                             <constraint firstItem="rpy-nu-gK0" firstAttribute="centerX" secondItem="rga-JF-mva" secondAttribute="centerX" id="erk-3u-5fT"/>
                             <constraint firstItem="q8R-4x-9rM" firstAttribute="centerX" secondItem="rga-JF-mva" secondAttribute="centerX" id="qbI-SR-S6x"/>
-                            <constraint firstItem="pBe-3H-gOY" firstAttribute="top" secondItem="rpy-nu-gK0" secondAttribute="bottom" constant="42" id="to0-2z-n9T"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="5W3-JA-5il"/>
-                                <exclude reference="SCM-Nb-Ct8"/>
-                                <exclude reference="Sou-ga-gVO"/>
-                                <exclude reference="to0-2z-n9T"/>
-                            </mask>
-                        </variation>
                     </view>
                     <connections>
                         <outlet property="mediumButton" destination="Kfo-pR-C4B" id="Q5q-zv-4pp"/>
@@ -1894,7 +1846,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="logo-1500-white.png" width="1500" height="1500"/>
         <image name="noteChartAltColors.png" width="900" height="626"/>
     </resources>
 </document>
