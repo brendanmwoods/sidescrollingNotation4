@@ -102,14 +102,14 @@
 		BC061F181CA323E400E231CD /* logo-gui-120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo-gui-120.png"; sourceTree = "<group>"; };
 		BC061F191CA323E400E231CD /* logo-gui-180.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo-gui-180.png"; sourceTree = "<group>"; };
 		BC0928661C8F85F80096140F /* leadboardTableTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = leadboardTableTableViewController.swift; sourceTree = "<group>"; };
-		BC63FFD11CA37E8E009AAA56 /* logo40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo40.png; path = "../../../../../../Volumes/disk/Programming/IOS/gui-logo/icons/logo40.png"; sourceTree = "<group>"; };
-		BC63FFD21CA37E8E009AAA56 /* logo58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo58.png; path = "../../../../../../Volumes/disk/Programming/IOS/gui-logo/icons/logo58.png"; sourceTree = "<group>"; };
-		BC63FFD31CA37E8E009AAA56 /* logo76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo76.png; path = "../../../../../../Volumes/disk/Programming/IOS/gui-logo/icons/logo76.png"; sourceTree = "<group>"; };
-		BC63FFD41CA37E8E009AAA56 /* logo80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo80.png; path = "../../../../../../Volumes/disk/Programming/IOS/gui-logo/icons/logo80.png"; sourceTree = "<group>"; };
-		BC63FFD51CA37E8E009AAA56 /* logo87.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo87.png; path = "../../../../../../Volumes/disk/Programming/IOS/gui-logo/icons/logo87.png"; sourceTree = "<group>"; };
-		BC63FFD61CA37E8E009AAA56 /* logo120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo120.png; path = "../../../../../../Volumes/disk/Programming/IOS/gui-logo/icons/logo120.png"; sourceTree = "<group>"; };
-		BC63FFD71CA37E8E009AAA56 /* logo152.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo152.png; path = "../../../../../../Volumes/disk/Programming/IOS/gui-logo/icons/logo152.png"; sourceTree = "<group>"; };
-		BC63FFD81CA37E8E009AAA56 /* logo167.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo167.png; path = "../../../../../../Volumes/disk/Programming/IOS/gui-logo/icons/logo167.png"; sourceTree = "<group>"; };
+		BC63FFD11CA37E8E009AAA56 /* logo40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo40.png; path = "/Volumes/disk/Programming/IOS/gui-logo/icons/logo40.png"; sourceTree = "<absolute>"; };
+		BC63FFD21CA37E8E009AAA56 /* logo58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo58.png; path = "/Volumes/disk/Programming/IOS/gui-logo/icons/logo58.png"; sourceTree = "<absolute>"; };
+		BC63FFD31CA37E8E009AAA56 /* logo76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo76.png; path = "/Volumes/disk/Programming/IOS/gui-logo/icons/logo76.png"; sourceTree = "<absolute>"; };
+		BC63FFD41CA37E8E009AAA56 /* logo80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo80.png; path = "/Volumes/disk/Programming/IOS/gui-logo/icons/logo80.png"; sourceTree = "<absolute>"; };
+		BC63FFD51CA37E8E009AAA56 /* logo87.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo87.png; path = "/Volumes/disk/Programming/IOS/gui-logo/icons/logo87.png"; sourceTree = "<absolute>"; };
+		BC63FFD61CA37E8E009AAA56 /* logo120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo120.png; path = "/Volumes/disk/Programming/IOS/gui-logo/icons/logo120.png"; sourceTree = "<absolute>"; };
+		BC63FFD71CA37E8E009AAA56 /* logo152.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo152.png; path = "/Volumes/disk/Programming/IOS/gui-logo/icons/logo152.png"; sourceTree = "<absolute>"; };
+		BC63FFD81CA37E8E009AAA56 /* logo167.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo167.png; path = "/Volumes/disk/Programming/IOS/gui-logo/icons/logo167.png"; sourceTree = "<absolute>"; };
 		BC63FFE11CA37F4E009AAA56 /* logo29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo29.png; sourceTree = "<group>"; };
 		BC64B7B91C6C56F200DE7780 /* NoteBrainer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NoteBrainer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC64B7BC1C6C56F200DE7780 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -226,6 +226,15 @@
 			children = (
 				BC061F181CA323E400E231CD /* logo-gui-120.png */,
 				BC061F191CA323E400E231CD /* logo-gui-180.png */,
+				BC63FFD11CA37E8E009AAA56 /* logo40.png */,
+				BC63FFE11CA37F4E009AAA56 /* logo29.png */,
+				BC63FFD21CA37E8E009AAA56 /* logo58.png */,
+				BC63FFD31CA37E8E009AAA56 /* logo76.png */,
+				BC63FFD41CA37E8E009AAA56 /* logo80.png */,
+				BC63FFD51CA37E8E009AAA56 /* logo87.png */,
+				BC63FFD61CA37E8E009AAA56 /* logo120.png */,
+				BC63FFD71CA37E8E009AAA56 /* logo152.png */,
+				BC63FFD81CA37E8E009AAA56 /* logo167.png */,
 				BC061F151CA3220600E231CD /* logo-gui.png */,
 			);
 			name = "logo-gui";
@@ -269,15 +278,6 @@
 				BC7E7AD01C9628EF00042F7F /* OptionsViewController.swift */,
 				BC64B7C01C6C56F200DE7780 /* Main.storyboard */,
 				BC64B7C31C6C56F200DE7780 /* Assets.xcassets */,
-				BC63FFD11CA37E8E009AAA56 /* logo40.png */,
-				BC63FFE11CA37F4E009AAA56 /* logo29.png */,
-				BC63FFD21CA37E8E009AAA56 /* logo58.png */,
-				BC63FFD31CA37E8E009AAA56 /* logo76.png */,
-				BC63FFD41CA37E8E009AAA56 /* logo80.png */,
-				BC63FFD51CA37E8E009AAA56 /* logo87.png */,
-				BC63FFD61CA37E8E009AAA56 /* logo120.png */,
-				BC63FFD71CA37E8E009AAA56 /* logo152.png */,
-				BC63FFD81CA37E8E009AAA56 /* logo167.png */,
 				BC64B7C51C6C56F200DE7780 /* LaunchScreen.storyboard */,
 				BCC8F7721C77C58A00EAA645 /* MainMenuViewController.swift */,
 				BC64D3BF1C9773210001F676 /* StatsViewController.swift */,

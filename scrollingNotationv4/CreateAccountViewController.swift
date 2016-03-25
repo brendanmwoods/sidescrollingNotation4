@@ -72,6 +72,7 @@ class CreateAccountViewController: UIViewController {
                             vc.optionalPrefilledEmail = self.emailTextField.text!
                             vc.optionalPrefilledPassword = self.passwordTextField.text!
                             vc.optionalprefilledAccountStatus = "Success. Now Login"
+                            vc.justCreatedAccount = true
                             self.showViewController(vc, sender: vc)
                         }
                     })

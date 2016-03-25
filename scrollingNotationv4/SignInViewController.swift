@@ -23,6 +23,7 @@ class SignInViewController: UIViewController {
     var optionalprefilledAccountStatus: String = ""
     var ref = Firebase(url:"https://glowing-torch-8861.firebaseio.com/")
     var delegate = AppDelegate()
+    var justCreatedAccount = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +38,10 @@ class SignInViewController: UIViewController {
             accountStatusLabel.hidden = false
             accountStatusLabel.text = optionalprefilledAccountStatus
         }
+        if justCreatedAccount {
+            signIn()
+        }
+        
     }
     
 
@@ -52,7 +57,10 @@ class SignInViewController: UIViewController {
     
     
     @IBAction func signInPushed(sender: UIButton) {
-        
+        signIn()
+    }
+    
+    func signIn() {
         ref.authUser(emailTextField.text, password: passwordTextField.text, withCompletionBlock: {error, authData in
             if error != nil {
                 self.errorLabel.hidden = false
@@ -88,5 +96,6 @@ class SignInViewController: UIViewController {
                 self.showViewController(vc, sender: vc)
             }
         })
+
     }
 }
