@@ -24,7 +24,7 @@ class BlankStaff: UIView {
         
         //Draw the grand staff lines in the background
         
-        //get width of frame set set global variable
+        //get width of frame 
         staffLineEndX = self.frame.size.width
         
         //context is the object used for drawing

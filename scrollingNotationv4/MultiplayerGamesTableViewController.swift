@@ -117,7 +117,7 @@ class MultiplayerGamesTableViewController: UITableViewController {
 
     func deleteGamePushed(sender:UIButton!) {
         print("pushed by \(sender.tag)")
-        let alert = UIAlertController(title: "Delete Game", message: "Are you sure you want to delete the game, forever?", preferredStyle: .Alert)
+        let alert = UIAlertController(title: "Delete Game", message: "Are you sure you want to delete this game vs \(self.allGames[sender.tag].opponent)?", preferredStyle: .Alert)
         alert.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
         alert.addAction(UIAlertAction(title: "Delete", style: .Default, handler: {
             handler in

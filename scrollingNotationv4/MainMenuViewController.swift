@@ -13,6 +13,8 @@ class MainMenuViewController: UIViewController {
     @IBOutlet weak var learningMode: UIButton!
     @IBOutlet weak var gameMode: UIButton!
     @IBOutlet weak var options: UIButton!
+    var ratingMinSessions = 3
+    var ratingTryAgainSessions = 5
     
     var didJustLoginInPreviousScreen = false
     
@@ -38,6 +40,7 @@ class MainMenuViewController: UIViewController {
                 }
             }
         }
+        rateMe()
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -46,6 +49,51 @@ class MainMenuViewController: UIViewController {
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    
+    
+    func rateMe() {
+        let neverRate = NSUserDefaults.standardUserDefaults().boolForKey("neverRate")
+        var numLaunches = NSUserDefaults.standardUserDefaults().integerForKey("numLaunches") + 1
+        
+        if (!neverRate && (numLaunches == ratingMinSessions || numLaunches >= (ratingMinSessions + ratingTryAgainSessions + 1)))
+        {
+            showPromptUserExperience()
+            numLaunches = ratingMinSessions + 1
+        }
+        NSUserDefaults.standardUserDefaults().setInteger(numLaunches, forKey: "numLaunches")
+    }
+    
+    func showPromptUserExperience() {
+        let alert = UIAlertController(title: "Thanks for using NoteRacer!", message: "Are you enjoying the app?", preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "Yes", style: UIAlertActionStyle.Default, handler: { alertAction in
+            self.showRateMe()
+            alert.dismissViewControllerAnimated(true, completion: nil)
+        }))
+        alert.addAction(UIAlertAction(title: "It could be better", style: UIAlertActionStyle.Default, handler: { alertAction in
+            NSUserDefaults.standardUserDefaults().setBool(true, forKey: "neverRate")
+            alert.dismissViewControllerAnimated(true, completion: nil)
+        }))
+ 
+        self.presentViewController(alert, animated: true, completion: nil)
+    }
+    
+    func showRateMe() {
+        let alert = UIAlertController(title: "Rate Us", message: "Help with a quick rating?", preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "Rate NoteRacer", style: UIAlertActionStyle.Default, handler: { alertAction in
+            NSUserDefaults.standardUserDefaults().setBool(true, forKey: "neverRate")
+            UIApplication.sharedApplication().openURL(NSURL(string : "itms-apps://itunes.apple.com/app/id1093955366")!)
+            alert.dismissViewControllerAnimated(true, completion: nil)
+        }))
+        alert.addAction(UIAlertAction(title: "No Thanks", style: UIAlertActionStyle.Default, handler: { alertAction in
+            NSUserDefaults.standardUserDefaults().setBool(true, forKey: "neverRate")
+            alert.dismissViewControllerAnimated(true, completion: nil)
+        }))
+        alert.addAction(UIAlertAction(title: "Maybe Later", style: UIAlertActionStyle.Default, handler: { alertAction in
+            alert.dismissViewControllerAnimated(true, completion: nil)
+        }))
+        self.presentViewController(alert, animated: true, completion: nil)
     }
     
     @IBAction func gameButtonPushed(sender:UIButton) {

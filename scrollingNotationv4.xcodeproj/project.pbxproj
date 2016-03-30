@@ -8,18 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		792CEE0A7CDAFB5A46677C1D /* Pods_scrollingNotationv4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B763151F543B160F3F04BE93 /* Pods_scrollingNotationv4.framework */; };
-		BC061F161CA3220600E231CD /* logo-gui.png in Resources */ = {isa = PBXBuildFile; fileRef = BC061F151CA3220600E231CD /* logo-gui.png */; };
 		BC061F1A1CA323E400E231CD /* logo-gui-120.png in Resources */ = {isa = PBXBuildFile; fileRef = BC061F181CA323E400E231CD /* logo-gui-120.png */; };
 		BC061F1B1CA323E400E231CD /* logo-gui-180.png in Resources */ = {isa = PBXBuildFile; fileRef = BC061F191CA323E400E231CD /* logo-gui-180.png */; };
 		BC0928671C8F85F80096140F /* leadboardTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0928661C8F85F80096140F /* leadboardTableTableViewController.swift */; };
-		BC63FFD91CA37E8E009AAA56 /* logo40.png in Resources */ = {isa = PBXBuildFile; fileRef = BC63FFD11CA37E8E009AAA56 /* logo40.png */; };
-		BC63FFDA1CA37E8E009AAA56 /* logo58.png in Resources */ = {isa = PBXBuildFile; fileRef = BC63FFD21CA37E8E009AAA56 /* logo58.png */; };
-		BC63FFDB1CA37E8E009AAA56 /* logo76.png in Resources */ = {isa = PBXBuildFile; fileRef = BC63FFD31CA37E8E009AAA56 /* logo76.png */; };
-		BC63FFDC1CA37E8E009AAA56 /* logo80.png in Resources */ = {isa = PBXBuildFile; fileRef = BC63FFD41CA37E8E009AAA56 /* logo80.png */; };
-		BC63FFDD1CA37E8E009AAA56 /* logo87.png in Resources */ = {isa = PBXBuildFile; fileRef = BC63FFD51CA37E8E009AAA56 /* logo87.png */; };
-		BC63FFDE1CA37E8E009AAA56 /* logo120.png in Resources */ = {isa = PBXBuildFile; fileRef = BC63FFD61CA37E8E009AAA56 /* logo120.png */; };
-		BC63FFDF1CA37E8E009AAA56 /* logo152.png in Resources */ = {isa = PBXBuildFile; fileRef = BC63FFD71CA37E8E009AAA56 /* logo152.png */; };
-		BC63FFE01CA37E8E009AAA56 /* logo167.png in Resources */ = {isa = PBXBuildFile; fileRef = BC63FFD81CA37E8E009AAA56 /* logo167.png */; };
 		BC63FFE21CA37F4E009AAA56 /* logo29.png in Resources */ = {isa = PBXBuildFile; fileRef = BC63FFE11CA37F4E009AAA56 /* logo29.png */; };
 		BC64B7BD1C6C56F200DE7780 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC64B7BC1C6C56F200DE7780 /* AppDelegate.swift */; };
 		BC64B7BF1C6C56F200DE7780 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC64B7BE1C6C56F200DE7780 /* GameViewController.swift */; };
@@ -98,18 +89,9 @@
 /* Begin PBXFileReference section */
 		83BFEF0AB207ED3D6629C939 /* Pods-scrollingNotationv4.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-scrollingNotationv4.debug.xcconfig"; path = "Pods/Target Support Files/Pods-scrollingNotationv4/Pods-scrollingNotationv4.debug.xcconfig"; sourceTree = "<group>"; };
 		B763151F543B160F3F04BE93 /* Pods_scrollingNotationv4.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_scrollingNotationv4.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		BC061F151CA3220600E231CD /* logo-gui.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "logo-gui.png"; path = "/Volumes/disk/Programming/IOS/noteBrainer logo/gui-logo/logo-gui.png"; sourceTree = "<absolute>"; };
 		BC061F181CA323E400E231CD /* logo-gui-120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo-gui-120.png"; sourceTree = "<group>"; };
 		BC061F191CA323E400E231CD /* logo-gui-180.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo-gui-180.png"; sourceTree = "<group>"; };
 		BC0928661C8F85F80096140F /* leadboardTableTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = leadboardTableTableViewController.swift; sourceTree = "<group>"; };
-		BC63FFD11CA37E8E009AAA56 /* logo40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo40.png; path = "/Volumes/disk/Programming/IOS/gui-logo/icons/logo40.png"; sourceTree = "<absolute>"; };
-		BC63FFD21CA37E8E009AAA56 /* logo58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo58.png; path = "/Volumes/disk/Programming/IOS/gui-logo/icons/logo58.png"; sourceTree = "<absolute>"; };
-		BC63FFD31CA37E8E009AAA56 /* logo76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo76.png; path = "/Volumes/disk/Programming/IOS/gui-logo/icons/logo76.png"; sourceTree = "<absolute>"; };
-		BC63FFD41CA37E8E009AAA56 /* logo80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo80.png; path = "/Volumes/disk/Programming/IOS/gui-logo/icons/logo80.png"; sourceTree = "<absolute>"; };
-		BC63FFD51CA37E8E009AAA56 /* logo87.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo87.png; path = "/Volumes/disk/Programming/IOS/gui-logo/icons/logo87.png"; sourceTree = "<absolute>"; };
-		BC63FFD61CA37E8E009AAA56 /* logo120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo120.png; path = "/Volumes/disk/Programming/IOS/gui-logo/icons/logo120.png"; sourceTree = "<absolute>"; };
-		BC63FFD71CA37E8E009AAA56 /* logo152.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo152.png; path = "/Volumes/disk/Programming/IOS/gui-logo/icons/logo152.png"; sourceTree = "<absolute>"; };
-		BC63FFD81CA37E8E009AAA56 /* logo167.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo167.png; path = "/Volumes/disk/Programming/IOS/gui-logo/icons/logo167.png"; sourceTree = "<absolute>"; };
 		BC63FFE11CA37F4E009AAA56 /* logo29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo29.png; sourceTree = "<group>"; };
 		BC64B7B91C6C56F200DE7780 /* NoteBrainer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NoteBrainer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC64B7BC1C6C56F200DE7780 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -226,16 +208,7 @@
 			children = (
 				BC061F181CA323E400E231CD /* logo-gui-120.png */,
 				BC061F191CA323E400E231CD /* logo-gui-180.png */,
-				BC63FFD11CA37E8E009AAA56 /* logo40.png */,
 				BC63FFE11CA37F4E009AAA56 /* logo29.png */,
-				BC63FFD21CA37E8E009AAA56 /* logo58.png */,
-				BC63FFD31CA37E8E009AAA56 /* logo76.png */,
-				BC63FFD41CA37E8E009AAA56 /* logo80.png */,
-				BC63FFD51CA37E8E009AAA56 /* logo87.png */,
-				BC63FFD61CA37E8E009AAA56 /* logo120.png */,
-				BC63FFD71CA37E8E009AAA56 /* logo152.png */,
-				BC63FFD81CA37E8E009AAA56 /* logo167.png */,
-				BC061F151CA3220600E231CD /* logo-gui.png */,
 			);
 			name = "logo-gui";
 			sourceTree = "<group>";
@@ -469,15 +442,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				BCC046C61C85794500438E71 /* 40.mp3 in Resources */,
-				BC63FFE01CA37E8E009AAA56 /* logo167.png in Resources */,
-				BC63FFDD1CA37E8E009AAA56 /* logo87.png in Resources */,
-				BC63FFDE1CA37E8E009AAA56 /* logo120.png in Resources */,
 				BCB038831C988BAB002A35D0 /* noteChart.png in Resources */,
 				BCC046DE1C857D0D00438E71 /* 28.mp3 in Resources */,
 				BCC046DF1C857D0D00438E71 /* 30.mp3 in Resources */,
 				BCB038851C98944F002A35D0 /* noteChartAltColors.png in Resources */,
 				BCC046CA1C85794500438E71 /* 47.mp3 in Resources */,
-				BC63FFDF1CA37E8E009AAA56 /* logo152.png in Resources */,
 				BC64B7C71C6C56F200DE7780 /* LaunchScreen.storyboard in Resources */,
 				BCEAB11A1C8150FF00929924 /* logo.png in Resources */,
 				BCC046DC1C857D0D00438E71 /* 25.mp3 in Resources */,
@@ -485,7 +454,6 @@
 				BCC8F7771C79060700EAA645 /* treble.png in Resources */,
 				BC64B7C41C6C56F200DE7780 /* Assets.xcassets in Resources */,
 				BCC046E11C857D0D00438E71 /* 33.mp3 in Resources */,
-				BC061F161CA3220600E231CD /* logo-gui.png in Resources */,
 				BCC046CF1C85794500438E71 /* 56.mp3 in Resources */,
 				BCC046A21C85611C00438E71 /* Bubble.mp3 in Resources */,
 				BCC046DB1C857D0D00438E71 /* 23.mp3 in Resources */,
@@ -494,17 +462,13 @@
 				BCC046DD1C857D0D00438E71 /* 27.mp3 in Resources */,
 				BCE74CEF1C7506F600FB4EC4 /* ovalNote.png in Resources */,
 				BCC046C81C85794500438E71 /* 44.mp3 in Resources */,
-				BC63FFDC1CA37E8E009AAA56 /* logo80.png in Resources */,
 				BC63FFE21CA37F4E009AAA56 /* logo29.png in Resources */,
 				BC7DE2451CA2FA36006769B2 /* logo-1500-white.png in Resources */,
 				BCC046E21C857D0D00438E71 /* 35.mp3 in Resources */,
-				BC63FFD91CA37E8E009AAA56 /* logo40.png in Resources */,
 				BCC046C71C85794500438E71 /* 42.mp3 in Resources */,
 				BC7495C61C924B3D0003D439 /* logo-1500-darkgreen1.png in Resources */,
 				BCC046E41C857D0D00438E71 /* 39.mp3 in Resources */,
 				BCC046CC1C85794500438E71 /* 51.mp3 in Resources */,
-				BC63FFDB1CA37E8E009AAA56 /* logo76.png in Resources */,
-				BC63FFDA1CA37E8E009AAA56 /* logo58.png in Resources */,
 				BCC8F7761C79060700EAA645 /* bass.png in Resources */,
 				BCC046CD1C85794500438E71 /* 52.mp3 in Resources */,
 				BCC046E01C857D0D00438E71 /* 32.mp3 in Resources */,
