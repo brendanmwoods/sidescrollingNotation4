@@ -21,7 +21,7 @@ class MultiplayerMenuViewController: UIViewController {
         delegate = UIApplication.sharedApplication().delegate as! AppDelegate
         
         // Do any additional setup after loading the view.
-        containerForGames.userInteractionEnabled = true
+        
     }
     
     override func didReceiveMemoryWarning() {

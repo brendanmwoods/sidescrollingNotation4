@@ -19,7 +19,7 @@ class MultiplayerGamesTableViewController: UITableViewController {
         super.viewDidLoad()
         delegate = UIApplication.sharedApplication().delegate as! AppDelegate
         retrieveGamesData()
-        self.tableView.rowHeight = 44.0
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
         
@@ -108,13 +108,12 @@ class MultiplayerGamesTableViewController: UITableViewController {
             cell.waitingLabel.hidden = false
         }
         cell.gameData = allGames[indexPath.row]
-        //cell.selectionStyle = UITableViewCellSelectionStyle.None
+        cell.selectionStyle = UITableViewCellSelectionStyle.None
         cell.playButton.tag = indexPath.row
         cell.playButton.addTarget(self, action: "multiplayerGameSegue:", forControlEvents: .TouchUpInside)
         cell.deleteGameButton.tag = indexPath.row
         cell.deleteGameButton.addTarget(self, action: "deleteGameButtonPushed:", forControlEvents: .TouchUpInside)
-        self.view.userInteractionEnabled = true
-        cell.userInteractionEnabled = true
+
         return cell
     }
     
