@@ -74,6 +74,11 @@ class MainMenuViewController: UIViewController {
         alert.addAction(UIAlertAction(title: "It could be better", style: UIAlertActionStyle.Default, handler: { alertAction in
             NSUserDefaults.standardUserDefaults().setBool(true, forKey: "neverRate")
             alert.dismissViewControllerAnimated(true, completion: nil)
+            
+            //prompt for suggestions 
+            let suggestionsAlert = UIAlertController(title: "How can we be better?", message: "Please send any improvements you would like to see to noteracer@gmail.com . Thanks!", preferredStyle: .Alert)
+            suggestionsAlert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+            self.presentViewController(suggestionsAlert, animated: true, completion: nil)
         }))
  
         self.presentViewController(alert, animated: true, completion: nil)
