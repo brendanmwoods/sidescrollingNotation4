@@ -60,11 +60,48 @@ class MultiplayerMenuViewController: UIViewController {
         })
     }
     
-    func createNewGame(opponent:String) {
+    @IBAction func newGameVsRandomButtonPushed(sender:UIButton!) {
         
+        let waitlistRef = Firebase(url: "https://glowing-torch-8861.firebaseio.com/MultiplayerWaitlist")
+        
+        waitlistRef.observeSingleEventOfType(.Value, withBlock: {
+            snapshot in
+            if snapshot.value is NSNull {
+                //nobody in the waitlist, so add the player and alert them to wait
+                waitlistRef.setValue([self.delegate.username : "true"])
+                let alert = UIAlertController(title: "Searching...", message: "A game will be added when another player is found", preferredStyle: .Alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+                self.presentViewController(alert, animated: true, completion: nil)
+            }
+            else {
+                waitlistRef.observeSingleEventOfType(.ChildAdded, withBlock: {
+                    snap in
+                    if snap.key == self.delegate.username {
+                        let alreadyOnList = UIAlertController(title: "Still Searching...", message: "You are already on the waiitlist. A game will be added when another player is found.", preferredStyle: .Alert)
+                    alreadyOnList.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+                    self.presentViewController(alreadyOnList, animated: true, completion: nil)
+                    }
+                    else {
+                        print("its not you")
+                        self.createNewGame(snap.key)
+                        waitlistRef.removeValue()
+                        let successAlert = UIAlertController(title: "Success", message: "New game added!", preferredStyle: .Alert)
+                        successAlert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+                        self.presentViewController(successAlert, animated: true, completion: nil)
+                    }
+                })
+                
+                
+            }
+            
+        })
+    }
+    
+    func createNewGame(opponent:String) {
+        print("staring game vs \(opponent)")
         let playersGamesRef = Firebase(url: "https://glowing-torch-8861.firebaseio.com/Usernames/\(delegate.username)/games")
         let opponentsGamesRef = Firebase(url: "https://glowing-torch-8861.firebaseio.com/Usernames/\(opponent)/games")
-
+        
         let gameId = ref.childByAppendingPath("Games/").childByAutoId()
         gameId.setValue(["Player1" : "\(self.delegate.username)",
             "Player2" : "\(opponent)", "scoreToBeat": 0, "isNewGame" : true])

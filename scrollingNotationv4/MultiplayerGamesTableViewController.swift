@@ -132,6 +132,7 @@ class MultiplayerGamesTableViewController: UITableViewController {
         
         self.presentViewController(alert, animated: true, completion: nil)
     }
+    
     func multiplayerGameSegue(sender:UIButton!) {
         let vc = self.storyboard?.instantiateViewControllerWithIdentifier("gameViewControllerScene") as! GameViewController
         vc.isMultiplayer = true
