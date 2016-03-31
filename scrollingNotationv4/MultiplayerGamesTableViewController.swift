@@ -19,6 +19,7 @@ class MultiplayerGamesTableViewController: UITableViewController {
         super.viewDidLoad()
         delegate = UIApplication.sharedApplication().delegate as! AppDelegate
         retrieveGamesData()
+        self.tableView.rowHeight = 44.0
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
         
@@ -95,7 +96,7 @@ class MultiplayerGamesTableViewController: UITableViewController {
     
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as! MultiplayerGameCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("myCells", forIndexPath: indexPath) as! MultiplayerGameCell
         cell.opponentLabel.text = "\(allGames[indexPath.row].opponent)"
         cell.scoreLabel.text = "\(allGames[indexPath.row].heroWins) - \(allGames[indexPath.row].opponentWins)"
         if allGames[indexPath.row].waitingOnPlayer == delegate.username {
@@ -107,15 +108,17 @@ class MultiplayerGamesTableViewController: UITableViewController {
             cell.waitingLabel.hidden = false
         }
         cell.gameData = allGames[indexPath.row]
-        cell.selectionStyle = UITableViewCellSelectionStyle.None
+        //cell.selectionStyle = UITableViewCellSelectionStyle.None
         cell.playButton.tag = indexPath.row
         cell.playButton.addTarget(self, action: "multiplayerGameSegue:", forControlEvents: .TouchUpInside)
         cell.deleteGameButton.tag = indexPath.row
-        cell.deleteGameButton.addTarget(self, action: "deleteGamePushed:", forControlEvents: .TouchUpInside)
+        cell.deleteGameButton.addTarget(self, action: "deleteGameButtonPushed:", forControlEvents: .TouchUpInside)
+        self.view.userInteractionEnabled = true
+        cell.userInteractionEnabled = true
         return cell
     }
-
-    func deleteGamePushed(sender:UIButton!) {
+    
+    func deleteGameButtonPushed(sender:UIButton!) {
         print("pushed by \(sender.tag)")
         let alert = UIAlertController(title: "Delete Game", message: "Are you sure you want to delete this game vs \(self.allGames[sender.tag].opponent)?", preferredStyle: .Alert)
         alert.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
@@ -136,52 +139,43 @@ class MultiplayerGamesTableViewController: UITableViewController {
         vc.multiplayerData = allGames[sender.tag]
         vc.difficulty = "medium"
         self.showViewController(vc, sender: vc)
-
+        
     }
-    
-//    func gameRemovedListener(){
-//        ref.childByAppendingPath("Usernames/\(delegate.username)/games").observeEventType(.ChildRemoved, withBlock: {
-//            snapshot in
-//            print("reloading data")
-//            self.tableView.reloadData()
-//            
-//        })
-//    }
     
 }
 
 
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-    // Return false if you do not want the specified item to be editable.
-    return true
-    }
-    */
-    
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-    if editingStyle == .Delete {
-    // Delete the row from the data source
-    tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-    } else if editingStyle == .Insert {
-    // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }
-    }
-    */
-    
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-    
-    }
-    */
-    
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-    // Return false if you do not want the item to be re-orderable.
-    return true
-    }
-    */
+/*
+// Override to support conditional editing of the table view.
+override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+// Return false if you do not want the specified item to be editable.
+return true
+}
+*/
+
+/*
+// Override to support editing the table view.
+override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+if editingStyle == .Delete {
+// Delete the row from the data source
+tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+} else if editingStyle == .Insert {
+// Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+}
+}
+*/
+
+/*
+// Override to support rearranging the table view.
+override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
+
+}
+*/
+
+/*
+// Override to support conditional rearranging of the table view.
+override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+// Return false if you do not want the item to be re-orderable.
+return true
+}
+*/

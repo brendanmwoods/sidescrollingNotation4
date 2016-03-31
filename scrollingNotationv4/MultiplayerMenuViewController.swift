@@ -14,12 +14,14 @@ class MultiplayerMenuViewController: UIViewController {
     var delegate = AppDelegate()
     let ref = Firebase(url: "https://glowing-torch-8861.firebaseio.com/")
     
+    @IBOutlet weak var containerForGames: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         delegate = UIApplication.sharedApplication().delegate as! AppDelegate
         
         // Do any additional setup after loading the view.
+        containerForGames.userInteractionEnabled = true
     }
     
     override func didReceiveMemoryWarning() {

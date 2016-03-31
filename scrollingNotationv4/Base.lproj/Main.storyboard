@@ -1061,13 +1061,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RMd-21-JxS">
-                                <rect key="frame" x="0.0" y="202" width="600" height="398"/>
-                                <color key="backgroundColor" red="0.066666666666666666" green="0.21568627450980393" blue="0.43137254901960786" alpha="1" colorSpace="calibratedRGB"/>
-                                <connections>
-                                    <segue destination="waf-uz-Km4" kind="embed" id="B1W-jq-axV"/>
-                                </connections>
-                            </containerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Games" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nYJ-LC-YFb">
                                 <rect key="frame" x="223" y="150" width="154" height="36"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="30"/>
@@ -1095,6 +1088,13 @@
                                     <action selector="newGameButtonPushed:" destination="cfh-9c-eSt" eventType="touchUpInside" id="VM0-Dw-BMA"/>
                                 </connections>
                             </button>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RMd-21-JxS">
+                                <rect key="frame" x="0.0" y="202" width="600" height="398"/>
+                                <color key="backgroundColor" red="0.066666666666666666" green="0.21568627450980393" blue="0.43137254901960786" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <segue destination="waf-uz-Km4" kind="embed" id="B1W-jq-axV"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" red="0.066666666666666666" green="0.21568627450980393" blue="0.43137254901960786" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -1126,6 +1126,9 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="containerForGames" destination="RMd-21-JxS" id="hYt-pM-DmR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xrC-Hj-vpc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1135,31 +1138,42 @@
         <scene sceneID="QJ9-7s-PEZ">
             <objects>
                 <tableViewController automaticallyAdjustsScrollViewInsets="NO" id="waf-uz-Km4" customClass="MultiplayerGamesTableViewController" customModule="NoteBrainer" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="top" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Fnd-co-RYS">
+                    <tableView key="view" clipsSubviews="YES" contentMode="top" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" sectionIndexMinimumDisplayRowCount="5" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Fnd-co-RYS">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="398"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.066666666666666666" green="0.21568627450980393" blue="0.43137254901960786" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="separatorColor" red="0.11351610099999999" green="0.21346665400000001" blue="0.34619633840000003" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="sectionIndexBackgroundColor" red="0.066666666666666666" green="0.21568627450980393" blue="0.43137254901960786" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="reuseIdentifier" id="WFQ-KB-fNO" customClass="MultiplayerGameCell" customModule="NoteBrainer" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="myCells" id="WFQ-KB-fNO" customClass="MultiplayerGameCell" customModule="NoteBrainer" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WFQ-KB-fNO" id="pbK-LW-a1J">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zx4-OR-s23">
-                                            <rect key="frame" x="504" y="7" width="80" height="30"/>
-                                            <color key="backgroundColor" red="0.0" green="0.75978837085252526" blue="0.00023258929833111435" alpha="1" colorSpace="calibratedRGB"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Game" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JMA-1D-aR0">
+                                            <rect key="frame" x="116" y="11" width="139" height="21"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="80" id="cCK-MO-3Tg"/>
+                                                <constraint firstAttribute="height" constant="21" id="0an-Fp-cax"/>
+                                                <constraint firstAttribute="width" constant="139" id="R8W-ch-2C8"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
-                                            <state key="normal" title="Play">
-                                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                            </state>
-                                        </button>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qoC-f0-P7k">
+                                            <rect key="frame" x="36" y="11" width="33" height="21"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 - 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="no6-aV-frm">
+                                            <rect key="frame" x="73" y="11" width="35" height="21"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                         <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hbr-kC-uH9">
                                             <rect key="frame" x="504" y="7" width="80" height="30"/>
                                             <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -1171,8 +1185,19 @@
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                         </button>
+                                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zx4-OR-s23">
+                                            <rect key="frame" x="504" y="7" width="80" height="30"/>
+                                            <color key="backgroundColor" red="0.0" green="0.75978837085252526" blue="0.00023258929833111435" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="80" id="cCK-MO-3Tg"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                            <state key="normal" title="Play">
+                                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            </state>
+                                        </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hEw-FX-RpC">
-                                            <rect key="frame" x="8" y="11" width="20" height="20"/>
+                                            <rect key="frame" x="8" y="12" width="20" height="20"/>
                                             <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="20" id="Fva-fR-R6H"/>
@@ -1182,38 +1207,18 @@
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                         </button>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 - 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="no6-aV-frm">
-                                            <rect key="frame" x="73" y="11" width="35" height="21"/>
-                                            <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
-                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qoC-f0-P7k">
-                                            <rect key="frame" x="36" y="11" width="33" height="21"/>
-                                            <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
-                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JMA-1D-aR0">
-                                            <rect key="frame" x="115" y="11" width="139" height="21"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="21" id="0an-Fp-cax"/>
-                                                <constraint firstAttribute="width" constant="139" id="R8W-ch-2C8"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
-                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                     </subviews>
                                     <color key="backgroundColor" red="0.066666666666666666" green="0.21568627450980393" blue="0.43137254901960786" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
                                         <constraint firstItem="JMA-1D-aR0" firstAttribute="leading" secondItem="pbK-LW-a1J" secondAttribute="leadingMargin" constant="107" id="2rW-0w-u0d"/>
+                                        <constraint firstItem="hEw-FX-RpC" firstAttribute="centerX" secondItem="pbK-LW-a1J" secondAttribute="centerX" id="8PC-iA-dgn"/>
                                         <constraint firstItem="JMA-1D-aR0" firstAttribute="baseline" secondItem="hbr-kC-uH9" secondAttribute="baseline" id="BZ3-Vd-fL5"/>
                                         <constraint firstItem="JMA-1D-aR0" firstAttribute="centerY" secondItem="qoC-f0-P7k" secondAttribute="centerY" id="DJa-Eo-p9B"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="Zx4-OR-s23" secondAttribute="trailing" constant="8" id="GK4-EQ-CtE"/>
                                         <constraint firstItem="Zx4-OR-s23" firstAttribute="centerY" secondItem="pbK-LW-a1J" secondAttribute="centerY" id="Gf9-PA-pRy"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="hbr-kC-uH9" secondAttribute="trailing" constant="8" id="HBB-R6-q3I"/>
                                         <constraint firstItem="JMA-1D-aR0" firstAttribute="baseline" secondItem="Zx4-OR-s23" secondAttribute="baseline" id="Jg2-0J-Y50"/>
+                                        <constraint firstItem="hEw-FX-RpC" firstAttribute="leading" secondItem="pbK-LW-a1J" secondAttribute="leadingMargin" id="N8h-KX-25X"/>
                                         <constraint firstItem="no6-aV-frm" firstAttribute="centerY" secondItem="qoC-f0-P7k" secondAttribute="centerY" id="NXn-Yr-hLK"/>
                                         <constraint firstItem="no6-aV-frm" firstAttribute="leading" secondItem="qoC-f0-P7k" secondAttribute="trailing" constant="4" id="YPu-Z7-UFz"/>
                                         <constraint firstItem="JMA-1D-aR0" firstAttribute="baseline" secondItem="hbr-kC-uH9" secondAttribute="baseline" id="bGk-iP-3Ms"/>
@@ -1225,6 +1230,8 @@
                                     </constraints>
                                     <variation key="default">
                                         <mask key="constraints">
+                                            <exclude reference="8PC-iA-dgn"/>
+                                            <exclude reference="xUt-aM-Zfa"/>
                                             <exclude reference="Jg2-0J-Y50"/>
                                             <exclude reference="bGk-iP-3Ms"/>
                                             <exclude reference="eyc-TJ-FKH"/>
@@ -1233,7 +1240,7 @@
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="0.066666666666666666" green="0.21568627450980393" blue="0.43137254901960786" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
-                                    <outlet property="deleteGameButton" destination="hEw-FX-RpC" id="DaC-vi-6my"/>
+                                    <outlet property="deleteGameButton" destination="hEw-FX-RpC" id="pUM-6t-kU3"/>
                                     <outlet property="opponentLabel" destination="JMA-1D-aR0" id="tTX-tU-g3m"/>
                                     <outlet property="playButton" destination="Zx4-OR-s23" id="Qyz-69-iES"/>
                                     <outlet property="scoreLabel" destination="no6-aV-frm" id="e7e-v7-INh"/>
