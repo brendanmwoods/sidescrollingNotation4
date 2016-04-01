@@ -201,7 +201,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="80" translatesAutoresizingMaskIntoConstraints="NO" id="HyZ-7N-NpS">
-                                <rect key="frame" x="195" y="208" width="210" height="315"/>
+                                <rect key="frame" x="195" y="143" width="210" height="315"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="45" translatesAutoresizingMaskIntoConstraints="NO" id="98I-u6-nD5">
                                         <rect key="frame" x="0.0" y="0.0" width="210" height="185"/>
@@ -267,14 +267,30 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="noteracer@gmail.com" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kCq-CT-QsN">
+                                <rect key="frame" x="219" y="570" width="162" height="22"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.067524894239008607" green="0.2139589221186704" blue="0.43008415956767687" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="NhF-lX-nfz" firstAttribute="top" secondItem="gij-m8-Aum" secondAttribute="bottom" constant="8" id="0XG-x6-zxS"/>
+                            <constraint firstItem="HyZ-7N-NpS" firstAttribute="centerY" secondItem="EPC-vU-BPr" secondAttribute="centerY" id="3RK-Mc-heu"/>
+                            <constraint firstItem="uZH-qu-mtq" firstAttribute="top" secondItem="kCq-CT-QsN" secondAttribute="bottom" constant="8" id="5cS-dJ-DDJ"/>
+                            <constraint firstItem="kCq-CT-QsN" firstAttribute="centerX" secondItem="EPC-vU-BPr" secondAttribute="centerX" id="Eca-3H-DwW"/>
                             <constraint firstItem="HyZ-7N-NpS" firstAttribute="centerX" secondItem="EPC-vU-BPr" secondAttribute="centerX" id="GKG-DL-cMM"/>
                             <constraint firstItem="HyZ-7N-NpS" firstAttribute="top" secondItem="NhF-lX-nfz" secondAttribute="bottom" constant="85" id="Vec-PG-G4Z"/>
                             <constraint firstItem="NhF-lX-nfz" firstAttribute="centerX" secondItem="EPC-vU-BPr" secondAttribute="centerX" id="aTT-Ls-lEU"/>
+                            <constraint firstItem="HyZ-7N-NpS" firstAttribute="top" secondItem="NhF-lX-nfz" secondAttribute="bottom" constant="20" id="nvI-MB-oX1"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="0XG-x6-zxS"/>
+                                <exclude reference="Vec-PG-G4Z"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="Rc6-iD-rzN"/>
                     <connections>
@@ -728,18 +744,10 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Learn" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rpy-nu-gK0">
-                                <rect key="frame" x="251" y="72" width="99" height="51"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="43"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.066666666666666666" green="0.21568627450980393" blue="0.43137254901960786" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="rpy-nu-gK0" firstAttribute="top" secondItem="dJN-bu-s5O" secondAttribute="bottom" constant="8" id="ALB-ah-4XI"/>
                             <constraint firstItem="q8R-4x-9rM" firstAttribute="centerY" secondItem="rga-JF-mva" secondAttribute="centerY" id="JbU-Sw-WQ8"/>
-                            <constraint firstItem="rpy-nu-gK0" firstAttribute="centerX" secondItem="rga-JF-mva" secondAttribute="centerX" id="erk-3u-5fT"/>
                             <constraint firstItem="q8R-4x-9rM" firstAttribute="centerX" secondItem="rga-JF-mva" secondAttribute="centerX" id="qbI-SR-S6x"/>
                         </constraints>
                     </view>
@@ -765,7 +773,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleAspectFit" verticalHuggingPriority="260" axis="vertical" distribution="fillProportionally" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="SLT-vg-N2s">
-                                <rect key="frame" x="20" y="98" width="560" height="431"/>
+                                <rect key="frame" x="20" y="85" width="560" height="431"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="LbA-NJ-Cln">
                                         <rect key="frame" x="175" y="0.0" width="210" height="70"/>
@@ -935,29 +943,21 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.11351610099999999" green="0.21346665400000001" blue="0.34619633840000003" alpha="1" colorSpace="calibratedRGB"/>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nWm-rf-ONd">
-                                <rect key="frame" x="245" y="28" width="110" height="51"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="43"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.066666666666666666" green="0.21568627450980393" blue="0.43137254901960786" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="19q-Q7-kpY" firstAttribute="top" secondItem="SLT-vg-N2s" secondAttribute="bottom" constant="10" id="1bk-6l-VmY"/>
                             <constraint firstAttribute="trailingMargin" secondItem="SLT-vg-N2s" secondAttribute="trailing" id="2u9-pY-kGr"/>
+                            <constraint firstItem="SLT-vg-N2s" firstAttribute="centerY" secondItem="jp0-oC-9lf" secondAttribute="centerY" id="2vt-Nd-ItR"/>
                             <constraint firstItem="SLT-vg-N2s" firstAttribute="centerY" secondItem="jp0-oC-9lf" secondAttribute="centerY" id="4rP-Nd-ngJ"/>
                             <constraint firstItem="19q-Q7-kpY" firstAttribute="top" relation="greaterThanOrEqual" secondItem="SLT-vg-N2s" secondAttribute="bottom" constant="181" id="4vT-xq-Mg0">
                                 <variation key="heightClass=regular-widthClass=regular" constant="10"/>
                             </constraint>
                             <constraint firstItem="19q-Q7-kpY" firstAttribute="top" secondItem="SLT-vg-N2s" secondAttribute="bottom" constant="104" id="6Xs-zm-WrQ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="SLT-vg-N2s" secondAttribute="trailing" id="Ayx-l5-Zyf"/>
-                            <constraint firstItem="nWm-rf-ONd" firstAttribute="top" secondItem="IEv-5c-rv1" secondAttribute="bottom" constant="8" id="Gdl-nl-85e"/>
                             <constraint firstItem="SLT-vg-N2s" firstAttribute="top" secondItem="jp0-oC-9lf" secondAttribute="topMargin" constant="60" id="Mn8-dF-IpU"/>
-                            <constraint firstItem="nWm-rf-ONd" firstAttribute="centerX" secondItem="jp0-oC-9lf" secondAttribute="centerX" id="N1t-XD-5V1"/>
                             <constraint firstItem="SLT-vg-N2s" firstAttribute="top" secondItem="IEv-5c-rv1" secondAttribute="bottom" constant="71" id="PM8-bf-AdT"/>
                             <constraint firstItem="SLT-vg-N2s" firstAttribute="leading" secondItem="jp0-oC-9lf" secondAttribute="leadingMargin" id="Wha-uB-KTj"/>
-                            <constraint firstItem="SLT-vg-N2s" firstAttribute="top" secondItem="nWm-rf-ONd" secondAttribute="bottom" constant="19" id="ebd-7a-SRy"/>
                             <constraint firstItem="19q-Q7-kpY" firstAttribute="top" secondItem="SLT-vg-N2s" secondAttribute="bottom" constant="10" id="m3U-ly-vhB"/>
                             <constraint firstItem="19q-Q7-kpY" firstAttribute="top" secondItem="SLT-vg-N2s" secondAttribute="bottom" constant="103" id="oNT-gK-vNV"/>
                             <constraint firstItem="SLT-vg-N2s" firstAttribute="leading" secondItem="jp0-oC-9lf" secondAttribute="leadingMargin" id="p64-2F-7LB"/>
@@ -985,7 +985,6 @@
                         </variation>
                         <variation key="heightClass=regular-widthClass=regular">
                             <mask key="constraints">
-                                <exclude reference="ebd-7a-SRy"/>
                                 <include reference="yEH-UB-BMZ"/>
                                 <exclude reference="zKm-6p-IMQ"/>
                                 <include reference="4vT-xq-Mg0"/>
