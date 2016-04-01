@@ -128,7 +128,7 @@ class GameViewController: UIViewController , AVAudioPlayerDelegate{
         absoluteNote: Int, isFlatOrSharp:Bool,diffFromTop:Int)) {
             
             ovalNoteImageView.frame = CGRectMake(
-                screenWidth - ovalNoteWidth,
+                screenWidth, //- ovalNoteWidth,
                 topLineY + CGFloat(currentNote.diffFromTop) * spaceBetweenNotes,
                 ovalNoteWidth,
                 ovalNoteHeight)
