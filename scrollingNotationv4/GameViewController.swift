@@ -86,9 +86,13 @@ class GameViewController: UIViewController , AVAudioPlayerDelegate{
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         let theScore = currentScore
         let score1 = ["Score" : theScore, "Name" : defaults.valueForKey("FirebaseUsername")!, "UUID" : appDelegate.UUID, "Date": NSDate().timeIntervalSince1970, "UID": uid!]
-        highScoresRef.childByAutoId().setValue(score1, andPriority: 0 - Int(theScore))
+        let autoId = highScoresRef.childByAutoId()
+        autoId.setValue(score1, andPriority: 0 - Int(theScore))
+        let autoIdKey = autoId.key
+        
         let ref = Firebase(url: "https://glowing-torch-8861.firebaseio.com/Usernames/\(defaults.valueForKey("FirebaseUsername")!)/scores")
-        ref.updateChildValues([String(currentScore): NSDate().timeIntervalSince1970])
+        
+        ref.updateChildValues([autoIdKey: currentScore])
         
     }
     
