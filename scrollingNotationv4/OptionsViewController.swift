@@ -53,10 +53,14 @@ class OptionsViewController: UIViewController {
     }
     
     @IBAction func soundSwitched(sender:UISwitch) {
+        let defaults = NSUserDefaults()
+        
         if sender.on {
             appDelegate.isSound = true
+            defaults.setValue(true, forKey: "isSound")
         } else {
             appDelegate.isSound = false
+            defaults.setValue(false, forKey: "isSound")
         }
     }
     

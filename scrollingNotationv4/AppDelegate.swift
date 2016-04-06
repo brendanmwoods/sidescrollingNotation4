@@ -27,7 +27,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         setUUID()
         setUsername()
         getPlayerScores()
+        setIsSound()
         return true
+    }
+    
+    func setIsSound() {
+        let defaults = NSUserDefaults()
+        
+        if defaults.valueForKey("isSound") != nil {
+        isSound = defaults.valueForKey("isSound") as! Bool
+        }
+        print(isSound)
     }
     
     func getPlayerScores() {
