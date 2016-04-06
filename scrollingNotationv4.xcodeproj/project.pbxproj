@@ -12,6 +12,7 @@
 		BC061F1B1CA323E400E231CD /* logo-gui-180.png in Resources */ = {isa = PBXBuildFile; fileRef = BC061F191CA323E400E231CD /* logo-gui-180.png */; };
 		BC0928671C8F85F80096140F /* leadboardTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0928661C8F85F80096140F /* leadboardTableTableViewController.swift */; };
 		BC11F1B01CAF0DD200A5BCA2 /* options-600x200.png in Resources */ = {isa = PBXBuildFile; fileRef = BC11F1AF1CAF0DD200A5BCA2 /* options-600x200.png */; };
+		BC50A2771CB4C61200A293E7 /* PracticeOptionsMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC50A2761CB4C61200A293E7 /* PracticeOptionsMenuViewController.swift */; };
 		BC63FFE21CA37F4E009AAA56 /* logo29.png in Resources */ = {isa = PBXBuildFile; fileRef = BC63FFE11CA37F4E009AAA56 /* logo29.png */; };
 		BC64B7BD1C6C56F200DE7780 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC64B7BC1C6C56F200DE7780 /* AppDelegate.swift */; };
 		BC64B7BF1C6C56F200DE7780 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC64B7BE1C6C56F200DE7780 /* GameViewController.swift */; };
@@ -57,6 +58,12 @@
 		BCC046E21C857D0D00438E71 /* 35.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BCC046D81C857D0D00438E71 /* 35.mp3 */; };
 		BCC046E31C857D0D00438E71 /* 37.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BCC046D91C857D0D00438E71 /* 37.mp3 */; };
 		BCC046E41C857D0D00438E71 /* 39.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BCC046DA1C857D0D00438E71 /* 39.mp3 */; };
+		BCC84CB81CB5B4DC0019474E /* 18.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BCC84CB21CB5B4DC0019474E /* 18.mp3 */; };
+		BCC84CB91CB5B4DC0019474E /* 20.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BCC84CB31CB5B4DC0019474E /* 20.mp3 */; };
+		BCC84CBA1CB5B4DC0019474E /* 21.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BCC84CB41CB5B4DC0019474E /* 21.mp3 */; };
+		BCC84CBB1CB5B4DC0019474E /* 59.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BCC84CB51CB5B4DC0019474E /* 59.mp3 */; };
+		BCC84CBC1CB5B4DC0019474E /* 61.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BCC84CB61CB5B4DC0019474E /* 61.mp3 */; };
+		BCC84CBD1CB5B4DC0019474E /* 63.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BCC84CB71CB5B4DC0019474E /* 63.mp3 */; };
 		BCC8F7731C77C58A00EAA645 /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC8F7721C77C58A00EAA645 /* MainMenuViewController.swift */; };
 		BCC8F7761C79060700EAA645 /* bass.png in Resources */ = {isa = PBXBuildFile; fileRef = BCC8F7741C79060700EAA645 /* bass.png */; };
 		BCC8F7771C79060700EAA645 /* treble.png in Resources */ = {isa = PBXBuildFile; fileRef = BCC8F7751C79060700EAA645 /* treble.png */; };
@@ -111,6 +118,7 @@
 		BC061F191CA323E400E231CD /* logo-gui-180.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo-gui-180.png"; sourceTree = "<group>"; };
 		BC0928661C8F85F80096140F /* leadboardTableTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = leadboardTableTableViewController.swift; sourceTree = "<group>"; };
 		BC11F1AF1CAF0DD200A5BCA2 /* options-600x200.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "options-600x200.png"; path = "graphics/options-600x200.png"; sourceTree = "<group>"; };
+		BC50A2761CB4C61200A293E7 /* PracticeOptionsMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PracticeOptionsMenuViewController.swift; sourceTree = "<group>"; };
 		BC63FFE11CA37F4E009AAA56 /* logo29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo29.png; sourceTree = "<group>"; };
 		BC64B7B91C6C56F200DE7780 /* NoteBrainer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NoteBrainer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC64B7BC1C6C56F200DE7780 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -162,6 +170,12 @@
 		BCC046D81C857D0D00438E71 /* 35.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 35.mp3; path = sounds/35.mp3; sourceTree = "<group>"; };
 		BCC046D91C857D0D00438E71 /* 37.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 37.mp3; path = sounds/37.mp3; sourceTree = "<group>"; };
 		BCC046DA1C857D0D00438E71 /* 39.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 39.mp3; path = sounds/39.mp3; sourceTree = "<group>"; };
+		BCC84CB21CB5B4DC0019474E /* 18.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 18.mp3; path = sounds/18.mp3; sourceTree = "<group>"; };
+		BCC84CB31CB5B4DC0019474E /* 20.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 20.mp3; path = sounds/20.mp3; sourceTree = "<group>"; };
+		BCC84CB41CB5B4DC0019474E /* 21.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 21.mp3; path = sounds/21.mp3; sourceTree = "<group>"; };
+		BCC84CB51CB5B4DC0019474E /* 59.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 59.mp3; path = sounds/59.mp3; sourceTree = "<group>"; };
+		BCC84CB61CB5B4DC0019474E /* 61.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 61.mp3; path = sounds/61.mp3; sourceTree = "<group>"; };
+		BCC84CB71CB5B4DC0019474E /* 63.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 63.mp3; path = sounds/63.mp3; sourceTree = "<group>"; };
 		BCC8F7721C77C58A00EAA645 /* MainMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
 		BCC8F7741C79060700EAA645 /* bass.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bass.png; sourceTree = "<group>"; };
 		BCC8F7751C79060700EAA645 /* treble.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = treble.png; sourceTree = "<group>"; };
@@ -309,6 +323,7 @@
 				BC8A43ED1C9F6CCC006F8A9D /* MultiplayerMenuViewController.swift */,
 				BC8A43EF1C9F90B5006F8A9D /* MultiplayerGamesTableViewController.swift */,
 				BC8A43F11C9F90E6006F8A9D /* MultiplayerGameCell.swift */,
+				BC50A2761CB4C61200A293E7 /* PracticeOptionsMenuViewController.swift */,
 			);
 			path = scrollingNotationv4;
 			sourceTree = "<group>";
@@ -335,6 +350,9 @@
 			isa = PBXGroup;
 			children = (
 				BCC046A11C85611C00438E71 /* Bubble.mp3 */,
+				BCC84CB21CB5B4DC0019474E /* 18.mp3 */,
+				BCC84CB31CB5B4DC0019474E /* 20.mp3 */,
+				BCC84CB41CB5B4DC0019474E /* 21.mp3 */,
 				BCC046D11C857D0D00438E71 /* 23.mp3 */,
 				BCC046D21C857D0D00438E71 /* 25.mp3 */,
 				BCC046D31C857D0D00438E71 /* 27.mp3 */,
@@ -356,6 +374,9 @@
 				BCC046C31C85794500438E71 /* 54.mp3 */,
 				BCC046C41C85794500438E71 /* 56.mp3 */,
 				BCC046C51C85794500438E71 /* 57.mp3 */,
+				BCC84CB51CB5B4DC0019474E /* 59.mp3 */,
+				BCC84CB61CB5B4DC0019474E /* 61.mp3 */,
+				BCC84CB71CB5B4DC0019474E /* 63.mp3 */,
 			);
 			name = sounds;
 			sourceTree = "<group>";
@@ -508,6 +529,7 @@
 				BCB038831C988BAB002A35D0 /* noteChart.png in Resources */,
 				BCC046DE1C857D0D00438E71 /* 28.mp3 in Resources */,
 				BCFB08A01CADF9B100770AE3 /* singleplayerNote-600x200.png in Resources */,
+				BCC84CB81CB5B4DC0019474E /* 18.mp3 in Resources */,
 				BCC046DF1C857D0D00438E71 /* 30.mp3 in Resources */,
 				BCFB088A1CAD905C00770AE3 /* logo40.png in Resources */,
 				BCB038851C98944F002A35D0 /* noteChartAltColors.png in Resources */,
@@ -519,6 +541,7 @@
 				BCEAB11A1C8150FF00929924 /* logo.png in Resources */,
 				BCC046DC1C857D0D00438E71 /* 25.mp3 in Resources */,
 				BCFB08A21CAE048500770AE3 /* statistics-600x200.png in Resources */,
+				BCC84CBA1CB5B4DC0019474E /* 21.mp3 in Resources */,
 				BC061F1A1CA323E400E231CD /* logo-gui-120.png in Resources */,
 				BCFB089A1CADE40400770AE3 /* game-600x200.png in Resources */,
 				BCC8F7771C79060700EAA645 /* treble.png in Resources */,
@@ -526,9 +549,11 @@
 				BC64B7C41C6C56F200DE7780 /* Assets.xcassets in Resources */,
 				BCFB08A61CAE0A4C00770AE3 /* practice-600x200.png in Resources */,
 				BCC046E11C857D0D00438E71 /* 33.mp3 in Resources */,
+				BCC84CBD1CB5B4DC0019474E /* 63.mp3 in Resources */,
 				BCC046CF1C85794500438E71 /* 56.mp3 in Resources */,
 				BCC046A21C85611C00438E71 /* Bubble.mp3 in Resources */,
 				BCC046DB1C857D0D00438E71 /* 23.mp3 in Resources */,
+				BCC84CBB1CB5B4DC0019474E /* 59.mp3 in Resources */,
 				BCFB08901CAD905C00770AE3 /* logo152.png in Resources */,
 				BCC046E31C857D0D00438E71 /* 37.mp3 in Resources */,
 				BC64B7C21C6C56F200DE7780 /* Main.storyboard in Resources */,
@@ -541,6 +566,7 @@
 				BCFB08A41CAE074E00770AE3 /* leaders-600x200.png in Resources */,
 				BCC046E21C857D0D00438E71 /* 35.mp3 in Resources */,
 				BCC046C71C85794500438E71 /* 42.mp3 in Resources */,
+				BCC84CBC1CB5B4DC0019474E /* 61.mp3 in Resources */,
 				BCFB088C1CAD905C00770AE3 /* logo76.png in Resources */,
 				BC7495C61C924B3D0003D439 /* logo-1500-darkgreen1.png in Resources */,
 				BCC046E41C857D0D00438E71 /* 39.mp3 in Resources */,
@@ -548,6 +574,7 @@
 				BCC8F7761C79060700EAA645 /* bass.png in Resources */,
 				BCC046CD1C85794500438E71 /* 52.mp3 in Resources */,
 				BCFB08891CAD905C00770AE3 /* logo29.png in Resources */,
+				BCC84CB91CB5B4DC0019474E /* 20.mp3 in Resources */,
 				BCC046E01C857D0D00438E71 /* 32.mp3 in Resources */,
 				BCFB088F1CAD905C00770AE3 /* logo120.png in Resources */,
 				BCFB089F1CADF9B100770AE3 /* multiplayerNote-600x200.png in Resources */,
@@ -638,6 +665,7 @@
 				BC0928671C8F85F80096140F /* leadboardTableTableViewController.swift in Sources */,
 				BC7E7AD11C9628EF00042F7F /* LeaderboardItem.swift in Sources */,
 				BC7E7AD21C9628EF00042F7F /* OptionsViewController.swift in Sources */,
+				BC50A2771CB4C61200A293E7 /* PracticeOptionsMenuViewController.swift in Sources */,
 				BC64B7EB1C6C57C900DE7780 /* BlankStaff.swift in Sources */,
 				BCD593D51CAB277B00F9411A /* GraphViewController.swift in Sources */,
 				BCE74CF11C75156100FB4EC4 /* GameMenuViewController.swift in Sources */,

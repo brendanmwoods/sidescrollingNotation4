@@ -21,6 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var username = String()
     var allPlayerScores = [Int]()
     var highScore = 0
+    var practiceModeDifficulty = "medium"
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         setUUID()

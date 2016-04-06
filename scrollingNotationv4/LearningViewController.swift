@@ -41,15 +41,41 @@ class LearningViewController: UIViewController, AVAudioPlayerDelegate   {
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        screenWidth = UIScreen.mainScreen().bounds.width
-        formatButtonShapes()
-        noteLibrary.fillNoteLibrary()
-        noteLibrary.filterNotesForDifficulty(difficulty)
-        
         let imageName = "ovalNote.png"
         let image = UIImage(named: imageName)
         ovalNoteImageView = UIImageView(image: image!)
+
+//        appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+//        screenWidth = UIScreen.mainScreen().bounds.width
+//        formatButtonShapes()
+//        
+//        difficulty = appDelegate.practiceModeDifficulty
+//        
+//        noteLibrary.fillNoteLibrary()
+//        
+//        noteLibrary.filterNotesForDifficulty(difficulty)
+//        
+//        let imageName = "ovalNote.png"
+//        let image = UIImage(named: imageName)
+//        ovalNoteImageView = UIImageView(image: image!)
+//        
+//        gameLoop()
+        
+
+            }
+    
+    override func viewWillAppear(animated: Bool) {
+        blankStaff?.setNeedsDisplay()
+        appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        screenWidth = UIScreen.mainScreen().bounds.width
+        formatButtonShapes()
+        print("yup")
+        noteLibrary = NoteLibrary()
+        difficulty = appDelegate.practiceModeDifficulty
+        print(difficulty)
+        noteLibrary.fillNoteLibrary()
+        
+        noteLibrary.filterNotesForDifficulty(difficulty)
         
         gameLoop()
     }

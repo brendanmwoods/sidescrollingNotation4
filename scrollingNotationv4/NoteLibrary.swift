@@ -15,8 +15,8 @@ class NoteLibrary:NSObject {
     let easyTrebleTopNote = 57
     let easyBassBottomNote = 23
     let easyBassTopNote = 40
-    let mediumBottomNote = 23
-    let mediumTopNote = 57
+    let mediumBottomNote = 18 // 23
+    let mediumTopNote = 63  //57
     var includeFlatsAndSharps = false
     var bottomNoteDiffFromTop = 32
     

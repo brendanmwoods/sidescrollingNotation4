@@ -76,5 +76,20 @@ class BlankStaff: UIView {
         bassSymbol.alpha = 0.75
         addSubview(bassSymbol)
         
+        //make top line over treble cleff
+        CGContextSetLineWidth(context, 1.0)
+        CGContextSetStrokeColorWithColor(context, UIColor.lightGrayColor().CGColor)
+        
+        CGContextMoveToPoint(context, staffLineStartX, topLineY + (spaceBetweenStaffLines * -1))
+        CGContextAddLineToPoint(context, staffLineEndX, topLineY + (spaceBetweenStaffLines * -1))
+        
+        CGContextStrokePath(context)
+        
+        //make bottom line under bass clef
+        CGContextMoveToPoint(context, staffLineStartX, topLineY + (spaceBetweenStaffLines * 11))
+        CGContextAddLineToPoint(context, staffLineEndX, topLineY + (spaceBetweenStaffLines * 11))
+        
+        CGContextStrokePath(context)
+        
     }
 }

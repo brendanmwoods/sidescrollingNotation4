@@ -229,10 +229,10 @@
                                             </mask>
                                         </variation>
                                     </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="25I-8f-zUb">
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="25I-8f-zUb">
                                         <rect key="frame" x="75" y="86" width="400" height="297"/>
                                         <subviews>
-                                            <button contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ufg-ac-baH">
+                                            <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ufg-ac-baH">
                                                 <rect key="frame" x="0.0" y="0.0" width="400" height="134"/>
                                                 <color key="backgroundColor" red="0.0" green="0.76078431372549016" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
@@ -246,7 +246,7 @@
                                                     <action selector="gameButtonPushed:" destination="rAz-1u-ywJ" eventType="touchUpInside" id="Ceg-BL-f7A"/>
                                                 </connections>
                                             </button>
-                                            <button contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Up4-lV-nFh">
+                                            <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Up4-lV-nFh">
                                                 <rect key="frame" x="0.0" y="164" width="400" height="133"/>
                                                 <color key="backgroundColor" red="0.0" green="0.75978837085252526" blue="0.00023258929833111435" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
@@ -1773,6 +1773,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="41M-so-MF5">
                                 <rect key="frame" x="10" y="348" width="75" height="30"/>
                                 <color key="backgroundColor" red="0.0" green="0.75978837089999995" blue="0.0002325892983" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                 <state key="normal" title="Show Note">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -1780,19 +1781,34 @@
                                     <action selector="showNotePushed:" destination="1kL-34-zOT" eventType="touchUpInside" id="Yo5-KD-KJo"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CF4-jd-QOd">
+                                <rect key="frame" x="515" y="348" width="75" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.75978837089999995" blue="0.0002325892983" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                <state key="normal" title="Settings">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="S1q-85-KYf" kind="show" id="gRG-Jn-NT1"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.066666666666666666" green="0.21568627450980393" blue="0.43137254901960786" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="kck-Ed-YFq" firstAttribute="leading" secondItem="s6J-K0-nnE" secondAttribute="leadingMargin" constant="-20" id="2vH-3h-T9z"/>
+                            <constraint firstItem="CF4-jd-QOd" firstAttribute="width" secondItem="41M-so-MF5" secondAttribute="width" id="Fvo-v2-EmA"/>
+                            <constraint firstItem="CF4-jd-QOd" firstAttribute="height" secondItem="41M-so-MF5" secondAttribute="height" id="NAb-vj-Uzu"/>
                             <constraint firstItem="kck-Ed-YFq" firstAttribute="top" secondItem="s6J-K0-nnE" secondAttribute="top" id="NvF-Ba-KX7"/>
                             <constraint firstItem="Pa5-Aa-AGY" firstAttribute="top" secondItem="kck-Ed-YFq" secondAttribute="bottom" id="S2O-p2-X3c"/>
                             <constraint firstItem="41M-so-MF5" firstAttribute="centerY" secondItem="od8-az-pCc" secondAttribute="centerY" id="Tdc-rT-blq"/>
                             <constraint firstItem="41M-so-MF5" firstAttribute="baseline" secondItem="od8-az-pCc" secondAttribute="baseline" id="VHk-HD-5k3"/>
                             <constraint firstItem="kck-Ed-YFq" firstAttribute="leading" secondItem="s6J-K0-nnE" secondAttribute="leading" id="aGg-he-5W3"/>
                             <constraint firstItem="kck-Ed-YFq" firstAttribute="top" secondItem="fUd-Mp-H3O" secondAttribute="bottom" id="bY9-9r-ajg"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="CF4-jd-QOd" secondAttribute="trailing" constant="-10" id="cGd-dL-Ehc"/>
                             <constraint firstItem="41M-so-MF5" firstAttribute="leading" secondItem="s6J-K0-nnE" secondAttribute="leadingMargin" constant="-10" id="fjA-qn-jcE"/>
                             <constraint firstItem="kck-Ed-YFq" firstAttribute="top" secondItem="s6J-K0-nnE" secondAttribute="topMargin" id="hS6-Fi-cm6"/>
                             <constraint firstAttribute="trailingMargin" secondItem="kck-Ed-YFq" secondAttribute="trailing" constant="-20" id="kSp-vT-Qn4"/>
+                            <constraint firstItem="CF4-jd-QOd" firstAttribute="centerY" secondItem="od8-az-pCc" secondAttribute="centerY" id="mxR-gM-agv"/>
                             <constraint firstItem="41M-so-MF5" firstAttribute="centerY" secondItem="od8-az-pCc" secondAttribute="centerY" id="pKO-YD-3wN"/>
                             <constraint firstItem="Pa5-Aa-AGY" firstAttribute="top" secondItem="kck-Ed-YFq" secondAttribute="bottom" id="s5w-kT-634"/>
                             <constraint firstAttribute="trailing" secondItem="kck-Ed-YFq" secondAttribute="trailing" id="sRe-d4-I7N"/>
@@ -1836,6 +1852,63 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qSz-xf-Gjw" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2079" y="258"/>
+        </scene>
+        <!--Practice Options Menu View Controller-->
+        <scene sceneID="81G-BL-3dJ">
+            <objects>
+                <viewController id="S1q-85-KYf" customClass="PracticeOptionsMenuViewController" customModule="NoteBrainer" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="tI8-AM-OVI"/>
+                        <viewControllerLayoutGuide type="bottom" id="hZs-8d-jyG"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5NE-ar-OQn">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Note Range" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pDt-Jc-BqG">
+                                <rect key="frame" x="255" y="252" width="91" height="20"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="QI5-52-qYa">
+                                <rect key="frame" x="150" y="280" width="300" height="41"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="VfV-wZ-FZt"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="dry-dp-riZ"/>
+                                    <constraint firstAttribute="width" constant="300" id="k8x-J4-w5C"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Bass"/>
+                                    <segment title="Both"/>
+                                    <segment title="Treble"/>
+                                </segments>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="dry-dp-riZ"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="noteRangeControlPushed:" destination="S1q-85-KYf" eventType="valueChanged" id="1t5-dY-zVX"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" red="0.066666670143604279" green="0.21568627655506134" blue="0.43137255311012268" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="QI5-52-qYa" firstAttribute="top" secondItem="pDt-Jc-BqG" secondAttribute="bottom" constant="8" id="bU3-oV-wo8"/>
+                            <constraint firstItem="QI5-52-qYa" firstAttribute="centerX" secondItem="5NE-ar-OQn" secondAttribute="centerX" id="pCr-B0-J6h"/>
+                            <constraint firstItem="QI5-52-qYa" firstAttribute="centerY" secondItem="5NE-ar-OQn" secondAttribute="centerY" id="weJ-vW-2jl"/>
+                            <constraint firstItem="pDt-Jc-BqG" firstAttribute="centerX" secondItem="5NE-ar-OQn" secondAttribute="centerX" id="z0i-9i-Mag"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="noteRangeControl" destination="QI5-52-qYa" id="Tsv-sy-Ejk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FSZ-oC-ybd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2749" y="259"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="7Z1-vv-nRK">
