@@ -459,6 +459,7 @@ public class LineChart: UIView {
         let y2: CGFloat = y.axis.inset
         let (start, stop, step) = self.x.ticks
         for var i: CGFloat = start; i <= stop; i += step {
+        
             x1 = self.x.scale(i) + x.axis.inset
             path.moveToPoint(CGPoint(x: x1, y: y1))
             path.addLineToPoint(CGPoint(x: x1, y: y2))

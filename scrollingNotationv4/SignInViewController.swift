@@ -29,7 +29,7 @@ class SignInViewController: UIViewController {
         super.viewDidLoad()
         delegate = UIApplication.sharedApplication().delegate as! AppDelegate
         
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(SignInViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
         emailTextField.text = optionalPrefilledEmail
         passwordTextField.text = optionalPrefilledPassword

@@ -110,9 +110,9 @@ class MultiplayerGamesTableViewController: UITableViewController {
         cell.gameData = allGames[indexPath.row]
         cell.selectionStyle = UITableViewCellSelectionStyle.None
         cell.playButton.tag = indexPath.row
-        cell.playButton.addTarget(self, action: "multiplayerGameSegue:", forControlEvents: .TouchUpInside)
+        cell.playButton.addTarget(self, action: #selector(MultiplayerGamesTableViewController.multiplayerGameSegue(_:)), forControlEvents: .TouchUpInside)
         cell.deleteGameButton.tag = indexPath.row
-        cell.deleteGameButton.addTarget(self, action: "deleteGameButtonPushed:", forControlEvents: .TouchUpInside)
+        cell.deleteGameButton.addTarget(self, action: #selector(MultiplayerGamesTableViewController.deleteGameButtonPushed(_:)), forControlEvents: .TouchUpInside)
 
         return cell
     }

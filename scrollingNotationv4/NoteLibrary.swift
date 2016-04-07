@@ -28,7 +28,7 @@ class NoteLibrary:NSObject {
     func fillNoteLibrary() {
         
         //create all 88 notes and assign absolute note number
-        for (var i = 1; i <= totalNotes ; i++) {
+        for (var i = 1; i <= totalNotes ; i += 1) {
             var tempNote = (noteName:"",octaveNumber:0,absoluteNote:0,false,diffFromTop:0)
             tempNote.absoluteNote = i
             allNotesArr.append(tempNote)

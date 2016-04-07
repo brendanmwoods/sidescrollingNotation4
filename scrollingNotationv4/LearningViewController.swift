@@ -126,13 +126,13 @@ class LearningViewController: UIViewController, AVAudioPlayerDelegate   {
     }
     
     func correctGuess() {
-        totalCorrect++
+        totalCorrect += 1
         updateResultsLabel()
         gameLoop()
     }
     
     func incorrectGuess() {
-        totalIncorrect++
+        totalIncorrect += 1
         updateResultsLabel()
     }
     

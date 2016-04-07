@@ -48,7 +48,7 @@ class leadboardTableTableViewController: UITableViewController {
                 if childrenCount < self.leaderboardSize {
                     let leaderboardItem = LeaderboardItem(snapshot: item as! FDataSnapshot)
                     newItems.append(leaderboardItem)
-                    childrenCount++
+                    childrenCount += 1
                 }
             }
             self.leaderboardItems = newItems

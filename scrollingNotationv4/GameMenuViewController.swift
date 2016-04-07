@@ -88,7 +88,7 @@ class GameMenuViewController: UIViewController {
                 if childrenCount < 5 {
                     let leaderboardItem = LeaderboardItem(snapshot: item as! FDataSnapshot)
                     newItems.append(leaderboardItem)
-                    childrenCount++
+                    childrenCount += 1
                 }
             }
             self.leaderboardItems = newItems

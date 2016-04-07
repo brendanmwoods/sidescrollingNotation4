@@ -150,7 +150,7 @@ class GameViewController: UIViewController , AVAudioPlayerDelegate{
             }
             
             timer = NSTimer.scheduledTimerWithTimeInterval(currentScrollSpeed, target: self,
-                selector: Selector("moveOvalNoteLeft"), userInfo: nil, repeats: true)
+                selector: #selector(GameViewController.moveOvalNoteLeft), userInfo: nil, repeats: true)
     }
     
     
@@ -169,7 +169,7 @@ class GameViewController: UIViewController , AVAudioPlayerDelegate{
     func correctGuess() {
         timer.invalidate()
         currentScrollSpeed /= 1.2
-        currentScore++
+        currentScore += 1
         scoreLabel!.text = String(currentScore)
         gameLoop()
         
@@ -221,12 +221,12 @@ class GameViewController: UIViewController , AVAudioPlayerDelegate{
             //check if player beat opponent
             if currentScore > multiplayerData.scoreToBeat {
                 //update player wins
-                multiplayerData.heroWins++
+                multiplayerData.heroWins += 1
                 gameRef.childByAppendingPath("/wins/").updateChildValues([multiplayerData.hero : multiplayerData.heroWins])
             }
             else if currentScore < multiplayerData.scoreToBeat{
                 //update opponent wins
-                multiplayerData.opponentWins++
+                multiplayerData.opponentWins += 1
                 gameRef.childByAppendingPath("/wins/").updateChildValues([multiplayerData.opponent : multiplayerData.opponentWins])
             }
             
