@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1605" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="9l3-rZ-ejb">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="9l3-rZ-ejb">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
-        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -40,7 +39,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="lYN-wC-SHI">
-                                <rect key="frame" x="20" y="65" width="560" height="218"/>
+                                <rect key="frame" x="20" y="191" width="560" height="218"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="PqP-1R-kbQ">
                                         <rect key="frame" x="218" y="0.0" width="125" height="62"/>
@@ -96,7 +95,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hdA-1q-1yD">
-                                <rect key="frame" x="195" y="312" width="210" height="70"/>
+                                <rect key="frame" x="195" y="438" width="210" height="70"/>
                                 <color key="backgroundColor" red="0.0" green="0.75978837085252526" blue="0.00023258929833111435" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="210" id="6jM-bV-qHk"/>
@@ -126,49 +125,31 @@
                                     <action selector="graphButtonPressed:" destination="jkQ-7I-dUs" eventType="touchUpInside" id="pDk-LA-Stu"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stats" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fZI-3C-ZQN">
-                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="43"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.066666666666666666" green="0.21568627450980393" blue="0.43137254901960786" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="hdA-1q-1yD" firstAttribute="centerX" secondItem="gHl-0b-4cw" secondAttribute="centerX" id="3Qt-eG-f2d"/>
                             <constraint firstItem="lYN-wC-SHI" firstAttribute="centerY" secondItem="gHl-0b-4cw" secondAttribute="centerY" id="6J0-0r-xTN"/>
                             <constraint firstItem="lYN-wC-SHI" firstAttribute="top" secondItem="WtH-Le-3Pc" secondAttribute="bottom" constant="45" id="96C-Gr-DwY"/>
+                            <constraint firstItem="lYN-wC-SHI" firstAttribute="centerY" secondItem="gHl-0b-4cw" secondAttribute="centerY" id="R4w-DH-bhF"/>
                             <constraint firstItem="hdA-1q-1yD" firstAttribute="top" secondItem="lYN-wC-SHI" secondAttribute="bottom" constant="29" id="Vzu-uU-a9L"/>
                             <constraint firstItem="lYN-wC-SHI" firstAttribute="centerX" secondItem="gHl-0b-4cw" secondAttribute="centerX" id="cTJ-f9-Xyw"/>
                             <constraint firstItem="lYN-wC-SHI" firstAttribute="leading" secondItem="gHl-0b-4cw" secondAttribute="leadingMargin" id="cy3-J1-0zm"/>
                             <constraint firstAttribute="trailingMargin" secondItem="lYN-wC-SHI" secondAttribute="trailing" id="q2o-3H-4qH"/>
-                            <constraint firstItem="fZI-3C-ZQN" firstAttribute="centerX" secondItem="gHl-0b-4cw" secondAttribute="centerX" id="qML-c2-hcA"/>
                             <constraint firstItem="hdA-1q-1yD" firstAttribute="centerX" secondItem="gHl-0b-4cw" secondAttribute="centerX" id="rYU-Ie-gmP"/>
                             <constraint firstItem="hdA-1q-1yD" firstAttribute="top" secondItem="lYN-wC-SHI" secondAttribute="bottom" constant="29" id="v1u-Q4-hkd"/>
-                            <constraint firstItem="fZI-3C-ZQN" firstAttribute="top" secondItem="gHl-0b-4cw" secondAttribute="topMargin" constant="8" id="x4t-vt-Doi">
-                                <variation key="heightClass=regular" constant="68"/>
-                            </constraint>
                         </constraints>
                         <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="fZI-3C-ZQN"/>
-                            </mask>
                             <mask key="constraints">
-                                <exclude reference="qML-c2-hcA"/>
-                                <exclude reference="x4t-vt-Doi"/>
                                 <exclude reference="6J0-0r-xTN"/>
+                                <exclude reference="96C-Gr-DwY"/>
                                 <exclude reference="cTJ-f9-Xyw"/>
                                 <exclude reference="3Qt-eG-f2d"/>
                                 <exclude reference="v1u-Q4-hkd"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular">
-                            <mask key="subviews">
-                                <include reference="fZI-3C-ZQN"/>
-                            </mask>
                             <mask key="constraints">
-                                <include reference="qML-c2-hcA"/>
-                                <include reference="x4t-vt-Doi"/>
                                 <include reference="6J0-0r-xTN"/>
                                 <exclude reference="96C-Gr-DwY"/>
                                 <exclude reference="cTJ-f9-Xyw"/>
@@ -239,7 +220,7 @@
                                                     <constraint firstAttribute="width" secondItem="ufg-ac-baH" secondAttribute="height" multiplier="3:1" id="FDo-RD-taX"/>
                                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="400" id="eOU-t6-sEe"/>
                                                 </constraints>
-                                                <state key="normal" image="game-600x200.png">
+                                                <state key="normal" image="game-thin-600x200.png">
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
                                                 <connections>
@@ -252,7 +233,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="Up4-lV-nFh" secondAttribute="height" multiplier="3:1" id="GaX-qk-Ro7"/>
                                                 </constraints>
-                                                <state key="normal" image="learn-600x200.png">
+                                                <state key="normal" image="learn-hat-thin-600x200.png">
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
                                                 <connections>
@@ -614,7 +595,7 @@
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dmq-T0-0da">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1.0.7" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dmq-T0-0da">
                                                 <rect key="frame" x="0.0" y="31" width="89" height="26"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="22"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -1934,9 +1915,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="game-600x200.png" width="600" height="200"/>
+        <image name="game-thin-600x200.png" width="600" height="200"/>
         <image name="leaders-600x200.png" width="600" height="200"/>
-        <image name="learn-600x200.png" width="600" height="200"/>
+        <image name="learn-hat-thin-600x200.png" width="600" height="200"/>
         <image name="multiplayerNote-600x200.png" width="600" height="200"/>
         <image name="noteChart-600x200.png" width="600" height="200"/>
         <image name="noteChartAltColors.png" width="900" height="626"/>

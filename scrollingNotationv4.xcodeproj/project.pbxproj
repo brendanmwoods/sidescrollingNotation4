@@ -34,6 +34,8 @@
 		BC8A43EE1C9F6CCC006F8A9D /* MultiplayerMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8A43ED1C9F6CCC006F8A9D /* MultiplayerMenuViewController.swift */; };
 		BC8A43F01C9F90B5006F8A9D /* MultiplayerGamesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8A43EF1C9F90B5006F8A9D /* MultiplayerGamesTableViewController.swift */; };
 		BC8A43F21C9F90E6006F8A9D /* MultiplayerGameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8A43F11C9F90E6006F8A9D /* MultiplayerGameCell.swift */; };
+		BC9999C31CB61E0700EB6DDF /* learn-hat-thin-600x200.png in Resources */ = {isa = PBXBuildFile; fileRef = BC9999C11CB61E0700EB6DDF /* learn-hat-thin-600x200.png */; };
+		BC9999C41CB61E0700EB6DDF /* game-thin-600x200.png in Resources */ = {isa = PBXBuildFile; fileRef = BC9999C21CB61E0700EB6DDF /* game-thin-600x200.png */; };
 		BCB038831C988BAB002A35D0 /* noteChart.png in Resources */ = {isa = PBXBuildFile; fileRef = BCB038821C988BAB002A35D0 /* noteChart.png */; };
 		BCB038851C98944F002A35D0 /* noteChartAltColors.png in Resources */ = {isa = PBXBuildFile; fileRef = BCB038841C98944F002A35D0 /* noteChartAltColors.png */; };
 		BCC046A21C85611C00438E71 /* Bubble.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BCC046A11C85611C00438E71 /* Bubble.mp3 */; };
@@ -146,6 +148,8 @@
 		BC8A43ED1C9F6CCC006F8A9D /* MultiplayerMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultiplayerMenuViewController.swift; sourceTree = "<group>"; };
 		BC8A43EF1C9F90B5006F8A9D /* MultiplayerGamesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultiplayerGamesTableViewController.swift; sourceTree = "<group>"; };
 		BC8A43F11C9F90E6006F8A9D /* MultiplayerGameCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultiplayerGameCell.swift; sourceTree = "<group>"; };
+		BC9999C11CB61E0700EB6DDF /* learn-hat-thin-600x200.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "learn-hat-thin-600x200.png"; path = "graphics/learn-hat-thin-600x200.png"; sourceTree = "<group>"; };
+		BC9999C21CB61E0700EB6DDF /* game-thin-600x200.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "game-thin-600x200.png"; path = "graphics/game-thin-600x200.png"; sourceTree = "<group>"; };
 		BCB038821C988BAB002A35D0 /* noteChart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = noteChart.png; sourceTree = "<group>"; };
 		BCB038841C98944F002A35D0 /* noteChartAltColors.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = noteChartAltColors.png; sourceTree = "<group>"; };
 		BCC046A11C85611C00438E71 /* Bubble.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Bubble.mp3; sourceTree = "<group>"; };
@@ -404,6 +408,8 @@
 				BCFB08991CADE40400770AE3 /* game-600x200.png */,
 				BCFB089B1CADE56B00770AE3 /* learn-600x200.png */,
 				BCFB089D1CADF9B100770AE3 /* multiplayerNote-600x200.png */,
+				BC9999C11CB61E0700EB6DDF /* learn-hat-thin-600x200.png */,
+				BC9999C21CB61E0700EB6DDF /* game-thin-600x200.png */,
 				BCFB08A71CAE0B0D00770AE3 /* noteChart-600x200.png */,
 				BC11F1AF1CAF0DD200A5BCA2 /* options-600x200.png */,
 				BCFB08A51CAE0A4C00770AE3 /* practice-600x200.png */,
@@ -529,6 +535,7 @@
 				BCB038831C988BAB002A35D0 /* noteChart.png in Resources */,
 				BCC046DE1C857D0D00438E71 /* 28.mp3 in Resources */,
 				BCFB08A01CADF9B100770AE3 /* singleplayerNote-600x200.png in Resources */,
+				BC9999C31CB61E0700EB6DDF /* learn-hat-thin-600x200.png in Resources */,
 				BCC84CB81CB5B4DC0019474E /* 18.mp3 in Resources */,
 				BCC046DF1C857D0D00438E71 /* 30.mp3 in Resources */,
 				BCFB088A1CAD905C00770AE3 /* logo40.png in Resources */,
@@ -580,6 +587,7 @@
 				BCFB089F1CADF9B100770AE3 /* multiplayerNote-600x200.png in Resources */,
 				BCC046C91C85794500438E71 /* 45.mp3 in Resources */,
 				BC061F1B1CA323E400E231CD /* logo-gui-180.png in Resources */,
+				BC9999C41CB61E0700EB6DDF /* game-thin-600x200.png in Resources */,
 				BCC046CE1C85794500438E71 /* 54.mp3 in Resources */,
 				BCC046D01C85794500438E71 /* 57.mp3 in Resources */,
 				BCC046CB1C85794500438E71 /* 49.mp3 in Resources */,
