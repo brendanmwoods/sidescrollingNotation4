@@ -168,7 +168,7 @@ class GameViewController: UIViewController , AVAudioPlayerDelegate{
     
     func correctGuess() {
         timer.invalidate()
-        currentScrollSpeed /= 1.2
+        currentScrollSpeed /= 1.1
         currentScore += 1
         scoreLabel!.text = String(currentScore)
         gameLoop()
