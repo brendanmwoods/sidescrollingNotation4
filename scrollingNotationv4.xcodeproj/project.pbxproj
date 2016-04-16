@@ -76,6 +76,7 @@
 		BCE74CF11C75156100FB4EC4 /* GameMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE74CF01C75156100FB4EC4 /* GameMenuViewController.swift */; };
 		BCE74CF31C7562CD00FB4EC4 /* LearningMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE74CF21C7562CD00FB4EC4 /* LearningMenuViewController.swift */; };
 		BCE74CF51C75669200FB4EC4 /* LearningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE74CF41C75669200FB4EC4 /* LearningViewController.swift */; };
+		BCE8D8AA1CC1C46400F53377 /* fullCleffStraightAltColorsCropped-2.png in Resources */ = {isa = PBXBuildFile; fileRef = BCE8D8A91CC1C46400F53377 /* fullCleffStraightAltColorsCropped-2.png */; };
 		BCEAB11A1C8150FF00929924 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = BCEAB1191C8150FF00929924 /* logo.png */; };
 		BCFB08891CAD905C00770AE3 /* logo29.png in Resources */ = {isa = PBXBuildFile; fileRef = BCFB08801CAD905C00770AE3 /* logo29.png */; };
 		BCFB088A1CAD905C00770AE3 /* logo40.png in Resources */ = {isa = PBXBuildFile; fileRef = BCFB08811CAD905C00770AE3 /* logo40.png */; };
@@ -190,6 +191,7 @@
 		BCE74CF01C75156100FB4EC4 /* GameMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameMenuViewController.swift; sourceTree = "<group>"; };
 		BCE74CF21C7562CD00FB4EC4 /* LearningMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LearningMenuViewController.swift; sourceTree = "<group>"; };
 		BCE74CF41C75669200FB4EC4 /* LearningViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LearningViewController.swift; sourceTree = "<group>"; };
+		BCE8D8A91CC1C46400F53377 /* fullCleffStraightAltColorsCropped-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "fullCleffStraightAltColorsCropped-2.png"; path = "../../scrollingNotationv4 3/scrollingNotationv4/graphics/fullCleffStraightAltColorsCropped-2.png"; sourceTree = "<group>"; };
 		BCEAB1191C8150FF00929924 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		BCFB08801CAD905C00770AE3 /* logo29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo29.png; path = icons/logo29.png; sourceTree = "<group>"; };
 		BCFB08811CAD905C00770AE3 /* logo40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo40.png; path = icons/logo40.png; sourceTree = "<group>"; };
@@ -411,6 +413,7 @@
 				BC9999C11CB61E0700EB6DDF /* learn-hat-thin-600x200.png */,
 				BC9999C21CB61E0700EB6DDF /* game-thin-600x200.png */,
 				BCFB08A71CAE0B0D00770AE3 /* noteChart-600x200.png */,
+				BCE8D8A91CC1C46400F53377 /* fullCleffStraightAltColorsCropped-2.png */,
 				BC11F1AF1CAF0DD200A5BCA2 /* options-600x200.png */,
 				BCFB08A51CAE0A4C00770AE3 /* practice-600x200.png */,
 				BCFB08A31CAE074E00770AE3 /* leaders-600x200.png */,
@@ -536,6 +539,7 @@
 				BCC046DE1C857D0D00438E71 /* 28.mp3 in Resources */,
 				BCFB08A01CADF9B100770AE3 /* singleplayerNote-600x200.png in Resources */,
 				BC9999C31CB61E0700EB6DDF /* learn-hat-thin-600x200.png in Resources */,
+				BCE8D8AA1CC1C46400F53377 /* fullCleffStraightAltColorsCropped-2.png in Resources */,
 				BCC84CB81CB5B4DC0019474E /* 18.mp3 in Resources */,
 				BCC046DF1C857D0D00438E71 /* 30.mp3 in Resources */,
 				BCFB088A1CAD905C00770AE3 /* logo40.png in Resources */,

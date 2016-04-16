@@ -1464,7 +1464,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="noteChartAltColors.png" translatesAutoresizingMaskIntoConstraints="NO" id="eLH-gr-cuw">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fullCleffStraightAltColorsCropped-2.png" translatesAutoresizingMaskIntoConstraints="NO" id="eLH-gr-cuw">
                                 <rect key="frame" x="0.0" y="77" width="600" height="388"/>
                             </imageView>
                         </subviews>
@@ -1924,12 +1924,12 @@
         </scene>
     </scenes>
     <resources>
+        <image name="fullCleffStraightAltColorsCropped-2.png" width="1728" height="1000"/>
         <image name="game-thin-600x200.png" width="600" height="200"/>
         <image name="leaders-600x200.png" width="600" height="200"/>
         <image name="learn-hat-thin-600x200.png" width="600" height="200"/>
         <image name="multiplayerNote-600x200.png" width="600" height="200"/>
         <image name="noteChart-600x200.png" width="600" height="200"/>
-        <image name="noteChartAltColors.png" width="900" height="626"/>
         <image name="options-600x200.png" width="600" height="200"/>
         <image name="practice-600x200.png" width="600" height="200"/>
         <image name="singleplayerNote-600x200.png" width="600" height="200"/>
