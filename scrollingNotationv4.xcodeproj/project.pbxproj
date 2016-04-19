@@ -495,6 +495,11 @@
 					BC64B7B81C6C56F200DE7780 = {
 						CreatedOnToolsVersion = 7.2;
 						DevelopmentTeam = VEQC3TC385;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					BC64B7CC1C6C56F300DE7780 = {
 						CreatedOnToolsVersion = 7.2;
@@ -839,6 +844,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.brendanwoods.noteBrainer;
 				PRODUCT_NAME = NoteBrainer;
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -856,6 +862,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.brendanwoods.noteBrainer;
 				PRODUCT_NAME = NoteBrainer;
+				PROVISIONING_PROFILE = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 			};
 			name = Release;

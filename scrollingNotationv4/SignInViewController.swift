@@ -77,7 +77,14 @@ class SignInViewController: UIViewController {
                     .observeEventType(.ChildAdded, withBlock: { snapshot in
                         defaults.setValue(snapshot.key!, forKey: "FirebaseUsername")
                         self.delegate.setUsername()
+                        
+                        
+                        let tokenRef = Firebase(url:"https://glowing-torch-8861.firebaseio.com/Usernames/\(defaults.valueForKey("FirebaseUsername")!)")
+                        tokenRef.updateChildValues(["token" : defaults.valueForKey("token")!])
+                        print(defaults.valueForKey("token")!)
+                        print(tokenRef)
                     })
+                
                 
                 let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
                 
