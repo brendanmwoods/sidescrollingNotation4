@@ -123,15 +123,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let tokenChars = UnsafePointer<CChar>(deviceToken.bytes)
         var tokenString = ""
         
+        
         for i in 0..<deviceToken.length {
             tokenString += String(format: "%02.2hhx", arguments: [tokenChars[i]])
         }
         
+        let defaults = NSUserDefaults()
+        defaults.setValue(tokenString, forKey: "token")
+        
+        //if we are logged in when notifications are accepted, send the token to firebase
+        if (defaults.objectForKey("FirebaseUsername") != nil) {
+            let tokenRef = Firebase(url:"https://glowing-torch-8861.firebaseio.com/Usernames/\(defaults.valueForKey("FirebaseUsername")!)")
+            tokenRef.updateChildValues(["token" : defaults.valueForKey("token")!])
+        }
+        
         print("Device Token:", tokenString)
         
-        let defaults = NSUserDefaults()
         
-        defaults.setValue(tokenString, forKey: "token")
     }
     
     func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {

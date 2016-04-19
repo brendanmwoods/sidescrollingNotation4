@@ -44,7 +44,7 @@ class SignInViewController: UIViewController {
         
     }
     
-
+    
     func dismissKeyboard() {
         //Causes the view (or one of its embedded text fields) to resign the first responder status.
         view.endEditing(true)
@@ -78,11 +78,12 @@ class SignInViewController: UIViewController {
                         defaults.setValue(snapshot.key!, forKey: "FirebaseUsername")
                         self.delegate.setUsername()
                         
-                        //setting the token for the currennt device that the current user is loggin in with
-                        let tokenRef = Firebase(url:"https://glowing-torch-8861.firebaseio.com/Usernames/\(defaults.valueForKey("FirebaseUsername")!)")
-                        tokenRef.updateChildValues(["token" : defaults.valueForKey("token")!])
-                        print(defaults.valueForKey("token")!)
-                        print(tokenRef)
+                        //if a token exists , send it to firebase
+                        if defaults.valueForKey("token") != nil {
+                            //setting the token for the currennt device that the current user is loggin in with
+                            let tokenRef = Firebase(url:"https://glowing-torch-8861.firebaseio.com/Usernames/\(defaults.valueForKey("FirebaseUsername")!)")
+                            tokenRef.updateChildValues(["token" : defaults.valueForKey("token")!])
+                        }
                     })
                 
                 
@@ -103,6 +104,6 @@ class SignInViewController: UIViewController {
                 self.showViewController(vc, sender: vc)
             }
         })
-
+        
     }
 }

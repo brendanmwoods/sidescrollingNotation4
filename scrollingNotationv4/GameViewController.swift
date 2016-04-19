@@ -64,13 +64,14 @@ class GameViewController: UIViewController , AVAudioPlayerDelegate{
         let imageName = "ovalNote.png"
         let image = UIImage(named: imageName)
         ovalNoteImageView = UIImageView(image: image!)
-        if isMultiplayer && multiplayerData.isNewGame != true {
-            scoreToBeatLabel?.hidden = false
-            scoreToBeatLabel.text = "Score To Beat: \(multiplayerData.scoreToBeat)"
-        }
-        else {
-            scoreToBeatLabel.hidden = true
-        }
+        
+//        if isMultiplayer && multiplayerData.isNewGame != true {
+//            scoreToBeatLabel?.hidden = false
+//            scoreToBeatLabel.text = "Score To Beat: \(multiplayerData.scoreToBeat)"
+//        }
+//        else {
+//            scoreToBeatLabel.hidden = true
+//        }
         gameLoop()
     }
     
@@ -98,6 +99,15 @@ class GameViewController: UIViewController , AVAudioPlayerDelegate{
     
     func gameLoop() {
         setHighScore()
+        
+        if isMultiplayer && multiplayerData.isNewGame != true {
+            scoreToBeatLabel?.hidden = false
+            scoreToBeatLabel.text = "Score To Beat: \(multiplayerData.scoreToBeat)"
+        }
+        else {
+            scoreToBeatLabel.hidden = true
+        }
+        
         
         if scoresNeedResetting
         {
@@ -267,6 +277,7 @@ class GameViewController: UIViewController , AVAudioPlayerDelegate{
             
             alert.addAction(UIAlertAction(title: "Start New Game", style: UIAlertActionStyle.Default, handler: {
                 action in
+                self.multiplayerData.isNewGame = true
                 self.gameLoop()
             }))
             

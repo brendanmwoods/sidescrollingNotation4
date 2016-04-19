@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class OptionsViewController: UIViewController {
     
@@ -67,6 +68,11 @@ class OptionsViewController: UIViewController {
     @IBAction func logoutOfFirebase() {
         if loggedIn == true {
         let defaults = NSUserDefaults()
+         //remove push notification token from firebase
+        let tokenRef = Firebase(url:"https://glowing-torch-8861.firebaseio.com/Usernames/\(defaults.valueForKey("FirebaseUsername")!)/token")
+            
+        tokenRef.removeValue()
+            
         defaults.setValue(nil, forKey: "FirebaseUID")
         defaults.setValue(nil, forKey: "FirebaseUsername")
         appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
@@ -76,6 +82,8 @@ class OptionsViewController: UIViewController {
         loggedIn = false
         appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         appDelegate.highScore = 0
+            
+            
         } else {
             let vc = self.storyboard?.instantiateViewControllerWithIdentifier("signInScene") as! SignInViewController
             self.showViewController(vc, sender: vc)
