@@ -78,7 +78,7 @@ class SignInViewController: UIViewController {
                         defaults.setValue(snapshot.key!, forKey: "FirebaseUsername")
                         self.delegate.setUsername()
                         
-                        
+                        //setting the token for the currennt device that the current user is loggin in with
                         let tokenRef = Firebase(url:"https://glowing-torch-8861.firebaseio.com/Usernames/\(defaults.valueForKey("FirebaseUsername")!)")
                         tokenRef.updateChildValues(["token" : defaults.valueForKey("token")!])
                         print(defaults.valueForKey("token")!)
