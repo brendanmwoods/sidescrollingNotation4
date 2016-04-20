@@ -299,12 +299,42 @@ class GameViewController: UIViewController , AVAudioPlayerDelegate{
             
         //if it is the first score of the round
         else if multiplayerData.isNewGame == true {
+           
             //post the score to beat to firebase
             gameRef.updateChildValues(["scoreToBeat" : currentScore])
             //change the waiting on player
             gameRef.childByAppendingPath("/waitingOnPlayer").setValue([multiplayerData.opponent : true])
             //change the isnewgame
             gameRef.updateChildValues(["isNewGame" : false])
+            
+            
+            //see if the next player's device has a token. if so , add to queue
+            let awaitingToken = Firebase(url: "https://glowing-torch-8861.firebaseio.com/Usernames/\(multiplayerData.opponent)/token")
+            
+            awaitingToken.observeSingleEventOfType(.Value, withBlock: { snap in
+                
+                if snap.value is NSNull {
+                    print("next player has no token. Not being added to push queue.")
+                } else {
+                    
+                    let queueRef = Firebase(url: "https://glowing-torch-8861.firebaseio.com/Queue")
+                    let newItemRef = queueRef.childByAutoId()
+                    let token = snap.value
+                    print("the token is \(token)")
+                    
+                    let newItem = [
+                        "player": self.multiplayerData.opponent,
+                        "opponent": self.multiplayerData.hero,
+                        "token": token]
+                    
+                    newItemRef.setValue(newItem)
+                    
+                }
+            })
+            
+            
+            
+            
             
             //display alerts
             var alert = UIAlertController()
