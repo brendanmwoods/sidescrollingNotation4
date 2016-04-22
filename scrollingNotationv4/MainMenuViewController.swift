@@ -31,7 +31,7 @@ class MainMenuViewController: UIViewController {
         self.navigationController!.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
         self.navigationController!.navigationBar.shadowImage = UIImage()
         self.navigationController!.navigationBar.translucent = true
-        self.navigationController!.navigationBar.backgroundColor = UIColor.clearColor()
+        self.navigationController!.navigationBar.backgroundColor = UIColor(red: 17, green: 55, blue: 110, alpha: 1.0)
         
         for parent in self.navigationController!.navigationBar.subviews {
             for childView in parent.subviews {
@@ -107,8 +107,10 @@ class MainMenuViewController: UIViewController {
             let vc = storyboard?.instantiateViewControllerWithIdentifier("createAccountScene") as! CreateAccountViewController
             self.showViewController(vc, sender: vc)
         } else {
-            let vc = storyboard?.instantiateViewControllerWithIdentifier("gameMenuScene") as! GameMenuViewController
-            self.showViewController(vc, sender: vc)
+            performSegueWithIdentifier("gameSegue", sender: nil)
+            
+//            let vc = storyboard?.instantiateViewControllerWithIdentifier("gameMenuScene") as! GameMenuViewController
+//            self.showViewController(vc, sender: vc)
         }
     }
 }

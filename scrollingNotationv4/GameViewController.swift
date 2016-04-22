@@ -23,8 +23,10 @@ class GameViewController: UIViewController , AVAudioPlayerDelegate{
     @IBOutlet weak var scoreLabel:UILabel?
     @IBOutlet weak var highScoreLabel:UILabel?
     @IBOutlet weak var scoreToBeatLabel:UILabel!
+    @IBOutlet weak var grandStaffView: UIImageView!
     
     var ovalNoteImageView = UIImageView()
+    var noteImageView = UIImageView()
     
     var scoresArray:NSMutableArray!
     
@@ -34,6 +36,9 @@ class GameViewController: UIViewController , AVAudioPlayerDelegate{
     let fractionOfTheScreenToMoveNote = 320
     let ovalNoteWidth:CGFloat = 30
     let ovalNoteHeight:CGFloat = 20
+    var noteImageWidth:CGFloat = 0
+    var noteImageHeight:CGFloat = 0
+    
     let spaceBetweenNotes:CGFloat = 10
     var timer = NSTimer()
     var noteLibrary = NoteLibrary()
@@ -65,13 +70,16 @@ class GameViewController: UIViewController , AVAudioPlayerDelegate{
         let image = UIImage(named: imageName)
         ovalNoteImageView = UIImageView(image: image!)
         
-//        if isMultiplayer && multiplayerData.isNewGame != true {
-//            scoreToBeatLabel?.hidden = false
-//            scoreToBeatLabel.text = "Score To Beat: \(multiplayerData.scoreToBeat)"
-//        }
-//        else {
-//            scoreToBeatLabel.hidden = true
-//        }
+        
+        
+
+        
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        noteImageHeight = grandStaffView.frame.size.height
+        noteImageWidth = noteImageHeight/8.333
+        print("View did appear")
         gameLoop()
     }
     
@@ -98,6 +106,7 @@ class GameViewController: UIViewController , AVAudioPlayerDelegate{
     }
     
     func gameLoop() {
+        
         setHighScore()
         
         if isMultiplayer && multiplayerData.isNewGame != true {
@@ -117,8 +126,9 @@ class GameViewController: UIViewController , AVAudioPlayerDelegate{
         }
         
         currentNote = noteLibrary.returnRandomNote()
-        createOvalNoteImage(currentNote)
-        
+    
+        createNoteImage(currentNote)
+    
     }
     
     func setHighScore() {
@@ -137,6 +147,43 @@ class GameViewController: UIViewController , AVAudioPlayerDelegate{
         gButton?.layer.cornerRadius = buttonRadius
     }
     
+    func createNoteImage(note: (noteName: String,octaveNumber: Int,
+        absoluteNote: Int, isFlatOrSharp:Bool,diffFromTop:Int)) {
+        
+        //need navigation bar and status height to compensate for positioning of note
+        let navHeight:CGFloat = (self.navigationController?.navigationBar.frame.height)!
+        
+        let statusHeight:CGFloat = UIApplication.sharedApplication().statusBarFrame.size.height
+        
+        print(navHeight)
+        print(grandStaffView.frame.origin.y)
+        print("making image")
+        
+        let imageName = "\(note.absoluteNote).png"
+        let image = UIImage(named: imageName)
+        noteImageView = UIImageView(image: image!)
+        
+        noteImageView.frame = CGRectMake(
+            screenWidth,
+            grandStaffView.frame.origin.y + navHeight + statusHeight,
+            noteImageWidth,
+            noteImageHeight)
+        
+        //ff the sound option is true, play note sound.
+        if appDelegate.isSound {
+            let path = NSBundle.mainBundle().pathForResource("\(note.absoluteNote)", ofType: "mp3")
+            let fileUrl = NSURL(fileURLWithPath: (path)!)
+            notePlayer = try? AVAudioPlayer(contentsOfURL: fileUrl)
+            notePlayer.prepareToPlay()
+            notePlayer.delegate = self
+            notePlayer.play()
+        }
+        
+        view.addSubview(noteImageView)
+        
+        timer = NSTimer.scheduledTimerWithTimeInterval(currentScrollSpeed, target: self,
+                                                       selector: #selector(GameViewController.moveNoteLeft), userInfo: nil, repeats: true)
+    }
     
     func createOvalNoteImage(note: (noteName: String,octaveNumber: Int,
         absoluteNote: Int, isFlatOrSharp:Bool,diffFromTop:Int)) {
@@ -170,13 +217,27 @@ class GameViewController: UIViewController , AVAudioPlayerDelegate{
             gameOver = true
             scoresNeedResetting = true
             timer.invalidate()
+            print("afterinvalidate")
             gameOverAlert()
         } else {
             self.ovalNoteImageView.center.x -= distanceToMoveNoteLeft
         }
     }
     
+    func moveNoteLeft(){
+        if noteImageView.center.x <= 0 {
+            currentScrollSpeed = startingScrollSpeed
+            gameOver = true
+            scoresNeedResetting = true
+            timer.invalidate()
+            gameOverAlert()
+        } else {
+            self.noteImageView.center.x -= distanceToMoveNoteLeft
+        }
+    }
+    
     func correctGuess() {
+        self.noteImageView.removeFromSuperview()
         timer.invalidate()
         currentScrollSpeed /= 1.1
         currentScore += 1
@@ -209,6 +270,7 @@ class GameViewController: UIViewController , AVAudioPlayerDelegate{
             }
             alert.addAction(UIAlertAction(title: "New Game", style: UIAlertActionStyle.Default, handler: {
                 action in
+                self.noteImageView.removeFromSuperview()
                 self.gameLoop()
             }))
             
@@ -277,6 +339,7 @@ class GameViewController: UIViewController , AVAudioPlayerDelegate{
             
             alert.addAction(UIAlertAction(title: "Start New Game", style: UIAlertActionStyle.Default, handler: {
                 action in
+                self.noteImageView.removeFromSuperview()
                 self.multiplayerData.isNewGame = true
                 self.gameLoop()
             }))

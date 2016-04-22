@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+    </dependencies>
+    <scenes>
+        <!--Game View Controller-->
+        <scene sceneID="aTr-qt-3pS">
+            <objects>
+                <viewController storyboardIdentifier="gameViewControllerScene" id="SLk-Aq-bCB" customClass="GameViewController" customModule="NoteBrainer" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3Wz-1j-4Y0"/>
+                        <viewControllerLayoutGuide type="bottom" id="6EQ-Z9-pWr"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ef0-qR-aH6">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="zSf-Og-kPi">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" horizontalHuggingPriority="248" verticalHuggingPriority="248" translatesAutoresizingMaskIntoConstraints="NO" id="DCW-b5-25w" userLabel="BlankStaff" customClass="BlankStaff" customModule="NoteBrainer" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="342"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ng4-CG-fmR">
+                                                <rect key="frame" x="0.0" y="0.0" width="600" height="60"/>
+                                                <color key="backgroundColor" red="0.066666666669999999" green="0.2156862745" blue="0.43137254899999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="60" id="605-Zd-Gf9"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="ng4-CG-fmR" firstAttribute="leading" secondItem="DCW-b5-25w" secondAttribute="leading" id="1We-Zs-rFg"/>
+                                            <constraint firstAttribute="trailing" secondItem="ng4-CG-fmR" secondAttribute="trailing" id="6sN-3T-5WL"/>
+                                            <constraint firstAttribute="height" constant="342" id="8wY-ea-j7O"/>
+                                            <constraint firstItem="ng4-CG-fmR" firstAttribute="top" secondItem="DCW-b5-25w" secondAttribute="top" id="wkR-kM-psd"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="751" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i1v-kU-JHk">
+                                        <rect key="frame" x="0.0" y="342" width="600" height="54"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="45"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                            <rect key="frame" x="0.0" y="342" width="800" height="190"/>
+                                        </variation>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="Vid-AF-zum">
+                                        <rect key="frame" x="0.0" y="396" width="600" height="19"/>
+                                        <subviews>
+                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score To Beat :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2VV-gz-AXv">
+                                                <rect key="frame" x="0.0" y="-1" width="0.0" height="20"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="High Score: 00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aGm-sd-S3F">
+                                                <rect key="frame" x="0.0" y="0.0" width="600" height="19"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="nxU-Pi-wPs">
+                                        <rect key="frame" x="0.0" y="415" width="600" height="185"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4ti-hu-l7g">
+                                                <rect key="frame" x="0.0" y="0.0" width="84" height="185"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="4ti-hu-l7g" secondAttribute="height" multiplier="83:183" id="2s3-Yk-Dg6"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="22"/>
+                                                <state key="normal" title="A">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                                    <rect key="frame" x="0.0" y="0.0" width="113" height="247"/>
+                                                </variation>
+                                                <connections>
+                                                    <action selector="noteButtonPushed:" destination="SLk-Aq-bCB" eventType="touchUpInside" id="JBn-84-Q8S"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GUE-KL-dLT">
+                                                <rect key="frame" x="86" y="0.0" width="84" height="185"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="22"/>
+                                                <state key="normal" title="B">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                                    <rect key="frame" x="115" y="0.0" width="112" height="247"/>
+                                                </variation>
+                                                <connections>
+                                                    <action selector="noteButtonPushed:" destination="SLk-Aq-bCB" eventType="touchUpInside" id="fHY-FD-UIt"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nfx-ZQ-Jnp">
+                                                <rect key="frame" x="172" y="0.0" width="84" height="185"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="22"/>
+                                                <state key="normal" title="C">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                                    <rect key="frame" x="229" y="0.0" width="113" height="247"/>
+                                                </variation>
+                                                <connections>
+                                                    <action selector="noteButtonPushed:" destination="SLk-Aq-bCB" eventType="touchUpInside" id="cIj-h0-KbM"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fYE-cw-En5">
+                                                <rect key="frame" x="258" y="0.0" width="84" height="185"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="22"/>
+                                                <state key="normal" title="D">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                                    <rect key="frame" x="344" y="0.0" width="112" height="247"/>
+                                                </variation>
+                                                <connections>
+                                                    <action selector="noteButtonPushed:" destination="SLk-Aq-bCB" eventType="touchUpInside" id="bVP-tm-Nd9"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AyE-9T-d3d">
+                                                <rect key="frame" x="344" y="0.0" width="84" height="185"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="22"/>
+                                                <state key="normal" title="E">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                                    <rect key="frame" x="458" y="0.0" width="113" height="247"/>
+                                                </variation>
+                                                <connections>
+                                                    <action selector="noteButtonPushed:" destination="SLk-Aq-bCB" eventType="touchUpInside" id="SzT-mT-r1k"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ecT-Oq-GMn">
+                                                <rect key="frame" x="430" y="0.0" width="84" height="185"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="22"/>
+                                                <state key="normal" title="F">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                                    <rect key="frame" x="573" y="0.0" width="112" height="247"/>
+                                                </variation>
+                                                <connections>
+                                                    <action selector="noteButtonPushed:" destination="SLk-Aq-bCB" eventType="touchUpInside" id="8rS-ua-6dX"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rPs-gl-GQL">
+                                                <rect key="frame" x="516" y="0.0" width="84" height="185"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="22"/>
+                                                <state key="normal" title="G">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                                    <rect key="frame" x="687" y="0.0" width="113" height="247"/>
+                                                </variation>
+                                                <connections>
+                                                    <action selector="noteButtonPushed:" destination="SLk-Aq-bCB" eventType="touchUpInside" id="N5s-Ny-yCM"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                            <rect key="frame" x="0.0" y="553" width="800" height="247"/>
+                                        </variation>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Vid-AF-zum" firstAttribute="leading" secondItem="zSf-Og-kPi" secondAttribute="leading" id="1TL-HV-GY2"/>
+                                    <constraint firstAttribute="trailing" secondItem="DCW-b5-25w" secondAttribute="trailing" id="9Pf-q9-nXg"/>
+                                    <constraint firstAttribute="bottom" secondItem="nxU-Pi-wPs" secondAttribute="bottom" id="Fzu-Uy-dMh"/>
+                                    <constraint firstAttribute="trailing" secondItem="nxU-Pi-wPs" secondAttribute="trailing" id="MDm-rZ-347"/>
+                                    <constraint firstItem="DCW-b5-25w" firstAttribute="leading" secondItem="zSf-Og-kPi" secondAttribute="leading" id="NoP-eg-Gzw"/>
+                                    <constraint firstItem="DCW-b5-25w" firstAttribute="top" secondItem="zSf-Og-kPi" secondAttribute="top" id="OMy-qi-abA"/>
+                                    <constraint firstItem="nxU-Pi-wPs" firstAttribute="leading" secondItem="zSf-Og-kPi" secondAttribute="leading" id="Tvz-qq-XNQ"/>
+                                    <constraint firstAttribute="trailing" secondItem="Vid-AF-zum" secondAttribute="trailing" id="Vqb-A8-YsG"/>
+                                    <constraint firstItem="i1v-kU-JHk" firstAttribute="centerX" secondItem="zSf-Og-kPi" secondAttribute="centerX" id="fuk-UT-0bD"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.066666666669999999" green="0.2156862745" blue="0.43137254899999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="zSf-Og-kPi" secondAttribute="trailing" id="Okk-14-cMq"/>
+                            <constraint firstItem="zSf-Og-kPi" firstAttribute="top" secondItem="Ef0-qR-aH6" secondAttribute="top" id="Zs2-oL-Ab5"/>
+                            <constraint firstItem="zSf-Og-kPi" firstAttribute="leading" secondItem="Ef0-qR-aH6" secondAttribute="leading" id="dsu-re-Pxj"/>
+                            <constraint firstItem="6EQ-Z9-pWr" firstAttribute="top" secondItem="zSf-Og-kPi" secondAttribute="bottom" id="vu8-KT-TBh"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="YU8-Dz-BEJ"/>
+                    <connections>
+                        <outlet property="BlankStaff" destination="DCW-b5-25w" id="T4n-QB-sS5"/>
+                        <outlet property="aButton" destination="4ti-hu-l7g" id="DEI-VD-eYr"/>
+                        <outlet property="bButton" destination="GUE-KL-dLT" id="WZx-j2-lZ5"/>
+                        <outlet property="blankStaff" destination="DCW-b5-25w" id="eUn-hS-Y9t"/>
+                        <outlet property="cButton" destination="Nfx-ZQ-Jnp" id="GCN-5e-lVt"/>
+                        <outlet property="dButton" destination="fYE-cw-En5" id="OCb-5Y-XtP"/>
+                        <outlet property="eButton" destination="AyE-9T-d3d" id="LQE-PI-bdj"/>
+                        <outlet property="fButton" destination="ecT-Oq-GMn" id="dhk-zw-mCm"/>
+                        <outlet property="gButton" destination="rPs-gl-GQL" id="VGB-k5-QQ9"/>
+                        <outlet property="highScoreLabel" destination="aGm-sd-S3F" id="8Jq-9t-4gw"/>
+                        <outlet property="scoreLabel" destination="i1v-kU-JHk" id="yBv-kp-CCB"/>
+                        <outlet property="scoreToBeatLabel" destination="2VV-gz-AXv" id="F2I-HP-OZq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TXa-84-taH" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2072.5" y="943.5"/>
+        </scene>
+    </scenes>
+</document>

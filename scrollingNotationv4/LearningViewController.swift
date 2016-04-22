@@ -21,13 +21,18 @@ class LearningViewController: UIViewController, AVAudioPlayerDelegate   {
     @IBOutlet weak var gButton:UIButton?
     @IBOutlet weak var scoreLabel:UILabel?
     @IBOutlet weak var noteLabel:UILabel!
+    @IBOutlet weak var grandStaffView:UIImageView!
     
     var ovalNoteImageView = UIImageView()
+    var noteImageView = UIImageView()
     
     let topLineY:CGFloat = 100
     var screenWidth:CGFloat = 0
     let ovalNoteWidth:CGFloat = 30
     let ovalNoteHeight:CGFloat = 20
+    var noteImageHeight:CGFloat = 0
+    var noteImageWidth:CGFloat = 0
+    
     let spaceBetweenNotes:CGFloat = 10
     var noteLibrary = NoteLibrary()
     var currentNote: (noteName: String,octaveNumber: Int,
@@ -39,6 +44,7 @@ class LearningViewController: UIViewController, AVAudioPlayerDelegate   {
     var appDelegate = AppDelegate()
     
     override func viewDidLoad() {
+        
         
         super.viewDidLoad()
         let imageName = "ovalNote.png"
@@ -61,15 +67,27 @@ class LearningViewController: UIViewController, AVAudioPlayerDelegate   {
 //        
 //        gameLoop()
         
-
+        noteImageView.removeFromSuperview()
+        
             }
+    override func viewDidAppear(animated: Bool) {
+        noteImageView.removeFromSuperview()
+        print(grandStaffView.frame.size.height)
+        noteImageHeight = grandStaffView.frame.size.height
+        noteImageWidth = noteImageHeight/8.333
+        
+        noteLabel.hidden = true
+        currentNote = noteLibrary.returnRandomNote()
+        
+        createNoteImage(currentNote)
+    }
     
     override func viewWillAppear(animated: Bool) {
+        
         blankStaff?.setNeedsDisplay()
         appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         screenWidth = UIScreen.mainScreen().bounds.width
         formatButtonShapes()
-        print("yup")
         noteLibrary = NoteLibrary()
         difficulty = appDelegate.practiceModeDifficulty
         print(difficulty)
@@ -86,9 +104,11 @@ class LearningViewController: UIViewController, AVAudioPlayerDelegate   {
     
     
     func gameLoop() {
+        
         noteLabel.hidden = true
         currentNote = noteLibrary.returnRandomNote()
-        createOvalNoteImage(currentNote)
+        //createOvalNoteImage(currentNote)
+        
     }
     
     func formatButtonShapes() {
@@ -100,6 +120,39 @@ class LearningViewController: UIViewController, AVAudioPlayerDelegate   {
         eButton?.layer.cornerRadius = buttonRadius
         fButton?.layer.cornerRadius = buttonRadius
         gButton?.layer.cornerRadius = buttonRadius
+    }
+    
+    func createNoteImage(note: (noteName: String,octaveNumber: Int,
+        absoluteNote: Int, isFlatOrSharp:Bool,diffFromTop:Int)) {
+        //need navigation bar and status height to compensate for positioning of note
+        let navHeight:CGFloat = (self.navigationController?.navigationBar.frame.height)!
+        
+        let statusHeight:CGFloat = UIApplication.sharedApplication().statusBarFrame.size.height
+        
+        print(navHeight)
+        print(grandStaffView.frame.origin.y)
+        print("making image")
+        
+        let imageName = "\(note.absoluteNote).png"
+        let image = UIImage(named: imageName)
+        noteImageView = UIImageView(image: image!)
+        
+        noteImageView.frame = CGRectMake(
+            (screenWidth/2) - (noteImageWidth/2),
+            grandStaffView.frame.origin.y + navHeight + statusHeight,
+            noteImageWidth,
+            noteImageHeight)
+        view.addSubview(noteImageView)
+
+        //if the sound option is true, play the note sound.
+        if appDelegate.isSound {
+            let path = NSBundle.mainBundle().pathForResource("\(note.absoluteNote)", ofType: "mp3")
+            let fileUrl = NSURL(fileURLWithPath: (path)!)
+            notePlayer = try? AVAudioPlayer(contentsOfURL: fileUrl)
+            notePlayer.prepareToPlay()
+            notePlayer.delegate = self
+            notePlayer.play()
+        }
     }
     
     func createOvalNoteImage(note: (noteName: String,octaveNumber: Int,
@@ -129,6 +182,8 @@ class LearningViewController: UIViewController, AVAudioPlayerDelegate   {
         totalCorrect += 1
         updateResultsLabel()
         gameLoop()
+        noteImageView.removeFromSuperview()
+        createNoteImage(currentNote)
     }
     
     func incorrectGuess() {
