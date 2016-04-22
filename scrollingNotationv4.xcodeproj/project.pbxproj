@@ -65,6 +65,7 @@
 		BC9999C41CB61E0700EB6DDF /* game-thin-600x200.png in Resources */ = {isa = PBXBuildFile; fileRef = BC9999C21CB61E0700EB6DDF /* game-thin-600x200.png */; };
 		BC9A73391CC883AC00C91416 /* grandStaff-1.png in Resources */ = {isa = PBXBuildFile; fileRef = BC9A73381CC883AC00C91416 /* grandStaff-1.png */; };
 		BCAEEAAA1CC9427A00EDFD31 /* 44.png in Resources */ = {isa = PBXBuildFile; fileRef = BCAEEAA91CC9427A00EDFD31 /* 44.png */; };
+		BCAFB1621CC9DC2A00337ECA /* noteChart-final.png in Resources */ = {isa = PBXBuildFile; fileRef = BCAFB1611CC9DC2A00337ECA /* noteChart-final.png */; };
 		BCB038851C98944F002A35D0 /* noteChartAltColors.png in Resources */ = {isa = PBXBuildFile; fileRef = BCB038841C98944F002A35D0 /* noteChartAltColors.png */; };
 		BCC046A21C85611C00438E71 /* Bubble.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BCC046A11C85611C00438E71 /* Bubble.mp3 */; };
 		BCC046C61C85794500438E71 /* 40.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BCC046BB1C85794500438E71 /* 40.mp3 */; };
@@ -104,7 +105,6 @@
 		BCE74CF11C75156100FB4EC4 /* GameMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE74CF01C75156100FB4EC4 /* GameMenuViewController.swift */; };
 		BCE74CF31C7562CD00FB4EC4 /* LearningMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE74CF21C7562CD00FB4EC4 /* LearningMenuViewController.swift */; };
 		BCE74CF51C75669200FB4EC4 /* LearningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE74CF41C75669200FB4EC4 /* LearningViewController.swift */; };
-		BCE8D8AA1CC1C46400F53377 /* fullCleffStraightAltColorsCropped-2.png in Resources */ = {isa = PBXBuildFile; fileRef = BCE8D8A91CC1C46400F53377 /* fullCleffStraightAltColorsCropped-2.png */; };
 		BCEAB11A1C8150FF00929924 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = BCEAB1191C8150FF00929924 /* logo.png */; };
 		BCFB08891CAD905C00770AE3 /* logo29.png in Resources */ = {isa = PBXBuildFile; fileRef = BCFB08801CAD905C00770AE3 /* logo29.png */; };
 		BCFB088A1CAD905C00770AE3 /* logo40.png in Resources */ = {isa = PBXBuildFile; fileRef = BCFB08811CAD905C00770AE3 /* logo40.png */; };
@@ -208,6 +208,7 @@
 		BC9999C21CB61E0700EB6DDF /* game-thin-600x200.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "game-thin-600x200.png"; path = "graphics/game-thin-600x200.png"; sourceTree = "<group>"; };
 		BC9A73381CC883AC00C91416 /* grandStaff-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "grandStaff-1.png"; path = "grandStaff1.1/grandStaff-1.png"; sourceTree = "<group>"; };
 		BCAEEAA91CC9427A00EDFD31 /* 44.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 44.png; path = notes1.1/44.png; sourceTree = "<group>"; };
+		BCAFB1611CC9DC2A00337ECA /* noteChart-final.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "noteChart-final.png"; sourceTree = "<group>"; };
 		BCB038841C98944F002A35D0 /* noteChartAltColors.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = noteChartAltColors.png; sourceTree = "<group>"; };
 		BCC046A11C85611C00438E71 /* Bubble.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Bubble.mp3; sourceTree = "<group>"; };
 		BCC046BB1C85794500438E71 /* 40.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 40.mp3; path = sounds/40.mp3; sourceTree = "<group>"; };
@@ -498,6 +499,7 @@
 				BCE74CEE1C7506F600FB4EC4 /* ovalNote.png */,
 				BCC8F7741C79060700EAA645 /* bass.png */,
 				BCB038841C98944F002A35D0 /* noteChartAltColors.png */,
+				BCAFB1611CC9DC2A00337ECA /* noteChart-final.png */,
 				BCEAB1191C8150FF00929924 /* logo.png */,
 				BCC8F7751C79060700EAA645 /* treble.png */,
 			);
@@ -645,12 +647,12 @@
 				BCC046DE1C857D0D00438E71 /* 28.mp3 in Resources */,
 				BCFB08A01CADF9B100770AE3 /* singleplayerNote-600x200.png in Resources */,
 				BC9999C31CB61E0700EB6DDF /* learn-hat-thin-600x200.png in Resources */,
-				BCE8D8AA1CC1C46400F53377 /* fullCleffStraightAltColorsCropped-2.png in Resources */,
 				BCC84CB81CB5B4DC0019474E /* 18.mp3 in Resources */,
 				BC52FADA1CC985D700DC31BA /* 25.png in Resources */,
 				BC52FAEF1CC985D700DC31BA /* 59.png in Resources */,
 				BCC046DF1C857D0D00438E71 /* 30.mp3 in Resources */,
 				BCFB088A1CAD905C00770AE3 /* logo40.png in Resources */,
+				BCAFB1621CC9DC2A00337ECA /* noteChart-final.png in Resources */,
 				BC52FAD91CC985D700DC31BA /* 23.png in Resources */,
 				BC52FAE71CC985D700DC31BA /* 45.png in Resources */,
 				BCB038851C98944F002A35D0 /* noteChartAltColors.png in Resources */,
