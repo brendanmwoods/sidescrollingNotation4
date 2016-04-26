@@ -30,7 +30,6 @@ class MultiplayerMenuViewController: UIViewController {
     }
     
     @IBAction func newGameButtonPushed(sender: AnyObject) {
-        print(delegate.username)
         
         //promt the user to enter the oppenents username
         let alert = UIAlertController(title: "Search Username", message: "Enter the username you want to play with", preferredStyle: UIAlertControllerStyle.Alert)
@@ -44,11 +43,9 @@ class MultiplayerMenuViewController: UIViewController {
                         snapshot in
                         if snapshot.value is NSNull {
                             //username does not exist
-                            print("username does not exist")
                             self.invalidUsernameAlert(opponentName!)
                         } else {
                             //begin a new game
-                            print("username is valid")
                             self.createNewGame(opponentName!)
                         }
                     })
@@ -56,7 +53,7 @@ class MultiplayerMenuViewController: UIViewController {
             }
         }))
         self.presentViewController(alert, animated: true, completion: {
-            print("completion block")
+        
         })
     }
     
@@ -82,7 +79,6 @@ class MultiplayerMenuViewController: UIViewController {
                     self.presentViewController(alreadyOnList, animated: true, completion: nil)
                     }
                     else {
-                        print("its not you")
                         self.createNewGame(snap.key)
                         waitlistRef.removeValue()
                         let successAlert = UIAlertController(title: "Success", message: "New game added!", preferredStyle: .Alert)
@@ -98,7 +94,6 @@ class MultiplayerMenuViewController: UIViewController {
     }
     
     func createNewGame(opponent:String) {
-        print("staring game vs \(opponent)")
         let playersGamesRef = Firebase(url: "https://glowing-torch-8861.firebaseio.com/Usernames/\(delegate.username)/games")
         let opponentsGamesRef = Firebase(url: "https://glowing-torch-8861.firebaseio.com/Usernames/\(opponent)/games")
         

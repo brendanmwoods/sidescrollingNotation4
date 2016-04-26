@@ -25,6 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         registerForPushNotifications(application)
+        
         setUUID()
         setUsername()
         getPlayerScores()
@@ -38,7 +39,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if defaults.valueForKey("isSound") != nil {
         isSound = defaults.valueForKey("isSound") as! Bool
         }
-        print(isSound)
     }
     
     func getPlayerScores() {

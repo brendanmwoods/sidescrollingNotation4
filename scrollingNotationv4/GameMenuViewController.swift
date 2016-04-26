@@ -38,8 +38,7 @@ class GameMenuViewController: UIViewController {
     override func viewDidAppear(animated: Bool) {
         appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         makeLeaderboard()
-//        self.navigationController!.navigationBar.translucent = true
-//        self.navigationController!.navigationBar.backgroundColor = UIColor.clearColor()
+
     }
     
     override func didReceiveMemoryWarning() {

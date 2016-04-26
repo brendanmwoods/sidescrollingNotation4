@@ -40,7 +40,6 @@ class MultiplayerGamesTableViewController: UITableViewController {
                 snapshot in
                 var opponentName = String()
                 
-                print(snapshot)
                 if snapshot.value["Player1"] as! String == self.delegate.username {
                     opponentName = snapshot.value["Player2"] as! String
                 } else {
@@ -118,7 +117,6 @@ class MultiplayerGamesTableViewController: UITableViewController {
     }
     
     func deleteGameButtonPushed(sender:UIButton!) {
-        print("pushed by \(sender.tag)")
         let alert = UIAlertController(title: "Delete Game", message: "Are you sure you want to delete this game vs \(self.allGames[sender.tag].opponent)?", preferredStyle: .Alert)
         alert.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
         alert.addAction(UIAlertAction(title: "Delete", style: .Default, handler: {

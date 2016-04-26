@@ -965,7 +965,7 @@
 			baseConfigurationReference = 83BFEF0AB207ED3D6629C939 /* Pods-scrollingNotationv4.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -975,7 +975,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.brendanwoods.noteBrainer;
 				PRODUCT_NAME = NoteBrainer;
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "692ba0d0-7af6-4607-9759-875249cbab14";
 			};
 			name = Debug;
 		};
@@ -984,7 +984,7 @@
 			baseConfigurationReference = FF6CD2A6DD5CF5657E3991B3 /* Pods-scrollingNotationv4.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -994,7 +994,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.brendanwoods.noteBrainer;
 				PRODUCT_NAME = NoteBrainer;
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "692ba0d0-7af6-4607-9759-875249cbab14";
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 			};
 			name = Release;
