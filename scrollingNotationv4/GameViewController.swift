@@ -56,6 +56,7 @@ class GameViewController: UIViewController , AVAudioPlayerDelegate{
     var appDelegate = AppDelegate()
     var multiplayerData = MultiplayerGamesTableViewController.gameData()
     var isMultiplayer = false
+    var scoreHasBeenSentToFirebase = false;
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,8 +70,6 @@ class GameViewController: UIViewController , AVAudioPlayerDelegate{
         let imageName = "ovalNote.png"
         let image = UIImage(named: imageName)
         ovalNoteImageView = UIImageView(image: image!)
-        
-        
         
 
         
@@ -155,10 +154,6 @@ class GameViewController: UIViewController , AVAudioPlayerDelegate{
         
         let statusHeight:CGFloat = UIApplication.sharedApplication().statusBarFrame.size.height
         
-        print(navHeight)
-        print(grandStaffView.frame.origin.y)
-        print("making image")
-        
         let imageName = "\(note.absoluteNote).png"
         let image = UIImage(named: imageName)
         noteImageView = UIImageView(image: image!)
@@ -217,7 +212,6 @@ class GameViewController: UIViewController , AVAudioPlayerDelegate{
             gameOver = true
             scoresNeedResetting = true
             timer.invalidate()
-            print("afterinvalidate")
             gameOverAlert()
         } else {
             self.ovalNoteImageView.center.x -= distanceToMoveNoteLeft
@@ -257,7 +251,11 @@ class GameViewController: UIViewController , AVAudioPlayerDelegate{
     
     func gameOverAlert(){
         appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        postScoreToFirebase()
+        if scoreHasBeenSentToFirebase == false {
+            scoreHasBeenSentToFirebase = true
+            postScoreToFirebase()
+        }
+        
         
         if isMultiplayer == false {
             var alert = UIAlertController()
