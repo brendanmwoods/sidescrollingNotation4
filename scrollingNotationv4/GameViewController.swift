@@ -58,6 +58,7 @@ class GameViewController: UIViewController , AVAudioPlayerDelegate{
     var isMultiplayer = false
     var scoreHasBeenSentToFirebase = false;
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
@@ -69,6 +70,7 @@ class GameViewController: UIViewController , AVAudioPlayerDelegate{
         
     }
     
+    
     override func viewDidAppear(animated: Bool) {
         noteImageHeight = grandStaffView.frame.size.height
         noteImageWidth = noteImageHeight/8.333
@@ -76,9 +78,11 @@ class GameViewController: UIViewController , AVAudioPlayerDelegate{
         gameLoop()
     }
     
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+    
     
     func postScoreToFirebase() {
         let defaults = NSUserDefaults()
@@ -97,6 +101,7 @@ class GameViewController: UIViewController , AVAudioPlayerDelegate{
         ref.updateChildValues([autoIdKey: currentScore])
         
     }
+    
     
     func gameLoop() {
         
@@ -124,10 +129,12 @@ class GameViewController: UIViewController , AVAudioPlayerDelegate{
         
     }
     
+    
     func setHighScore() {
         appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         highScoreLabel!.text = "High Score: \(appDelegate.highScore)"
     }
+    
     
     func formatButtonShapes() {
         let buttonRadius:CGFloat = 5
@@ -139,6 +146,7 @@ class GameViewController: UIViewController , AVAudioPlayerDelegate{
         fButton?.layer.cornerRadius = buttonRadius
         gButton?.layer.cornerRadius = buttonRadius
     }
+    
     
     func createNoteImage(note: (noteName: String,octaveNumber: Int,
         absoluteNote: Int, isFlatOrSharp:Bool,diffFromTop:Int)) {
@@ -174,43 +182,6 @@ class GameViewController: UIViewController , AVAudioPlayerDelegate{
                                                        selector: #selector(GameViewController.moveNoteLeft), userInfo: nil, repeats: true)
     }
     
-    func createOvalNoteImage(note: (noteName: String,octaveNumber: Int,
-        absoluteNote: Int, isFlatOrSharp:Bool,diffFromTop:Int)) {
-        
-        ovalNoteImageView.frame = CGRectMake(
-            screenWidth, //- ovalNoteWidth,
-            topLineY + CGFloat(currentNote.diffFromTop) * spaceBetweenNotes,
-            ovalNoteWidth,
-            ovalNoteHeight)
-        
-        view.addSubview(ovalNoteImageView)
-        
-        //If the sound option is true, play note sound.
-        if appDelegate.isSound {
-            let path = NSBundle.mainBundle().pathForResource("\(note.absoluteNote)", ofType: "mp3")
-            let fileUrl = NSURL(fileURLWithPath: (path)!)
-            notePlayer = try? AVAudioPlayer(contentsOfURL: fileUrl)
-            notePlayer.prepareToPlay()
-            notePlayer.delegate = self
-            notePlayer.play()
-        }
-        
-        timer = NSTimer.scheduledTimerWithTimeInterval(currentScrollSpeed, target: self,
-                                                       selector: #selector(GameViewController.moveOvalNoteLeft), userInfo: nil, repeats: true)
-    }
-    
-    
-    func moveOvalNoteLeft(){
-        if ovalNoteImageView.frame.origin.x <= 0 {
-            currentScrollSpeed = startingScrollSpeed
-            gameOver = true
-            scoresNeedResetting = true
-            timer.invalidate()
-            gameOverAlert()
-        } else {
-            self.ovalNoteImageView.center.x -= distanceToMoveNoteLeft
-        }
-    }
     
     func moveNoteLeft(){
         if noteImageView.center.x <= 0 {
@@ -246,6 +217,10 @@ class GameViewController: UIViewController , AVAudioPlayerDelegate{
     func gameOverAlert(){
         appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         
+        
+        //some scores have been double posting. In order to protect from an incorrect guess and the 
+        //not crossing the end line in the same line resulting in the score being posted multiple times,
+        //check to see if the score has been posted. if it hasn't  , post it. 
         if scoreHasBeenSentToFirebase == false {
             scoreHasBeenSentToFirebase = true
             postScoreToFirebase()
