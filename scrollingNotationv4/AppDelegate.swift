@@ -23,6 +23,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var highScore = 0
     var practiceModeDifficulty = "medium"
     
+    
+    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         registerForPushNotifications(application)
         NSLog("appfinished launching")
@@ -37,27 +39,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let defaults = NSUserDefaults()
         
         if defaults.valueForKey("isSound") != nil {
-        isSound = defaults.valueForKey("isSound") as! Bool
+            isSound = defaults.valueForKey("isSound") as! Bool
         }
     }
     
     func getPlayerScores() {
         NSLog("getplayerscores()")
         let defaults = NSUserDefaults()
-        if defaults.valueForKey("FirebaseUID") != nil {
+        if defaults.valueForKey("FirebaseUsername") != nil {
+            let loggedInAsUsername = defaults.valueForKey("FirebaseUsername")!
             var i = 0
-            let scoresRef = Firebase(url: "https://glowing-torch-8861.firebaseio.com/High%20Scores")
-            scoresRef.queryOrderedByChild("UID").queryEqualToValue(defaults.valueForKey("FirebaseUID")).observeEventType(.ChildAdded, withBlock: {
+            let scoresRef = Firebase(url: "https://glowing-torch-8861.firebaseio.com/Usernames/\(loggedInAsUsername)/scores")
+            
+            scoresRef.observeEventType(.ChildAdded, withBlock: {
                 snapshot in
                 i += 1
                 NSLog("\(i)")
-                let score:Int = snapshot.value["Score"] as! Int
+                let score:Int = snapshot.value as! Int
                 self.allPlayerScores.append(score)
                 if score > self.highScore {
                     self.highScore = score
                 }
             })
         }
+        
     }
     
     func setUUID() {
