@@ -54,7 +54,7 @@ class MultiplayerGamesTableViewController: UITableViewController {
                 })
                 gamesDataRef.childByAppendingPath("wins").observeSingleEventOfType(.Value, withBlock: {
                     snapshot in
-                    print(snapshot)
+                    
                     let heroWins = snapshot.value["\(self.delegate.username)"] as! Int
                     let opponentWins = snapshot.value["\(opponentName)"] as! Int
                     let tempGame = gameData(hero:self.delegate.username , opponent: opponentName, heroWins: heroWins, opponentWins: opponentWins, waitingOnPlayer: waitingOnPlayer, scoreToBeat: scoreToBeat, isNewGame: isNewGame, gameID: gameID )

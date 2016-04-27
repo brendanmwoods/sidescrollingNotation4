@@ -25,7 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         registerForPushNotifications(application)
-        
+        NSLog("appfinished launching")
         setUUID()
         setUsername()
         getPlayerScores()
@@ -42,11 +42,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func getPlayerScores() {
+        NSLog("getplayerscores()")
         let defaults = NSUserDefaults()
         if defaults.valueForKey("FirebaseUID") != nil {
+            var i = 0
             let scoresRef = Firebase(url: "https://glowing-torch-8861.firebaseio.com/High%20Scores")
             scoresRef.queryOrderedByChild("UID").queryEqualToValue(defaults.valueForKey("FirebaseUID")).observeEventType(.ChildAdded, withBlock: {
                 snapshot in
+                i++
+                NSLog("\(i)")
                 let score:Int = snapshot.value["Score"] as! Int
                 self.allPlayerScores.append(score)
                 if score > self.highScore {

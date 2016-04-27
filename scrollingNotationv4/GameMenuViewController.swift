@@ -77,14 +77,16 @@ class GameMenuViewController: UIViewController {
     }
     
     func makeLeaderboard() {
+        NSLog("makeLeaderboard()")
         let scoresRef = Firebase(url: "https://glowing-torch-8861.firebaseio.com/High%20Scores")
         
         scoresRef.queryLimitedToFirst(5).observeSingleEventOfType(.Value, withBlock: { snapshot in
             var newItems = [LeaderboardItem]()
             var childrenCount = 0
-            
+            var i = 0
             for item in snapshot.children {
                 if childrenCount < 5 {
+                    NSLog("\(i)")
                     let leaderboardItem = LeaderboardItem(snapshot: item as! FDataSnapshot)
                     newItems.append(leaderboardItem)
                     childrenCount += 1

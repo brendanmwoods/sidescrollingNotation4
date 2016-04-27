@@ -46,7 +46,7 @@ class GameViewController: UIViewController , AVAudioPlayerDelegate{
     var currentScrollSpeed:NSTimeInterval = 0.02
     var startingScrollSpeed:NSTimeInterval = 0.02
     var currentNote: (noteName: String,octaveNumber: Int,
-    absoluteNote: Int, isFlatOrSharp:Bool,diffFromTop:Int) = ("",0,0,false,0)
+        absoluteNote: Int, isFlatOrSharp:Bool,diffFromTop:Int) = ("",0,0,false,0)
     var currentScore = 0
     var nextScoreIncrease = 0
     let scoreIncreaseConstant = 100
@@ -67,18 +67,12 @@ class GameViewController: UIViewController , AVAudioPlayerDelegate{
         noteLibrary.fillNoteLibrary()
         noteLibrary.filterNotesForDifficulty(difficulty)
         
-        let imageName = "ovalNote.png"
-        let image = UIImage(named: imageName)
-        ovalNoteImageView = UIImageView(image: image!)
-        
-
-        
     }
     
     override func viewDidAppear(animated: Bool) {
         noteImageHeight = grandStaffView.frame.size.height
         noteImageWidth = noteImageHeight/8.333
-        print("View did appear")
+        
         gameLoop()
     }
     
@@ -125,9 +119,9 @@ class GameViewController: UIViewController , AVAudioPlayerDelegate{
         }
         
         currentNote = noteLibrary.returnRandomNote()
-    
+        scoreHasBeenSentToFirebase = false
         createNoteImage(currentNote)
-    
+        
     }
     
     func setHighScore() {
@@ -182,27 +176,27 @@ class GameViewController: UIViewController , AVAudioPlayerDelegate{
     
     func createOvalNoteImage(note: (noteName: String,octaveNumber: Int,
         absoluteNote: Int, isFlatOrSharp:Bool,diffFromTop:Int)) {
-            
-            ovalNoteImageView.frame = CGRectMake(
-                screenWidth, //- ovalNoteWidth,
-                topLineY + CGFloat(currentNote.diffFromTop) * spaceBetweenNotes,
-                ovalNoteWidth,
-                ovalNoteHeight)
-            
-            view.addSubview(ovalNoteImageView)
-            
-            //ff the sound option is true, play note sound.
-            if appDelegate.isSound {
-                let path = NSBundle.mainBundle().pathForResource("\(note.absoluteNote)", ofType: "mp3")
-                let fileUrl = NSURL(fileURLWithPath: (path)!)
-                notePlayer = try? AVAudioPlayer(contentsOfURL: fileUrl)
-                notePlayer.prepareToPlay()
-                notePlayer.delegate = self
-                notePlayer.play()
-            }
-            
-            timer = NSTimer.scheduledTimerWithTimeInterval(currentScrollSpeed, target: self,
-                selector: #selector(GameViewController.moveOvalNoteLeft), userInfo: nil, repeats: true)
+        
+        ovalNoteImageView.frame = CGRectMake(
+            screenWidth, //- ovalNoteWidth,
+            topLineY + CGFloat(currentNote.diffFromTop) * spaceBetweenNotes,
+            ovalNoteWidth,
+            ovalNoteHeight)
+        
+        view.addSubview(ovalNoteImageView)
+        
+        //If the sound option is true, play note sound.
+        if appDelegate.isSound {
+            let path = NSBundle.mainBundle().pathForResource("\(note.absoluteNote)", ofType: "mp3")
+            let fileUrl = NSURL(fileURLWithPath: (path)!)
+            notePlayer = try? AVAudioPlayer(contentsOfURL: fileUrl)
+            notePlayer.prepareToPlay()
+            notePlayer.delegate = self
+            notePlayer.play()
+        }
+        
+        timer = NSTimer.scheduledTimerWithTimeInterval(currentScrollSpeed, target: self,
+                                                       selector: #selector(GameViewController.moveOvalNoteLeft), userInfo: nil, repeats: true)
     }
     
     
@@ -251,6 +245,7 @@ class GameViewController: UIViewController , AVAudioPlayerDelegate{
     
     func gameOverAlert(){
         appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        
         if scoreHasBeenSentToFirebase == false {
             scoreHasBeenSentToFirebase = true
             postScoreToFirebase()
@@ -358,9 +353,9 @@ class GameViewController: UIViewController , AVAudioPlayerDelegate{
             
         }
             
-        //if it is the first score of the round
+            //if it is the first score of the round
         else if multiplayerData.isNewGame == true {
-           
+            
             //post the score to beat to firebase
             gameRef.updateChildValues(["scoreToBeat" : currentScore])
             //change the waiting on player
