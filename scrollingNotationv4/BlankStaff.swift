@@ -37,7 +37,8 @@ class BlankStaff: UIView {
         CGContextAddLineToPoint(context, staffLineEndX, topLineY)
         
         //make the remainder of the treble clef
-        for var i :CGFloat = 1; i <= 4; i++ {
+        for index in 1...4 {
+            let i:CGFloat = CGFloat(index)
             CGContextMoveToPoint(context,staffLineStartX, topLineY + spaceBetweenStaffLines * i)
             CGContextAddLineToPoint(context, staffLineEndX, topLineY + spaceBetweenStaffLines * i)
         }
@@ -56,7 +57,9 @@ class BlankStaff: UIView {
         CGContextSetLineWidth(context, 3.0)
         CGContextSetStrokeColorWithColor(context, UIColor.blackColor().CGColor)
         
-        for var i:CGFloat = 6; i <= 10; i++ {
+        
+        for index in 6...10 {
+            let i:CGFloat = CGFloat(index)
             CGContextMoveToPoint(context,staffLineStartX, topLineY + spaceBetweenStaffLines * i)
             CGContextAddLineToPoint(context, staffLineEndX, topLineY + spaceBetweenStaffLines * i)
         }

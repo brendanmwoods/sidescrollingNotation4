@@ -49,7 +49,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let scoresRef = Firebase(url: "https://glowing-torch-8861.firebaseio.com/High%20Scores")
             scoresRef.queryOrderedByChild("UID").queryEqualToValue(defaults.valueForKey("FirebaseUID")).observeEventType(.ChildAdded, withBlock: {
                 snapshot in
-                i++
+                i += 1
                 NSLog("\(i)")
                 let score:Int = snapshot.value["Score"] as! Int
                 self.allPlayerScores.append(score)

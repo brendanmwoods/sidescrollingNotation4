@@ -30,7 +30,6 @@
 		BC52FAE31CC985D700DC31BA /* 40-b.png in Resources */ = {isa = PBXBuildFile; fileRef = BC52FAC71CC985D700DC31BA /* 40-b.png */; };
 		BC52FAE41CC985D700DC31BA /* 40.png in Resources */ = {isa = PBXBuildFile; fileRef = BC52FAC81CC985D700DC31BA /* 40.png */; };
 		BC52FAE51CC985D700DC31BA /* 42.png in Resources */ = {isa = PBXBuildFile; fileRef = BC52FAC91CC985D700DC31BA /* 42.png */; };
-		BC52FAE61CC985D700DC31BA /* 44.png in Resources */ = {isa = PBXBuildFile; fileRef = BC52FACA1CC985D700DC31BA /* 44.png */; };
 		BC52FAE71CC985D700DC31BA /* 45.png in Resources */ = {isa = PBXBuildFile; fileRef = BC52FACB1CC985D700DC31BA /* 45.png */; };
 		BC52FAE81CC985D700DC31BA /* 47.png in Resources */ = {isa = PBXBuildFile; fileRef = BC52FACC1CC985D700DC31BA /* 47.png */; };
 		BC52FAE91CC985D700DC31BA /* 49.png in Resources */ = {isa = PBXBuildFile; fileRef = BC52FACD1CC985D700DC31BA /* 49.png */; };
@@ -591,7 +590,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0720;
-				LastUpgradeCheck = 0720;
+				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = "brendan woods";
 				TargetAttributes = {
 					BC64B7B81C6C56F200DE7780 = {
@@ -712,7 +711,6 @@
 				BC52FAE31CC985D700DC31BA /* 40-b.png in Resources */,
 				BCC8F7761C79060700EAA645 /* bass.png in Resources */,
 				BCAEEAAA1CC9427A00EDFD31 /* 44.png in Resources */,
-				BC52FAE61CC985D700DC31BA /* 44.png in Resources */,
 				BC52FAEC1CC985D700DC31BA /* 54.png in Resources */,
 				BCC046CD1C85794500438E71 /* 52.mp3 in Resources */,
 				BC52FAE41CC985D700DC31BA /* 40.png in Resources */,

@@ -86,6 +86,7 @@ class GameMenuViewController: UIViewController {
             var i = 0
             for item in snapshot.children {
                 if childrenCount < 5 {
+                    i += 1
                     NSLog("\(i)")
                     let leaderboardItem = LeaderboardItem(snapshot: item as! FDataSnapshot)
                     newItems.append(leaderboardItem)

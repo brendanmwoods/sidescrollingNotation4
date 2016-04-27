@@ -28,7 +28,8 @@ class NoteLibrary:NSObject {
     func fillNoteLibrary() {
         
         //create all 88 notes and assign absolute note number
-        for (var i = 1; i <= totalNotes ; i += 1) {
+        //for (var i = 1; i <= totalNotes ; i += 1) {
+        for i in 1...totalNotes{
             var tempNote = (noteName:"",octaveNumber:0,absoluteNote:0,false,diffFromTop:0)
             tempNote.absoluteNote = i
             allNotesArr.append(tempNote)
@@ -83,7 +84,7 @@ class NoteLibrary:NSObject {
         for index in 0..<totalNotes{
             if allNotesArr[index].isFlatOrSharp == false {
                 allNotesArr[index].diffFromTop = tempDiffFromTop
-                tempDiffFromTop--
+                tempDiffFromTop -= 1
             }
         }
     }
@@ -110,7 +111,9 @@ class NoteLibrary:NSObject {
             print("default case for filtering based on difficulty")
         }
         
-        for var i = allNotesArr.count-1; i >= 0; i-- {
+        //for var i = allNotesArr.count-1; i >= 0; i -= 1 {
+        for i in (0...allNotesArr.count-1).reverse(){
+        
             if allNotesArr[i].absoluteNote < tempBottomNote ||
                 allNotesArr[i].absoluteNote > tempTopNote  {
                     allNotesArr.removeAtIndex(i)
@@ -126,7 +129,7 @@ class NoteLibrary:NSObject {
     
     //remove all the flat and sharp notes
     func removeFlatsAndSharps() {
-        for var i = allNotesArr.count-1; i >= 0; i-- {
+        for var i = allNotesArr.count-1; i >= 0; i -= 1 {
             if allNotesArr[i].isFlatOrSharp == true {
                 allNotesArr.removeAtIndex(i)
             }
