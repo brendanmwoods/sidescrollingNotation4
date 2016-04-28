@@ -16,9 +16,9 @@ class leadboardTableTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController!.navigationBar.translucent = false
-        self.navigationController!.navigationBar.barTintColor = UIColor(red: 29/255, green: 54/255, blue: 88/255, alpha: 1)
-        self.view.backgroundColor = UIColor(red: 29/255, green: 54/255, blue: 88/255, alpha: 1)
+//        self.navigationController!.navigationBar.translucent = true
+//        self.navigationController!.navigationBar.barTintColor = UIColor(red: 17/255, green: 55/255, blue: 110/255, alpha: 1)
+//        self.view.backgroundColor = UIColor(red: 17/255, green: 55/255, blue: 110/255, alpha: 1)
         makeLeaderboard()
     }
     
@@ -70,7 +70,7 @@ class leadboardTableTableViewController: UITableViewController {
             cell.textLabel?.textColor = UIColor.whiteColor()
             cell.detailTextLabel?.textColor = UIColor.whiteColor()
             cell.selectionStyle = UITableViewCellSelectionStyle.None
-            cell.backgroundColor = UIColor(red: 29/255, green: 54/255, blue: 88/255, alpha: 1)
+            cell.backgroundColor = UIColor(red: 17/255, green: 55/255, blue: 110/255, alpha: 1)
         }
         return cell
     }

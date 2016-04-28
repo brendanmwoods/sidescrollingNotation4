@@ -67,7 +67,6 @@ class GameViewController: UIViewController , AVAudioPlayerDelegate{
         formatButtonShapes()
         noteLibrary.fillNoteLibrary()
         noteLibrary.filterNotesForDifficulty(difficulty)
-        
     }
     
     

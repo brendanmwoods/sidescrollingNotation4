@@ -130,6 +130,7 @@ class NoteLibrary:NSObject {
     //remove all the flat and sharp notes
     func removeFlatsAndSharps() {
         for var i = allNotesArr.count-1; i >= 0; i -= 1 {
+        //let startIndex = allNotesArr.count -1
             if allNotesArr[i].isFlatOrSharp == true {
                 allNotesArr.removeAtIndex(i)
             }
